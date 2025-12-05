@@ -4,7 +4,7 @@ export function RetailTechPage() {
     return (
         <DetailLayout
             title="Retail Tech for Garments"
-            description="NeoTeq brings AI and analytics to the garment industry—from design to distribution—enabling faster decisions, personalized experiences, and reduced waste."
+            description="Jashom brings AI and analytics to the garment industry—from design to distribution—enabling faster decisions, personalized experiences, and reduced waste."
             whatWeOffer={[
                 "AI-based visual search and virtual try-on",
                 "Smart inventory & merchandising predictions",

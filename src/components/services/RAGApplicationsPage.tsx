@@ -4,7 +4,7 @@ export function RAGApplicationsPage() {
     return (
         <DetailLayout
             title="RAG Applications"
-            description="NeoTeq builds Retrieval-Augmented Generation systems that combine retrieval, reasoning, and response—creating AI agents that understand context and deliver answers grounded in your data."
+            description="Jashom builds Retrieval-Augmented Generation systems that combine retrieval, reasoning, and response—creating AI agents that understand context and deliver answers grounded in your data."
             whatWeOffer={[
                 "Text ↔ Voice: Multilingual voice interaction for real-time AI assistance",
                 "Text → Video: Convert transcripts and stories into video explainers using AI generation",

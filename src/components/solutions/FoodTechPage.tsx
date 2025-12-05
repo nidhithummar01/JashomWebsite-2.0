@@ -4,7 +4,7 @@ export function FoodTechPage() {
     return (
         <DetailLayout
             title="FoodTech"
-            description="From manufacturing to delivery, NeoTeq's food tech solutions enhance visibility, reduce waste, and improve decision-making through automation and analytics."
+            description="From manufacturing to delivery, Jashom's food tech solutions enhance visibility, reduce waste, and improve decision-making through automation and analytics."
             whatWeOffer={[
                 "AI-based demand forecasting & supply optimization",
                 "Food traceability with blockchain & IoT data integration",

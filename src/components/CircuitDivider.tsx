@@ -9,10 +9,10 @@ export function CircuitDivider() {
       <svg width="100%" height="64" viewBox="0 0 1200 64" className="opacity-70">
         <defs>
           <linearGradient id="circuit-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#1E90FF" stopOpacity="0" />
-            <stop offset="20%" stopColor="#1E90FF" stopOpacity="1" />
-            <stop offset="80%" stopColor="#00FFFF" stopOpacity="1" />
-            <stop offset="100%" stopColor="#00FFFF" stopOpacity="0" />
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+            <stop offset="20%" stopColor="#ffffff" stopOpacity="1" />
+            <stop offset="80%" stopColor="#d1d5db" stopOpacity="1" />
+            <stop offset="100%" stopColor="#d1d5db" stopOpacity="0" />
           </linearGradient>
         </defs>
         
@@ -34,7 +34,7 @@ export function CircuitDivider() {
             cx={x}
             cy={32}
             r="4"
-            fill="#1E90FF"
+            fill="#ffffff"
             initial={{ scale: 0, opacity: 0 }}
             animate={inView ? { scale: 1, opacity: 1 } : {}}
             transition={{ delay: 0.3 + i * 0.15, duration: 0.3 }}
@@ -59,7 +59,7 @@ export function CircuitDivider() {
           cx="0"
           cy="32"
           r="6"
-          fill="#00FFFF"
+          fill="#d1d5db"
           opacity="0.8"
           initial={{ cx: 0 }}
           animate={inView ? { 

@@ -4,7 +4,7 @@ export function EnvironmentTechPage() {
     return (
         <DetailLayout
             title="EnvironmentTech"
-            description="NeoTeq creates digital ecosystems that monitor, predict, and reduce environmental impact using AI and data automation."
+            description="Jashom creates digital ecosystems that monitor, predict, and reduce environmental impact using AI and data automation."
             whatWeOffer={[
                 "AI-driven emission & energy optimization",
                 "ESG data pipeline & reporting automation",

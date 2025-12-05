@@ -7,15 +7,15 @@ import { AnimatedCounter } from './AnimatedCounter';
 import { ParticleBackground } from './ParticleBackground';
 import { MagneticButton } from './MagneticButton';
 import { ServicesSlider } from './ServicesSlider';
-import { 
-  Cpu, 
-  Zap, 
-  Shield, 
-  Brain, 
-  TrendingUp, 
-  Award, 
-  Users, 
-  Globe, 
+import {
+  Cpu,
+  Zap,
+  Shield,
+  Brain,
+  TrendingUp,
+  Award,
+  Users,
+  Globe,
   Sparkles,
   ArrowRight,
   CheckCircle2,
@@ -36,8 +36,8 @@ const staggerContainer = {
 
 const staggerItem = {
   hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
+  show: {
+    opacity: 1,
     y: 0,
     transition: {
       type: "spring",
@@ -51,7 +51,7 @@ export function HomePage() {
   return (
     <div className="min-h-screen bg-black">
       <SEO
-        title="Neoteq. AI - AI & GPU Optimization | Enterprise AI Solutions"
+        title="Jashom. AI - AI & GPU Optimization | Enterprise AI Solutions"
         description="Transform your business with cutting-edge AI and GPU optimization solutions. Industry-leading expertise in machine learning, deep learning, and high-performance computing. Request a demo today."
         keywords="AI optimization, GPU acceleration, machine learning development, artificial intelligence consulting, MLOps, data engineering, AI security, CUDA programming, deep learning, neural networks, computer vision, NLP, enterprise AI"
       />
@@ -59,9 +59,9 @@ export function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Particle Background */}
         <ParticleBackground />
-        
+
         {/* Animated background grid */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -78,7 +78,7 @@ export function HomePage() {
 
         {/* Glowing orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#1E90FF] opacity-20 blur-[120px]"
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#ffffff] opacity-20 blur-[120px]"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.2, 0.3, 0.2],
@@ -92,7 +92,7 @@ export function HomePage() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#00FFFF] opacity-20 blur-[120px]"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#d1d5db] opacity-20 blur-[120px]"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.25, 0.2],
@@ -113,12 +113,12 @@ export function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-block mb-6 px-4 py-2 rounded-full glass-effect border border-[#1E90FF]/30"
+              className="inline-block mb-6 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-[#00FFFF]">Next-Gen AI Solutions</span>
+              <span className="text-[#d1d5db]">Next-Gen AI Solutions</span>
             </motion.div>
 
             <motion.h1
@@ -147,7 +147,7 @@ export function HomePage() {
             >
               <MagneticButton
                 href="/contact"
-                className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#1E90FF] to-[#00FFFF] text-black neon-glow-hover transition-all duration-300"
+                className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300"
               >
                 Request a Demo
               </MagneticButton>
@@ -161,9 +161,9 @@ export function HomePage() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 rounded-full border-2 border-[#1E90FF] flex items-start justify-center p-2">
+          <div className="w-6 h-10 rounded-full border-2 border-[#ffffff] flex items-start justify-center p-2">
             <motion.div
-              className="w-1.5 h-1.5 rounded-full bg-[#1E90FF]"
+              className="w-1.5 h-1.5 rounded-full bg-[#ffffff]"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
@@ -187,13 +187,13 @@ export function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-4 text-gradient">Why Choose NeoTeq?</h2>
+            <h2 className="mb-4 text-gradient">Why Choose Jashom?</h2>
             <p className="text-white/70 max-w-2xl mx-auto">
               Industry-leading expertise in AI optimization and deployment
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="hidden"
@@ -220,9 +220,9 @@ export function HomePage() {
               <motion.div key={index} variants={staggerItem}>
                 <GlassCard delay={0}>
                   <div className="flex flex-col items-center text-center">
-                    <motion.div 
-                      className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#1E90FF] to-[#00FFFF] flex items-center justify-center mb-4"
-                      whileHover={{ 
+                    <motion.div
+                      className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#ffffff] to-[#d1d5db] flex items-center justify-center mb-4"
+                      whileHover={{
                         rotate: [0, -10, 10, 0],
                         scale: 1.1
                       }}
@@ -280,7 +280,7 @@ export function HomePage() {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4"
             variants={staggerContainer}
             initial="hidden"
@@ -294,8 +294,8 @@ export function HomePage() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                className="glass-effect rounded-lg p-4 text-center border border-[#1E90FF]/20 hover:border-[#00FFFF]/50 transition-all cursor-pointer group"
-                whileHover={{ 
+                className="glass-effect rounded-lg p-4 text-center border border-[#ffffff]/20 hover:border-[#d1d5db]/50 transition-all cursor-pointer group"
+                whileHover={{
                   y: -8,
                   scale: 1.1,
                   boxShadow: "0 10px 30px rgba(0, 255, 255, 0.2)"
@@ -325,7 +325,7 @@ export function HomePage() {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={staggerContainer}
             initial="hidden"
@@ -360,17 +360,17 @@ export function HomePage() {
             ].map((phase, index) => (
               <motion.div key={index} variants={staggerItem}>
                 <GlassCard delay={0}>
-                  <motion.div 
-                    className="text-[#1E90FF]/50 mb-2"
+                  <motion.div
+                    className="text-[#ffffff]/50 mb-2"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                   >
                     {phase.step}
                   </motion.div>
-                  <motion.div 
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1E90FF] to-[#00FFFF] flex items-center justify-center mb-4"
-                    whileHover={{ 
+                  <motion.div
+                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ffffff] to-[#d1d5db] flex items-center justify-center mb-4"
+                    whileHover={{
                       rotate: 360,
                       scale: 1.2
                     }}
@@ -400,11 +400,11 @@ export function HomePage() {
           >
             <h2 className="mb-4 text-gradient">Trusted by Industry Leaders</h2>
             <p className="text-white/70 max-w-2xl mx-auto">
-              See what our clients say about transforming their businesses with NeoTeq
+              See what our clients say about transforming their businesses with Jashom
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="hidden"
@@ -413,13 +413,13 @@ export function HomePage() {
           >
             {[
               {
-                quote: "NeoTeq's GPU optimization reduced our AI inference time by 85%. Their expertise in CUDA programming is unmatched.",
+                quote: "Jashom's GPU optimization reduced our AI inference time by 85%. Their expertise in CUDA programming is unmatched.",
                 author: "Sarah Chen",
                 role: "CTO, TechVision Inc",
                 rating: 5
               },
               {
-                quote: "The AI solutions delivered by NeoTeq have transformed our customer experience. ROI exceeded expectations within 6 months.",
+                quote: "The AI solutions delivered by Jashom have transformed our customer experience. ROI exceeded expectations within 6 months.",
                 author: "Michael Rodriguez",
                 role: "VP Engineering, RetailPro",
                 rating: 5
@@ -442,7 +442,7 @@ export function HomePage() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 + i * 0.1 }}
                       >
-                        <Sparkles className="w-5 h-5 text-[#00FFFF] fill-[#00FFFF]" />
+                        <Sparkles className="w-5 h-5 text-[#d1d5db] fill-[#d1d5db]" />
                       </motion.div>
                     ))}
                   </div>
@@ -460,7 +460,7 @@ export function HomePage() {
 
       <CircuitDivider />
 
-      {/* Why NeoTeq Section */}
+      {/* Why Jashom Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -469,16 +469,16 @@ export function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#1E90FF]/30">
-                <span className="text-[#00FFFF]">The NeoTeq Difference</span>
+              <div className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30">
+                <span className="text-[#d1d5db]">The Jashom Difference</span>
               </div>
-              <h2 className="mb-6 text-gradient">Why Global Enterprises Choose NeoTeq</h2>
+              <h2 className="mb-6 text-gradient">Why Global Enterprises Choose Jashom</h2>
               <p className="text-white/70 mb-8">
-                We don't just build AI solutions—we create competitive advantages. Our team combines 
+                We don't just build AI solutions—we create competitive advantages. Our team combines
                 deep technical expertise with business acumen to deliver transformative results.
               </p>
-              
-              <motion.div 
+
+              <motion.div
                 className="space-y-4"
                 variants={staggerContainer}
                 initial="hidden"
@@ -503,7 +503,7 @@ export function HomePage() {
                       whileHover={{ rotate: 360, scale: 1.2 }}
                       transition={{ type: "spring", stiffness: 200 }}
                     >
-                      <CheckCircle2 className="w-5 h-5 text-[#00FFFF] flex-shrink-0 mt-0.5 group-hover:text-[#1E90FF]" />
+                      <CheckCircle2 className="w-5 h-5 text-[#d1d5db] flex-shrink-0 mt-0.5 group-hover:text-[#ffffff]" />
                     </motion.div>
                     <span className="text-white/80 group-hover:text-white transition-colors">{point}</span>
                   </motion.div>
@@ -512,7 +512,7 @@ export function HomePage() {
 
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 mt-8 text-[#00FFFF] hover:text-white transition-colors group"
+                className="inline-flex items-center gap-2 mt-8 text-[#d1d5db] hover:text-white transition-colors group"
               >
                 <span>View Our Success Stories</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -535,16 +535,16 @@ export function HomePage() {
                 <motion.div
                   key={index}
                   variants={staggerItem}
-                  className="glass-effect rounded-xl p-6 border border-[#1E90FF]/20 flex items-center gap-4 cursor-pointer group"
-                  whileHover={{ 
+                  className="glass-effect rounded-xl p-6 border border-[#ffffff]/20 flex items-center gap-4 cursor-pointer group"
+                  whileHover={{
                     scale: 1.05,
                     x: 10,
                     borderColor: 'rgba(0, 255, 255, 0.5)',
                     boxShadow: "0 10px 40px rgba(30, 144, 255, 0.3)"
                   }}
                 >
-                  <motion.div 
-                    className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1E90FF] to-[#00FFFF] flex items-center justify-center flex-shrink-0"
+                  <motion.div
+                    className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#ffffff] to-[#d1d5db] flex items-center justify-center flex-shrink-0"
                     whileHover={{ rotate: [0, -10, 10, 0] }}
                     transition={{ duration: 0.5 }}
                   >
@@ -552,7 +552,7 @@ export function HomePage() {
                   </motion.div>
                   <div>
                     <div className="text-white/60 text-sm group-hover:text-white/80 transition-colors">{metric.label}</div>
-                    <div className="text-white text-xl group-hover:text-[#00FFFF] transition-colors">{metric.value}</div>
+                    <div className="text-white text-xl group-hover:text-[#d1d5db] transition-colors">{metric.value}</div>
                   </div>
                 </motion.div>
               ))}
@@ -567,30 +567,30 @@ export function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            className="glass-effect rounded-2xl p-12 border border-[#1E90FF]/30 text-center relative overflow-hidden"
+            className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30 text-center relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1E90FF]/10 to-[#00FFFF]/10 pointer-events-none" />
-            
+            <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/10 to-[#d1d5db]/10 pointer-events-none" />
+
             <div className="relative z-10">
               <h2 className="mb-4 text-gradient">Ready to Accelerate Your AI Journey?</h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join hundreds of forward-thinking companies leveraging NeoTeq's AI expertise 
+                Join hundreds of forward-thinking companies leveraging Jashom's AI expertise
                 to drive innovation and achieve unprecedented business outcomes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#1E90FF] to-[#00FFFF] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
+                  className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
                 >
                   Request a Demo
                 </Link>
                 <Link
                   to="/portfolio"
-                  className="inline-block px-8 py-4 rounded-xl bg-white/5 border border-[#1E90FF]/30 text-white hover:bg-white/10 transition-all duration-300"
+                  className="inline-block px-8 py-4 rounded-xl bg-white/5 border border-[#ffffff]/30 text-white hover:bg-white/10 transition-all duration-300"
                 >
                   View Case Studies
                 </Link>

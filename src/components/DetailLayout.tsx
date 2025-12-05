@@ -13,22 +13,22 @@ interface DetailLayoutProps {
   type: 'Service' | 'Solution';
 }
 
-export function DetailLayout({ 
-  title, 
-  description, 
-  whatWeOffer, 
-  benefits, 
+export function DetailLayout({
+  title,
+  description,
+  whatWeOffer,
+  benefits,
   benefitsTitle = 'Benefits',
-  type 
+  type
 }: DetailLayoutProps) {
   return (
     <div className="min-h-screen bg-black pt-24 pb-20">
       <SEO
-        title={`${title} | NeoTeq ${type}`}
+        title={`${title} | Jashom ${type}`}
         description={description}
-        keywords={`${title}, ${type}, NeoTeq AI, Services, Solutions`}
+        keywords={`${title}, ${type}, Jashom AI, Services, Solutions`}
       />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -37,12 +37,12 @@ export function DetailLayout({
           animate={{ opacity: 1, y: 0 }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#1E90FF]/30"
+            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-[#00FFFF]">{type === 'Service' ? 'Our Services' : 'Our Solutions'}</span>
+            <span className="text-[#d1d5db]">{type === 'Service' ? 'Our Services' : 'Our Solutions'}</span>
           </motion.div>
           <h1 className="mb-4 text-gradient">{title}</h1>
           <p className="text-white/70 max-w-3xl mx-auto text-lg">
@@ -73,7 +73,7 @@ export function DetailLayout({
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <CheckCircle2 className="w-6 h-6 text-[#1E90FF] flex-shrink-0" />
+                    <CheckCircle2 className="w-6 h-6 text-[#ffffff] flex-shrink-0" />
                     <span className="text-white/80 text-lg">{item}</span>
                   </motion.div>
                 ))}
@@ -101,8 +101,8 @@ export function DetailLayout({
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="w-6 h-6 rounded-full bg-[#00FFFF]/10 flex items-center justify-center flex-shrink-0 border border-[#00FFFF]/30">
-                      <div className="w-2 h-2 rounded-full bg-[#00FFFF]" />
+                    <div className="w-6 h-6 rounded-full bg-[#d1d5db]/10 flex items-center justify-center flex-shrink-0 border border-[#d1d5db]/30">
+                      <div className="w-2 h-2 rounded-full bg-[#d1d5db]" />
                     </div>
                     <span className="text-white/80 text-lg">{item}</span>
                   </motion.div>
@@ -121,9 +121,9 @@ export function DetailLayout({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 border border-[#1E90FF]/30 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1E90FF]/10 to-[#00FFFF]/10 pointer-events-none" />
-            
+          <div className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/10 to-[#d1d5db]/10 pointer-events-none" />
+
             <div className="relative z-10">
               <h2 className="mb-4 text-gradient">Ready to Get Started?</h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
@@ -132,7 +132,7 @@ export function DetailLayout({
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#1E90FF] to-[#00FFFF] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
                 >
                   <span>Contact Us</span>
                   <ArrowRight className="w-5 h-5" />

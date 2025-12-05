@@ -18,7 +18,7 @@ export function CapabilityMatrixPage() {
         'Prompt Engineering',
         'Fine-tuning'
       ],
-      color: 'from-[#1E90FF] to-[#00FFFF]'
+      color: 'from-[#ffffff] to-[#d1d5db]'
     },
     {
       icon: Cpu,
@@ -32,7 +32,7 @@ export function CapabilityMatrixPage() {
         'Performance Profiling',
         'Hardware Acceleration'
       ],
-      color: 'from-[#00FFFF] to-[#1E90FF]'
+      color: 'from-[#d1d5db] to-[#ffffff]'
     },
     {
       icon: Code,
@@ -46,7 +46,7 @@ export function CapabilityMatrixPage() {
         'API Development',
         'UI/UX Design'
       ],
-      color: 'from-[#1E90FF] to-[#00FFFF]'
+      color: 'from-[#ffffff] to-[#d1d5db]'
     },
     {
       icon: Cloud,
@@ -60,7 +60,7 @@ export function CapabilityMatrixPage() {
         'CDN Optimization',
         'Infrastructure as Code'
       ],
-      color: 'from-[#00FFFF] to-[#1E90FF]'
+      color: 'from-[#d1d5db] to-[#ffffff]'
     },
     {
       icon: Package,
@@ -74,15 +74,15 @@ export function CapabilityMatrixPage() {
         'DevOps',
         'Continuous Integration'
       ],
-      color: 'from-[#1E90FF] to-[#00FFFF]'
+      color: 'from-[#ffffff] to-[#d1d5db]'
     }
   ];
 
   return (
     <div className="min-h-screen bg-black pt-24 pb-20">
       <SEO
-        title="Technical Capabilities | AI, LLM, GPU, Cloud & Engineering | NeoTeq"
-        description="Explore NeoTeq's technical expertise: AI & LLM Platforms, GPU Optimization, Web & App Engineering, Cloud & Edge Computing, Product Engineering. Advanced capabilities across the AI lifecycle."
+        title="Technical Capabilities | AI, LLM, GPU, Cloud & Engineering | Jashom"
+        description="Explore Jashom's technical expertise: AI & LLM Platforms, GPU Optimization, Web & App Engineering, Cloud & Edge Computing, Product Engineering. Advanced capabilities across the AI lifecycle."
         keywords="AI LLM platforms, GPU optimization expertise, cloud computing, edge AI, product engineering, technical capabilities, CUDA development, Kubernetes"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,12 +93,12 @@ export function CapabilityMatrixPage() {
           animate={{ opacity: 1, y: 0 }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#1E90FF]/30"
+            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-[#00FFFF]">Our Expertise</span>
+            <span className="text-[#d1d5db]">Our Expertise</span>
           </motion.div>
           <h1 className="mb-4 text-gradient">Capability Matrix</h1>
           <p className="text-white/70 max-w-3xl mx-auto">
@@ -131,7 +131,7 @@ export function CapabilityMatrixPage() {
                     {capability.technologies.map((tech, idx) => (
                       <div
                         key={idx}
-                        className="px-3 py-2 rounded-lg bg-white/5 border border-[#1E90FF]/20 text-white/80 text-sm text-center hover:bg-white/10 transition-colors"
+                        className="px-3 py-2 rounded-lg bg-white/5 border border-[#ffffff]/20 text-white/80 text-sm text-center hover:bg-white/10 transition-colors"
                       >
                         {tech}
                       </div>
@@ -201,14 +201,14 @@ export function CapabilityMatrixPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 border border-[#1E90FF]/30">
+          <div className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30">
             <h2 className="mb-4 text-gradient">Leverage Our Expertise</h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
               Let's discuss how our capabilities can address your specific technical challenges.
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#1E90FF] to-[#00FFFF] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
+              className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
             >
               Schedule Technical Call
             </a>

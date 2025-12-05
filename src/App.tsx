@@ -23,6 +23,7 @@ import { ProductEngineeringPage } from './components/services/ProductEngineering
 import { StaffAugmentationPage } from './components/services/StaffAugmentationPage';
 import { AIAgenticPage } from './components/services/AIAgenticPage';
 import { CustomDevelopmentPage } from './components/services/CustomDevelopmentPage';
+import { CyberSecurityPage } from './components/services/CyberSecurityPage';
 import { HealthTechPage } from './components/solutions/HealthTechPage';
 import { FoodTechPage } from './components/solutions/FoodTechPage';
 import { EnvironmentTechPage } from './components/solutions/EnvironmentTechPage';
@@ -66,6 +67,9 @@ function AnimatedRoutes() {
         <Route path="/services/staff-augmentation" element={<PageTransition><StaffAugmentationPage /></PageTransition>} />
         <Route path="/services/ai-agentic-systems" element={<PageTransition><AIAgenticPage /></PageTransition>} />
         <Route path="/services/custom-development" element={<PageTransition><CustomDevelopmentPage /></PageTransition>} />
+        <Route path="/services/cyber-security" element={<PageTransition><CyberSecurityPage /></PageTransition>} />
+        <Route path="/services/cloud-computing" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
+        <Route path="/services/devops" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
         <Route path="/services/capability-matrix" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
 
         {/* Solution Routes */}
@@ -78,17 +82,17 @@ function AnimatedRoutes() {
         <Route path="/solutions/legal-and-tax" element={<PageTransition><LegalTaxPage /></PageTransition>} />
 
         {/* Placeholder routes */}
-        <Route path="/about" element={<PageTransition><PlaceholderPage title="About Us" description="Learn more about NeoTeq's mission, vision, and the team driving AI innovation across industries." /></PageTransition>} />
-        <Route path="/careers" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with NeoTeq." /></PageTransition>} />
+        <Route path="/about" element={<PageTransition><PlaceholderPage title="About Us" description="Learn more about Jashom's mission, vision, and the team driving AI innovation across industries." /></PageTransition>} />
+        <Route path="/careers" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with Jashom." /></PageTransition>} />
         <Route path="/blog" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
-        <Route path="/news" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from NeoTeq." /></PageTransition>} />
-        <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for NeoTeq's AI solutions." /></PageTransition>} />
-        <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from NeoTeq's AI experts." /></PageTransition>} />
-        <Route path="/api" element={<PageTransition><PlaceholderPage title="API Reference" description="Complete API documentation and integration guides for NeoTeq's AI platform." /></PageTransition>} />
-        <Route path="/privacy" element={<PageTransition><PlaceholderPage title="Privacy Policy" description="NeoTeq's commitment to protecting your privacy and data security." /></PageTransition>} />
-        <Route path="/terms" element={<PageTransition><PlaceholderPage title="Terms of Service" description="Terms and conditions for using NeoTeq's services and platforms." /></PageTransition>} />
-        <Route path="/cookies" element={<PageTransition><PlaceholderPage title="Cookie Policy" description="Information about how NeoTeq uses cookies and similar technologies." /></PageTransition>} />
-        <Route path="/security" element={<PageTransition><PlaceholderPage title="Security" description="Learn about NeoTeq's enterprise-grade security practices and compliance certifications." /></PageTransition>} />
+        <Route path="/news" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from Jashom." /></PageTransition>} />
+        <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
+        <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />
+        <Route path="/api" element={<PageTransition><PlaceholderPage title="API Reference" description="Complete API documentation and integration guides for Jashom's AI platform." /></PageTransition>} />
+        <Route path="/privacy" element={<PageTransition><PlaceholderPage title="Privacy Policy" description="Jashom's commitment to protecting your privacy and data security." /></PageTransition>} />
+        <Route path="/terms" element={<PageTransition><PlaceholderPage title="Terms of Service" description="Terms and conditions for using Jashom's services and platforms." /></PageTransition>} />
+        <Route path="/cookies" element={<PageTransition><PlaceholderPage title="Cookie Policy" description="Information about how Jashom uses cookies and similar technologies." /></PageTransition>} />
+        <Route path="/security" element={<PageTransition><PlaceholderPage title="Security" description="Learn about Jashom's enterprise-grade security practices and compliance certifications." /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

@@ -46,16 +46,16 @@ export function Navigation() {
     {
       label: 'Services',
       dropdown: [
-        { path: '/services/ai-automation', label: 'AI & Automation' },
-        { path: '/services/ai-gpu-optimization', label: 'AI GPU Optimization' },
+        { path: '/services/ai-gpu-optimization', label: 'AI GPU Optimization & Attestation' },
         { path: '/services/rag-applications', label: 'RAG Applications' },
-        { path: '/services/devops-cloud', label: 'DevOps & Cloud' },
+        { path: '/services/devops-cloud', label: 'DevOps' },
         { path: '/services/devsecops', label: 'DevSecOps' },
-        { path: '/services/vapt', label: 'VAPT' },
+        { path: '/services/devops-cloud', label: 'Cloud Computing' },
+        { path: '/services/cyber-security', label: 'Cyber Security' },
         { path: '/services/product-engineering', label: 'Product Engineering' },
         { path: '/services/staff-augmentation', label: 'Staff Augmentation' },
         { path: '/services/ai-agentic-systems', label: 'AI Agentic Systems' },
-        { path: '/services/custom-development', label: 'Custom Development' },
+        { path: '/services/ai-automation', label: 'AI & Automation' },
         { path: '/services/capability-matrix', label: 'Capability Matrix' }
       ]
     },
@@ -63,12 +63,12 @@ export function Navigation() {
       label: 'Solutions',
       dropdown: [
         { path: '/solutions/healthtech', label: 'HealthTech' },
-        { path: '/solutions/foodtech', label: 'FoodTech' },
-        { path: '/solutions/environmenttech', label: 'EnvironmentTech' },
-        { path: '/solutions/retail-tech', label: 'Retail Tech' },
         { path: '/solutions/supply-chain', label: 'Supply Chain' },
         { path: '/solutions/fintech', label: 'FinTech' },
-        { path: '/solutions/legal-and-tax', label: 'Legal & Tax' }
+        { path: '/solutions/environmenttech', label: 'EnvironmentTech' },
+        { path: '/solutions/legal-and-tax', label: 'Legal & Tax' },
+        { path: '/solutions/retail-tech', label: 'Retail Tech' },
+        { path: '/solutions/foodtech', label: 'FoodTech' }
       ]
     },
     { path: '/portfolio', label: 'Portfolio' },
@@ -82,7 +82,7 @@ export function Navigation() {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-[#1E90FF]/20"
+      className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -95,7 +95,11 @@ export function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               whileHover={{ scale: 1.05 }}
             >
-              <img src="/neoteq-logo.png" alt="NeoTeq" className="h-12 w-auto" />
+              <img
+                src="/jashom-logo-header-70px.png"
+                alt="Jashom"
+                className="h-[40px] md:h-[70px] w-auto transition-all duration-300 object-contain"
+              />
             </motion.div>
           </Link>
 
@@ -116,7 +120,7 @@ export function Navigation() {
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <button
-                      className="flex items-center gap-1 text-white hover:text-[#00FFFF] transition-colors"
+                      className="flex items-center gap-1 text-white hover:text-gray-300 transition-colors"
                     >
                       <motion.span
                         whileHover={{ scale: 1.1 }}
@@ -133,7 +137,7 @@ export function Navigation() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="absolute top-full left-0 mt-2 w-64 glass-effect rounded-xl border border-[#1E90FF]/30 overflow-hidden max-h-[80vh] overflow-y-auto"
+                          className="absolute top-full left-0 mt-2 w-64 glass-effect rounded-xl border border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto"
                         >
                           {item.dropdown.map((subItem, subIndex) => (
                             <Link
@@ -141,8 +145,8 @@ export function Navigation() {
                               to={subItem.path}
                               onClick={handleLinkClick}
                               className={`block px-4 py-3 transition-colors ${location.pathname === subItem.path
-                                ? 'text-[#1E90FF] bg-[#1E90FF]/10'
-                                : 'text-white hover:text-[#00FFFF] hover:bg-white/5'
+                                ? 'text-white bg-white/10'
+                                : 'text-white hover:text-gray-300 hover:bg-white/5'
                                 }`}
                             >
                               {subItem.label}
@@ -156,8 +160,8 @@ export function Navigation() {
                   <Link
                     to={item.path}
                     className={`relative transition-colors ${location.pathname === item.path
-                      ? 'text-[#1E90FF]'
-                      : 'text-white hover:text-[#00FFFF]'
+                      ? 'text-white'
+                      : 'text-white hover:text-gray-300'
                       }`}
                   >
                     <motion.span
@@ -169,7 +173,7 @@ export function Navigation() {
                     {location.pathname === item.path && (
                       <motion.div
                         layoutId="nav-indicator"
-                        className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-gradient-to-r from-[#1E90FF] to-[#00FFFF]"
+                        className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-white"
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
@@ -239,8 +243,8 @@ export function Navigation() {
                             to={subItem.path}
                             onClick={handleLinkClick}
                             className={`block py-2 px-6 rounded-lg transition-all ${location.pathname === subItem.path
-                              ? 'text-[#1E90FF] bg-[#1E90FF]/10'
-                              : 'text-white hover:text-[#00FFFF] hover:bg-white/5'
+                              ? 'text-white bg-white/10'
+                              : 'text-white hover:text-gray-300 hover:bg-white/5'
                               }`}
                           >
                             {subItem.label}
@@ -252,8 +256,8 @@ export function Navigation() {
                         to={item.path}
                         onClick={handleLinkClick}
                         className={`block py-2 px-4 rounded-lg transition-all ${location.pathname === item.path
-                          ? 'text-[#1E90FF] bg-[#1E90FF]/10'
-                          : 'text-white hover:text-[#00FFFF] hover:bg-white/5'
+                          ? 'text-white bg-white/10'
+                          : 'text-white hover:text-gray-300 hover:bg-white/5'
                           }`}
                       >
                         {item.label}

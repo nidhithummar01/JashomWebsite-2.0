@@ -98,7 +98,7 @@ export function ServicesSlider() {
           <div className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-10">
             <motion.button
               onClick={prev}
-              className="w-12 h-12 rounded-full glass-effect border border-[#1E90FF]/30 flex items-center justify-center text-white hover:border-[#00FFFF]/50 transition-all"
+              className="w-12 h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
               whileHover={{ scale: 1.1, x: -5 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -109,7 +109,7 @@ export function ServicesSlider() {
           <div className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-10">
             <motion.button
               onClick={next}
-              className="w-12 h-12 rounded-full glass-effect border border-[#1E90FF]/30 flex items-center justify-center text-white hover:border-[#00FFFF]/50 transition-all"
+              className="w-12 h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
               whileHover={{ scale: 1.1, x: 5 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -139,7 +139,7 @@ export function ServicesSlider() {
                   <GlassCard delay={0}>
                     <div className="h-full flex flex-col">
                       <motion.div
-                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1E90FF] to-[#00FFFF] flex items-center justify-center mb-4"
+                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#ffffff] to-[#d1d5db] flex items-center justify-center mb-4"
                         whileHover={{
                           rotate: [0, -10, 10, 0],
                           scale: 1.1
@@ -155,14 +155,14 @@ export function ServicesSlider() {
                       <div className="space-y-2 mb-4">
                         {service.highlights.slice(0, 3).map((highlight, idx) => (
                           <div key={idx} className="flex items-start gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#00FFFF] mt-1.5 flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#d1d5db] mt-1.5 flex-shrink-0" />
                             <span className="text-white/60 text-sm">{highlight}</span>
                           </div>
                         ))}
                       </div>
 
                       <div className="pt-4 border-t border-white/10">
-                        <p className="text-[#1E90FF]/70 text-xs">{service.tech}</p>
+                        <p className="text-[#ffffff]/70 text-xs">{service.tech}</p>
                       </div>
                     </div>
                   </GlassCard>
@@ -179,7 +179,7 @@ export function ServicesSlider() {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'bg-[#1E90FF] w-8'
+                    ? 'bg-[#ffffff] w-8'
                     : 'bg-white/20 hover:bg-white/40'
                 }`}
               />

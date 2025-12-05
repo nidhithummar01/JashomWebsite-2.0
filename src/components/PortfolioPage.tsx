@@ -282,7 +282,7 @@ export function PortfolioPage() {
   return (
     <div className="min-h-screen bg-black pt-24 pb-20">
       <SEO
-        title="Portfolio & Case Studies | AI Success Stories | NeoTeq"
+        title="Portfolio & Case Studies | AI Success Stories | Jashom"
         description="Real-world AI transformations: Healthcare diagnostics, fraud detection, supply chain optimization, and more. See how we've delivered $2B+ in value across 500+ projects."
         keywords="AI case studies, machine learning portfolio, AI success stories, GPU optimization results, AI implementation examples, enterprise AI projects"
       />
@@ -294,12 +294,12 @@ export function PortfolioPage() {
           animate={{ opacity: 1, y: 0 }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#1E90FF]/30"
+            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-[#00FFFF]">Success Stories</span>
+            <span className="text-[#d1d5db]">Success Stories</span>
           </motion.div>
           <h1 className="mb-4 text-gradient">Portfolio</h1>
           <p className="text-white/70 max-w-3xl mx-auto">
@@ -328,97 +328,97 @@ export function PortfolioPage() {
 
               {/* Projects in this category */}
               {projects.map((study, index) => (
-            <GlassCard key={`${category}-${index}`}>
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Left Column */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 rounded-full bg-[#1E90FF]/20 text-[#00FFFF] text-sm">
-                      {study.industry}
-                    </span>
-                    <span className="text-white/50 text-sm">{study.client}</span>
-                  </div>
-                  <h3 className="mb-4 text-white">{study.title}</h3>
-                  
-                  <div className="space-y-4">
+                <GlassCard key={`${category}-${index}`}>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {/* Left Column */}
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-[#1E90FF]" />
-                        <span className="text-[#00FFFF]">Challenge</span>
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 rounded-full bg-[#ffffff]/20 text-[#d1d5db] text-sm">
+                          {study.industry}
+                        </span>
+                        <span className="text-white/50 text-sm">{study.client}</span>
                       </div>
-                      <p className="text-white/70 text-sm pl-4">{study.challenge}</p>
+                      <h3 className="mb-4 text-white">{study.title}</h3>
+
+                      <div className="space-y-4">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
+                            <span className="text-[#d1d5db]">Challenge</span>
+                          </div>
+                          <p className="text-white/70 text-sm pl-4">{study.challenge}</p>
+                        </div>
+
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
+                            <span className="text-[#d1d5db]">Solution</span>
+                          </div>
+                          <p className="text-white/70 text-sm pl-4">{study.solution}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mt-6">
+                        {study.tags.map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 rounded-lg bg-white/5 border border-[#ffffff]/20 text-white/60 text-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-[#1E90FF]" />
-                        <span className="text-[#00FFFF]">Solution</span>
+                    {/* Right Column - Impact */}
+                    <div className="flex flex-col justify-center">
+                      <div className="flex items-center gap-2 mb-6">
+                        <TrendingUp className="w-5 h-5 text-[#d1d5db]" />
+                        <span className="text-[#d1d5db]">Impact & Results</span>
                       </div>
-                      <p className="text-white/70 text-sm pl-4">{study.solution}</p>
+                      <div className="space-y-4">
+                        {study.impact.map((item, idx) => (
+                          <motion.div
+                            key={idx}
+                            className="flex items-start gap-3"
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                          >
+                            <CheckCircle2 className="w-5 h-5 text-[#ffffff] flex-shrink-0 mt-0.5" />
+                            <span className="text-white">{item}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                      <div className="mt-6 flex flex-col gap-3">
+                        {study.link ? (
+                          <motion.a
+                            href={study.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
+                            whileHover={{ x: 5 }}
+                          >
+                            <span>View Full Case Study</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </motion.a>
+                        ) : null}
+                        {study.liveUrl ? (
+                          <a
+                            href={study.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors"
+                          >
+                            <span>Visit Live Platform</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </a>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
-
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {study.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 rounded-lg bg-white/5 border border-[#1E90FF]/20 text-white/60 text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right Column - Impact */}
-                <div className="flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-6">
-                    <TrendingUp className="w-5 h-5 text-[#00FFFF]" />
-                    <span className="text-[#00FFFF]">Impact & Results</span>
-                  </div>
-                  <div className="space-y-4">
-                    {study.impact.map((item, idx) => (
-                      <motion.div
-                        key={idx}
-                        className="flex items-start gap-3"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
-                      >
-                        <CheckCircle2 className="w-5 h-5 text-[#1E90FF] flex-shrink-0 mt-0.5" />
-                        <span className="text-white">{item}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex flex-col gap-3">
-                    {study.link ? (
-                      <motion.a
-                        href={study.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-[#00FFFF] hover:text-white transition-colors"
-                        whileHover={{ x: 5 }}
-                      >
-                        <span>View Full Case Study</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </motion.a>
-                    ) : null}
-                    {study.liveUrl ? (
-                      <a
-                        href={study.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-[#1E90FF] hover:text-[#00FFFF] transition-colors"
-                      >
-                        <span>Visit Live Platform</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                    ) : null}
-                  </div>
-                </div>
-              </div>
-            </GlassCard>
+                </GlassCard>
               ))}
             </div>
           ))}
@@ -465,14 +465,14 @@ export function PortfolioPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 border border-[#1E90FF]/30">
+          <div className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30">
             <h2 className="mb-4 text-gradient">Ready to Write Your Success Story?</h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-              Join leading organizations that have transformed their operations with NeoTeq.
+              Join leading organizations that have transformed their operations with Jashom.
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#1E90FF] to-[#00FFFF] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
+              className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
             >
               Start Your Project
             </a>

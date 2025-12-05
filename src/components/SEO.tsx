@@ -31,30 +31,30 @@ export function SEO({
     // Update or create meta tags
     updateMetaTag('name', 'description', description);
     updateMetaTag('name', 'keywords', keywords);
-    
+
     // Open Graph tags
     updateMetaTag('property', 'og:title', title);
     updateMetaTag('property', 'og:description', description);
     updateMetaTag('property', 'og:url', currentUrl);
     updateMetaTag('property', 'og:type', ogType);
     updateMetaTag('property', 'og:image', ogImageUrl);
-    updateMetaTag('property', 'og:site_name', 'Neoteq. AI');
-    
+    updateMetaTag('property', 'og:site_name', 'Jashom. AI');
+
     // Twitter Card tags
     updateMetaTag('name', 'twitter:card', 'summary_large_image');
     updateMetaTag('name', 'twitter:title', title);
     updateMetaTag('name', 'twitter:description', description);
     updateMetaTag('name', 'twitter:image', ogImageUrl);
     updateMetaTag('name', 'twitter:site', '@neoteq');
-    
+
     // Canonical URL
     updateLinkTag('canonical', canonical || currentUrl);
-    
+
     // Structured Data - Organization
     updateStructuredData('organization', {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'NeoTeq',
+      name: 'Jashom',
       url: baseUrl,
       logo: `${baseUrl}/logo.png`,
       description: 'Leading AI and GPU optimization company',
@@ -82,7 +82,7 @@ export function SEO({
     updateStructuredData('website', {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'NeoTeq',
+      name: 'Jashom',
       url: baseUrl,
       potentialAction: {
         '@type': 'SearchAction',
@@ -97,37 +97,37 @@ export function SEO({
 
 function updateMetaTag(attribute: string, key: string, content: string) {
   let element = document.querySelector(`meta[${attribute}="${key}"]`);
-  
+
   if (!element) {
     element = document.createElement('meta');
     element.setAttribute(attribute, key);
     document.head.appendChild(element);
   }
-  
+
   element.setAttribute('content', content);
 }
 
 function updateLinkTag(rel: string, href: string) {
   let element = document.querySelector(`link[rel="${rel}"]`);
-  
+
   if (!element) {
     element = document.createElement('link');
     element.setAttribute('rel', rel);
     document.head.appendChild(element);
   }
-  
+
   element.setAttribute('href', href);
 }
 
 function updateStructuredData(id: string, data: object) {
   let script = document.getElementById(`structured-data-${id}`);
-  
+
   if (!script) {
     script = document.createElement('script');
     script.id = `structured-data-${id}`;
     script.type = 'application/ld+json';
     document.head.appendChild(script);
   }
-  
+
   script.textContent = JSON.stringify(data);
 }

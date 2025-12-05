@@ -4,7 +4,7 @@ export function AIGPUOptimizationPage() {
     return (
         <DetailLayout
             title="AI GPU Optimization & Attestation"
-            description="At NeoTeq, we specialize in AI GPU optimization and attestation, helping enterprises achieve faster, more efficient, and verifiable AI performance. Our engineers design custom CUDA pipelines, implement TensorRT optimizations, and fine-tune large language models (LLMs) to reduce latency, energy usage, and compute cost—without sacrificing accuracy."
+            description="At Jashom, we specialize in AI GPU optimization and attestation, helping enterprises achieve faster, more efficient, and verifiable AI performance. Our engineers design custom CUDA pipelines, implement TensorRT optimizations, and fine-tune large language models (LLMs) to reduce latency, energy usage, and compute cost—without sacrificing accuracy."
             whatWeOffer={[
                 "Kernel-level GPU tuning for NVIDIA/AMD",
                 "LLM fine-tuning, pruning, and quantization (INT8/FP16)",

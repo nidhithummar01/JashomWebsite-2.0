@@ -3,7 +3,7 @@ import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { MagneticButton } from './MagneticButton';
-import { Cpu, Heart, UtensilsCrossed, ShoppingCart, TrendingUp, Leaf } from 'lucide-react';
+import { Cpu, Heart, UtensilsCrossed, ShoppingCart, TrendingUp, Leaf, Package, Scale } from 'lucide-react';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -33,28 +33,16 @@ const staggerItem = {
 export function SolutionsPage() {
   const solutions = [
     {
-      icon: Cpu,
-      title: 'AI GPU Optimization',
-      description: 'Maximize computational efficiency with cutting-edge GPU optimization techniques for AI workloads.',
-      features: ['Parallel Processing', 'Memory Management', 'Performance Tuning']
-    },
-    {
       icon: Heart,
       title: 'HealthTech',
       description: 'Revolutionary AI solutions for healthcare, from diagnostics to patient care optimization.',
       features: ['Medical Imaging', 'Predictive Analytics', 'Patient Monitoring']
     },
     {
-      icon: UtensilsCrossed,
-      title: 'FoodTech',
-      description: 'Transform food industry operations with AI-powered supply chain and quality assurance.',
-      features: ['Supply Chain AI', 'Quality Detection', 'Demand Forecasting']
-    },
-    {
-      icon: ShoppingCart,
-      title: 'Retail',
-      description: 'Enhance customer experiences and optimize operations with intelligent retail solutions.',
-      features: ['Personalization', 'Inventory AI', 'Customer Analytics']
+      icon: Package,
+      title: 'Supply Chain',
+      description: 'Optimize logistics and inventory management with predictive AI and real-time tracking.',
+      features: ['Demand Forecasting', 'Route Optimization', 'Inventory Management']
     },
     {
       icon: TrendingUp,
@@ -64,16 +52,34 @@ export function SolutionsPage() {
     },
     {
       icon: Leaf,
-      title: 'Environment Tech',
+      title: 'EnvironmentTech',
       description: 'Leverage AI to monitor, predict, and optimize environmental sustainability efforts.',
       features: ['Climate Modeling', 'Resource Optimization', 'Impact Analysis']
+    },
+    {
+      icon: Scale,
+      title: 'Legal & Tax',
+      description: 'Automate compliance and legal research with intelligent document processing and analysis.',
+      features: ['Contract Analysis', 'Compliance Automation', 'Tax Optimization']
+    },
+    {
+      icon: ShoppingCart,
+      title: 'Retail Tech',
+      description: 'Enhance customer experiences and optimize operations with intelligent retail solutions.',
+      features: ['Personalization', 'Inventory AI', 'Customer Analytics']
+    },
+    {
+      icon: UtensilsCrossed,
+      title: 'FoodTech',
+      description: 'Transform food industry operations with AI-powered supply chain and quality assurance.',
+      features: ['Supply Chain AI', 'Quality Detection', 'Demand Forecasting']
     }
   ];
 
   return (
     <div className="min-h-screen bg-black pt-24 pb-20">
       <SEO
-        title="AI Solutions by Industry | NeoTeq - Healthcare, FinTech, Retail & More"
+        title="AI Solutions by Industry | Jashom - Healthcare, FinTech, Retail & More"
         description="Discover tailored AI and GPU optimization solutions for Healthcare, FinTech, FoodTech, Retail, and Environmental sectors. Industry-specific expertise delivering measurable impact."
         keywords="AI healthcare solutions, fintech AI, retail AI, foodtech optimization, environmental AI, GPU optimization by industry, AI implementation"
       />
@@ -85,12 +91,12 @@ export function SolutionsPage() {
           animate={{ opacity: 1, y: 0 }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#1E90FF]/30"
+            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-[#00FFFF]">Industry Solutions</span>
+            <span className="text-[#d1d5db]">Industry Solutions</span>
           </motion.div>
           <h1 className="mb-4 text-gradient">Our Solutions</h1>
           <p className="text-white/70 max-w-3xl mx-auto">
@@ -118,7 +124,7 @@ export function SolutionsPage() {
               <GlassCard delay={0}>
                 <div className="flex flex-col h-full">
                   <motion.div
-                    className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1E90FF] to-[#00FFFF] flex items-center justify-center mb-4"
+                    className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#ffffff] to-[#d1d5db] flex items-center justify-center mb-4"
                     whileHover={{
                       rotate: [0, -10, 10, -10, 0],
                       scale: 1.15
@@ -141,7 +147,7 @@ export function SolutionsPage() {
                         whileHover={{ x: 5 }}
                       >
                         <motion.div
-                          className="w-1.5 h-1.5 rounded-full bg-[#1E90FF] mr-2"
+                          className="w-1.5 h-1.5 rounded-full bg-[#ffffff] mr-2"
                           whileHover={{ scale: 2 }}
                         />
                         <span className="text-sm group-hover:text-white transition-colors">{feature}</span>
@@ -164,14 +170,14 @@ export function SolutionsPage() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="glass-effect rounded-2xl p-12 border border-[#1E90FF]/30 relative overflow-hidden"
+            className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30 relative overflow-hidden"
             whileHover={{
               borderColor: 'rgba(0, 255, 255, 0.5)',
               boxShadow: "0 20px 60px rgba(30, 144, 255, 0.3)"
             }}
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-[#1E90FF]/10 to-[#00FFFF]/10"
+              className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/10 to-[#d1d5db]/10"
               animate={{
                 opacity: [0.5, 0.8, 0.5]
               }}
@@ -188,7 +194,7 @@ export function SolutionsPage() {
               </p>
               <MagneticButton
                 href="/contact"
-                className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#1E90FF] to-[#00FFFF] text-black neon-glow-hover transition-all duration-300"
+                className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300"
               >
                 Schedule Consultation
               </MagneticButton>
