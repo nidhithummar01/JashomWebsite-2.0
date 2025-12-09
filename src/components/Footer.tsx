@@ -145,12 +145,12 @@ export function Footer() {
 
         {/* Newsletter Signup */}
         <div className="glass-effect rounded-2xl p-8 mb-12">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
               <h3 className="text-white mb-2 font-semibold">Stay Updated</h3>
               <p className="text-white/70">Get the latest insights on AI, GPU optimization, and industry trends.</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Enter your email"

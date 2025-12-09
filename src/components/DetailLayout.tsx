@@ -52,7 +52,7 @@ export function DetailLayout({
 
         <CircuitDivider />
 
-        <div className="grid md:grid-cols-2 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
           {/* What We Offer Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

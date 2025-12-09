@@ -95,25 +95,25 @@ export function ServicesSlider() {
 
         <div className="relative">
           {/* Navigation Buttons */}
-          <div className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-10">
+          <div className="absolute left-0 md:-left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-10">
             <motion.button
               onClick={prev}
-              className="w-12 h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
               whileHover={{ scale: 1.1, x: -5 }}
               whileTap={{ scale: 0.9 }}
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </motion.button>
           </div>
 
-          <div className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-10">
+          <div className="absolute right-0 md:-right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-10">
             <motion.button
               onClick={next}
-              className="w-12 h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
               whileHover={{ scale: 1.1, x: 5 }}
               whileTap={{ scale: 0.9 }}
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </motion.button>
           </div>
 
@@ -178,8 +178,8 @@ export function ServicesSlider() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all ${index === currentIndex
-                    ? 'bg-[#ffffff] w-8'
-                    : 'bg-white/20 hover:bg-white/40'
+                  ? 'bg-[#ffffff] w-8'
+                  : 'bg-white/20 hover:bg-white/40'
                   }`}
               />
             ))}

@@ -141,19 +141,20 @@ export function HomePage() {
             </motion.p>
 
             <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
               <MagneticButton
                 href="/contact"
-                className="inline-block px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center"
               >
                 Request a Demo
               </MagneticButton>
               <Link
                 to="/contact"
-                className="inline-block ml-4 px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center"
               >
                 Get in Touch
               </Link>
@@ -260,7 +261,7 @@ export function HomePage() {
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { value: '500+', label: 'Projects Delivered' },
               { value: '98%', label: 'Client Satisfaction' },
@@ -296,7 +297,7 @@ export function HomePage() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
@@ -478,7 +479,7 @@ export function HomePage() {
       {/* Why Jashom Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}

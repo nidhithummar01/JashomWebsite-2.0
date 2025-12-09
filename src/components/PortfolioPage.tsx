@@ -314,7 +314,7 @@ export function PortfolioPage() {
               {/* Projects in this category */}
               {projects.map((study, index) => (
                 <GlassCard key={`${category}-${index}`}>
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Left Column */}
                     <div>
                       <div className="flex items-center gap-3 mb-4">
@@ -419,7 +419,7 @@ export function PortfolioPage() {
           viewport={{ once: true }}
         >
           <h2 className="text-center mb-12 text-gradient">By The Numbers</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { value: '500+', label: 'Projects Completed' },
               { value: '98%', label: 'Client Retention' },

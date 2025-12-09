@@ -38,7 +38,6 @@ export function Navigation() {
     {
       label: 'About Us',
       dropdown: [
-        { path: '/about', label: 'About Us' },
         { path: '/blog', label: 'Blog' },
         { path: '/careers', label: 'Career' }
       ]
@@ -236,7 +235,7 @@ export function Navigation() {
                   >
                     {item.dropdown ? (
                       <div>
-                        <div className="py-2 px-4 text-white/60 text-sm">
+                        <div className="py-3 px-4 text-white/60 text-sm font-medium">
                           {item.label}
                         </div>
                         {item.dropdown.map((subItem) => (
@@ -244,7 +243,7 @@ export function Navigation() {
                             key={subItem.path}
                             to={subItem.path}
                             onClick={handleLinkClick}
-                            className={`block py-2 px-6 rounded-lg transition-all ${location.pathname === subItem.path
+                            className={`block py-3 px-6 rounded-lg transition-all min-h-[44px] flex items-center ${location.pathname === subItem.path
                               ? 'text-white bg-white/10'
                               : 'text-white hover:bg-white/10 hover:text-white'
                               }`}
@@ -257,7 +256,7 @@ export function Navigation() {
                       <Link
                         to={item.path}
                         onClick={handleLinkClick}
-                        className={`block py-2 px-4 rounded-lg transition-all ${location.pathname === item.path
+                        className={`block py-3 px-4 rounded-lg transition-all min-h-[44px] flex items-center ${location.pathname === item.path
                           ? 'text-white bg-white/10'
                           : 'text-white hover:bg-white/10 hover:text-white'
                           }`}
