@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { CircuitDivider } from './CircuitDivider';
 import { SEO } from './SEO';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 export function ContactPage() {
@@ -238,24 +238,6 @@ export function ContactPage() {
             </div>
 
             <div className="glass-effect rounded-2xl p-8 border border-[#ffffff]/30">
-              <h3 className="mb-4 text-white">Office Hours</h3>
-              <div className="space-y-2 text-white/70">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span className="text-[#d1d5db]">9:00 AM - 6:00 PM PST</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span className="text-[#d1d5db]">10:00 AM - 4:00 PM PST</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span className="text-white/50">Closed</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-effect rounded-2xl p-8 border border-[#ffffff]/30">
               <h3 className="mb-4 text-white">Quick Response</h3>
               <p className="text-white/70 mb-4">
                 Our team typically responds within 24 hours during business days.
@@ -280,10 +262,17 @@ export function ContactPage() {
         >
           <div className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30 text-center">
             <h2 className="mb-4 text-gradient">Global Reach, Local Expertise</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
+            <p className="text-white/70 max-w-2xl mx-auto mb-8">
               While headquartered in Silicon Valley, we serve clients worldwide with 24/7 support
               and distributed teams across multiple time zones.
             </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-transparent text-white hover:bg-white/10 transition-all duration-300"
+            >
+              <span>Get Started</span>
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </motion.div>
       </div>

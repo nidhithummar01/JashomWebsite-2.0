@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
@@ -35,42 +36,49 @@ export function SolutionsPage() {
     {
       icon: Heart,
       title: 'HealthTech',
+      path: '/solutions/healthtech',
       description: 'Revolutionary AI solutions for healthcare, from diagnostics to patient care optimization.',
       features: ['Medical Imaging', 'Predictive Analytics', 'Patient Monitoring']
     },
     {
       icon: Package,
       title: 'Supply Chain',
+      path: '/solutions/supply-chain',
       description: 'Optimize logistics and inventory management with predictive AI and real-time tracking.',
       features: ['Demand Forecasting', 'Route Optimization', 'Inventory Management']
     },
     {
       icon: TrendingUp,
       title: 'FinTech',
+      path: '/solutions/fintech',
       description: 'Secure, intelligent financial solutions powered by advanced machine learning algorithms.',
       features: ['Fraud Detection', 'Risk Analysis', 'Algorithmic Trading']
     },
     {
       icon: Leaf,
       title: 'EnvironmentTech',
+      path: '/solutions/environmenttech',
       description: 'Leverage AI to monitor, predict, and optimize environmental sustainability efforts.',
       features: ['Climate Modeling', 'Resource Optimization', 'Impact Analysis']
     },
     {
       icon: Scale,
       title: 'Legal & Tax',
+      path: '/solutions/legal-and-tax',
       description: 'Automate compliance and legal research with intelligent document processing and analysis.',
       features: ['Contract Analysis', 'Compliance Automation', 'Tax Optimization']
     },
     {
       icon: ShoppingCart,
       title: 'Retail Tech',
+      path: '/solutions/retail-tech',
       description: 'Enhance customer experiences and optimize operations with intelligent retail solutions.',
       features: ['Personalization', 'Inventory AI', 'Customer Analytics']
     },
     {
       icon: UtensilsCrossed,
       title: 'FoodTech',
+      path: '/solutions/foodtech',
       description: 'Transform food industry operations with AI-powered supply chain and quality assurance.',
       features: ['Supply Chain AI', 'Quality Detection', 'Demand Forecasting']
     }
@@ -98,8 +106,8 @@ export function SolutionsPage() {
           >
             <span className="text-[#d1d5db]">Industry Solutions</span>
           </motion.div>
-          <h1 className="mb-4 text-gradient">Our Solutions</h1>
-          <p className="text-white/70 max-w-3xl mx-auto">
+          <h1 className="mb-6 text-gradient">Our Solutions</h1>
+          <p className="text-white/80 max-w-2xl mx-auto">
             Tailored AI and GPU optimization solutions across diverse industries,
             delivering measurable impact and transformative results.
           </p>
@@ -121,41 +129,43 @@ export function SolutionsPage() {
               variants={staggerItem}
               id={solution.title.toLowerCase().replace(/ /g, '-')}
             >
-              <GlassCard delay={0}>
-                <div className="flex flex-col h-full">
-                  <motion.div
-                    className="w-14 h-14 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center mb-4"
-                    whileHover={{
-                      rotate: [0, -10, 10, -10, 0],
-                      scale: 1.15
-                    }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <solution.icon className="w-7 h-7 text-white" />
-                  </motion.div>
-                  <h3 className="mb-3 text-white">{solution.title}</h3>
-                  <p className="text-white/70 mb-6 flex-grow">{solution.description}</p>
-                  <div className="space-y-2">
-                    {solution.features.map((feature, idx) => (
-                      <motion.div
-                        key={idx}
-                        className="flex items-center text-white/80 group cursor-pointer"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 + idx * 0.1 }}
-                        whileHover={{ x: 5 }}
-                      >
+              <Link to={solution.path}>
+                <GlassCard delay={0}>
+                  <div className="flex flex-col h-full">
+                    <motion.div
+                      className="w-14 h-14 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center mb-4"
+                      whileHover={{
+                        rotate: [0, -10, 10, -10, 0],
+                        scale: 1.15
+                      }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <solution.icon className="w-7 h-7 text-white" />
+                    </motion.div>
+                    <h3 className="mb-3 text-white">{solution.title}</h3>
+                    <p className="text-white/70 mb-6 flex-grow">{solution.description}</p>
+                    <div className="space-y-2">
+                      {solution.features.map((feature, idx) => (
                         <motion.div
-                          className="w-1.5 h-1.5 rounded-full bg-[#ffffff] mr-2"
-                          whileHover={{ scale: 2 }}
-                        />
-                        <span className="text-sm group-hover:text-white transition-colors">{feature}</span>
-                      </motion.div>
-                    ))}
+                          key={idx}
+                          className="flex items-center text-white/80 group cursor-pointer"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.5 + idx * 0.1 }}
+                          whileHover={{ x: 5 }}
+                        >
+                          <motion.div
+                            className="w-1.5 h-1.5 rounded-full bg-[#ffffff] mr-2"
+                            whileHover={{ scale: 2 }}
+                          />
+                          <span className="text-sm group-hover:text-white transition-colors">{feature}</span>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </GlassCard>
+                </GlassCard>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

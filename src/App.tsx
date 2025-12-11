@@ -17,7 +17,6 @@ import { AIAutomationPage } from './components/services/AIAutomationPage';
 import { AIGPUOptimizationPage } from './components/services/AIGPUOptimizationPage';
 import { RAGApplicationsPage } from './components/services/RAGApplicationsPage';
 import { DevOpsCloudPage } from './components/services/DevOpsCloudPage';
-import { DevSecOpsPage } from './components/services/DevSecOpsPage';
 import { DevOpsDevSecOpsPage } from './components/services/DevOpsDevSecOpsPage';
 import { VAPTPage } from './components/services/VAPTPage';
 import { ProductEngineeringPage } from './components/services/ProductEngineeringPage';
@@ -63,16 +62,13 @@ function AnimatedRoutes() {
         <Route path="/services/rag-applications" element={<PageTransition><RAGApplicationsPage /></PageTransition>} />
         <Route path="/services/devops-cloud" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
         <Route path="/services/devops-devsecops" element={<PageTransition><DevOpsDevSecOpsPage /></PageTransition>} />
-        <Route path="/services/devsecops" element={<PageTransition><DevSecOpsPage /></PageTransition>} />
         <Route path="/services/vapt" element={<PageTransition><VAPTPage /></PageTransition>} />
         <Route path="/services/product-engineering" element={<PageTransition><ProductEngineeringPage /></PageTransition>} />
-        <Route path="/services/staff-augmentation" element={<PageTransition><StaffAugmentationPage /></PageTransition>} />
         <Route path="/services/ai-agentic-systems" element={<PageTransition><AIAgenticPage /></PageTransition>} />
         <Route path="/services/custom-development" element={<PageTransition><CustomDevelopmentPage /></PageTransition>} />
         <Route path="/services/cyber-security" element={<PageTransition><CyberSecurityPage /></PageTransition>} />
         <Route path="/services/cloud-computing" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
         <Route path="/services/devops" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
-        <Route path="/services/capability-matrix" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
 
         {/* Solution Routes */}
         <Route path="/solutions/healthtech" element={<PageTransition><HealthTechPage /></PageTransition>} />
@@ -82,6 +78,7 @@ function AnimatedRoutes() {
         <Route path="/solutions/supply-chain" element={<PageTransition><SupplyChainPage /></PageTransition>} />
         <Route path="/solutions/fintech" element={<PageTransition><FinTechPage /></PageTransition>} />
         <Route path="/solutions/legal-and-tax" element={<PageTransition><LegalTaxPage /></PageTransition>} />
+
 
         {/* Placeholder routes */}
         <Route path="/about" element={<PageTransition><PlaceholderPage title="About Us" description="Learn more about Jashom's mission, vision, and the team driving AI innovation across industries." /></PageTransition>} />

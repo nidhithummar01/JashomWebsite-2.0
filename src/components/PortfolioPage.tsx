@@ -40,23 +40,6 @@ export function PortfolioPage() {
       tags: ['Project Management', 'Real-time Collaboration', 'Resource Management', 'Analytics Dashboard'],
       link: 'https://jay.jashom.com/projects/projectsphere'
     },
-
-    {
-      title: 'EcoComply Chatbot - Compliance Automation',
-      client: 'Jay Dave',
-      industry: 'AI & Machine Learning',
-      category: 'SaaS Platforms',
-      challenge: 'Organizations face complex regulatory compliance requirements that require significant time and resources to understand and implement correctly.',
-      solution: 'EcoComply Chatbot provides AI-powered compliance automation with instant regulatory guidance and automated compliance processes.',
-      impact: [
-        '95% query accuracy',
-        '50% cost reduction',
-        'Sub-30-second response times',
-        'AI-powered compliance guidance'
-      ],
-      tags: ['AI Chatbot', 'Compliance Automation', 'Natural Language Processing', 'Regulatory Database'],
-      link: 'https://jay.jashom.com/projects/ecocomply-chatbot'
-    },
     {
       title: 'EnviroPulse - Environmental Monitoring',
       client: 'Jay Dave',
@@ -178,77 +161,7 @@ export function PortfolioPage() {
       tags: ['RAG Technology', 'AI Platform', 'Machine Learning', 'Knowledge Management'],
       link: 'https://jay.jashom.com/projects/rag-lu',
       liveUrl: 'https://rag.lu'
-    },
-    {
-      title: 'Healthcare AI Diagnostics Platform',
-      client: 'MedTech Solutions',
-      industry: 'Healthcare',
-      category: 'AI & Machine Learning',
-      challenge: 'Manual diagnosis process was time-consuming and prone to human error, requiring 48+ hours for complex cases.',
-      solution: 'Developed a GPU-accelerated AI platform using deep learning models for medical image analysis with real-time processing capabilities.',
-      impact: [
-        '92% diagnostic accuracy improvement',
-        '85% reduction in processing time',
-        '1M+ patients served annually'
-      ],
-      tags: ['AI/ML', 'Computer Vision', 'GPU Optimization']
-    },
-    {
-      title: 'Real-time Fraud Detection System',
-      client: 'SecureBank Financial',
-      industry: 'FinTech',
-      category: 'Smart Infrastructure',
-      challenge: 'Legacy fraud detection system had high false-positive rates and couldn\'t scale with transaction volume growth.',
-      solution: 'Built a real-time ML pipeline with GPU-accelerated inference, processing millions of transactions per second with adaptive learning.',
-      impact: [
-        '78% reduction in false positives',
-        '99.7% fraud detection accuracy',
-        '$50M+ in prevented losses annually'
-      ],
-      tags: ['Machine Learning', 'Real-time Processing', 'Security']
-    },
-    {
-      title: 'Supply Chain Optimization Engine',
-      client: 'GlobalRetail Corp',
-      industry: 'Retail',
-      category: 'Smart Infrastructure',
-      challenge: 'Inefficient inventory management leading to stockouts and overstock situations, impacting $100M+ in revenue.',
-      solution: 'Implemented AI-driven predictive analytics with multi-variable optimization algorithms for demand forecasting and inventory planning.',
-      impact: [
-        '35% reduction in stockouts',
-        '28% decrease in excess inventory',
-        '$45M annual cost savings'
-      ],
-      tags: ['Predictive Analytics', 'Optimization', 'Cloud']
-    },
-    {
-      title: 'Conversational AI Assistant',
-      client: 'TechSupport Inc',
-      industry: 'Customer Service',
-      category: 'AI & Machine Learning',
-      challenge: 'Customer support team overwhelmed with 10,000+ daily queries, leading to long wait times and customer dissatisfaction.',
-      solution: 'Deployed fine-tuned LLM-powered conversational AI with RAG architecture, handling complex multi-turn conversations autonomously.',
-      impact: [
-        '70% reduction in support tickets',
-        '4.8/5 customer satisfaction score',
-        '24/7 support availability'
-      ],
-      tags: ['LLM', 'Natural Language Processing', 'RAG']
-    },
-    {
-      title: 'Environmental Monitoring System',
-      client: 'EcoWatch Initiative',
-      industry: 'Environmental',
-      category: 'AI & Machine Learning',
-      challenge: 'Manual monitoring of environmental data across 500+ sites was inefficient and unable to detect rapid changes.',
-      solution: 'Created an edge AI system with IoT integration for real-time environmental data analysis and predictive modeling.',
-      impact: [
-        '95% faster anomaly detection',
-        '500+ sites monitored in real-time',
-        '40% reduction in monitoring costs'
-      ],
-      tags: ['Edge AI', 'IoT', 'Predictive Modeling']
-    },
+    }
   ];
 
   // Group projects by category
@@ -256,8 +169,7 @@ export function PortfolioPage() {
     'Environmental Tech',
     'Healthcare Technology',
     'SaaS Platforms',
-    'AI & Machine Learning',
-    'Smart Infrastructure'
+    'AI & Machine Learning'
   ];
 
   const groupedProjects = categories.map(category => ({

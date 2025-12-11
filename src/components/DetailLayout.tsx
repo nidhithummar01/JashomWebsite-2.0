@@ -44,8 +44,8 @@ export function DetailLayout({
           >
             <span className="text-[#d1d5db]">{type === 'Service' ? 'Our Services' : 'Our Solutions'}</span>
           </motion.div>
-          <h1 className="mb-4 text-gradient">{title}</h1>
-          <p className="text-white/70 max-w-3xl mx-auto text-lg">
+          <h1 className="mb-6 text-gradient">{title}</h1>
+          <p className="text-white/80 max-w-2xl mx-auto">
             {description}
           </p>
         </motion.div>
@@ -112,8 +112,6 @@ export function DetailLayout({
           </motion.div>
         </div>
 
-        <CircuitDivider />
-
         {/* CTA Section */}
         <motion.div
           className="mt-16 text-center"
@@ -121,23 +119,19 @@ export function DetailLayout({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 relative overflow-hidden">
-            <div className="absolute inset-0 bg-transparent pointer-events-none" />
-
-            <div className="relative z-10">
-              <h2 className="mb-4 text-gradient">Ready to Get Started?</h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Transform your business with our expert {type === 'Service' ? 'services' : 'solutions'}.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-black transition-all duration-300 hover:scale-105 font-medium"
-                >
-                  <span>Contact Us</span>
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </div>
+          <div className="glass-effect rounded-2xl p-20 md:p-24 border border-[#ffffff]/30">
+            <h2 className="mb-8 text-white text-2xl font-bold">Ready to Transform Your Business?</h2>
+            <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+              Let's discuss how our services and expertise can address your specific business challenges and unlock new opportunities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-transparent text-white hover:bg-white/10 transition-all duration-300"
+              >
+                <span>Get Started</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </motion.div>

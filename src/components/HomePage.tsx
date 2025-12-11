@@ -5,7 +5,6 @@ import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
 import { ParticleBackground } from './ParticleBackground';
-import { MagneticButton } from './MagneticButton';
 import { ServicesSlider } from './ServicesSlider';
 import {
   Cpu,
@@ -127,7 +126,7 @@ export function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              AI. Optimized. Everywhere.
+              Accelerate Your AI Journey with Precision Engineering
             </motion.h1>
 
             <motion.p
@@ -136,8 +135,8 @@ export function HomePage() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Transform your business with cutting-edge AI and GPU optimization solutions.
-              We deliver innovation at the intersection of artificial intelligence and high-performance computing.
+              From GPU optimization to intelligent automation, we build AI solutions that drive measurable business outcomes.
+              Partner with experts who understand both technology and your industry.
             </motion.p>
 
             <motion.div
@@ -146,17 +145,17 @@ export function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <MagneticButton
-                href="/contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center"
-              >
-                Request a Demo
-              </MagneticButton>
               <Link
                 to="/contact"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center"
               >
-                Get in Touch
+                Start Your AI Transformation
+              </Link>
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center"
+              >
+                Schedule a Consultation
               </Link>
             </motion.div>
           </motion.div>

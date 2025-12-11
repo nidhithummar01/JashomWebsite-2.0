@@ -1,482 +1,182 @@
 import { motion } from 'motion/react';
 import { CircuitDivider } from './CircuitDivider';
-import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
-import {
-  Cpu,
-  MessageSquare,
-  Heart,
-  Utensils,
-  Leaf,
-  ShoppingBag,
-  Brain,
-  Code,
-  Cloud,
-  Package,
-  CheckCircle2,
-  ArrowRight
-} from 'lucide-react';
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const staggerItem = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100
-    }
-  }
-};
+import { ArrowRight } from 'lucide-react';
 
 export function ServicesPage() {
-  const services = [
-    {
-      icon: Cpu,
-      title: 'AI GPU Optimization & Attestation',
-      tagline: 'Unlock the true performance of your GPU infrastructure while ensuring trust and integrity',
-      description: 'At Jashom, we specialize in AI GPU optimization and attestation, helping enterprises achieve faster, more efficient, and verifiable AI performance. Our engineers design custom CUDA pipelines, implement TensorRT optimizations, and fine-tune large language models (LLMs) to reduce latency, energy usage, and compute cost—without sacrificing accuracy.',
-      deliverables: [
-        'Kernel-level GPU tuning for NVIDIA/AMD',
-        'LLM fine-tuning, pruning, and quantization (INT8/FP16)',
-        'Model compression & inference acceleration',
-        'Secure GPU Attestation with nvTrust and JSON evidence verification',
-        'Dynamic batching, parallelization & scheduling for multi-node clusters',
-        'Energy-efficient computing with up to 40% cost reduction'
-      ],
-      tech: 'CUDA • TensorRT • PyTorch • Triton Inference • ONNX • nvTrust',
-      color: 'from-[#ffffff] to-[#d1d5db]'
-    },
-    {
-      icon: MessageSquare,
-      title: 'RAG Applications',
-      tagline: 'Make your organization\'s data interactive and intelligent',
-      description: 'Jashom builds Retrieval-Augmented Generation systems that combine retrieval, reasoning, and response—creating AI agents that understand context and deliver answers grounded in your data.',
-      deliverables: [
-        'Text ↔ Voice: Multilingual voice interaction for real-time AI assistance',
-        'Text → Video: Convert transcripts and stories into video explainers using AI generation',
-        'Meeting Summaries: Automated summaries, action items, and key insights from meetings',
-        'Chatbots on Your Data: Context-aware assistants trained on private documents and repositories',
-        'AI Summarization: Concise text summarization for long documents and reports'
-      ],
-      tech: 'LangChain • Hugging Face • OpenAI • Nuclia • AWS Bedrock',
-      color: 'from-[#d1d5db] to-[#ffffff]'
-    },
-    {
-      icon: Heart,
-      title: 'HealthTech',
-      tagline: 'Empowering healthcare ecosystems with connected intelligence',
-      description: 'Jashom develops AI-powered healthcare platforms that automate workflows, enhance patient care, and maintain regulatory compliance—ensure speed, precision, and safety.',
-      deliverables: [
-        'Multi-location hospital management (HIPAA-compliant)',
-        'Real-time patient monitoring and dispatch automation',
-        'Predictive analytics for hospital operations',
-        'Computer vision for medical imaging and diagnostics',
-        'IoT integration for remote patient tracking and smart devices'
-      ],
-      tech: '99.9% uptime • Enhanced patient response • Optimized doctor workflows',
-      color: 'from-[#ffffff] to-[#d1d5db]'
-    },
-    {
-      icon: Utensils,
-      title: 'FoodTech',
-      tagline: 'Digitizing the food and supply chain ecosystem with smart, data-driven AI',
-      description: 'From manufacturing to delivery, Jashom\'s food tech solutions enhance visibility, reduce waste, and improve decision-making through automation and analytics.',
-      deliverables: [
-        'AI-based demand forecasting & supply optimization',
-        'Food traceability with blockchain & IoT data integration',
-        'Real-time quality & freshness monitoring',
-        'Predictive analytics for logistics and inventory',
-        'Consumer feedback intelligence using NLP and sentiment models'
-      ],
-      tech: 'IoT • Blockchain • NLP • Predictive Analytics',
-      color: 'from-[#d1d5db] to-[#ffffff]'
-    },
-    {
-      icon: Leaf,
-      title: 'EnvironmentTech',
-      tagline: 'Building a sustainable planet with intelligent environmental technology',
-      description: 'Jashom creates digital ecosystems that monitor, predict, and reduce environmental impact using AI and data automation.',
-      deliverables: [
-        'AI-driven emission & energy optimization',
-        'ESG data pipeline & reporting automation',
-        'Predictive analytics for air, water, and soil quality',
-        'Real-time dashboards connected with IoT & satellite data',
-        'Sustainability scoring and compliance reporting'
-      ],
-      tech: 'IoT • Satellite Data • ESG Automation • Real-time Analytics',
-      color: 'from-[#ffffff] to-[#d1d5db]'
-    },
-    {
-      icon: ShoppingBag,
-      title: 'Retail Tech for Garments',
-      tagline: 'Reinventing fashion and retail with intelligent automation',
-      description: 'Jashom brings AI and analytics to the garment industry—from design to distribution—enabling faster decisions, personalized experiences, and reduced waste.',
-      deliverables: [
-        'AI-based visual search and virtual try-on',
-        'Smart inventory & merchandising predictions',
-        'Edge vision systems for quality control',
-        'AI-powered feedback and sentiment dashboards',
-        'Integrated retail analytics and customer intelligence'
-      ],
-      tech: 'Computer Vision • Edge AI • Customer Analytics',
-      color: 'from-[#d1d5db] to-[#ffffff]'
-    },
-    {
-      icon: CheckCircle2,
-      title: 'Cybersecurity',
-      tagline: 'Protect your digital assets with advanced security solutions',
-      description: 'Protect your digital assets with advanced security solutions tailored for modern infrastructures.',
-      deliverables: [
-        'Threat detection & monitoring',
-        'Security hardening',
-        'Incident response',
-        'Compliance and risk management'
-      ],
-      tech: 'SIEM • EDR • Zero Trust • Compliance',
-      color: 'from-[#ffffff] to-[#d1d5db]'
-    }
+  // AI Services
+  const aiServices = [
+    { title: 'AI GPU Optimization & Attestation', path: '/services/ai-gpu-optimization' },
+    { title: 'RAG Applications', path: '/services/rag-applications' },
+    { title: 'AI Agentic Systems (N8N automation)', path: '/services/ai-agentic-systems' },
+    { title: 'AI Integration & Workflow Automation', path: '/services/ai-automation' }
   ];
 
-  const capabilities = [
-    {
-      icon: Brain,
-      title: 'AI & LLM Platforms',
-      description: 'Build and deploy advanced AI systems powered by large language models and neural networks.',
-      technologies: [
-        'GPT Integration',
-        'Custom LLMs',
-        'RAG Systems',
-        'Vector Databases',
-        'Prompt Engineering',
-        'Fine-tuning'
-      ],
-      color: 'from-[#ffffff] to-[#d1d5db]'
-    },
-    {
-      icon: Cpu,
-      title: 'GPU Optimization',
-      description: 'Maximize computational efficiency with advanced GPU acceleration and optimization techniques.',
-      technologies: [
-        'CUDA Development',
-        'Tensor Optimization',
-        'Memory Management',
-        'Parallel Processing',
-        'Performance Profiling',
-        'Hardware Acceleration'
-      ],
-      color: 'from-[#d1d5db] to-[#ffffff]'
-    },
-    {
-      icon: Code,
-      title: 'Web & App Engineering',
-      description: 'Create scalable, responsive applications with modern frameworks and best practices.',
-      technologies: [
-        'React & Next.js',
-        'Mobile Development',
-        'Progressive Web Apps',
-        'Real-time Systems',
-        'API Development',
-        'UI/UX Design'
-      ],
-      color: 'from-[#ffffff] to-[#d1d5db]'
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud & Edge',
-      description: 'Deploy AI solutions at scale with cloud infrastructure and edge computing capabilities.',
-      technologies: [
-        'AWS/Azure/GCP',
-        'Kubernetes',
-        'Serverless',
-        'Edge Computing',
-        'CDN Optimization',
-        'Infrastructure as Code'
-      ],
-      color: 'from-[#d1d5db] to-[#ffffff]'
-    },
-    {
-      icon: Package,
-      title: 'Product Engineering',
-      description: 'End-to-end product development from conception to deployment and maintenance.',
-      technologies: [
-        'Agile Development',
-        'MVP Creation',
-        'Product Strategy',
-        'Quality Assurance',
-        'DevOps',
-        'Continuous Integration'
-      ],
-      color: 'from-[#ffffff] to-[#d1d5db]'
-    }
+  // Cybersecurity
+  const securityServices = [
+    { title: 'Cybersecurity', path: '/services/cyber-security' },
+    { title: 'VAPT', path: '/services/vapt' },
+    { title: 'Compliance & Risk', path: '/services/cyber-security' }
   ];
+
+  // Cloud & DevOps Engineering
+  const cloudDevOpsServices = [
+    { title: 'DevOps & DevSecOps', path: '/services/devops-devsecops' },
+    { title: 'Cloud Computing', path: '/services/cloud-computing' },
+    { title: 'Edge Computing', path: '/services/devops-cloud' },
+    { title: 'CI/CD Automation', path: '/services/devops' }
+  ];
+
+  // Product Engineering
+  const productServices = [
+    { title: 'Product Engineering (Full-Stack Development)', path: '/services/product-engineering' },
+    { title: 'Micro-SaaS Development', path: '/services/custom-development' },
+    { title: 'Custom Development', path: '/services/custom-development' }
+  ];
+
 
   return (
     <div className="min-h-screen bg-black pt-24 pb-20">
       <SEO
-        title="Our Services | AI GPU Optimization, RAG, HealthTech & More | Jashom"
-        description="Comprehensive AI services: GPU Optimization & Attestation, RAG Applications, HealthTech, FoodTech, EnvironmentTech, and Retail Tech. Transform your industry with Jashom's expertise."
-        keywords="AI GPU optimization, RAG applications, healthcare AI, food tech, environment tech, retail AI, CUDA development, LLM fine-tuning, AI services"
+        title="Our Services | AI, Cloud, DevOps, Product Engineering & Security | Jashom"
+        description="Comprehensive technology services: AI & GPU Optimization, Cloud & DevOps Engineering, Product Development, Cybersecurity, and Staff Augmentation."
+        keywords="AI services, cloud computing, DevOps, product engineering, cybersecurity, staff augmentation"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
+            className="inline-block mb-6 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
             <span className="text-[#d1d5db]">What We Offer</span>
           </motion.div>
-          <h1 className="mb-4 text-gradient">Our Services</h1>
-          <p className="text-white/70 max-w-3xl mx-auto">
-            Comprehensive AI solutions tailored to transform your industry with cutting-edge technology and domain expertise
+          <h1 className="mb-6 text-gradient">Our Services</h1>
+          <p className="text-white/80 max-w-2xl mx-auto">
+            Comprehensive technology solutions tailored to transform your business with cutting-edge innovation and domain expertise
           </p>
         </motion.div>
 
         <CircuitDivider />
 
-        {/* Services Grid */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-8 mt-16"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {services.map((service, index) => (
+        {/* Services Grid - 3 Column Layout */}
+        <section className="py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32">
+            {/* Column 1: AI Services & Cybersecurity */}
             <motion.div
-              key={index}
-              variants={staggerItem}
-              id={service.title.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="space-y-16 lg:space-y-20"
             >
-              <GlassCard className="h-full">
-                <div className="flex flex-col h-full">
-                  <motion.div
-                    className="w-16 h-16 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center mb-4"
-                    whileHover={{
-                      rotate: [0, -10, 10, 0],
-                      scale: 1.1
-                    }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <service.icon className="w-8 h-8 text-white" />
-                  </motion.div>
-
-                  <h3 className="text-white mb-2">{service.title}</h3>
-                  <p className="text-[#d1d5db] text-sm mb-3 italic">{service.tagline}</p>
-                  <p className="text-white/70 text-sm mb-4">{service.description}</p>
-
-                  <div className="mb-4">
-                    <h4 className="text-white/90 text-sm mb-3">What We Deliver:</h4>
-                    <div className="space-y-2">
-                      {service.deliverables.map((item, idx) => (
-                        <motion.div
-                          key={idx}
-                          className="flex items-start gap-2"
-                          whileHover={{ x: 5 }}
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-[#d1d5db] flex-shrink-0 mt-0.5" />
-                          <span className="text-white/60 text-sm">{item}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-auto pt-4 border-t border-white/10">
-                    <p className="text-[#ffffff]/70 text-xs">Tech Stack:</p>
-                    <p className="text-white/50 text-xs mt-1">{service.tech}</p>
-                  </div>
+              <div>
+                <h2 className="text-white text-2xl font-bold mb-10">AI Services</h2>
+                <div className="space-y-5">
+                  {aiServices.map((service, index) => (
+                    <motion.a
+                      key={index}
+                      href={service.path}
+                      className="block text-white/80 hover:text-white transition-colors text-lg py-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + index * 0.05 }}
+                    >
+                      {service.title}
+                    </motion.a>
+                  ))}
                 </div>
-              </GlassCard>
+              </div>
+              <div className="pt-8">
+                <h2 className="text-white text-2xl font-bold mb-10">Cybersecurity</h2>
+                <div className="space-y-5">
+                  {securityServices.map((service, index) => (
+                    <motion.a
+                      key={index}
+                      href={service.path}
+                      className="block text-white/80 hover:text-white transition-colors text-lg py-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + (aiServices.length + index) * 0.05 }}
+                    >
+                      {service.title}
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
             </motion.div>
-          ))}
-        </motion.div>
 
-        <CircuitDivider />
-
-        {/* Capability Matrix Section */}
-        <motion.div
-          className="mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          id="capability"
-        >
-          <div className="text-center mb-12">
+            {/* Column 2: Cloud & DevOps Engineering & Product Engineering */}
             <motion.div
-              className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
+              className="space-y-16 lg:space-y-20"
             >
-              <span className="text-[#d1d5db]">Our Expertise</span>
+              <div>
+                <h2 className="text-white text-2xl font-bold mb-10">Cloud & DevOps Engineering</h2>
+                <div className="space-y-5">
+                  {cloudDevOpsServices.map((service, index) => (
+                    <motion.a
+                      key={index}
+                      href={service.path}
+                      className="block text-white/80 hover:text-white transition-colors text-lg py-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 + index * 0.05 }}
+                    >
+                      {service.title}
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-8">
+                <h2 className="text-white text-2xl font-bold mb-10">Product Engineering</h2>
+                <div className="space-y-5">
+                  {productServices.map((service, index) => (
+                    <motion.a
+                      key={index}
+                      href={service.path}
+                      className="block text-white/80 hover:text-white transition-colors text-lg py-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 + (cloudDevOpsServices.length + index) * 0.05 }}
+                    >
+                      {service.title}
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
             </motion.div>
-            <h2 className="mb-4 text-gradient">Capability Matrix</h2>
-            <p className="text-white/70 max-w-3xl mx-auto">
-              A comprehensive overview of our technical capabilities and expertise across the entire AI and software development lifecycle
-            </p>
           </div>
-
-          <motion.div
-            className="grid md:grid-cols-2 gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {capabilities.map((capability, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                className={index === capabilities.length - 1 && capabilities.length % 2 !== 0 ? 'md:col-span-2' : ''}
-              >
-                <GlassCard className="h-full">
-                  <div className="flex flex-col h-full">
-                    <motion.div
-                      className="w-16 h-16 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center mb-4"
-                      whileHover={{
-                        rotate: 360,
-                        scale: 1.1
-                      }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                    >
-                      <capability.icon className="w-8 h-8 text-white" />
-                    </motion.div>
-                    <h3 className="mb-3 text-white">{capability.title}</h3>
-                    <p className="text-white/70 mb-6">{capability.description}</p>
-                    <div className="grid grid-cols-2 gap-3 mt-auto">
-                      {capability.technologies.map((tech, idx) => (
-                        <motion.div
-                          key={idx}
-                          className="px-3 py-2 rounded-lg bg-white/5 border border-[#ffffff]/20 text-white/80 text-sm text-center hover:bg-white/10 hover:border-[#d1d5db]/50 transition-all cursor-pointer"
-                          whileHover={{ scale: 1.05, y: -2 }}
-                        >
-                          {tech}
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        <CircuitDivider />
-
-        {/* Expertise Levels */}
-        <motion.div
-          className="mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-center mb-12 text-gradient">Our Expertise Levels</h2>
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              {
-                level: 'Advanced',
-                description: 'Deep expertise with proven track record',
-                percentage: '85%',
-                areas: ['AI/ML', 'GPU Optimization', 'Cloud Architecture']
-              },
-              {
-                level: 'Proficient',
-                description: 'Strong capabilities and experience',
-                percentage: '70%',
-                areas: ['Web Development', 'DevOps', 'Data Engineering']
-              },
-              {
-                level: 'Emerging',
-                description: 'Growing expertise in cutting-edge tech',
-                percentage: '50%',
-                areas: ['Quantum ML', 'Edge AI', 'Neuromorphic Computing']
-              }
-            ].map((expertise, index) => (
-              <motion.div key={index} variants={staggerItem}>
-                <GlassCard>
-                  <div className="text-center">
-                    <motion.div
-                      className="mb-4 text-gradient"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ type: "spring", stiffness: 200, delay: index * 0.1 }}
-                    >
-                      {expertise.percentage}
-                    </motion.div>
-                    <h3 className="mb-2 text-white">{expertise.level}</h3>
-                    <p className="text-white/70 mb-4 text-sm">{expertise.description}</p>
-                    <div className="space-y-2">
-                      {expertise.areas.map((area, idx) => (
-                        <div key={idx} className="text-white/60 text-sm">
-                          {area}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        <CircuitDivider />
+        </section>
 
         {/* CTA Section */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-20 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 relative overflow-hidden">
-            <div className="absolute inset-0 bg-transparent pointer-events-none" />
-
-            <div className="relative z-10">
-              <h2 className="mb-4 text-gradient">Ready to Transform Your Business?</h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Let's discuss how our services and expertise can address your specific business challenges and unlock new opportunities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black font-medium"
-                >
-                  <span>Get Started</span>
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                <a
-                  href="/portfolio"
-                  className="inline-block px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300"
-                >
-                  View Case Studies
-                </a>
-              </div>
+          <div className="glass-effect rounded-3xl p-20 md:p-24 border border-[#ffffff]/30">
+            <h2 className="mb-8 text-white text-2xl font-bold">Ready to Transform Your Business?</h2>
+            <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+              Let's discuss how our services and expertise can address your specific business challenges and unlock new opportunities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-transparent text-white hover:bg-white/10 transition-all duration-300"
+              >
+                <span>Get Started</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </motion.div>

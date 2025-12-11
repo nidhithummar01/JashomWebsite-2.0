@@ -12,18 +12,22 @@ export function Footer() {
       { label: 'Career', path: '/careers' }
     ],
     services: [
-      { label: 'AI GPU Optimization', path: '/services#gpu' },
-      { label: 'RAG Applications', path: '/services#rag' },
-      { label: 'HealthTech', path: '/services#health' },
-      { label: 'FoodTech', path: '/services#food' },
-      { label: 'EnvironmentTech', path: '/services#environment' },
-      { label: 'Retail Tech', path: '/services#retail' },
-      { label: 'Capability Matrix', path: '/services#capability' }
+      { label: 'AI GPU Optimization & Attestation', path: '/services/ai-gpu-optimization' },
+      { label: 'RAG Applications', path: '/services/rag-applications' },
+      { label: 'AI Agentic Systems', path: '/services/ai-agentic-systems' },
+      { label: 'Cybersecurity', path: '/services/cyber-security' },
+      { label: 'DevOps & DevSecOps', path: '/services/devops-devsecops' },
+      { label: 'Cloud Computing', path: '/services/cloud-computing' },
+      { label: 'Product Engineering', path: '/services/product-engineering' }
     ],
     solutions: [
-      { label: 'AI Solutions', path: '/solutions#ai' },
-      { label: 'Industry Solutions', path: '/solutions#industry' },
-      { label: 'Custom Solutions', path: '/solutions#custom' }
+      { label: 'HealthTech', path: '/solutions/healthtech' },
+      { label: 'Supply Chain', path: '/solutions/supply-chain' },
+      { label: 'FinTech', path: '/solutions/fintech' },
+      { label: 'EnvironmentTech', path: '/solutions/environmenttech' },
+      { label: 'Legal & Tax', path: '/solutions/legal-and-tax' },
+      { label: 'Retail Tech', path: '/solutions/retail-tech' },
+      { label: 'FoodTech', path: '/solutions/foodtech' }
     ],
     resources: [
       { label: 'Company Brochure', path: '/brochure' },

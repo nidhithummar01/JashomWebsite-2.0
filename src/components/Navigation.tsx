@@ -42,21 +42,7 @@ export function Navigation() {
         { path: '/careers', label: 'Career' }
       ]
     },
-    {
-      label: 'Services',
-      dropdown: [
-        { path: '/services/ai-gpu-optimization', label: 'AI GPU Optimization & Attestation' },
-        { path: '/services/rag-applications', label: 'RAG Applications' },
-        { path: '/services/devops-devsecops', label: 'DevOps & DevSecOps' },
-        { path: '/services/devops-cloud', label: 'Cloud Computing' },
-        { path: '/services/cyber-security', label: 'Cybersecurity' },
-        { path: '/services/product-engineering', label: 'Product Engineering' },
-        { path: '/services/staff-augmentation', label: 'Staff Augmentation' },
-        { path: '/services/ai-agentic-systems', label: 'AI Agentic Systems' },
-        { path: '/services/ai-automation', label: 'AI & Automation' },
-        { path: '/services/capability-matrix', label: 'Capability Matrix' }
-      ]
-    },
+    { path: '/services', label: 'Services' },
     {
       label: 'Solutions',
       dropdown: [
@@ -66,10 +52,10 @@ export function Navigation() {
         { path: '/solutions/environmenttech', label: 'EnvironmentTech' },
         { path: '/solutions/legal-and-tax', label: 'Legal & Tax' },
         { path: '/solutions/retail-tech', label: 'Retail Tech' },
-        { path: '/solutions/foodtech', label: 'FoodTech' }
+        { path: '/solutions/foodtech', label: 'FoodTech' },
+        { path: '/portfolio', label: 'Portfolio' }
       ]
     },
-    { path: '/portfolio', label: 'Portfolio' },
     { path: '/contact', label: 'Contact' },
   ];
 
