@@ -218,14 +218,23 @@ export function Navigation() {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="md:hidden border-t border-[#333333] mt-2"
-            >
-              <div className="pb-4 space-y-1 pt-2 overflow-y-auto overscroll-contain max-h-[calc(100vh-5rem)]">
+            <>
+              {/* Overlay to close menu when clicking outside */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                onClick={handleLinkClick}
+              />
+              <motion.div
+                variants={menuVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                className="md:hidden border-t border-[#333333] mt-2 relative z-50 bg-black"
+              >
+                <div className="pb-4 space-y-1 pt-2 overflow-y-auto overscroll-contain max-h-[calc(100vh-5rem)]">
                 {navItems.map((item) => (
                   <motion.div
                     key={item.label}
@@ -233,14 +242,30 @@ export function Navigation() {
                   >
                     {item.dropdown ? (
                       <div>
-                        <div className="py-3 px-4 text-white/60 text-sm font-medium">
-                          {item.label}
-                        </div>
+                        {item.label === 'Solutions' ? (
+                          <Link
+                            to="/solutions"
+                            onClick={handleLinkClick}
+                            className={`block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base font-medium ${location.pathname === '/solutions'
+                              ? 'text-white bg-white/10'
+                              : 'text-white hover:bg-white/10 hover:text-white'
+                              }`}
+                          >
+                            {item.label}
+                          </Link>
+                        ) : (
+                          <div className="py-3 px-4 text-white/60 text-sm font-medium">
+                            {item.label}
+                          </div>
+                        )}
                         {item.dropdown.map((subItem) => (
                           <Link
                             key={subItem.path}
                             to={subItem.path}
-                            onClick={handleLinkClick}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleLinkClick();
+                            }}
                             className={`block py-3 px-6 sm:px-8 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base ${location.pathname === subItem.path
                               ? 'text-white bg-white/10'
                               : 'text-white hover:bg-white/10 hover:text-white'
@@ -265,7 +290,8 @@ export function Navigation() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>

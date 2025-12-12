@@ -361,22 +361,27 @@ export function PortfolioPage() {
                       <div className="mt-6 flex flex-col gap-3">
                         {study.link ? (
                           study.link.startsWith('/') ? (
-                            <motion.div whileHover={{ x: 5 }}>
-                              <Link
-                                to={study.link}
-                                className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
+                            <Link
+                              to={study.link}
+                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors cursor-pointer min-h-[44px]"
+                            >
+                              <motion.span
+                                className="flex items-center gap-2"
+                                whileHover={{ x: 5 }}
+                                whileTap={{ scale: 0.95 }}
                               >
                                 <span>View Full Case Study</span>
                                 <ArrowRight className="w-4 h-4" />
-                              </Link>
-                            </motion.div>
+                              </motion.span>
+                            </Link>
                           ) : (
                             <motion.a
                               href={study.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
+                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors min-h-[44px] flex items-center"
                               whileHover={{ x: 5 }}
+                              whileTap={{ scale: 0.95 }}
                             >
                               <span>View Full Case Study</span>
                               <ArrowRight className="w-4 h-4" />
