@@ -4,18 +4,22 @@ export function SupplyChainPage() {
     return (
         <DetailLayout
             title="Supply Chain Solutions"
-            description="We improve supply chain operations using automation, AI, and smart data workflows."
+            description="Optimize, automate, and forecast your supply chain with AI-powered precision. Improve visibility, reduce costs, and eliminate operational bottlenecks."
             whatWeOffer={[
-                "Inventory forecasting",
-                "Real-time tracking",
-                "Supplier management"
+                "Demand Forecasting & Inventory Optimization: Machine learning models to predict demand patterns and maintain optimal stock.",
+                "Route & Logistics Optimization: Real-time routing algorithms that reduce transport time and cost.",
+                "Warehouse Automation & Vision AI: Object detection for inventory counting, quality checks, and process automation.",
+                "Digital Twins for Supply Chain: Scenario simulations for performance, risk, and resource planning.",
+                "End-to-End Visibility Dashboards: Unified tracking for procurement, distribution, and last-mile delivery."
             ]}
             benefits={[
-                "Inventory forecasting",
-                "Real-time tracking",
-                "Supplier management"
+                "Improved visibility across supply chain",
+                "Reduced operational costs",
+                "Eliminated bottlenecks",
+                "Optimized inventory levels",
+                "Enhanced logistics efficiency"
             ]}
-            benefitsTitle="We Solve"
+            benefitsTitle="Benefits"
             type="Solution"
         />
     );

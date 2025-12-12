@@ -3,19 +3,23 @@ import { DetailLayout } from '../DetailLayout';
 export function RetailTechPage() {
     return (
         <DetailLayout
-            title="Retail Tech for Garments"
-            description="Jashom brings AI and analytics to the garment industry—from design to distribution—enabling faster decisions, personalized experiences, and reduced waste."
+            title="Retail Tech Solutions"
+            description="Reimagine retail with AI-driven personalization, automation, and predictive intelligence."
             whatWeOffer={[
-                "AI-based visual search and virtual try-on",
-                "Smart inventory & merchandising predictions",
-                "Edge vision systems for quality control",
-                "AI-powered feedback and sentiment dashboards",
-                "Integrated retail analytics and customer intelligence"
+                "Customer Personalization Engines: AI-based recommendation systems for e-commerce and in-store experiences.",
+                "Sales Forecasting & Pricing Optimization: Predict product performance and optimize pricing strategies.",
+                "Computer Vision for Retail: Shelf-scanning, inventory tracking, and automated checkouts.",
+                "Chatbots & Customer Support Automation: Personalized assistance that improves conversion and engagement.",
+                "Store Performance Analytics: Insights into footfall, customer behavior, and sales patterns."
             ]}
             benefits={[
-                "Computer Vision • Edge AI • Customer Analytics"
+                "Enhanced customer personalization",
+                "Optimized pricing strategies",
+                "Automated retail operations",
+                "Improved customer engagement",
+                "Data-driven store insights"
             ]}
-            benefitsTitle="Technologies"
+            benefitsTitle="Benefits"
             type="Solution"
         />
     );

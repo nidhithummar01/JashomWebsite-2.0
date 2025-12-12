@@ -4,18 +4,22 @@ export function LegalTaxPage() {
     return (
         <DetailLayout
             title="Legal & Tax Solutions"
-            description="AI-powered tools that simplify legal and tax workflows."
+            description="Transform legal and tax workflows with AI assistants, automated document processing, and compliance intelligence."
             whatWeOffer={[
-                "Document automation",
-                "Legal RAG systems",
-                "Compliance workflows"
+                "AI Contract Review & Summarization: Identify risks, clauses, and inconsistencies instantly using LLM-powered analysis.",
+                "Automated Tax Compliance: Intelligent systems to track tax rules, generate reports, and reduce manual errors.",
+                "Legal Research Automation: AI that scans case laws, regulations, and documents within seconds.",
+                "Document Classification & Extraction: OCR + AI for structured output from complex legal/tax documents.",
+                "Litigation Prediction Models: Data-driven insights to support lawyers and compliance teams."
             ]}
             benefits={[
-                "Document automation",
-                "Legal RAG systems",
-                "Compliance workflows"
+                "Streamlined legal workflows",
+                "Automated compliance processes",
+                "Faster document processing",
+                "Reduced manual errors",
+                "Data-driven legal insights"
             ]}
-            benefitsTitle="We Solve"
+            benefitsTitle="Benefits"
             type="Solution"
         />
     );

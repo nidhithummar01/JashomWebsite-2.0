@@ -49,35 +49,35 @@ export function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
+            className="inline-block mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-effect border border-[#ffffff]/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-[#d1d5db]">Get In Touch</span>
+            <span className="text-[#d1d5db] text-xs sm:text-sm">Get In Touch</span>
           </motion.div>
-          <h1 className="mb-4 text-gradient">Contact Us</h1>
-          <p className="text-white/70 max-w-3xl mx-auto">
+          <h1 className="mb-3 sm:mb-4 text-gradient text-3xl sm:text-4xl md:text-5xl px-2">Contact Us</h1>
+          <p className="text-white/70 max-w-3xl mx-auto text-sm sm:text-base px-4 sm:px-0">
             Ready to transform your business with AI? Let's discuss how we can help you achieve your goals.
           </p>
         </motion.div>
 
         <CircuitDivider />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mt-12 sm:mt-16">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="glass-effect rounded-2xl p-8 border border-[#ffffff]/30">
-              <h2 className="mb-6 text-white">Send Us a Message</h2>
+            <div className="glass-effect rounded-2xl p-6 sm:p-8 border border-[#ffffff]/30">
+              <h2 className="mb-4 sm:mb-6 text-white text-xl sm:text-2xl">Send Us a Message</h2>
 
               {submitted ? (
                 <motion.div
@@ -192,10 +192,10 @@ export function ContactPage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
-            <div className="glass-effect rounded-2xl p-8 border border-[#ffffff]/30">
-              <h2 className="mb-6 text-white">Contact Information</h2>
+            <div className="glass-effect rounded-2xl p-6 sm:p-8 border border-[#ffffff]/30">
+              <h2 className="mb-4 sm:mb-6 text-white text-xl sm:text-2xl">Contact Information</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -237,15 +237,15 @@ export function ContactPage() {
               </div>
             </div>
 
-            <div className="glass-effect rounded-2xl p-8 border border-[#ffffff]/30">
-              <h3 className="mb-4 text-white">Quick Response</h3>
-              <p className="text-white/70 mb-4">
+            <div className="glass-effect rounded-2xl p-6 sm:p-8 border border-[#ffffff]/30">
+              <h3 className="mb-3 sm:mb-4 text-white text-lg sm:text-xl">Quick Response</h3>
+              <p className="text-white/70 mb-3 sm:mb-4 text-sm sm:text-base">
                 Our team typically responds within 24 hours during business days.
                 For urgent inquiries, please call us directly.
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#d1d5db] animate-pulse" />
-                <span className="text-[#d1d5db]">Online Now</span>
+                <span className="text-[#d1d5db] text-sm sm:text-base">Online Now</span>
               </div>
             </div>
           </motion.div>
@@ -260,18 +260,18 @@ export function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30 text-center">
-            <h2 className="mb-4 text-gradient">Global Reach, Local Expertise</h2>
-            <p className="text-white/70 max-w-2xl mx-auto mb-8">
+          <div className="glass-effect rounded-2xl p-6 sm:p-8 md:p-12 border border-[#ffffff]/30 text-center">
+            <h2 className="mb-3 sm:mb-4 text-gradient text-xl sm:text-2xl md:text-3xl px-2">Global Reach, Local Expertise</h2>
+            <p className="text-white/70 max-w-2xl mx-auto mb-6 sm:mb-8 text-sm sm:text-base px-4 sm:px-0">
               While headquartered in Silicon Valley, we serve clients worldwide with 24/7 support
               and distributed teams across multiple time zones.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-transparent text-white hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-transparent text-white hover:bg-white/10 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
             >
               <span>Get Started</span>
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
           </div>
         </motion.div>

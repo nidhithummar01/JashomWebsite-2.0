@@ -37,50 +37,50 @@ export function SolutionsPage() {
       icon: Heart,
       title: 'HealthTech',
       path: '/solutions/healthtech',
-      description: 'Revolutionary AI solutions for healthcare, from diagnostics to patient care optimization.',
-      features: ['Medical Imaging', 'Predictive Analytics', 'Patient Monitoring']
+      description: 'Empower healthcare providers with AI-driven insights, predictive analytics, and automated workflows.',
+      features: ['AI-Powered Diagnostics', 'Predictive Care', 'EHR Automation', 'Virtual Assistants']
     },
     {
       icon: Package,
       title: 'Supply Chain',
       path: '/solutions/supply-chain',
-      description: 'Optimize logistics and inventory management with predictive AI and real-time tracking.',
-      features: ['Demand Forecasting', 'Route Optimization', 'Inventory Management']
+      description: 'Optimize, automate, and forecast your supply chain with AI-powered precision.',
+      features: ['Demand Forecasting', 'Route Optimization', 'Warehouse Automation', 'Digital Twins']
     },
     {
       icon: TrendingUp,
       title: 'FinTech',
       path: '/solutions/fintech',
-      description: 'Secure, intelligent financial solutions powered by advanced machine learning algorithms.',
-      features: ['Fraud Detection', 'Risk Analysis', 'Algorithmic Trading']
+      description: 'Accelerate financial innovation with secure, intelligent, and scalable AI systems.',
+      features: ['Fraud Detection', 'Credit Underwriting', 'Compliance & KYC', 'Robo-Advisors']
     },
     {
       icon: Leaf,
       title: 'EnvironmentTech',
       path: '/solutions/environmenttech',
-      description: 'Leverage AI to monitor, predict, and optimize environmental sustainability efforts.',
-      features: ['Climate Modeling', 'Resource Optimization', 'Impact Analysis']
+      description: 'Use AI to monitor, predict, and protect the environment for sustainable decision-making.',
+      features: ['Carbon Analysis', 'Climate Prediction', 'Energy Management', 'Waste Automation']
     },
     {
       icon: Scale,
       title: 'Legal & Tax',
       path: '/solutions/legal-and-tax',
-      description: 'Automate compliance and legal research with intelligent document processing and analysis.',
-      features: ['Contract Analysis', 'Compliance Automation', 'Tax Optimization']
+      description: 'Transform legal and tax workflows with AI assistants and automated document processing.',
+      features: ['Contract Review', 'Tax Compliance', 'Legal Research', 'Document Extraction']
     },
     {
       icon: ShoppingCart,
       title: 'Retail Tech',
       path: '/solutions/retail-tech',
-      description: 'Enhance customer experiences and optimize operations with intelligent retail solutions.',
-      features: ['Personalization', 'Inventory AI', 'Customer Analytics']
+      description: 'Reimagine retail with AI-driven personalization, automation, and predictive intelligence.',
+      features: ['Personalization', 'Sales Forecasting', 'Computer Vision', 'Store Analytics']
     },
     {
       icon: UtensilsCrossed,
       title: 'FoodTech',
       path: '/solutions/foodtech',
-      description: 'Transform food industry operations with AI-powered supply chain and quality assurance.',
-      features: ['Supply Chain AI', 'Quality Detection', 'Demand Forecasting']
+      description: 'Modernize food operations with AI systems that improve safety, quality, and production.',
+      features: ['Quality Detection', 'Yield Optimization', 'Traceability', 'Demand Forecasting']
     }
   ];
 
@@ -94,20 +94,20 @@ export function SolutionsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
+            className="inline-block mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-effect border border-[#ffffff]/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-[#d1d5db]">Industry Solutions</span>
+            <span className="text-[#d1d5db] text-xs sm:text-sm">Industry Solutions</span>
           </motion.div>
-          <h1 className="mb-6 text-gradient">Our Solutions</h1>
-          <p className="text-white/80 max-w-2xl mx-auto">
+          <h1 className="mb-4 sm:mb-6 text-gradient text-3xl sm:text-4xl md:text-5xl px-2">Our Solutions</h1>
+          <p className="text-white/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
             Tailored AI and GPU optimization solutions across diverse industries,
             delivering measurable impact and transformative results.
           </p>
@@ -117,7 +117,7 @@ export function SolutionsPage() {
 
         {/* Solutions Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -180,7 +180,7 @@ export function SolutionsPage() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30 relative overflow-hidden"
+            className="glass-effect rounded-2xl p-6 sm:p-8 md:p-12 border border-[#ffffff]/30 relative overflow-hidden"
             whileHover={{
               borderColor: 'rgba(0, 255, 255, 0.5)',
               boxShadow: "0 20px 60px rgba(30, 144, 255, 0.3)"
@@ -198,13 +198,13 @@ export function SolutionsPage() {
               }}
             />
             <div className="relative z-10">
-              <h2 className="mb-4 text-gradient">Ready to Transform Your Industry?</h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+              <h2 className="mb-3 sm:mb-4 text-gradient text-xl sm:text-2xl md:text-3xl px-2">Ready to Transform Your Industry?</h2>
+              <p className="text-white/70 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
                 Let's discuss how our AI solutions can drive innovation in your specific domain.
               </p>
               <MagneticButton
                 href="/contact"
-                className="inline-block px-8 py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black"
+                className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black text-sm sm:text-base"
               >
                 Schedule Consultation
               </MagneticButton>

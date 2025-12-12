@@ -11,7 +11,7 @@ interface GlassCardProps {
 export function GlassCard({ children, className = '', hover = true, delay = 0 }: GlassCardProps) {
   return (
     <motion.div
-      className={`glass-effect rounded-2xl p-6 transition-all duration-300 ${
+      className={`glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 ${
         hover ? 'neon-glow-hover' : ''
       } ${className}`}
       initial={{ opacity: 0, y: 20, rotateX: 10 }}

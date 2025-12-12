@@ -84,8 +84,8 @@ export function Navigation() {
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -94,13 +94,13 @@ export function Navigation() {
               <img
                 src="/jashom-logo-header-70px.png"
                 alt="Jashom"
-                className="h-[40px] md:h-[70px] w-auto transition-all duration-300 object-contain"
+                className="h-[35px] sm:h-[50px] md:h-[60px] lg:h-[70px] w-auto transition-all duration-300 object-contain max-w-[120px] sm:max-w-none"
               />
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -133,7 +133,7 @@ export function Navigation() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className={`absolute top-full left-0 mt-2 glass-effect rounded-xl border border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto ${item.label === 'About Us' ? 'w-48 p-2 flex flex-col gap-2' : 'w-64'
+                          className={`absolute top-full left-0 mt-2 glass-effect rounded-xl border border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto z-50 ${item.label === 'About Us' ? 'w-48 xl:w-56 p-2 flex flex-col gap-2' : 'w-56 xl:w-64'
                             }`}
                         >
                           {item.dropdown.map((subItem, subIndex) => (
@@ -183,10 +183,11 @@ export function Navigation() {
 
           {/* Mobile menu button */}
           <motion.button
-            className="md:hidden text-white"
+            className="lg:hidden text-white z-50 flex-shrink-0"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
+            aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
               {isOpen ? (
@@ -222,9 +223,9 @@ export function Navigation() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="md:hidden overflow-hidden"
+              className="lg:hidden overflow-hidden border-t border-[#333333] mt-2"
             >
-              <div className="pb-4 space-y-2">
+              <div className="pb-4 space-y-1 pt-2">
                 {navItems.map((item) => (
                   <motion.div
                     key={item.label}
@@ -240,7 +241,7 @@ export function Navigation() {
                             key={subItem.path}
                             to={subItem.path}
                             onClick={handleLinkClick}
-                            className={`block py-3 px-6 rounded-lg transition-all min-h-[44px] flex items-center ${location.pathname === subItem.path
+                            className={`block py-3 px-6 sm:px-8 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base ${location.pathname === subItem.path
                               ? 'text-white bg-white/10'
                               : 'text-white hover:bg-white/10 hover:text-white'
                               }`}
@@ -253,7 +254,7 @@ export function Navigation() {
                       <Link
                         to={item.path}
                         onClick={handleLinkClick}
-                        className={`block py-3 px-4 rounded-lg transition-all min-h-[44px] flex items-center ${location.pathname === item.path
+                        className={`block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base ${location.pathname === item.path
                           ? 'text-white bg-white/10'
                           : 'text-white hover:bg-white/10 hover:text-white'
                           }`}

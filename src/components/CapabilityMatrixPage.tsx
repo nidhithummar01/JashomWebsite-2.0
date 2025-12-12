@@ -110,7 +110,7 @@ export function CapabilityMatrixPage() {
         <CircuitDivider />
 
         {/* Capabilities Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
           {capabilities.map((capability, index) => (
             <motion.div
               key={index}
@@ -127,11 +127,11 @@ export function CapabilityMatrixPage() {
                   </div>
                   <h3 className="mb-3 text-white">{capability.title}</h3>
                   <p className="text-white/70 mb-6">{capability.description}</p>
-                  <div className="grid grid-cols-2 gap-3 mt-auto">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 mt-auto">
                     {capability.technologies.map((tech, idx) => (
                       <div
                         key={idx}
-                        className="px-3 py-2 rounded-lg bg-white/5 border border-[#ffffff]/20 text-white/80 text-sm text-center hover:bg-white/10 transition-colors"
+                        className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-white/5 border border-[#ffffff]/20 text-white/80 text-xs sm:text-sm text-center hover:bg-white/10 transition-colors break-words"
                       >
                         {tech}
                       </div>
@@ -153,7 +153,7 @@ export function CapabilityMatrixPage() {
           viewport={{ once: true }}
         >
           <h2 className="text-center mb-12 text-gradient">Our Expertise Levels</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 level: 'Advanced',
@@ -201,14 +201,14 @@ export function CapabilityMatrixPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30">
-            <h2 className="mb-4 text-gradient">Leverage Our Expertise</h2>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+          <div className="glass-effect rounded-2xl p-6 sm:p-8 md:p-12 border border-[#ffffff]/30">
+            <h2 className="mb-3 sm:mb-4 text-gradient text-xl sm:text-2xl md:text-3xl px-2">Leverage Our Expertise</h2>
+            <p className="text-white/70 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
               Let's discuss how our capabilities can address your specific technical challenges.
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300 hover:scale-105"
+              className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300 hover:scale-105 text-sm sm:text-base text-center"
             >
               Schedule Technical Call
             </a>

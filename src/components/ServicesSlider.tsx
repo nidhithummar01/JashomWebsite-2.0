@@ -54,7 +54,7 @@ export function ServicesSlider() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 640) {
         setItemsPerView(1);
       } else if (window.innerWidth < 1024) {
         setItemsPerView(2);
@@ -82,47 +82,49 @@ export function ServicesSlider() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-4 text-gradient">Our Services</h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+          <h2 className="mb-3 sm:mb-4 text-gradient text-2xl sm:text-3xl md:text-4xl px-2">Our Services</h2>
+          <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
             Comprehensive AI solutions tailored to transform your industry
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Navigation Buttons */}
-          <div className="absolute left-0 md:-left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-10">
+          <div className="absolute left-0 sm:-left-2 md:-left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-10">
             <motion.button
               onClick={prev}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
               whileHover={{ scale: 1.1, x: -5 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="Previous service"
             >
-              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </motion.button>
           </div>
 
-          <div className="absolute right-0 md:-right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-10">
+          <div className="absolute right-0 sm:-right-2 md:-right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-10">
             <motion.button
               onClick={next}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full glass-effect border border-[#ffffff]/30 flex items-center justify-center text-white hover:border-[#d1d5db]/50 transition-all"
               whileHover={{ scale: 1.1, x: 5 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="Next service"
             >
-              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </motion.button>
           </div>
 
           {/* Slider Container */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden px-8 sm:px-12 md:px-16 lg:px-20">
             <motion.div
-              className="flex gap-6"
+              className="flex gap-4 sm:gap-6"
               animate={{
-                x: `calc(-${currentIndex * (100 / itemsPerView)}% - ${currentIndex * (24 / itemsPerView)}px)`
+                x: `calc(-${currentIndex * (100 / itemsPerView)}% - ${currentIndex * (16 / itemsPerView)}px)`
               }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
@@ -130,7 +132,7 @@ export function ServicesSlider() {
                 <motion.div
                   key={index}
                   className="flex-shrink-0"
-                  style={{ width: `calc(${100 / itemsPerView}% - ${(24 * (itemsPerView - 1)) / itemsPerView}px)` }}
+                  style={{ width: `calc(${100 / itemsPerView}% - ${(16 * (itemsPerView - 1)) / itemsPerView}px)` }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

@@ -120,14 +120,16 @@ function updateLinkTag(rel: string, href: string) {
 }
 
 function updateStructuredData(id: string, data: object) {
-  let script = document.getElementById(`structured-data-${id}`);
+  let script = document.getElementById(`structured-data-${id}`) as HTMLScriptElement | null;
 
   if (!script) {
-    script = document.createElement('script');
+    script = document.createElement('script') as HTMLScriptElement;
     script.id = `structured-data-${id}`;
     script.type = 'application/ld+json';
     document.head.appendChild(script);
   }
 
-  script.textContent = JSON.stringify(data);
+  if (script) {
+    script.textContent = JSON.stringify(data);
+  }
 }

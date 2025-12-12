@@ -227,7 +227,7 @@ export function PortfolioPage() {
               {/* Projects in this category */}
               {projects.map((study, index) => (
                 <GlassCard key={`${category}-${index}`}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                     {/* Left Column */}
                     <div>
                       <div className="flex items-center gap-3 mb-4">
@@ -332,7 +332,7 @@ export function PortfolioPage() {
           viewport={{ once: true }}
         >
           <h2 className="text-center mb-12 text-gradient">By The Numbers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               { value: '500+', label: 'Projects Completed' },
               { value: '98%', label: 'Client Retention' },
@@ -363,14 +363,14 @@ export function PortfolioPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30">
-            <h2 className="mb-4 text-gradient">Ready to Write Your Success Story?</h2>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+          <div className="glass-effect rounded-2xl p-6 sm:p-8 md:p-12 border border-[#ffffff]/30">
+            <h2 className="mb-3 sm:mb-4 text-gradient text-xl sm:text-2xl md:text-3xl px-2">Ready to Write Your Success Story?</h2>
+            <p className="text-white/70 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
               Join leading organizations that have transformed their operations with Jashom.
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black scale-100 hover:scale-105"
+              className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black scale-100 hover:scale-105 text-sm sm:text-base text-center"
             >
               Start Your Project
             </a>

@@ -3,19 +3,23 @@ import { DetailLayout } from '../DetailLayout';
 export function FoodTechPage() {
     return (
         <DetailLayout
-            title="FoodTech"
-            description="From manufacturing to delivery, Jashom's food tech solutions enhance visibility, reduce waste, and improve decision-making through automation and analytics."
+            title="FoodTech Solutions"
+            description="Modernize food operations with AI systems that improve safety, quality, production, and consumer experience."
             whatWeOffer={[
-                "AI-based demand forecasting & supply optimization",
-                "Food traceability with blockchain & IoT data integration",
-                "Real-time quality & freshness monitoring",
-                "Predictive analytics for logistics and inventory",
-                "Consumer feedback intelligence using NLP and sentiment models"
+                "Food Quality Detection (Vision AI): Identify defects, spoilage, and contamination using image-based analysis.",
+                "Production & Yield Optimization: Predict equipment performance, reduce wastage, and optimize output.",
+                "Supply Chain Traceability: Track source-to-table journeys with AI-integrated systems.",
+                "Menu Personalization & Demand Forecasting: AI models for restaurant chains, cloud kitchens, and food delivery apps.",
+                "Smart Agriculture Integration: Crop monitoring, soil insights, and precision farming using AI."
             ]}
             benefits={[
-                "IoT • Blockchain • NLP • Predictive Analytics"
+                "Improved food safety and quality",
+                "Reduced production wastage",
+                "Enhanced traceability",
+                "Optimized demand forecasting",
+                "Precision farming capabilities"
             ]}
-            benefitsTitle="Technologies"
+            benefitsTitle="Benefits"
             type="Solution"
         />
     );

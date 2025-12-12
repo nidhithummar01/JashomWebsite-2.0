@@ -24,6 +24,10 @@ import { StaffAugmentationPage } from './components/services/StaffAugmentationPa
 import { AIAgenticPage } from './components/services/AIAgenticPage';
 import { CustomDevelopmentPage } from './components/services/CustomDevelopmentPage';
 import { CyberSecurityPage } from './components/services/CyberSecurityPage';
+import { EdgeComputingPage } from './components/services/EdgeComputingPage';
+import { CICDAutomationPage } from './components/services/CICDAutomationPage';
+import { ComplianceRiskPage } from './components/services/ComplianceRiskPage';
+import { MicroSaaSPage } from './components/services/MicroSaaSPage';
 import { HealthTechPage } from './components/solutions/HealthTechPage';
 import { FoodTechPage } from './components/solutions/FoodTechPage';
 import { EnvironmentTechPage } from './components/solutions/EnvironmentTechPage';
@@ -74,6 +78,10 @@ function AnimatedRoutes() {
         <Route path="/services/ai-agentic-systems" element={<PageTransition><AIAgenticPage /></PageTransition>} />
         <Route path="/services/custom-development" element={<PageTransition><CustomDevelopmentPage /></PageTransition>} />
         <Route path="/services/cyber-security" element={<PageTransition><CyberSecurityPage /></PageTransition>} />
+        <Route path="/services/edge-computing" element={<PageTransition><EdgeComputingPage /></PageTransition>} />
+        <Route path="/services/cicd-automation" element={<PageTransition><CICDAutomationPage /></PageTransition>} />
+        <Route path="/services/compliance-risk" element={<PageTransition><ComplianceRiskPage /></PageTransition>} />
+        <Route path="/services/micro-saas" element={<PageTransition><MicroSaaSPage /></PageTransition>} />
         <Route path="/services/cloud-computing" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
         <Route path="/services/devops" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
 
@@ -117,7 +125,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <ScrollProgress />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-black text-white overflow-x-hidden">
         <Navigation />
         <AnimatedRoutes />
         <Footer />

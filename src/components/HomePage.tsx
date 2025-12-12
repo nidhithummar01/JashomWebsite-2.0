@@ -121,7 +121,7 @@ export function HomePage() {
             </motion.div>
 
             <motion.h1
-              className="mb-6 text-gradient"
+              className="mb-4 sm:mb-6 text-gradient text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-2 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -130,7 +130,7 @@ export function HomePage() {
             </motion.h1>
 
             <motion.p
-              className="mb-8 text-white/80 max-w-2xl mx-auto"
+              className="mb-6 sm:mb-8 text-white/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -140,20 +140,20 @@ export function HomePage() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-4 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base"
               >
                 Start Your AI Transformation
               </Link>
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base"
               >
                 Schedule a Consultation
               </Link>
@@ -182,10 +182,10 @@ export function HomePage() {
       {/* Services Slider */}
       <ServicesSlider />
 
-      <div className="flex justify-center pb-20">
+      <div className="flex justify-center pb-12 sm:pb-20 px-4">
         <Link
           to="/contact"
-          className="inline-block px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-medium"
+          className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-medium text-center text-sm sm:text-base"
         >
           Schedule a Call
         </Link>
@@ -260,7 +260,7 @@ export function HomePage() {
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               { value: '500+', label: 'Projects Delivered' },
               { value: '98%', label: 'Client Satisfaction' },
@@ -296,7 +296,7 @@ export function HomePage() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4"
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
@@ -341,7 +341,7 @@ export function HomePage() {
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
@@ -408,19 +408,19 @@ export function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-4 text-gradient">Trusted by Industry Leaders</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
+            <h2 className="mb-3 sm:mb-4 text-gradient text-2xl sm:text-3xl md:text-4xl">Trusted by Industry Leaders</h2>
+            <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
               See what our clients say about transforming their businesses with Jashom
             </p>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
@@ -478,17 +478,17 @@ export function HomePage() {
       {/* Why Jashom Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30">
-                <span className="text-[#d1d5db]">The Jashom Difference</span>
+              <div className="inline-block mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-effect border border-[#ffffff]/30">
+                <span className="text-[#d1d5db] text-xs sm:text-sm">The Jashom Difference</span>
               </div>
-              <h2 className="mb-6 text-gradient">Why Global Enterprises Choose Jashom</h2>
-              <p className="text-white/70 mb-8">
+              <h2 className="mb-4 sm:mb-6 text-gradient text-2xl sm:text-3xl md:text-4xl">Why Global Enterprises Choose Jashom</h2>
+              <p className="text-white/70 mb-6 sm:mb-8 text-sm sm:text-base">
                 We don't just build AI solutions—we create competitive advantages. Our team combines
                 deep technical expertise with business acumen to deliver transformative results.
               </p>
@@ -527,7 +527,7 @@ export function HomePage() {
 
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 mt-8 text-[#d1d5db] hover:text-white transition-colors group"
+                className="inline-flex items-center gap-2 mt-6 sm:mt-8 text-[#d1d5db] hover:text-white transition-colors group text-sm sm:text-base"
               >
                 <span>View Our Success Stories</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -547,29 +547,29 @@ export function HomePage() {
                 { icon: Globe, label: 'Global Presence', value: '25+ Countries' },
                 { icon: Brain, label: 'AI Models Deployed', value: '1000+ Models' }
               ].map((metric, index) => (
-                <motion.div
-                  key={index}
-                  variants={staggerItem}
-                  className="glass-effect rounded-xl p-6 border border-[#ffffff]/20 flex items-center gap-4 cursor-pointer group"
-                  whileHover={{
-                    scale: 1.05,
-                    x: 10,
-                    borderColor: 'rgba(0, 255, 255, 0.5)',
-                    boxShadow: "0 10px 40px rgba(255, 255, 255, 0.1)"
-                  }}
-                >
                   <motion.div
-                    className="w-14 h-14 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center flex-shrink-0"
-                    whileHover={{ rotate: [0, -10, 10, 0] }}
-                    transition={{ duration: 0.5 }}
+                    key={index}
+                    variants={staggerItem}
+                    className="glass-effect rounded-xl p-4 sm:p-6 border border-[#ffffff]/20 flex items-center gap-3 sm:gap-4 cursor-pointer group"
+                    whileHover={{
+                      scale: 1.05,
+                      x: 10,
+                      borderColor: 'rgba(0, 255, 255, 0.5)',
+                      boxShadow: "0 10px 40px rgba(255, 255, 255, 0.1)"
+                    }}
                   >
-                    <metric.icon className="w-7 h-7 text-white" />
+                    <motion.div
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center flex-shrink-0"
+                      whileHover={{ rotate: [0, -10, 10, 0] }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <metric.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                    </motion.div>
+                    <div>
+                      <div className="text-white/60 text-xs sm:text-sm group-hover:text-white/80 transition-colors">{metric.label}</div>
+                      <div className="text-white text-lg sm:text-xl group-hover:text-[#d1d5db] transition-colors">{metric.value}</div>
+                    </div>
                   </motion.div>
-                  <div>
-                    <div className="text-white/60 text-sm group-hover:text-white/80 transition-colors">{metric.label}</div>
-                    <div className="text-white text-xl group-hover:text-[#d1d5db] transition-colors">{metric.value}</div>
-                  </div>
-                </motion.div>
               ))}
             </motion.div>
           </div>
@@ -582,7 +582,7 @@ export function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            className="glass-effect rounded-2xl p-12 border border-[#ffffff]/30 text-center relative overflow-hidden"
+            className="glass-effect rounded-2xl p-6 sm:p-8 md:p-12 border border-[#ffffff]/30 text-center relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -591,21 +591,21 @@ export function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/10 to-[#d1d5db]/10 pointer-events-none" />
 
             <div className="relative z-10">
-              <h2 className="mb-4 text-gradient">Ready to Accelerate Your AI Journey?</h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+              <h2 className="mb-3 sm:mb-4 text-gradient text-xl sm:text-2xl md:text-3xl px-2">Ready to Accelerate Your AI Journey?</h2>
+              <p className="text-white/70 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
                 Join hundreds of forward-thinking companies leveraging Jashom's AI expertise
                 to drive innovation and achieve unprecedented business outcomes.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
                 <Link
                   to="/contact"
-                  className="inline-block px-8 py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
+                  className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-sm sm:text-base"
                 >
                   Request a Demo
                 </Link>
                 <Link
                   to="/portfolio"
-                  className="inline-block px-8 py-4 rounded-xl bg-white/5 border border-[#ffffff]/30 text-white hover:bg-white/10 transition-all duration-300"
+                  className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-white/5 border border-[#ffffff]/30 text-white hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
                 >
                   View Case Studies
                 </Link>
