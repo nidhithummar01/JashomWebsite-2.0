@@ -7,6 +7,10 @@ import { ServicesPage } from './components/ServicesPage';
 import { SolutionsPage } from './components/SolutionsPage';
 import { CapabilityMatrixPage } from './components/CapabilityMatrixPage';
 import { PortfolioPage } from './components/PortfolioPage';
+import { RankzyAIPage } from './components/portfolio/RankzyAIPage';
+import { PodAIClipforgePage } from './components/portfolio/PodAIClipforgePage';
+import { NVTrustGPUAttestationPage } from './components/portfolio/NVTrustGPUAttestationPage';
+import { HTICUDAAccelerationPage } from './components/portfolio/HTICUDAAccelerationPage';
 import { ContactPage } from './components/ContactPage';
 import { BrochurePage } from './components/BrochurePage';
 import { PlaceholderPage } from './components/PlaceholderPage';
@@ -64,6 +68,10 @@ function AnimatedRoutes() {
         <Route path="/solutions" element={<PageTransition><SolutionsPage /></PageTransition>} />
         <Route path="/capability" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
         <Route path="/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
+        <Route path="/portfolio/rankzy-ai" element={<PageTransition><RankzyAIPage /></PageTransition>} />
+        <Route path="/portfolio/pod-ai-clipforge" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />
+        <Route path="/portfolio/nvtrust-gpu-attestation" element={<PageTransition><NVTrustGPUAttestationPage /></PageTransition>} />
+        <Route path="/portfolio/hti-cuda-acceleration" element={<PageTransition><HTICUDAAccelerationPage /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
         <Route path="/brochure" element={<PageTransition><BrochurePage /></PageTransition>} />
 

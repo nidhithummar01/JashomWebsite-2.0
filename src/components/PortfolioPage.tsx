@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
@@ -161,6 +162,74 @@ export function PortfolioPage() {
       tags: ['RAG Technology', 'AI Platform', 'Machine Learning', 'Knowledge Management'],
       link: 'https://jay.jashom.com/projects/rag-lu',
       liveUrl: 'https://rag.lu'
+    },
+    {
+      title: 'RANKZY AI - AI Visibility Optimization Platform',
+      client: 'Jashom',
+      industry: 'AI SEO & Optimization',
+      category: 'AI & Machine Learning',
+      challenge: 'Businesses struggle to maintain visibility in AI-powered search and recommendations across ChatGPT, Claude, Google Gemini, and Perplexity, as traditional SEO methods are becoming obsolete in the AI-first discovery era.',
+      solution: 'Rankzy AI is the world\'s first comprehensive AI Visibility Optimization Platform that helps businesses dominate AI-powered search and recommendations across multiple AI models through multi-stage prompt testing, brand mention detection, competitor tracking, and citation analysis.',
+      impact: [
+        'Future-proof marketing strategy for AI-first discovery',
+        'Data-driven competitive intelligence in AI responses',
+        'Actionable insights with specific implementation guidance',
+        'Real-time monitoring of AI visibility performance',
+        'First-mover advantage in emerging AI optimization market'
+      ],
+      tags: ['AI SEO', 'AI Visibility', 'Large Language Model Optimization', 'AI Search Ranking', 'Multi-Provider AI Testing'],
+      link: '/portfolio/rankzy-ai'
+    },
+    {
+      title: 'POD AI (CLIPFORGE) - AI Content Creation & Repurposing Platform',
+      client: 'Jashom',
+      industry: 'AI Content Automation',
+      category: 'AI & Machine Learning',
+      challenge: 'Content creators and businesses need to produce professional videos, social media posts, and presentations at scale, but existing tools lack comprehensive multi-format AI processing and brand consistency across platforms.',
+      solution: 'POD AI (ClipForge) is an all-in-one AI-powered content creation platform that transforms any content format into professional videos, social media posts, presentations, and more with intelligent automation, brand consistency, and platform-specific optimization.',
+      impact: [
+        'Multi-format AI processing in single platform (text, voice, video, images, documents)',
+        'Deep brand integration for consistent professional presentation',
+        'Credit-based pricing eliminates unused subscription waste',
+        'Platform-specific optimization for YouTube, TikTok, Instagram, LinkedIn',
+        'No technical skills required with intuitive user interface'
+      ],
+      tags: ['AI Content Creation', 'Video Generation', 'Content Repurposing', 'Social Media Automation', 'Voice AI Technology'],
+      link: '/portfolio/pod-ai-clipforge'
+    },
+    {
+      title: 'NVTRUST GPU ATTESTATION - Secure Hardware Verification System',
+      client: 'Jashom',
+      industry: 'GPU Security & Confidential Computing',
+      category: 'AI & Machine Learning',
+      challenge: 'Enterprises need to verify GPU authenticity and integrity for confidential computing workloads, but existing solutions lack cryptographic verification protocols and tamper detection capabilities for NVIDIA H100 GPUs.',
+      solution: 'nvTrust GPU Attestation System provides enterprise-grade secure remote attestation for NVIDIA H100 GPUs using cryptographic verification protocols with dual-verification architecture, hardware-rooted trust, and SPDM compliance to ensure hardware authenticity and integrity.',
+      impact: [
+        'Cryptographic proof of genuine NVIDIA hardware',
+        'Verification of untampered GPU firmware and configuration',
+        'Current responses with nonce-based validation',
+        'ECDSA signatures provide cryptographic attestation proof',
+        'Standards compliance with SPDM protocol'
+      ],
+      tags: ['GPU Security', 'Hardware Attestation', 'Confidential Computing', 'NVIDIA GPU Verification', 'Cryptographic Verification'],
+      link: '/portfolio/nvtrust-gpu-attestation'
+    },
+    {
+      title: 'HTI CUDA GPU ACCELERATION - Energy-Efficient AI Computing',
+      client: 'Jashom',
+      industry: 'GPU Optimization & Energy Efficiency',
+      category: 'AI & Machine Learning',
+      challenge: 'AI training workloads consume excessive energy on enterprise GPUs, but existing optimization solutions compromise computational accuracy or lack real-time power monitoring capabilities for distributed multi-GPU environments.',
+      solution: 'HTI (High-dimensional Token Integration) CUDA Acceleration provides research-grade GPU optimization for NVIDIA A100/H100 enterprise GPUs, achieving up to 82% energy reduction while maintaining computational accuracy through optimized kernel fusion and real-time power monitoring.',
+      impact: [
+        'Up to 82.3% energy reduction on specific AI workloads',
+        'Zero accuracy loss while optimizing energy consumption',
+        'Real-time power monitoring with NVML-based energy sampling',
+        'Multi-GPU scaling proven across multiple A100/H100 GPUs',
+        'Significant power consumption savings for data centers'
+      ],
+      tags: ['GPU Optimization', 'CUDA Acceleration', 'Energy Efficiency', 'AI Performance', 'Multi-GPU Scaling'],
+      link: '/portfolio/hti-cuda-acceleration'
     }
   ];
 
@@ -291,16 +360,28 @@ export function PortfolioPage() {
                       </div>
                       <div className="mt-6 flex flex-col gap-3">
                         {study.link ? (
-                          <motion.a
-                            href={study.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
-                            whileHover={{ x: 5 }}
-                          >
-                            <span>View Full Case Study</span>
-                            <ArrowRight className="w-4 h-4" />
-                          </motion.a>
+                          study.link.startsWith('/') ? (
+                            <motion.div whileHover={{ x: 5 }}>
+                              <Link
+                                to={study.link}
+                                className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
+                              >
+                                <span>View Full Case Study</span>
+                                <ArrowRight className="w-4 h-4" />
+                              </Link>
+                            </motion.div>
+                          ) : (
+                            <motion.a
+                              href={study.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
+                              whileHover={{ x: 5 }}
+                            >
+                              <span>View Full Case Study</span>
+                              <ArrowRight className="w-4 h-4" />
+                            </motion.a>
+                          )
                         ) : null}
                         {study.liveUrl ? (
                           <a
