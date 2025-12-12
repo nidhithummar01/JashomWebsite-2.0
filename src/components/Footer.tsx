@@ -62,9 +62,9 @@ export function Footer() {
                 whileHover={{ scale: 1.05 }}
               >
                 <img
-                  src="/jashom-logo.png"
+                  src="/jashom-logo-header-70px.png"
                   alt="Jashom"
-                  className="h-6 sm:h-8 w-auto object-contain max-w-[150px] sm:max-w-none"
+                  className="h-8 sm:h-10 md:h-12 w-auto object-contain"
                 />
               </motion.div>
             </Link>

@@ -85,7 +85,7 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
-          <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -100,7 +100,7 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -183,7 +183,7 @@ export function Navigation() {
 
           {/* Mobile menu button */}
           <motion.button
-            className="lg:hidden text-white z-50 flex-shrink-0"
+            className="md:hidden text-white z-50 flex-shrink-0"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
@@ -223,9 +223,9 @@ export function Navigation() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="lg:hidden overflow-hidden border-t border-[#333333] mt-2"
+              className="md:hidden border-t border-[#333333] mt-2"
             >
-              <div className="pb-4 space-y-1 pt-2">
+              <div className="pb-4 space-y-1 pt-2 overflow-y-auto overscroll-contain max-h-[calc(100vh-5rem)]">
                 {navItems.map((item) => (
                   <motion.div
                     key={item.label}
