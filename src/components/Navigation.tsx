@@ -1,27 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
-const menuVariants = {
-  closed: {
-    opacity: 0,
-    height: 0,
-    transition: {
-      duration: 0.3,
-      when: "afterChildren",
-    }
-  },
-  open: {
-    opacity: 1,
-    height: "auto",
-    transition: {
-      duration: 0.3,
-      when: "beforeChildren",
-      staggerChildren: 0.05
-    }
-  }
-};
 
 const menuItemVariants = {
   closed: { opacity: 0, x: -20 },
@@ -246,13 +226,14 @@ export function Navigation() {
                 onClick={handleLinkClick}
               />
               <motion.div
-                variants={menuVariants}
-                initial="closed"
-                animate="open"
-                exit="closed"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto', maxHeight: 'calc(100vh - 5rem)' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
                 className="md:hidden border-t border-[#333333] mt-2 relative z-50 bg-black"
+                style={{ maxHeight: 'calc(100vh - 5rem)', overflowY: 'auto' }}
               >
-                <div className="pb-4 space-y-1 pt-2 overflow-y-auto overscroll-contain max-h-[calc(100vh-5rem)]">
+                <div className="pb-4 space-y-1 pt-2">
                 {navItems.map((item) => (
                   <motion.div
                     key={item.label}

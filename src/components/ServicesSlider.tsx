@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
-import { ChevronLeft, ChevronRight, Cpu, MessageSquare, Heart, Utensils, Leaf, ShoppingBag } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Cpu, MessageSquare, Bot, Workflow, Shield, FileSearch, ShieldCheck, Cloud, Network, GitBranch, Code, Wrench, Layers } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { GlassCard } from './GlassCard';
 
+// Services data - single source of truth for both desktop and mobile
 const services = [
   {
     icon: Cpu,
@@ -19,32 +20,88 @@ const services = [
     tech: 'LangChain • Hugging Face • OpenAI • Nuclia'
   },
   {
-    icon: Heart,
-    title: 'HealthTech',
-    description: 'AI-powered healthcare platforms that automate workflows, enhance patient care, and maintain HIPAA compliance.',
-    highlights: ['Multi-location hospital management', 'Real-time patient monitoring', 'Predictive analytics', 'Medical imaging AI'],
-    tech: '99.9% uptime • HIPAA-compliant • IoT integration'
+    icon: Bot,
+    title: 'AI Agentic Systems',
+    description: 'Intelligent autonomous systems that make decisions, execute tasks, and learn from interactions to deliver complex business outcomes.',
+    highlights: ['Autonomous task execution', 'Multi-agent orchestration', 'Self-learning capabilities', 'Business process automation'],
+    tech: 'N8N • LangChain • OpenAI Agents • AutoGPT'
   },
   {
-    icon: Utensils,
-    title: 'FoodTech',
-    description: 'Digitizing food and supply chains with AI-driven forecasting, quality monitoring, and blockchain traceability.',
-    highlights: ['AI demand forecasting', 'Food traceability with blockchain', 'Real-time quality monitoring', 'Predictive logistics'],
-    tech: 'IoT • Blockchain • NLP sentiment analysis'
+    icon: Workflow,
+    title: 'AI Integration & Workflow Automation',
+    description: 'Seamlessly integrate AI into your existing workflows with intelligent automation that adapts to your business processes.',
+    highlights: ['API integration', 'Workflow optimization', 'Process automation', 'Legacy system modernization'],
+    tech: 'Python • REST APIs • Webhooks • MuleSoft'
   },
   {
-    icon: Leaf,
-    title: 'EnvironmentTech',
-    description: 'Building sustainable solutions with AI-driven emission optimization, ESG reporting, and environmental monitoring.',
-    highlights: ['AI emission optimization', 'ESG data pipelines', 'Air/water/soil quality analytics', 'Sustainability scoring'],
-    tech: 'IoT • Satellite data • Real-time dashboards'
+    icon: Shield,
+    title: 'Cybersecurity',
+    description: 'Comprehensive security solutions protecting your digital infrastructure from threats with advanced AI-powered detection and response.',
+    highlights: ['Threat detection & response', 'Security monitoring', 'Incident management', 'Vulnerability assessment'],
+    tech: 'SIEM • SOAR • Threat Intelligence • AI Security'
   },
   {
-    icon: ShoppingBag,
-    title: 'Retail Tech for Garments',
-    description: 'Reinventing fashion retail with AI visual search, virtual try-on, and smart inventory predictions.',
-    highlights: ['AI visual search & virtual try-on', 'Smart inventory predictions', 'Edge vision quality control', 'Customer intelligence'],
-    tech: 'Computer Vision • Edge AI • Analytics'
+    icon: FileSearch,
+    title: 'VAPT',
+    description: 'Vulnerability Assessment and Penetration Testing to identify and remediate security weaknesses before attackers exploit them.',
+    highlights: ['Network penetration testing', 'Web application security', 'Infrastructure assessment', 'Compliance validation'],
+    tech: 'OWASP • Burp Suite • Metasploit • Nmap'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Compliance & Risk',
+    description: 'Ensure regulatory compliance and manage risk with comprehensive frameworks tailored to your industry requirements.',
+    highlights: ['Regulatory compliance', 'Risk assessment', 'Audit preparation', 'Policy implementation'],
+    tech: 'GDPR • HIPAA • SOC 2 • ISO 27001'
+  },
+  {
+    icon: Cloud,
+    title: 'DevOps & DevSecOps',
+    description: 'Accelerate software delivery with DevOps practices and integrate security throughout the development lifecycle.',
+    highlights: ['CI/CD pipelines', 'Infrastructure as Code', 'Security integration', 'Automated testing'],
+    tech: 'Kubernetes • Docker • Terraform • Jenkins'
+  },
+  {
+    icon: Network,
+    title: 'Cloud Computing',
+    description: 'Leverage cloud infrastructure for scalable, resilient, and cost-effective application deployment and management.',
+    highlights: ['Cloud migration', 'Multi-cloud strategy', 'Cost optimization', 'Auto-scaling'],
+    tech: 'AWS • Azure • GCP • Cloud Native'
+  },
+  {
+    icon: GitBranch,
+    title: 'Edge Computing',
+    description: 'Deploy computing resources closer to data sources for reduced latency and improved real-time processing capabilities.',
+    highlights: ['Edge deployment', 'Latency optimization', 'Real-time processing', 'IoT integration'],
+    tech: 'Edge AI • IoT • 5G • Fog Computing'
+  },
+  {
+    icon: Code,
+    title: 'CI/CD Automation',
+    description: 'Streamline development workflows with continuous integration and deployment pipelines for faster, reliable releases.',
+    highlights: ['Automated builds', 'Testing automation', 'Deployment pipelines', 'Release management'],
+    tech: 'GitHub Actions • GitLab CI • CircleCI • ArgoCD'
+  },
+  {
+    icon: Wrench,
+    title: 'Product Engineering',
+    description: 'End-to-end product development from concept to deployment with full-stack engineering expertise.',
+    highlights: ['Full-stack development', 'Product architecture', 'Scalable systems', 'Performance optimization'],
+    tech: 'React • Node.js • Python • Microservices'
+  },
+  {
+    icon: Layers,
+    title: 'Custom Development',
+    description: 'Bespoke software solutions tailored to your unique business needs and requirements.',
+    highlights: ['Custom applications', 'Enterprise software', 'System integration', 'Legacy modernization'],
+    tech: 'Full Stack • Cloud Native • Modern Frameworks'
+  },
+  {
+    icon: Cloud,
+    title: 'Micro-SaaS Development',
+    description: 'Build and launch focused SaaS products with rapid development cycles and market validation.',
+    highlights: ['Rapid prototyping', 'MVP development', 'SaaS architecture', 'Product launch'],
+    tech: 'Next.js • Stripe • Supabase • Modern SaaS Stack'
   }
 ];
 
@@ -68,6 +125,7 @@ export function ServicesSlider() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Use the same services array for both desktop and mobile
   const maxIndex = Math.max(0, services.length - itemsPerView);
 
   const next = () => {
