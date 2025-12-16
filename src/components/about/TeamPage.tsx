@@ -33,37 +33,37 @@ export function TeamPage() {
     {
       name: 'Jay Dave',
       role: 'Founder',
-      linkedin: null
+      linkedin: 'https://www.linkedin.com/in/jayksdave'
     },
     {
       name: 'Soham Thaker',
       role: 'Tech Lead',
-      linkedin: null
+      linkedin: 'https://www.linkedin.com/in/thakersoham/'
     },
     {
       name: 'Archana Trivedi',
       role: 'Operation Manager',
-      linkedin: null
+      linkedin: 'https://www.linkedin.com/in/archana-trivedi-326b65110'
     },
     {
       name: 'Arpit',
       role: 'DevOps and Security Head (CISO)',
-      linkedin: null
+      linkedin: 'https://www.linkedin.com/in/arpit-christie/'
     },
     {
-      name: 'Dhwana Gadani',
+      name: 'Dhwanan Gadani',
       role: 'Partner & Delivery Head',
-      linkedin: null
+      linkedin: 'https://www.linkedin.com/in/dhwanan'
     },
     {
       name: 'Maxime Derian',
       role: 'Partner – Europe Region',
-      linkedin: null
+      linkedin: 'https://www.linkedin.com/in/maxime-derian/'
     },
     {
       name: 'Abhishek Bhagwat',
       role: 'Sales Manager',
-      linkedin: null
+      linkedin: 'https://www.linkedin.com/in/abhishek-bhagwat-037221248/'
     }
   ];
 
