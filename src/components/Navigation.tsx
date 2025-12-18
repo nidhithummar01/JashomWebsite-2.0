@@ -66,17 +66,6 @@ export function Navigation() {
       ]
     },
     {
-      label: 'AI for Industry',
-      dropdown: [
-        { path: '/ai-for-industry/sales', label: 'AI for Sales' },
-        { path: '/ai-for-industry/legal', label: 'AI for Legal' },
-        { path: '/ai-for-industry/accounting', label: 'AI for Accounting' },
-        { path: '/ai-for-industry/healthcare', label: 'AI for Healthcare' },
-        { path: '/ai-for-industry/marketing', label: 'AI for Marketing' },
-        { path: '/ai-for-industry/rnd', label: 'AI for R&D' }
-      ]
-    },
-    {
       label: 'Solutions',
       dropdown: [
         { path: '/solutions/healthtech', label: 'HealthTech' },
@@ -86,6 +75,17 @@ export function Navigation() {
         { path: '/solutions/legal-and-tax', label: 'Legal & Tax' },
         { path: '/solutions/retail-tech', label: 'RetailTech' },
         { path: '/solutions/foodtech', label: 'FoodTech' }
+      ]
+    },
+    {
+      label: 'AI for Industry',
+      dropdown: [
+        { path: '/ai-for-industry/sales', label: 'AI for Sales' },
+        { path: '/ai-for-industry/legal', label: 'AI for Legal' },
+        { path: '/ai-for-industry/accounting', label: 'AI for Accounting' },
+        { path: '/ai-for-industry/healthcare', label: 'AI for Healthcare' },
+        { path: '/ai-for-industry/marketing', label: 'AI for Marketing' },
+        { path: '/ai-for-industry/rnd', label: 'AI for R&D' }
       ]
     },
     { path: '/contact', label: 'Contact' },

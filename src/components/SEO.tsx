@@ -66,9 +66,7 @@ export function SEO({
         availableLanguage: ['English']
       },
       sameAs: [
-        'https://linkedin.com/company/neoteq',
-        'https://twitter.com/neoteq',
-        'https://github.com/neoteq'
+        'https://linkedin.com/company/neoteq'
       ],
       address: {
         '@type': 'PostalAddress',

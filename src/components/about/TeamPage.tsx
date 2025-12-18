@@ -3,6 +3,7 @@ import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { Linkedin } from 'lucide-react';
+import jaySirImage from './jay.sir.img.png';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -35,7 +36,7 @@ export function TeamPage() {
       role: 'Founder',
       bio: 'Visionary founder leading the company\'s strategy, innovation, and long-term growth.',
       linkedin: 'https://www.linkedin.com/in/jayksdave',
-      image: '/team-images/jay-dave.jpg'
+      image: jaySirImage
     },
     {
       name: 'Maxime Derian',
@@ -130,12 +131,20 @@ export function TeamPage() {
                       transition={{ delay: 0.1 }}
                     >
                       {member.image ? (
-                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-white/20 overflow-hidden">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-white/20 overflow-hidden bg-white/5 flex-shrink-0 aspect-square">
                           <img
                             src={member.image}
                             alt={member.name}
                             className="w-full h-full object-cover object-center"
-                            style={{ objectFit: 'cover', objectPosition: 'center center' }}
+                            style={{ 
+                              objectFit: 'cover', 
+                              objectPosition: 'center center',
+                              display: 'block',
+                              width: '100%',
+                              height: '100%',
+                              maxWidth: '100%',
+                              maxHeight: '100%'
+                            }}
                           />
                         </div>
                       ) : (

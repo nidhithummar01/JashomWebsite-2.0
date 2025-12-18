@@ -179,7 +179,7 @@ export function HomePage() {
       <div className="flex justify-center pb-12 sm:pb-20 px-4">
         <Link
           to="/contact"
-          className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-medium text-center text-sm sm:text-base"
+          className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-medium text-center text-sm sm:text-base whitespace-nowrap"
         >
           Schedule a Call
         </Link>
@@ -423,14 +423,14 @@ export function HomePage() {
             {[
               {
                 quote: "Jashom's GPU optimization reduced our AI inference time by 85%. Their expertise in CUDA programming is unmatched.",
-                author: "Sarah Chen",
-                role: "CTO, TechVision Inc",
+                author: "Sarah",
+                role: "CTO, Tech Company",
                 rating: 5
               },
               {
                 quote: "The AI solutions delivered by Jashom have transformed our customer experience. ROI exceeded expectations within 6 months.",
-                author: "Michael Rodriguez",
-                role: "VP Engineering, RetailPro",
+                author: "Michael",
+                role: "FoodTech Engineering",
                 rating: 5
               },
               {
@@ -536,10 +536,10 @@ export function HomePage() {
               viewport={{ once: true }}
             >
               {[
-                { icon: Award, label: 'Industry Recognition', value: '15+ Awards' },
-                { icon: Users, label: 'Expert Team', value: '100+ AI Engineers' },
-                { icon: Globe, label: 'Global Presence', value: '25+ Countries' },
-                { icon: Brain, label: 'AI Models Deployed', value: '1000+ Models' }
+                { icon: Award, label: 'Industry Recognition', value: '3+ Awards' },
+                { icon: Users, label: 'Expert Team', value: '50+ AI Experts' },
+                { icon: Globe, label: 'Global Presence', value: '3+ Countries' },
+                { icon: Brain, label: 'AI Models', value: '50+ Models' }
               ].map((metric, index) => (
                   <motion.div
                     key={index}
