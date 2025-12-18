@@ -13,6 +13,9 @@ export function AnimatedCounter({ value, label, duration = 2 }: AnimatedCounterP
   const count = useMotionValue(0);
   const hasAnimated = useRef(false);
   
+  // Check if value contains a slash (e.g., "24/7") - display as-is without animation
+  const isTextValue = value.includes('/');
+  
   // Extract number from value (e.g., "500+" => 500, "98%" => 98)
   const numericValue = parseInt(value.replace(/\D/g, '')) || 0;
   const suffix = value.replace(/\d/g, '');
@@ -22,7 +25,7 @@ export function AnimatedCounter({ value, label, duration = 2 }: AnimatedCounterP
   });
 
   useEffect(() => {
-    if (inView && !hasAnimated.current) {
+    if (inView && !hasAnimated.current && !isTextValue) {
       hasAnimated.current = true;
       const controls = animate(count, numericValue, {
         duration,
@@ -30,7 +33,7 @@ export function AnimatedCounter({ value, label, duration = 2 }: AnimatedCounterP
       });
       return controls.stop;
     }
-  }, [inView, count, numericValue, duration]);
+  }, [inView, count, numericValue, duration, isTextValue]);
 
   return (
     <motion.div
@@ -50,7 +53,7 @@ export function AnimatedCounter({ value, label, duration = 2 }: AnimatedCounterP
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        {rounded}
+        {isTextValue ? value : rounded}
       </motion.div>
       <div className="text-white/70">{label}</div>
     </motion.div>

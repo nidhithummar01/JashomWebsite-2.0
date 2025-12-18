@@ -65,10 +65,10 @@ const slides = [
     services: [
       { icon: Cpu, name: 'AI GPU Optimization & Attestation', color: 'from-[#ffffff] to-[#d1d5db]' },
       { icon: MessageSquare, name: 'RAG Applications', color: 'from-[#d1d5db] to-[#ffffff]' },
-      { icon: Heart, name: 'HealthTech', color: 'from-[#ffffff] to-[#d1d5db]' },
-      { icon: Utensils, name: 'FoodTech', color: 'from-[#d1d5db] to-[#ffffff]' },
-      { icon: Leaf, name: 'EnvironmentTech', color: 'from-[#ffffff] to-[#d1d5db]' },
-      { icon: ShoppingBag, name: 'RetailTech', color: 'from-[#d1d5db] to-[#ffffff]' }
+      { icon: Shield, name: 'Cybersecurity', color: 'from-[#ffffff] to-[#d1d5db]' },
+      { icon: Shield, name: 'VAPT', color: 'from-[#d1d5db] to-[#ffffff]' },
+      { icon: RefreshCw, name: 'CI/CD Automation', color: 'from-[#ffffff] to-[#d1d5db]' },
+      { icon: Package, name: 'SaaS Development', color: 'from-[#d1d5db] to-[#ffffff]' }
     ]
   },
   {
@@ -273,9 +273,9 @@ const slides = [
     content: {
       tagline: 'Join hundreds of forward-thinking companies leveraging Jashom\'s AI expertise',
       contact: [
-        { icon: Mail, label: 'Email', value: 'contact@neoteq.ai' },
-        { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567' },
-        { icon: MapPin, label: 'Location', value: 'Silicon Valley, CA' }
+        { icon: Mail, label: 'Email', value: 'info@jashom.com' },
+        { icon: Phone, label: 'Phone', value: '+91 90239 06363' },
+        { icon: MapPin, label: 'Location', value: '414, Satyam-2, Amba Business Park, ATPL, Adalaj, Gujarat, India' }
       ]
     }
   }
@@ -678,12 +678,12 @@ export function BrochurePage() {
                     <p className="text-2xl text-[#d1d5db] mb-6">{slide.subtitle}</p>
                     <p className="text-white/70 mb-12 max-w-2xl">{slide.content.tagline}</p>
 
-                    <div className="grid grid-cols-3 gap-8 mb-12">
+                    <div className="grid grid-cols-3 gap-6 mb-12">
                       {slide.content.contact.map((item: any, idx: number) => (
                         <div key={idx} className="glass-effect rounded-xl p-6 border border-[#ffffff]/20">
                           <item.icon className="w-8 h-8 text-[#d1d5db] mx-auto mb-3" />
-                          <div className="text-white/60 text-sm mb-1">{item.label}</div>
-                          <div className="text-white">{item.value}</div>
+                          <div className="text-white/60 text-sm mb-2">{item.label}</div>
+                          <div className="text-white text-sm leading-relaxed">{item.value}</div>
                         </div>
                       ))}
                     </div>
