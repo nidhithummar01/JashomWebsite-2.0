@@ -5,10 +5,6 @@ import {
   ChevronRight,
   Cpu,
   MessageSquare,
-  Heart,
-  Utensils,
-  Leaf,
-  ShoppingBag,
   Brain,
   Code,
   Cloud,
@@ -27,8 +23,7 @@ import {
   Maximize2,
   GitBranch,
   RefreshCw,
-  Workflow,
-  Settings
+  Workflow
 } from 'lucide-react';
 import { SEO } from './SEO';
 
@@ -50,7 +45,7 @@ const slides = [
       mission: 'Pioneering AI and GPU optimization solutions that transform businesses across industries.',
       vision: 'To be the global leader in AI optimization, making advanced technology accessible and efficient for enterprises worldwide.',
       stats: [
-        { value: '500+', label: 'Projects Delivered' },
+        { value: '50+', label: 'Projects Delivered' },
         { value: '98%', label: 'Client Satisfaction' },
         { value: '10x', label: 'Performance Gain' },
         { value: '24/7', label: 'Support Available' }
@@ -283,7 +278,6 @@ const slides = [
 
 export function BrochurePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -301,10 +295,8 @@ export function BrochurePage() {
     try {
       if (!document.fullscreenElement) {
         await document.documentElement.requestFullscreen();
-        setIsFullscreen(true);
       } else {
         await document.exitFullscreen();
-        setIsFullscreen(false);
       }
     } catch (error) {
       console.log('Fullscreen not supported or blocked:', error);
@@ -397,14 +389,17 @@ export function BrochurePage() {
                 {slide.type === 'cover' && (
                   <div className="flex flex-col items-center justify-center h-full text-center">
                     <motion.div
-                      className="w-24 h-24 rounded-2xl bg-[#111] border border-white/10 flex items-center justify-center mb-8"
+                      className="mb-8"
                       animate={{
-                        rotate: [0, 5, -5, 0],
                         scale: [1, 1.05, 1]
                       }}
                       transition={{ duration: 4, repeat: Infinity }}
                     >
-                      <Cpu className="w-12 h-12 text-white" />
+                      <img
+                        src="/jashom-logo-header-70px.png"
+                        alt="Jashom Logo"
+                        className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto mx-auto object-contain"
+                      />
                     </motion.div>
                     <h1 className="text-6xl mb-4 text-gradient">{slide.title}</h1>
                     <p className="text-4xl text-[#d1d5db] mb-4">{slide.subtitle}</p>
@@ -426,16 +421,16 @@ export function BrochurePage() {
                       <div className="space-y-6">
                         <div>
                           <h3 className="text-white mb-3">Our Mission</h3>
-                          <p className="text-white/70">{slide.content.mission}</p>
+                          <p className="text-white/70">{slide.content?.mission}</p>
                         </div>
                         <div>
                           <h3 className="text-white mb-3">Our Vision</h3>
-                          <p className="text-white/70">{slide.content.vision}</p>
+                          <p className="text-white/70">{slide.content?.vision}</p>
                         </div>
                       </div>
 
                       <div className="grid grid-cols-2 gap-4">
-                        {slide.content.stats.map((stat: any, idx: number) => (
+                        {slide.content?.stats?.map((stat: any, idx: number) => (
                           <div key={idx} className="glass-effect rounded-xl p-6 border border-[#ffffff]/20 text-center">
                             <div className="text-3xl text-gradient mb-2">{stat.value}</div>
                             <div className="text-white/60 text-sm">{stat.label}</div>
@@ -455,7 +450,7 @@ export function BrochurePage() {
                     </div>
 
                     <div className="flex-grow grid grid-cols-3 gap-6">
-                      {slide.services.map((service: any, idx: number) => (
+                      {slide.services?.map((service: any, idx: number) => (
                         <motion.div
                           key={idx}
                           className="glass-effect rounded-xl p-6 border border-[#ffffff]/20 hover:border-[#d1d5db]/50 transition-all flex flex-col items-center text-center"
@@ -480,10 +475,10 @@ export function BrochurePage() {
                     </div>
 
                     <div className="flex-grow">
-                      <p className="text-white/70 mb-6 text-lg">{slide.content.description}</p>
+                      <p className="text-white/70 mb-6 text-lg">{slide.content?.description}</p>
 
                       <div className="grid grid-cols-2 gap-4 mb-6">
-                        {slide.content.highlights.map((highlight: string, idx: number) => (
+                        {slide.content?.highlights?.map((highlight: string, idx: number) => (
                           <div key={idx} className="flex items-center gap-3 glass-effect rounded-lg p-3 border border-[#ffffff]/20">
                             <CheckCircle2 className="w-5 h-5 text-[#d1d5db] flex-shrink-0" />
                             <span className="text-white/80 text-sm">{highlight}</span>
@@ -493,7 +488,7 @@ export function BrochurePage() {
 
                       <div className="glass-effect rounded-lg p-4 border border-[#ffffff]/30">
                         <div className="text-[#d1d5db] text-sm mb-1">Tech Stack</div>
-                        <div className="text-white/70">{slide.content.tech}</div>
+                        <div className="text-white/70">{slide.content?.tech}</div>
                       </div>
                     </div>
                   </div>
@@ -508,7 +503,7 @@ export function BrochurePage() {
                     </div>
 
                     <div className="flex-grow grid grid-cols-3 gap-4">
-                      {slide.capabilities.slice(0, 3).map((cap: any, idx: number) => (
+                      {slide.capabilities?.slice(0, 3).map((cap: any, idx: number) => (
                         <div key={idx} className="glass-effect rounded-xl p-4 border border-[#ffffff]/20">
                           <div className="w-12 h-12 rounded-lg bg-[#111] border border-white/10 flex items-center justify-center mb-3">
                             <cap.icon className="w-6 h-6 text-white" />
@@ -524,7 +519,7 @@ export function BrochurePage() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4 mt-4">
-                      {slide.capabilities.slice(3).map((cap: any, idx: number) => (
+                      {slide.capabilities?.slice(3).map((cap: any, idx: number) => (
                         <div key={idx} className="glass-effect rounded-xl p-4 border border-[#ffffff]/20">
                           <div className="w-12 h-12 rounded-lg bg-[#111] border border-white/10 flex items-center justify-center mb-3">
                             <cap.icon className="w-6 h-6 text-white" />
@@ -547,7 +542,7 @@ export function BrochurePage() {
                     <div className="mb-6">
                       <h2 className="text-4xl mb-2 text-gradient">{slide.title}</h2>
                       <p className="text-[#d1d5db] mb-2">{slide.subtitle}</p>
-                      <p className="text-2xl text-gradient italic">{slide.content.tagline}</p>
+                      <p className="text-2xl text-gradient italic">{slide.content?.tagline}</p>
                     </div>
 
                     <div className="flex-grow grid grid-cols-2 gap-6">
@@ -558,10 +553,10 @@ export function BrochurePage() {
                             <div className="w-12 h-12 rounded-lg bg-[#111] border border-white/10 flex items-center justify-center">
                               <RefreshCw className="w-6 h-6 text-white" />
                             </div>
-                            <h3 className="text-white text-xl">{slide.content.methodology.title}</h3>
+                            <h3 className="text-white text-xl">{slide.content?.methodology?.title}</h3>
                           </div>
                           <div className="space-y-2">
-                            {slide.content.methodology.points.map((point: string, idx: number) => (
+                            {slide.content?.methodology?.points?.map((point: string, idx: number) => (
                               <div key={idx} className="flex items-start gap-2">
                                 <CheckCircle2 className="w-4 h-4 text-[#d1d5db] flex-shrink-0 mt-1" />
                                 <span className="text-white/70 text-sm">{point}</span>
@@ -574,7 +569,7 @@ export function BrochurePage() {
                         <div className="glass-effect rounded-xl p-6 border border-[#ffffff]/30">
                           <h4 className="text-white mb-3">Key Benefits</h4>
                           <div className="grid grid-cols-2 gap-2">
-                            {slide.content.benefits.map((benefit: string, idx: number) => (
+                            {slide.content?.benefits?.map((benefit: string, idx: number) => (
                               <div key={idx} className="flex items-center gap-2 text-sm text-white/70">
                                 <div className="w-1.5 h-1.5 rounded-full bg-[#d1d5db]" />
                                 {benefit}
@@ -589,7 +584,7 @@ export function BrochurePage() {
                         <div className="glass-effect rounded-xl p-6 border border-[#ffffff]/30 h-full">
                           <h3 className="text-white mb-4 text-lg">Enterprise Tools & Technologies</h3>
                           <div className="grid grid-cols-2 gap-4">
-                            {slide.content.tools.map((tool: any, idx: number) => (
+                            {slide.content?.tools?.map((tool: any, idx: number) => (
                               <motion.div
                                 key={idx}
                                 className="glass-effect rounded-lg p-4 border border-[#ffffff]/20 hover:border-[#d1d5db]/50 transition-all"
@@ -623,7 +618,7 @@ export function BrochurePage() {
                     </div>
 
                     <div className="flex-grow grid grid-cols-3 gap-4">
-                      {slide.reasons.map((reason: any, idx: number) => (
+                      {slide.reasons?.map((reason: any, idx: number) => (
                         <motion.div
                           key={idx}
                           className="glass-effect rounded-xl p-6 border border-[#ffffff]/20 hover:border-[#d1d5db]/50 transition-all text-center"
@@ -649,7 +644,7 @@ export function BrochurePage() {
                     </div>
 
                     <div className="flex-grow space-y-4">
-                      {slide.cases.map((case_: any, idx: number) => (
+                      {slide.cases?.map((case_: any, idx: number) => (
                         <div key={idx} className="glass-effect rounded-xl p-6 border border-[#ffffff]/20">
                           <div className="flex items-start justify-between">
                             <div className="flex-grow">
@@ -676,10 +671,10 @@ export function BrochurePage() {
                   <div className="h-full flex flex-col items-center justify-center text-center">
                     <h2 className="text-5xl mb-4 text-gradient">{slide.title}</h2>
                     <p className="text-2xl text-[#d1d5db] mb-6">{slide.subtitle}</p>
-                    <p className="text-white/70 mb-12 max-w-2xl">{slide.content.tagline}</p>
+                    <p className="text-white/70 mb-12 max-w-2xl">{slide.content?.tagline}</p>
 
                     <div className="grid grid-cols-3 gap-6 mb-12">
-                      {slide.content.contact.map((item: any, idx: number) => (
+                      {slide.content?.contact?.map((item: any, idx: number) => (
                         <div key={idx} className="glass-effect rounded-xl p-6 border border-[#ffffff]/20">
                           <item.icon className="w-8 h-8 text-[#d1d5db] mx-auto mb-3" />
                           <div className="text-white/60 text-sm mb-2">{item.label}</div>

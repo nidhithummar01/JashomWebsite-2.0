@@ -14,6 +14,10 @@ import { HTICUDAAccelerationPage } from './components/portfolio/HTICUDAAccelerat
 import { ContactPage } from './components/ContactPage';
 import { BrochurePage } from './components/BrochurePage';
 import { PlaceholderPage } from './components/PlaceholderPage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { TermsOfServicePage } from './components/TermsOfServicePage';
+import { CookiePolicyPage } from './components/CookiePolicyPage';
+import { SecurityPolicyPage } from './components/SecurityPolicyPage';
 import { TeamPage } from './components/about/TeamPage';
 import { AboutPortfolioPage } from './components/about/AboutPortfolioPage';
 import { PageTransition } from './components/PageTransition';
@@ -124,10 +128,10 @@ function AnimatedRoutes() {
         <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
         <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />
         <Route path="/api" element={<PageTransition><PlaceholderPage title="API Reference" description="Complete API documentation and integration guides for Jashom's AI platform." /></PageTransition>} />
-        <Route path="/privacy" element={<PageTransition><PlaceholderPage title="Privacy Policy" description="Jashom's commitment to protecting your privacy and data security." /></PageTransition>} />
-        <Route path="/terms" element={<PageTransition><PlaceholderPage title="Terms of Service" description="Terms and conditions for using Jashom's services and platforms." /></PageTransition>} />
-        <Route path="/cookies" element={<PageTransition><PlaceholderPage title="Cookie Policy" description="Information about how Jashom uses cookies and similar technologies." /></PageTransition>} />
-        <Route path="/security" element={<PageTransition><PlaceholderPage title="Security" description="Learn about Jashom's enterprise-grade security practices and compliance certifications." /></PageTransition>} />
+        <Route path="/privacy" element={<PageTransition><PrivacyPolicyPage /></PageTransition>} />
+        <Route path="/terms" element={<PageTransition><TermsOfServicePage /></PageTransition>} />
+        <Route path="/cookies" element={<PageTransition><CookiePolicyPage /></PageTransition>} />
+        <Route path="/security" element={<PageTransition><SecurityPolicyPage /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );
