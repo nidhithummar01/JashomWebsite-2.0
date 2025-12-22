@@ -74,7 +74,7 @@ export function PrivacyPolicyPage() {
       <li>Request correction or deletion of your data</li>
       <li>Withdraw consent for marketing communications</li>
     </ul>
-    <p>To exercise your rights, contact us at <a href="mailto:jay@jashom.com">jay@jashom.com</a>.</p>
+    <p>To exercise your rights, contact us at <a href="mailto:info@jashom.com">info@jashom.com</a>.</p>
     
     <hr style="border-color: rgba(255,255,255,0.1); margin: 2rem 0;" />
     
@@ -85,7 +85,7 @@ export function PrivacyPolicyPage() {
     
     <h2>7. Contact Us</h2>
     <p>For privacy-related questions, contact us at:</p>
-    <p><a href="mailto:jay@jashom.com">jay@jashom.com</a></p>
+    <p><a href="mailto:info@jashom.com">info@jashom.com</a></p>
     <p><a href="https://www.jashom.com">www.jashom.com</a></p>
   `;
 

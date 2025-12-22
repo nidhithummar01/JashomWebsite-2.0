@@ -42,7 +42,7 @@ export function SecurityPolicyPage() {
     <hr style="border-color: rgba(255,255,255,0.1); margin: 2rem 0;" />
     
     <h2>5. Contact for Security Issues</h2>
-    <p><a href="mailto:jay@jashom.com">jay@jashom.com</a></p>
+    <p><a href="mailto:info@jashom.com">info@jashom.com</a></p>
   `;
 
   return (

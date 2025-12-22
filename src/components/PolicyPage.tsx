@@ -72,8 +72,8 @@ export function PolicyPage({ title, description, content, lastUpdated }: PolicyP
           transition={{ delay: 0.4 }}
         >
           <p>If you have questions about this policy, please contact us at{' '}
-            <a href="mailto:jay@jashom.com" className="text-[#d1d5db] hover:text-white underline">
-              jay@jashom.com
+            <a href="mailto:info@jashom.com" className="text-[#d1d5db] hover:text-white underline">
+              info@jashom.com
             </a>
           </p>
         </motion.div>
