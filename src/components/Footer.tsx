@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Youtube } from 'lucide-react';
 
 // Reddit icon component (lucide-react doesn't have Reddit icon)
 const RedditIcon = ({ className }: { className?: string }) => (
@@ -58,6 +58,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Linkedin, href: 'https://www.linkedin.com/company/jashom/', label: 'LinkedIn' },
     { icon: Instagram, href: 'https://www.instagram.com/jashomtechnologies_?igsh=NzhmejJwcHFveDA1&utm_source=qr', label: 'Instagram' },
+    { icon: Youtube, href: 'https://youtube.com/@infojashom?si=9m-oTFvAQRvPX0Fy', label: 'YouTube' },
     { icon: RedditIcon, href: 'https://www.reddit.com/user/JashomTechnologies_/', label: 'Reddit' }
   ];
 
