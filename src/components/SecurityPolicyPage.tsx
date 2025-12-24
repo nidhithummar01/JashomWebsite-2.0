@@ -50,7 +50,6 @@ export function SecurityPolicyPage() {
       title="Security Policy"
       description="Learn about Jashom's enterprise-grade security practices and compliance certifications."
       content={content}
-      lastUpdated="22-12-2025"
     />
   );
 }

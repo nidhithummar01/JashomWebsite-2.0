@@ -2,7 +2,6 @@ import { PolicyPage } from './PolicyPage';
 
 export function TermsOfServicePage() {
   const content = `
-    <p><strong>Effective Date:</strong> 22-12-2025</p>
     <p>By accessing or using the Jashom website and services, you agree to the following Terms of Service.</p>
     
     <hr style="border-color: rgba(255,255,255,0.1); margin: 2rem 0;" />
@@ -53,7 +52,6 @@ export function TermsOfServicePage() {
       title="Terms of Service"
       description="Terms and conditions for using Jashom's services and platforms."
       content={content}
-      lastUpdated="22-12-2025"
     />
   );
 }

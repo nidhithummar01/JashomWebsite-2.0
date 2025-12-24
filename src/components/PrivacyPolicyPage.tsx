@@ -2,8 +2,6 @@ import { PolicyPage } from './PolicyPage';
 
 export function PrivacyPolicyPage() {
   const content = `
-    <p><strong>Effective Date:</strong> 22-12-2025</p>
-    <p><strong>Last Updated:</strong> 22-12-2025</p>
     <p>At Jashom Technologies Pvt. Ltd. ("Jashom", "we", "our", "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
     
     <hr style="border-color: rgba(255,255,255,0.1); margin: 2rem 0;" />
@@ -94,7 +92,6 @@ export function PrivacyPolicyPage() {
       title="Privacy Policy"
       description="Jashom's commitment to protecting your privacy and data security."
       content={content}
-      lastUpdated="22-12-2025"
     />
   );
 }

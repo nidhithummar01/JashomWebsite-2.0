@@ -39,7 +39,6 @@ export function CookiePolicyPage() {
       title="Cookie Policy"
       description="Information about how Jashom uses cookies and similar technologies."
       content={content}
-      lastUpdated="22-12-2025"
     />
   );
 }
