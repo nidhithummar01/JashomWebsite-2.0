@@ -1,13 +1,20 @@
-# Production stage
+# ---------- Build Stage ----------
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+
+# ---------- Production Stage ----------
 FROM nginx:1.27-alpine
 
-# Install runtime deps
 RUN apk add --no-cache libpng tiff curl
 
-# Create non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Create writable dirs for nginx
 RUN mkdir -p /tmp/nginx/client_temp \
              /tmp/nginx/proxy_temp \
              /tmp/nginx/fastcgi_temp \
@@ -15,10 +22,8 @@ RUN mkdir -p /tmp/nginx/client_temp \
              /tmp/nginx/scgi_temp \
     && chown -R appuser:appgroup /tmp/nginx
 
-# Copy build output
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Replace nginx config
 RUN printf '%s\n' \
 'pid /tmp/nginx.pid;' \
 'worker_processes auto;' \
@@ -39,10 +44,8 @@ RUN printf '%s\n' \
 '  }' \
 '}' > /etc/nginx/nginx.conf
 
-# Fix ownership
 RUN chown -R appuser:appgroup /usr/share/nginx /etc/nginx
 
-# Disable entrypoint scripts (they try to write /etc)
 RUN rm -rf /docker-entrypoint.d/*
 
 USER appuser
