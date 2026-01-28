@@ -3,12 +3,6 @@ services:
     image: docker.jashom.com/jashom-web:${TAG}
     container_name: jashom-web
 
-    read_only: true
-
-    tmpfs:
-      - /tmp
-      - /var/run
-
     ports:
       - "2128:8080"
 
