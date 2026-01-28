@@ -19,28 +19,25 @@ RUN apk update && apk upgrade --no-cache \
 # Create non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Required nginx writable dirs (MUST exist at build time)
-RUN mkdir -p /tmp/nginx/client_temp \
-             /tmp/nginx/proxy_temp \
-             /tmp/nginx/fastcgi_temp \
-             /tmp/nginx/uwsgi_temp \
-             /tmp/nginx/scgi_temp \
-    && chown -R appuser:appgroup /tmp/nginx
+# Prepare nginx writable paths
+RUN mkdir -p /var/cache/nginx \
+             /var/run \
+    && chown -R appuser:appgroup /var/cache/nginx /var/run
 
 # Copy frontend
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Hardened nginx config
+# Nginx config (NO /tmp paths)
 RUN printf '%s\n' \
-'pid /tmp/nginx.pid;' \
+'pid /var/run/nginx.pid;' \
 'worker_processes auto;' \
 'events { worker_connections 1024; }' \
 'http {' \
-'  client_body_temp_path /tmp/nginx/client_temp;' \
-'  proxy_temp_path /tmp/nginx/proxy_temp;' \
-'  fastcgi_temp_path /tmp/nginx/fastcgi_temp;' \
-'  uwsgi_temp_path /tmp/nginx/uwsgi_temp;' \
-'  scgi_temp_path /tmp/nginx/scgi_temp;' \
+'  client_body_temp_path /var/cache/nginx/client_temp;' \
+'  proxy_temp_path /var/cache/nginx/proxy_temp;' \
+'  fastcgi_temp_path /var/cache/nginx/fastcgi_temp;' \
+'  uwsgi_temp_path /var/cache/nginx/uwsgi_temp;' \
+'  scgi_temp_path /var/cache/nginx/scgi_temp;' \
 '  include /etc/nginx/mime.types;' \
 '  default_type application/octet-stream;' \
 '  server {' \
@@ -55,10 +52,7 @@ RUN printf '%s\n' \
 '  }' \
 '}' > /etc/nginx/nginx.conf
 
-# Permissions
 RUN chown -R appuser:appgroup /usr/share/nginx /etc/nginx
-
-# Disable nginx default entrypoint mutations
 RUN rm -rf /docker-entrypoint.d/*
 
 USER appuser
