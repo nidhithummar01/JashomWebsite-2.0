@@ -8,10 +8,10 @@ COPY . .
 RUN npm run build
 
 
-# ---------- Production Stage ----------
+# ---------- Runtime Stage ----------
 FROM nginx:1.27-alpine3.20
 
-# Patch all base CVEs
+# Patch CVEs
 RUN apk update && apk upgrade --no-cache \
     && apk add --no-cache libpng tiff curl libxml2 expat \
     && rm -rf /var/cache/apk/*
@@ -19,7 +19,7 @@ RUN apk update && apk upgrade --no-cache \
 # Create non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Nginx temp dirs for read-only root fs
+# Required nginx writable dirs (MUST exist at build time)
 RUN mkdir -p /tmp/nginx/client_temp \
              /tmp/nginx/proxy_temp \
              /tmp/nginx/fastcgi_temp \
@@ -27,10 +27,10 @@ RUN mkdir -p /tmp/nginx/client_temp \
              /tmp/nginx/scgi_temp \
     && chown -R appuser:appgroup /tmp/nginx
 
-# Copy built frontend
+# Copy frontend
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Harden nginx config
+# Hardened nginx config
 RUN printf '%s\n' \
 'pid /tmp/nginx.pid;' \
 'worker_processes auto;' \
@@ -58,7 +58,7 @@ RUN printf '%s\n' \
 # Permissions
 RUN chown -R appuser:appgroup /usr/share/nginx /etc/nginx
 
-# Remove entrypoint scripts
+# Disable nginx default entrypoint mutations
 RUN rm -rf /docker-entrypoint.d/*
 
 USER appuser
