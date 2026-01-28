@@ -6,11 +6,11 @@ services:
     read_only: true
 
     tmpfs:
-      - /var/cache/nginx:uid=1000,gid=1000,mode=0755
-      - /var/run:uid=1000,gid=1000,mode=0755
+      - /tmp
+      - /var/run
 
     ports:
-      - "2128:80"
+      - "2128:8080"
 
     restart: unless-stopped
 
