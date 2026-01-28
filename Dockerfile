@@ -1,43 +1,27 @@
-# ---------- Build Stage ----------
-FROM node:20-alpine AS builder
-
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-
 # ---------- Runtime Stage ----------
 FROM nginx:1.27-alpine3.20
 
-# Patch CVEs
 RUN apk update && apk upgrade --no-cache \
     && apk add --no-cache libpng tiff curl libxml2 expat \
     && rm -rf /var/cache/apk/*
 
-# Create non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Prepare nginx writable paths
-RUN mkdir -p /var/cache/nginx \
-             /var/run \
+RUN mkdir -p /var/cache/nginx /var/run \
     && chown -R appuser:appgroup /var/cache/nginx /var/run
 
-# Copy frontend
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Nginx config (NO /tmp paths)
 RUN printf '%s\n' \
 'pid /var/run/nginx.pid;' \
 'worker_processes auto;' \
 'events { worker_connections 1024; }' \
 'http {' \
-'  client_body_temp_path /var/cache/nginx/client_temp;' \
-'  proxy_temp_path /var/cache/nginx/proxy_temp;' \
-'  fastcgi_temp_path /var/cache/nginx/fastcgi_temp;' \
-'  uwsgi_temp_path /var/cache/nginx/uwsgi_temp;' \
-'  scgi_temp_path /var/cache/nginx/scgi_temp;' \
+'  client_body_temp_path /var/cache/nginx;' \
+'  proxy_temp_path /var/cache/nginx;' \
+'  fastcgi_temp_path /var/cache/nginx;' \
+'  uwsgi_temp_path /var/cache/nginx;' \
+'  scgi_temp_path /var/cache/nginx;' \
 '  include /etc/nginx/mime.types;' \
 '  default_type application/octet-stream;' \
 '  server {' \
