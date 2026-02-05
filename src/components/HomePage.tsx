@@ -5,7 +5,8 @@ import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
 import { ParticleBackground } from './ParticleBackground';
-import { ServicesSlider } from './ServicesSlider';
+// COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase
+// import { ServicesSlider } from './ServicesSlider';
 import {
   Cpu,
   Zap,
@@ -181,8 +182,8 @@ export function HomePage() {
 
       <CircuitDivider />
 
-      {/* Services Slider */}
-      <ServicesSlider />
+      {/* COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase */}
+      {/* <ServicesSlider /> */}
 
       <div className="flex justify-center pb-12 sm:pb-20 px-4">
         <Link

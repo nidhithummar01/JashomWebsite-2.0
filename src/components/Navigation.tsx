@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { ContactModal } from './ContactModal';
 
 const menuItemVariants = {
   closed: { opacity: 0, x: -20 },
@@ -12,11 +13,26 @@ export function Navigation() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [clickedServiceCategory, setClickedServiceCategory] = useState<string | null>(null);
   const [openSubMenus, setOpenSubMenus] = useState<{ [key: string]: boolean }>({});
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const navItems = [
     { path: '/', label: 'Home' },
+    // NEW SERVICES NAVBAR (CLEAN)
+    {
+      label: 'Services',
+      dropdown: [
+        { path: '/gpu-optimization-service', label: 'GPU Optimization Service' },
+        { path: '/cuda-development-service', label: 'CUDA Development Service' }
+      ]
+    },
+    // HIRE EXPERT WITH HOVER DROPDOWN
+    {
+      label: 'Hire Expert',
+      dropdown: [
+        { path: '/hire-cuda-developer', label: 'Hire CUDA Developer' }
+      ]
+    },
     {
       label: 'About Us',
       dropdown: [
@@ -26,6 +42,8 @@ export function Navigation() {
         { path: '/about/career', label: 'Career' }
       ]
     },
+    // COMMENTED OUT - Old Services temporarily hidden from UI but preserved in codebase
+    /*
     {
       label: 'Services',
       dropdown: [
@@ -65,6 +83,9 @@ export function Navigation() {
         }
       ]
     },
+    */
+    // COMMENTED OUT - Solutions temporarily hidden from UI but preserved in codebase
+    /*
     {
       label: 'Solutions',
       dropdown: [
@@ -77,6 +98,9 @@ export function Navigation() {
         { path: '/solutions/foodtech', label: 'FoodTech' }
       ]
     },
+    */
+    // COMMENTED OUT - AI for Industry temporarily hidden from UI but preserved in codebase
+    /*
     {
       label: 'AI for Industry',
       dropdown: [
@@ -88,22 +112,25 @@ export function Navigation() {
         { path: '/ai-for-industry/rnd', label: 'AI for R&D' }
       ]
     },
-    { path: '/contact', label: 'Contact' },
+    */
+    // Thank You Page - accessible but not promoted (used for redirects)
+    { path: '/thank-you', label: 'Thank You Page' },
+    // Contact Us will be handled separately as modal trigger
   ];
 
   const handleLinkClick = () => {
     setIsOpen(false);
     setActiveDropdown(null);
-    setClickedServiceCategory(null);
   };
 
   return (
-    <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-[#333333]"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
-    >
+    <>
+      <motion.nav
+        className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-[#333333]"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           <Link to="/" className="flex items-center flex-shrink-0">
@@ -134,42 +161,13 @@ export function Navigation() {
                   <div
                     className="relative"
                     onMouseEnter={() => {
-                      // Solutions and Services open on hover (desktop only)
-                      if (item.label === 'Solutions' || item.label === 'Services') {
-                        setActiveDropdown(item.label);
-                      } else {
-                        setActiveDropdown(item.label);
-                      }
+                      setActiveDropdown(item.label);
                     }}
                     onMouseLeave={() => {
-                      // Solutions: Close on mouse leave
-                      // Services: Only close dropdown if no category is clicked
-                      if (item.label === 'Solutions') {
-                        setActiveDropdown(null);
-                      } else if (item.label === 'Services') {
-                        if (clickedServiceCategory === null) {
-                          setActiveDropdown(null);
-                        }
-                      } else {
-                        setActiveDropdown(null);
-                        setClickedServiceCategory(null);
-                      }
+                      setActiveDropdown(null);
                     }}
                   >
                     <button
-                      onClick={() => {
-                        // Services: Click to toggle dropdown (click-only, no hover)
-                        if (item.label === 'Services') {
-                          if (activeDropdown === item.label) {
-                            // Close dropdown and reset clicked category
-                            setActiveDropdown(null);
-                            setClickedServiceCategory(null);
-                          } else {
-                            // Open dropdown
-                            setActiveDropdown(item.label);
-                          }
-                        }
-                      }}
                       className="flex items-center gap-1 text-white hover:text-gray-300 transition-colors"
                     >
                       <motion.span
@@ -188,122 +186,59 @@ export function Navigation() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
                           onMouseEnter={() => {
-                            // Keep Solutions dropdown open on hover
-                            // Services: Keep open if category is clicked
-                            if (item.label === 'Solutions') {
-                              setActiveDropdown(item.label);
-                            } else if (item.label === 'Services') {
-                              // Keep Services dropdown open if category is clicked
-                              if (clickedServiceCategory !== null) {
-                                setActiveDropdown(item.label);
-                              }
-                            } else {
-                              setActiveDropdown(item.label);
-                            }
+                            setActiveDropdown(item.label);
                           }}
                           onMouseLeave={() => {
-                            // Solutions: Close on mouse leave
-                            // Services: Only close dropdown if no category is clicked
-                            if (item.label === 'Solutions') {
-                              setActiveDropdown(null);
-                            } else if (item.label === 'Services') {
-                              if (clickedServiceCategory === null) {
-                                setActiveDropdown(null);
-                              }
-                            } else {
-                              setActiveDropdown(null);
-                            }
+                            setActiveDropdown(null);
                           }}
-                          onClick={(e) => {
-                            if (item.label === 'Services' && !(e.target as HTMLElement).closest('button')) {
-                              e.stopPropagation();
-                            }
-                          }}
-                          className={`absolute top-full left-0 mt-2 glass-effect rounded-xl border border-white/10 overflow-visible max-h-[80vh] overflow-y-auto z-50 ${item.label === 'About Us' ? 'w-48 xl:w-56 p-2 flex flex-col gap-2' : item.label === 'Services' ? 'w-64 xl:w-72' : 'w-56 xl:w-64'
-                            }`}
+                          className={`absolute top-full left-0 mt-2 z-50 ${
+                            item.label === 'About Us' 
+                              ? 'w-48 xl:w-56 p-2 flex flex-col gap-2 glass-effect rounded-xl border border-white/10' 
+                              : item.label === 'Services'
+                              ? 'w-80 xl:w-96 p-2 flex flex-col gap-1 glass-effect rounded-xl border border-white/10'
+                              : item.label === 'Hire Expert'
+                              ? 'p-3 flex flex-row gap-4 glass-effect rounded-xl border border-white/10 whitespace-nowrap'
+                              : 'w-56 xl:w-64 glass-effect rounded-xl border border-white/10'
+                          }`}
                         >
-                          {item.dropdown.map((subItem, subIndex) => {
-                            // Check if this is a Services category with sub-items
-                            const hasSubItems = (subItem as any).subItems && (subItem as any).subItems.length > 0;
-                            
-                            if (hasSubItems && item.label === 'Services') {
-                              // Services: Click-based behavior for categories
-                              const isClicked = clickedServiceCategory === subItem.label;
-                              const hasClickedCategory = clickedServiceCategory !== null;
-                              
-                              // If a category is clicked, only show that category and its sub-items
-                              // Otherwise, show all categories (hover state)
-                              if (hasClickedCategory && !isClicked) {
-                                return null; // Hide other categories when one is clicked
-                              }
-                              
-                              return (
-                                <div key={subItem.label || subIndex}>
-                                  <button
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      e.stopPropagation();
-                                      // Toggle clicked category
-                                      if (clickedServiceCategory === subItem.label) {
-                                        setClickedServiceCategory(null);
-                                      } else {
-                                        setClickedServiceCategory(subItem.label);
-                                      }
-                                    }}
-                                    onMouseEnter={(e) => {
-                                      // Prevent hover expansion - only click works
-                                      e.stopPropagation();
-                                    }}
-                                    className={`w-full px-4 py-3 flex items-center justify-between text-white hover:bg-white/10 transition-colors cursor-pointer ${isClicked ? 'bg-white/10' : ''}`}
-                                  >
-                                    <span className="whitespace-nowrap">{subItem.label}</span>
-                                    <ChevronDown className={`w-4 h-4 transition-transform ${isClicked ? 'rotate-180' : ''}`} />
-                                  </button>
-                                  {isClicked && (
-                                    <motion.div
-                                      initial={{ opacity: 0, height: 0 }}
-                                      animate={{ opacity: 1, height: 'auto' }}
-                                      exit={{ opacity: 0, height: 0 }}
-                                      className="overflow-hidden"
-                                      onMouseEnter={(e) => {
-                                        // Keep dropdown open when hovering over sub-items
-                                        e.stopPropagation();
-                                      }}
-                                    >
-                                      <div className="pl-4">
-                                        {(subItem as any).subItems.map((subSubItem: any) => (
-                                          <Link
-                                            key={subSubItem.path}
-                                            to={subSubItem.path}
-                                            onClick={() => {
-                                              handleLinkClick();
-                                              // Close Services dropdown when clicking a sub-item
-                                              setActiveDropdown(null);
-                                              setClickedServiceCategory(null);
-                                            }}
-                                            className={`block px-4 py-3 transition-colors whitespace-nowrap ${location.pathname === subSubItem.path
-                                              ? 'text-white bg-white/10'
-                                              : 'text-white hover:bg-white/10 hover:text-white'
-                                              }`}
-                                          >
-                                            {subSubItem.label}
-                                          </Link>
-                                        ))}
-                                      </div>
-                                    </motion.div>
-                                  )}
-                                </div>
-                              );
-                            }
-                            
-                            // Regular dropdown item
-                            if (!(subItem as any).path) return null;
-                            return (
+                          {item.label === 'Services' ? (
+                            // SERVICES DROPDOWN - VERTICAL LAYOUT (ONE ITEM PER ROW, NO TEXT WRAPPING)
+                            item.dropdown.map((service) => (
+                              <Link
+                                key={(service as any).path}
+                                to={(service as any).path}
+                                onClick={handleLinkClick}
+                                className={`block transition-colors px-4 py-3 rounded-lg whitespace-nowrap ${location.pathname === (service as any).path
+                                  ? 'text-white bg-white/10'
+                                  : 'text-white hover:bg-white/10 hover:text-white'
+                                }`}
+                              >
+                                {service.label}
+                              </Link>
+                            ))
+                          ) : item.label === 'Hire Expert' ? (
+                            // HIRE EXPERT DROPDOWN - HORIZONTAL LAYOUT
+                            item.dropdown.map((subItem) => (
                               <Link
                                 key={(subItem as any).path}
                                 to={(subItem as any).path}
                                 onClick={handleLinkClick}
-                                className={`block transition-colors ${item.label === 'AI for Industry' ? 'whitespace-nowrap' : ''} ${item.label === 'About Us' ? 'px-4 py-2 rounded-lg' : 'px-4 py-3'
+                                className={`transition-colors px-4 py-3 rounded-lg whitespace-nowrap ${location.pathname === (subItem as any).path
+                                  ? 'text-white bg-white/10'
+                                  : 'text-white hover:bg-white/10 hover:text-white'
+                                }`}
+                              >
+                                {subItem.label}
+                              </Link>
+                            ))
+                          ) : (
+                            // REGULAR DROPDOWN
+                            item.dropdown.map((subItem) => (
+                              <Link
+                                key={(subItem as any).path}
+                                to={(subItem as any).path}
+                                onClick={handleLinkClick}
+                                className={`block transition-colors ${item.label === 'About Us' ? 'px-4 py-2 rounded-lg' : 'px-4 py-3'
                                   } ${location.pathname === (subItem as any).path
                                     ? 'text-white bg-white/10'
                                     : 'text-white hover:bg-white/10 hover:text-white'
@@ -311,8 +246,8 @@ export function Navigation() {
                               >
                                 {subItem.label}
                               </Link>
-                            );
-                          })}
+                            ))
+                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -342,6 +277,22 @@ export function Navigation() {
                 )}
               </motion.div>
             ))}
+            
+            {/* CONTACT US BUTTON - Opens Modal */}
+            <motion.button
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navItems.length * 0.05 }}
+              onClick={() => setIsContactModalOpen(true)}
+              className="relative text-white hover:text-gray-300 transition-colors"
+            >
+              <motion.span
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                Contact Us
+              </motion.span>
+            </motion.button>
           </div>
 
           {/* Mobile menu button */}
@@ -510,6 +461,18 @@ export function Navigation() {
                     )}
                   </motion.div>
                 ))}
+                
+                {/* CONTACT US BUTTON - Mobile */}
+                <motion.button
+                  variants={menuItemVariants}
+                  onClick={() => {
+                    setIsContactModalOpen(true);
+                    handleLinkClick();
+                  }}
+                  className="block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base text-white hover:bg-white/10 hover:text-white w-full text-left"
+                >
+                  Contact Us
+                </motion.button>
               </div>
               </motion.div>
             </>
@@ -517,5 +480,12 @@ export function Navigation() {
         </AnimatePresence>
       </div>
     </motion.nav>
+    
+    {/* Contact Modal */}
+    <ContactModal 
+      isOpen={isContactModalOpen} 
+      onClose={() => setIsContactModalOpen(false)} 
+    />
+    </>
   );
 }

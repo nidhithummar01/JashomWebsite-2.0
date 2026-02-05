@@ -145,6 +145,20 @@ export function TeamPage() {
                               maxWidth: '100%',
                               maxHeight: '100%'
                             }}
+                            onError={(e) => {
+                              // Fallback to initials if image fails to load
+                              const target = e.target as HTMLImageElement;
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="w-full h-full rounded-full bg-white/5 border-2 border-white/20 flex items-center justify-center">
+                                    <span class="text-white/40 text-2xl sm:text-3xl font-semibold">
+                                      ${member.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                                    </span>
+                                  </div>
+                                `;
+                              }
+                            }}
                           />
                         </div>
                       ) : (

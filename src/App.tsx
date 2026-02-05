@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
-import { ServicesPage } from './components/ServicesPage';
+// COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase
+// import { ServicesPage } from './components/ServicesPage';
 import { SolutionsPage } from './components/SolutionsPage';
 import { CapabilityMatrixPage } from './components/CapabilityMatrixPage';
 import { PortfolioPage } from './components/PortfolioPage';
@@ -14,6 +15,11 @@ import { HTICUDAAccelerationPage } from './components/portfolio/HTICUDAAccelerat
 import { ContactPage } from './components/ContactPage';
 import { BrochurePage } from './components/BrochurePage';
 import { PlaceholderPage } from './components/PlaceholderPage';
+// NEW PAGE IMPORTS
+import { HireCudaDeveloperPage } from './components/HireCudaDeveloperPage';
+import { ThankYouPage } from './components/ThankYouPage';
+import { GPUOptimizationServicePage } from './components/GPUOptimizationServicePage';
+import { CUDADevelopmentServicePage } from './components/CUDADevelopmentServicePage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { CookiePolicyPage } from './components/CookiePolicyPage';
@@ -23,34 +29,37 @@ import { AboutPortfolioPage } from './components/about/AboutPortfolioPage';
 import { PageTransition } from './components/PageTransition';
 import { ScrollProgress } from './components/ScrollProgress';
 import { AnimatePresence } from 'motion/react';
-import { AIAutomationPage } from './components/services/AIAutomationPage';
-import { AIGPUOptimizationPage } from './components/services/AIGPUOptimizationPage';
-import { RAGApplicationsPage } from './components/services/RAGApplicationsPage';
-import { DevOpsCloudPage } from './components/services/DevOpsCloudPage';
-import { DevOpsDevSecOpsPage } from './components/services/DevOpsDevSecOpsPage';
-import { VAPTPage } from './components/services/VAPTPage';
-import { ProductEngineeringPage } from './components/services/ProductEngineeringPage';
-import { AIAgenticPage } from './components/services/AIAgenticPage';
-import { CustomDevelopmentPage } from './components/services/CustomDevelopmentPage';
-import { CyberSecurityPage } from './components/services/CyberSecurityPage';
-import { EdgeComputingPage } from './components/services/EdgeComputingPage';
-import { CICDAutomationPage } from './components/services/CICDAutomationPage';
-import { ComplianceRiskPage } from './components/services/ComplianceRiskPage';
-import { MicroSaaSPage } from './components/services/MicroSaaSPage';
-import { HealthTechPage } from './components/solutions/HealthTechPage';
-import { FoodTechPage } from './components/solutions/FoodTechPage';
-import { EnvironmentTechPage } from './components/solutions/EnvironmentTechPage';
-import { RetailTechPage } from './components/solutions/RetailTechPage';
-import { SupplyChainPage } from './components/solutions/SupplyChainPage';
-import { FinTechPage } from './components/solutions/FinTechPage';
-import { LegalTaxPage } from './components/solutions/LegalTaxPage';
-import { AIForIndustryPage } from './components/industry/AIForIndustryPage';
-import { AIForSalesPage } from './components/industry/AIForSalesPage';
-import { AIForLegalPage } from './components/industry/AIForLegalPage';
-import { AIForAccountingPage } from './components/industry/AIForAccountingPage';
-import { AIForHealthcarePage } from './components/industry/AIForHealthcarePage';
-import { AIForMarketingPage } from './components/industry/AIForMarketingPage';
-import { AIForRnDPage } from './components/industry/AIForRnDPage';
+// COMMENTED OUT - Service page imports temporarily hidden from UI but preserved in codebase
+// import { AIAutomationPage } from './components/services/AIAutomationPage';
+// import { AIGPUOptimizationPage } from './components/services/AIGPUOptimizationPage';
+// import { RAGApplicationsPage } from './components/services/RAGApplicationsPage';
+// import { DevOpsCloudPage } from './components/services/DevOpsCloudPage';
+// import { DevOpsDevSecOpsPage } from './components/services/DevOpsDevSecOpsPage';
+// import { VAPTPage } from './components/services/VAPTPage';
+// import { ProductEngineeringPage } from './components/services/ProductEngineeringPage';
+// import { AIAgenticPage } from './components/services/AIAgenticPage';
+// import { CustomDevelopmentPage } from './components/services/CustomDevelopmentPage';
+// import { CyberSecurityPage } from './components/services/CyberSecurityPage';
+// import { EdgeComputingPage } from './components/services/EdgeComputingPage';
+// import { CICDAutomationPage } from './components/services/CICDAutomationPage';
+// import { ComplianceRiskPage } from './components/services/ComplianceRiskPage';
+// import { MicroSaaSPage } from './components/services/MicroSaaSPage';
+// COMMENTED OUT - Solutions page imports temporarily hidden from UI but preserved in codebase
+// import { HealthTechPage } from './components/solutions/HealthTechPage';
+// import { FoodTechPage } from './components/solutions/FoodTechPage';
+// import { EnvironmentTechPage } from './components/solutions/EnvironmentTechPage';
+// import { RetailTechPage } from './components/solutions/RetailTechPage';
+// import { SupplyChainPage } from './components/solutions/SupplyChainPage';
+// import { FinTechPage } from './components/solutions/FinTechPage';
+// import { LegalTaxPage } from './components/solutions/LegalTaxPage';
+// COMMENTED OUT - AI for Industry page imports temporarily hidden from UI but preserved in codebase
+// import { AIForIndustryPage } from './components/industry/AIForIndustryPage';
+// import { AIForSalesPage } from './components/industry/AIForSalesPage';
+// import { AIForLegalPage } from './components/industry/AIForLegalPage';
+// import { AIForAccountingPage } from './components/industry/AIForAccountingPage';
+// import { AIForHealthcarePage } from './components/industry/AIForHealthcarePage';
+// import { AIForMarketingPage } from './components/industry/AIForMarketingPage';
+// import { AIForRnDPage } from './components/industry/AIForRnDPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -69,7 +78,8 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
-        <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} />
+        {/* COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase */}
+        {/* <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} /> */}
         <Route path="/solutions" element={<PageTransition><SolutionsPage /></PageTransition>} />
         <Route path="/capability" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
         <Route path="/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
@@ -80,8 +90,16 @@ function AnimatedRoutes() {
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
         <Route path="/brochure" element={<PageTransition><BrochurePage /></PageTransition>} />
 
-        {/* Service Routes */}
-        <Route path="/services/ai-automation" element={<PageTransition><AIAutomationPage /></PageTransition>} />
+        {/* NEW ROUTES - Hire Expert and Thank You Page */}
+        <Route path="/hire-cuda-developer" element={<PageTransition><HireCudaDeveloperPage /></PageTransition>} />
+        <Route path="/thank-you" element={<PageTransition><ThankYouPage /></PageTransition>} />
+
+        {/* NEW SERVICES ROUTES */}
+        <Route path="/gpu-optimization-service" element={<PageTransition><GPUOptimizationServicePage /></PageTransition>} />
+        <Route path="/cuda-development-service" element={<PageTransition><CUDADevelopmentServicePage /></PageTransition>} />
+
+        {/* COMMENTED OUT - Service Routes temporarily hidden from UI but preserved in codebase */}
+        {/* <Route path="/services/ai-automation" element={<PageTransition><AIAutomationPage /></PageTransition>} />
         <Route path="/services/ai-gpu-optimization" element={<PageTransition><AIGPUOptimizationPage /></PageTransition>} />
         <Route path="/services/rag-applications" element={<PageTransition><RAGApplicationsPage /></PageTransition>} />
         <Route path="/services/devops-cloud" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
@@ -94,25 +112,25 @@ function AnimatedRoutes() {
         <Route path="/services/edge-computing" element={<PageTransition><EdgeComputingPage /></PageTransition>} />
         <Route path="/services/cicd-automation" element={<PageTransition><CICDAutomationPage /></PageTransition>} />
         <Route path="/services/compliance-risk" element={<PageTransition><ComplianceRiskPage /></PageTransition>} />
-        <Route path="/services/micro-saas" element={<PageTransition><MicroSaaSPage /></PageTransition>} />
+        <Route path="/services/micro-saas" element={<PageTransition><MicroSaaSPage /></PageTransition>} /> */}
 
-        {/* Solution Routes */}
-        <Route path="/solutions/healthtech" element={<PageTransition><HealthTechPage /></PageTransition>} />
+        {/* COMMENTED OUT - Solution Routes temporarily hidden from UI but preserved in codebase */}
+        {/* <Route path="/solutions/healthtech" element={<PageTransition><HealthTechPage /></PageTransition>} />
         <Route path="/solutions/foodtech" element={<PageTransition><FoodTechPage /></PageTransition>} />
         <Route path="/solutions/environmenttech" element={<PageTransition><EnvironmentTechPage /></PageTransition>} />
         <Route path="/solutions/retail-tech" element={<PageTransition><RetailTechPage /></PageTransition>} />
         <Route path="/solutions/supply-chain" element={<PageTransition><SupplyChainPage /></PageTransition>} />
         <Route path="/solutions/fintech" element={<PageTransition><FinTechPage /></PageTransition>} />
-        <Route path="/solutions/legal-and-tax" element={<PageTransition><LegalTaxPage /></PageTransition>} />
+        <Route path="/solutions/legal-and-tax" element={<PageTransition><LegalTaxPage /></PageTransition>} /> */}
 
-        {/* AI for Industry Routes */}
-        <Route path="/ai-for-industry" element={<PageTransition><AIForIndustryPage /></PageTransition>} />
+        {/* COMMENTED OUT - AI for Industry Routes temporarily hidden from UI but preserved in codebase */}
+        {/* <Route path="/ai-for-industry" element={<PageTransition><AIForIndustryPage /></PageTransition>} />
         <Route path="/ai-for-industry/sales" element={<PageTransition><AIForSalesPage /></PageTransition>} />
         <Route path="/ai-for-industry/legal" element={<PageTransition><AIForLegalPage /></PageTransition>} />
         <Route path="/ai-for-industry/accounting" element={<PageTransition><AIForAccountingPage /></PageTransition>} />
         <Route path="/ai-for-industry/healthcare" element={<PageTransition><AIForHealthcarePage /></PageTransition>} />
         <Route path="/ai-for-industry/marketing" element={<PageTransition><AIForMarketingPage /></PageTransition>} />
-        <Route path="/ai-for-industry/rnd" element={<PageTransition><AIForRnDPage /></PageTransition>} />
+        <Route path="/ai-for-industry/rnd" element={<PageTransition><AIForRnDPage /></PageTransition>} /> */}
 
         {/* About Us routes */}
         <Route path="/about/team" element={<PageTransition><TeamPage /></PageTransition>} />
