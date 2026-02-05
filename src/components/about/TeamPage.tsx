@@ -3,7 +3,6 @@ import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { Linkedin } from 'lucide-react';
-import jaySirImage from './jay.sir.img.png';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -36,42 +35,42 @@ export function TeamPage() {
       role: 'Founder',
       bio: 'Visionary founder leading the company\'s strategy, innovation, and long-term growth.',
       linkedin: 'https://www.linkedin.com/in/jayksdave',
-      image: jaySirImage
+      image: '/images/team/jay-dave.jpg'
     },
     {
       name: 'Maxime Derian',
       role: 'Partner (Europe Region)',
       bio: 'Leads business growth and partnerships across the European market.',
       linkedin: 'https://www.linkedin.com/in/maxime-derian/',
-      image: '/team-images/maxime-derian.jpg'
+      image: '/images/team/maxime-derian.jpg'
     },
     {
       name: 'Soham Thaker',
       role: 'Tech Lead',
       bio: 'Leads technical strategy and architecture, ensuring scalable and high-quality solutions across projects.',
       linkedin: 'https://www.linkedin.com/in/thakersoham/',
-      image: '/team-images/soham-thaker.jpg'
+      image: '/images/team/soham-thaker.jpg'
     },
     {
       name: 'Dhwanan Gadani',
       role: 'Partner & Delivery Head',
       bio: 'Manages project delivery and client success, ensuring timely execution and quality outcomes.',
       linkedin: 'https://www.linkedin.com/in/dhwanan',
-      image: '/team-images/dhwanan-gadani.jpg'
+      image: '/images/team/dhwanan-gadani.jpg'
     },
     {
       name: 'Archana Trivedi',
       role: 'Operations Manager',
       bio: 'Oversees day-to-day operations to ensure smooth execution, efficiency, and process excellence.',
       linkedin: 'https://www.linkedin.com/in/archana-trivedi-326b65110',
-      image: '/team-images/archana-trivedi.jpg'
+      image: '/images/team/archana-trivedi.jpg'
     },
     {
       name: 'Abhishek Bhagwat',
       role: 'Sales Manager',
       bio: 'Drives sales strategy and client acquisition by aligning business needs with tailored solutions.',
       linkedin: 'https://www.linkedin.com/in/abhishek-bhagwat-037221248/',
-      image: '/team-images/abhishek-bhagwat.jpg'
+      image: '/images/team/abhishek-bhagwat.jpg'
     }
   ];
 
