@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
@@ -74,8 +73,6 @@ export function PortfolioDetailPage({
           </p>
         </motion.div>
 
-        <CircuitDivider />
-
         {/* Core Features */}
         <motion.div
           className="mt-12 sm:mt-16"
@@ -106,7 +103,7 @@ export function PortfolioDetailPage({
         {/* Advanced Features */}
         {advancedFeatures && advancedFeatures.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -135,7 +132,7 @@ export function PortfolioDetailPage({
         {/* Technical Specifications */}
         {technicalSpecs && technicalSpecs.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -164,7 +161,7 @@ export function PortfolioDetailPage({
         {/* Pricing Plans */}
         {pricingPlans && pricingPlans.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -184,7 +181,7 @@ export function PortfolioDetailPage({
         {/* Target Industries */}
         {targetIndustries && targetIndustries.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -213,7 +210,7 @@ export function PortfolioDetailPage({
         {/* ROI Benefits */}
         {roiBenefits && roiBenefits.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -242,7 +239,7 @@ export function PortfolioDetailPage({
         {/* Competitive Advantages */}
         {competitiveAdvantages && competitiveAdvantages.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -271,7 +268,7 @@ export function PortfolioDetailPage({
         {/* Use Cases */}
         {useCases && useCases.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -300,7 +297,7 @@ export function PortfolioDetailPage({
         {/* Security Guarantees */}
         {securityGuarantees && securityGuarantees.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -329,7 +326,7 @@ export function PortfolioDetailPage({
         {/* API Integration */}
         {apiExample && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -348,7 +345,7 @@ export function PortfolioDetailPage({
         {/* Future Roadmap */}
         {futureRoadmap && futureRoadmap.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -377,7 +374,7 @@ export function PortfolioDetailPage({
         {/* Development Status */}
         {developmentStatus && developmentStatus.length > 0 && (
           <motion.div
-            className="mt-12 sm:mt-16"
+            className="mt-16 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -403,11 +400,9 @@ export function PortfolioDetailPage({
           </motion.div>
         )}
 
-        <CircuitDivider />
-
         {/* CTA Section */}
         <motion.div
-          className="mt-12 sm:mt-16 text-center"
+          className="mt-24 sm:mt-32 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

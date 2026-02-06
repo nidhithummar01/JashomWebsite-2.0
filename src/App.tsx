@@ -12,6 +12,15 @@ import { RankzyAIPage } from './components/portfolio/RankzyAIPage';
 import { PodAIClipforgePage } from './components/portfolio/PodAIClipforgePage';
 import { NVTrustGPUAttestationPage } from './components/portfolio/NVTrustGPUAttestationPage';
 import { HTICUDAAccelerationPage } from './components/portfolio/HTICUDAAccelerationPage';
+import { BoostReferralPage } from './components/portfolio/BoostReferralPage';
+import { ProjectSpherePage } from './components/portfolio/ProjectSpherePage';
+import { EnviroPulsePage } from './components/portfolio/EnviroPulsePage';
+import { GreenSpherePage } from './components/portfolio/GreenSpherePage';
+import { EcoBotAIPage } from './components/portfolio/EcoBotAIPage';
+import { JashomHealthPage } from './components/portfolio/JashomHealthPage';
+import { JashomHealthcarePage } from './components/portfolio/JashomHealthcarePage';
+import { JashomICUConnectPage } from './components/portfolio/JashomICUConnectPage';
+import { RAGLUPage } from './components/portfolio/RAGLUPage';
 import { ContactPage } from './components/ContactPage';
 import { BrochurePage } from './components/BrochurePage';
 import { PlaceholderPage } from './components/PlaceholderPage';
@@ -87,6 +96,17 @@ function AnimatedRoutes() {
         <Route path="/portfolio/pod-ai-clipforge" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />
         <Route path="/portfolio/nvtrust-gpu-attestation" element={<PageTransition><NVTrustGPUAttestationPage /></PageTransition>} />
         <Route path="/portfolio/hti-cuda-acceleration" element={<PageTransition><HTICUDAAccelerationPage /></PageTransition>} />
+        
+        {/* Project Detail Routes */}
+        <Route path="/projects/boostreferral" element={<PageTransition><BoostReferralPage /></PageTransition>} />
+        <Route path="/projects/projectsphere" element={<PageTransition><ProjectSpherePage /></PageTransition>} />
+        <Route path="/projects/enviropulse" element={<PageTransition><EnviroPulsePage /></PageTransition>} />
+        <Route path="/projects/greensphere" element={<PageTransition><GreenSpherePage /></PageTransition>} />
+        <Route path="/projects/ecobot-ai" element={<PageTransition><EcoBotAIPage /></PageTransition>} />
+        <Route path="/projects/jashom-health" element={<PageTransition><JashomHealthPage /></PageTransition>} />
+        <Route path="/projects/jashom-healthcare" element={<PageTransition><JashomHealthcarePage /></PageTransition>} />
+        <Route path="/projects/jashom-icu-connect" element={<PageTransition><JashomICUConnectPage /></PageTransition>} />
+        <Route path="/projects/rag-lu" element={<PageTransition><RAGLUPage /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
         <Route path="/brochure" element={<PageTransition><BrochurePage /></PageTransition>} />
 

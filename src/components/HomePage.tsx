@@ -4,7 +4,7 @@ import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
-import { ParticleBackground } from './ParticleBackground';
+import { useEffect, useRef } from 'react';
 // COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase
 // import { ServicesSlider } from './ServicesSlider';
 import {
@@ -48,65 +48,49 @@ const staggerItem = {
 };
 
 export function HomePage() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch((error) => {
+        console.error('Video autoplay failed:', error);
+      });
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black" style={{ width: '100%', overflow: 'hidden' }}>
       <SEO
         title="Jashom. AI - AI & GPU Optimization | Enterprise AI Solutions"
         description="Transform your business with cutting-edge AI and GPU optimization solutions. Industry-leading expertise in machine learning, deep learning, and high-performance computing. Request a demo today."
         keywords="AI optimization, GPU acceleration, machine learning development, artificial intelligence consulting, MLOps, data engineering, AI security, CUDA programming, deep learning, neural networks, computer vision, NLP, enterprise AI"
       />
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Particle Background */}
-        <ParticleBackground />
-
-        {/* Animated background grid */}
-        <motion.div
-          className="absolute inset-0 overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+      {/* Hero Section - Full Screen Edge-to-Edge */}
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black" style={{ margin: 0, padding: 0 }}>
+        {/* Video Background - Full Screen Coverage */}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          style={{ 
+            pointerEvents: 'none',
+            width: '100vw',
+            height: '100vh',
+            objectFit: 'cover'
+          }}
         >
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }} />
-        </motion.div>
+          <source src="/videos/bg.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Enhanced Dark Overlay for Text Readability - NO GRID */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[1]" />
 
-        {/* Glowing orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#ffffff] opacity-20 blur-[120px]"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#d1d5db] opacity-20 blur-[120px]"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.25, 0.2],
-            x: [0, -50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-[10] max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,7 +115,8 @@ export function HomePage() {
             </motion.h1>
 
             <motion.p
-              className="mb-6 sm:mb-8 text-white/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0"
+              className="mb-6 sm:mb-8 text-white max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0 font-medium"
+              style={{ textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -148,7 +133,7 @@ export function HomePage() {
             >
               <Link
                 to="/contact"
-                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base"
+                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base cursor-pointer"
               >
                 Start Your AI Transformation
               </Link>
@@ -156,28 +141,13 @@ export function HomePage() {
                 href="https://calendly.com/jaydave-jashom/new-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base"
+                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base cursor-pointer"
               >
                 Schedule a Meeting
               </a>
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-[#ffffff] flex items-start justify-center p-2">
-            <motion.div
-              className="w-1.5 h-1.5 rounded-full bg-[#ffffff]"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
       </section>
 
       <CircuitDivider />
@@ -188,11 +158,185 @@ export function HomePage() {
       <div className="flex justify-center pb-12 sm:pb-20 px-4">
         <Link
           to="/contact"
-          className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-medium text-center text-sm sm:text-base whitespace-nowrap"
+          className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-medium text-center text-sm sm:text-base whitespace-nowrap cursor-pointer"
         >
           Schedule a Call
         </Link>
       </div>
+
+      <CircuitDivider />
+
+      {/* What We Do Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="mb-12 sm:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What We Do</h2>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            {/* GPU Optimization */}
+            <div className="space-y-4 max-w-xl">
+              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>GPU Optimization</h3>
+              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                We unlock maximum GPU performance through memory optimization, kernel tuning, and throughput engineering. Our solutions deliver measurable speed improvements and cost reductions for production workloads at scale.
+              </p>
+            </div>
+
+            {/* CUDA Development */}
+            <div className="space-y-4 max-w-xl">
+              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>CUDA Development</h3>
+              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                We build custom CUDA solutions for parallel computing and performance-critical systems. From low-level GPU programming to algorithm acceleration, we help organizations extract full value from NVIDIA hardware.
+              </p>
+            </div>
+
+            {/* AI Engineering */}
+            <div className="space-y-4 max-w-xl">
+              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>AI Engineering</h3>
+              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                We develop production-ready AI systems that deliver business impact. Our work spans model optimization, deployment architecture, and integration—moving AI from experimentation to reliable operation.
+              </p>
+            </div>
+
+            {/* Data & Performance Engineering */}
+            <div className="space-y-4 max-w-xl">
+              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Data & Performance Engineering</h3>
+              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                We architect high-performance data systems that handle scale and complexity. Through optimized pipelines and system design, we enable faster insights and more reliable decision-making.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <CircuitDivider />
+
+      {/* Section-5: Trusted by Innovative Teams - Client Showcase & Impact */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-black to-[#0a1a1a]">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Trusted by Innovative Teams Worldwide
+            </h2>
+            <p className="text-white/60 text-sm sm:text-base max-w-3xl mx-auto">
+              Driving AI and GPU-accelerated solutions for modern businesses
+            </p>
+          </motion.div>
+
+          {/* Two Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left Column - Client Showcase */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <h3 className="text-white text-xl sm:text-2xl font-semibold mb-8">
+                Partnering with Industry Leaders
+              </h3>
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  'FinTech Platforms',
+                  'AI Research Teams',
+                  'SaaS Startups',
+                  'Enterprise Engineering',
+                  'Healthcare Systems',
+                  'Data Analytics Firms',
+                  'Cloud Providers',
+                  'Manufacturing Tech'
+                ].map((client, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-white/5 border border-white/10 rounded-lg p-6 flex items-center justify-center text-center transition-all hover:bg-white/10 hover:border-white/20 cursor-default"
+                  >
+                    <span className="text-white/70 text-sm font-medium">{client}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Column - Impact Highlights */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="space-y-6"
+            >
+              <h3 className="text-white text-xl sm:text-2xl font-semibold mb-8">
+                Measurable Impact
+              </h3>
+              
+              {/* Impact Card 1 */}
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
+              >
+                <div className="text-3xl font-bold text-white mb-2">10× Performance Gains</div>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  GPU optimization delivering measurable speedups for compute-heavy workloads.
+                </p>
+              </motion.div>
+
+              {/* Impact Card 2 */}
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
+              >
+                <div className="text-3xl font-bold text-white mb-2">AI at Scale</div>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  CUDA-powered systems built for inference, training, and real-time analytics.
+                </p>
+              </motion.div>
+
+              {/* Impact Card 3 */}
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
+              >
+                <div className="text-3xl font-bold text-white mb-2">Cost-Efficient Infrastructure</div>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Reduced cloud and GPU infrastructure spend through low-level optimization.
+                </p>
+              </motion.div>
+
+              {/* Impact Card 4 */}
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
+              >
+                <div className="text-3xl font-bold text-white mb-2">Production-Ready Solutions</div>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  From prototype to deployment with performance guarantees.
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       <CircuitDivider />
 
@@ -530,7 +674,7 @@ export function HomePage() {
 
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 mt-6 sm:mt-8 text-[#d1d5db] hover:text-white transition-colors group text-sm sm:text-base"
+                className="inline-flex items-center gap-2 mt-6 sm:mt-8 text-[#d1d5db] hover:text-white transition-colors group text-sm sm:text-base cursor-pointer"
               >
                 <span>View Our Success Stories</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -602,13 +746,13 @@ export function HomePage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
                 <Link
                   to="/contact"
-                  className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+                  className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-sm sm:text-base cursor-pointer"
                 >
                   Request a Demo
                 </Link>
                 <Link
                   to="/portfolio"
-                  className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-white/5 border border-[#ffffff]/30 text-white hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
+                  className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-white/5 border border-[#ffffff]/30 text-white hover:bg-white/10 transition-all duration-300 text-sm sm:text-base cursor-pointer"
                 >
                   View Case Studies
                 </Link>

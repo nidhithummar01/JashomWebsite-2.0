@@ -130,7 +130,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             {/* Close Button - Top Right */}
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-10"
+              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-10 cursor-pointer"
               style={{ top: '24px', right: '24px' }}
             >
               <X className="w-5 h-5 text-white" />
@@ -249,7 +249,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-8 py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                    className="w-full px-8 py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black disabled:opacity-50 disabled:cursor-not-allowed font-medium cursor-pointer"
                     whileHover={!isSubmitting ? { scale: 1.02 } : {}}
                     whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                   >

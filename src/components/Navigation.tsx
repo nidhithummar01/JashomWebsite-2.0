@@ -168,7 +168,7 @@ export function Navigation() {
                     }}
                   >
                     <button
-                      className="flex items-center gap-1 text-white hover:text-gray-300 transition-colors"
+                      className="flex items-center gap-1 text-white hover:text-gray-300 transition-colors cursor-pointer"
                     >
                       <motion.span
                         whileHover={{ scale: 1.1 }}
@@ -191,26 +191,32 @@ export function Navigation() {
                           onMouseLeave={() => {
                             setActiveDropdown(null);
                           }}
-                          className={`absolute top-full left-0 mt-2 z-50 ${
-                            item.label === 'About Us' 
+                          className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 ${
+                            item.label === 'Services'
+                              ? 'bg-black border border-white/20 rounded-lg shadow-xl py-2'
+                              : item.label === 'About Us' 
                               ? 'w-48 xl:w-56 p-2 flex flex-col gap-2 glass-effect rounded-xl border border-white/10' 
-                              : item.label === 'Services'
-                              ? 'w-80 xl:w-96 p-2 flex flex-col gap-1 glass-effect rounded-xl border border-white/10'
                               : item.label === 'Hire Expert'
                               ? 'p-3 flex flex-row gap-4 glass-effect rounded-xl border border-white/10 whitespace-nowrap'
                               : 'w-56 xl:w-64 glass-effect rounded-xl border border-white/10'
                           }`}
+                          style={item.label === 'Services' ? { minWidth: 'max-content' } : {}}
                         >
+                          {/* Pointer Arrow - Only for Services */}
+                          {item.label === 'Services' && (
+                            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[8px] border-l-transparent border-r-transparent border-b-black" />
+                          )}
                           {item.label === 'Services' ? (
-                            // SERVICES DROPDOWN - VERTICAL LAYOUT (ONE ITEM PER ROW, NO TEXT WRAPPING)
+                            // SERVICES DROPDOWN - COMPACT BLACK BOX WITH CLEAN SPACING
                             item.dropdown.map((service) => (
                               <Link
                                 key={(service as any).path}
                                 to={(service as any).path}
                                 onClick={handleLinkClick}
-                                className={`block transition-colors px-4 py-3 rounded-lg whitespace-nowrap ${location.pathname === (service as any).path
-                                  ? 'text-white bg-white/10'
-                                  : 'text-white hover:bg-white/10 hover:text-white'
+                                className={`block px-6 py-3 transition-colors whitespace-nowrap cursor-pointer ${
+                                  location.pathname === (service as any).path
+                                    ? 'text-white bg-white/10'
+                                    : 'text-white hover:bg-white/5'
                                 }`}
                               >
                                 {service.label}
@@ -223,6 +229,7 @@ export function Navigation() {
                                 key={(subItem as any).path}
                                 to={(subItem as any).path}
                                 onClick={handleLinkClick}
+                                style={{ cursor: 'pointer' }}
                                 className={`transition-colors px-4 py-3 rounded-lg whitespace-nowrap ${location.pathname === (subItem as any).path
                                   ? 'text-white bg-white/10'
                                   : 'text-white hover:bg-white/10 hover:text-white'
@@ -238,6 +245,7 @@ export function Navigation() {
                                 key={(subItem as any).path}
                                 to={(subItem as any).path}
                                 onClick={handleLinkClick}
+                                style={{ cursor: 'pointer' }}
                                 className={`block transition-colors ${item.label === 'About Us' ? 'px-4 py-2 rounded-lg' : 'px-4 py-3'
                                   } ${location.pathname === (subItem as any).path
                                     ? 'text-white bg-white/10'
@@ -255,7 +263,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     to={item.path}
-                    className={`relative transition-colors ${location.pathname === item.path
+                    className={`relative transition-colors cursor-pointer ${location.pathname === item.path
                       ? 'text-white'
                       : 'text-white hover:text-gray-300'
                       }`}
@@ -284,7 +292,7 @@ export function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navItems.length * 0.05 }}
               onClick={() => setIsContactModalOpen(true)}
-              className="relative text-white hover:text-gray-300 transition-colors"
+              className="relative text-white hover:text-gray-300 transition-colors cursor-pointer"
             >
               <motion.span
                 whileHover={{ scale: 1.1 }}
@@ -297,7 +305,7 @@ export function Navigation() {
 
           {/* Mobile menu button */}
           <motion.button
-            className="md:hidden text-white z-50 flex-shrink-0"
+            className="md:hidden text-white z-50 flex-shrink-0 cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
@@ -451,7 +459,7 @@ export function Navigation() {
                       <Link
                         to={item.path}
                         onClick={handleLinkClick}
-                        className={`block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base ${location.pathname === item.path
+                        className={`block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base cursor-pointer ${location.pathname === item.path
                           ? 'text-white bg-white/10'
                           : 'text-white hover:bg-white/10 hover:text-white'
                           }`}
@@ -469,7 +477,7 @@ export function Navigation() {
                     setIsContactModalOpen(true);
                     handleLinkClick();
                   }}
-                  className="block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base text-white hover:bg-white/10 hover:text-white w-full text-left"
+                  className="block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base text-white hover:bg-white/10 hover:text-white w-full text-left cursor-pointer"
                 >
                   Contact Us
                 </motion.button>
