@@ -191,21 +191,14 @@ export function Navigation() {
                           onMouseLeave={() => {
                             setActiveDropdown(null);
                           }}
-                          className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 ${
-                            item.label === 'Services'
-                              ? 'bg-black border border-white/20 rounded-lg shadow-xl py-2'
-                              : item.label === 'About Us' 
-                              ? 'w-48 xl:w-56 p-2 flex flex-col gap-2 glass-effect rounded-xl border border-white/10' 
-                              : item.label === 'Hire Expert'
-                              ? 'p-3 flex flex-row gap-4 glass-effect rounded-xl border border-white/10 whitespace-nowrap'
-                              : 'w-56 xl:w-64 glass-effect rounded-xl border border-white/10'
+                          className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 bg-black border border-white/20 rounded-lg shadow-xl py-2 ${
+                            item.label === 'Hire Expert' ? 'whitespace-nowrap' : ''
                           }`}
-                          style={item.label === 'Services' ? { minWidth: 'max-content' } : {}}
+                          style={{ minWidth: 'max-content' }}
                         >
-                          {/* Pointer Arrow - Only for Services */}
-                          {item.label === 'Services' && (
-                            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[8px] border-l-transparent border-r-transparent border-b-black" />
-                          )}
+                          {/* Pointer Arrow - All Dropdowns */}
+                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[8px] border-l-transparent border-r-transparent border-b-black" />
+                          
                           {item.label === 'Services' ? (
                             // SERVICES DROPDOWN - COMPACT BLACK BOX WITH CLEAN SPACING
                             item.dropdown.map((service) => (
@@ -222,35 +215,18 @@ export function Navigation() {
                                 {service.label}
                               </Link>
                             ))
-                          ) : item.label === 'Hire Expert' ? (
-                            // HIRE EXPERT DROPDOWN - HORIZONTAL LAYOUT
-                            item.dropdown.map((subItem) => (
-                              <Link
-                                key={(subItem as any).path}
-                                to={(subItem as any).path}
-                                onClick={handleLinkClick}
-                                style={{ cursor: 'pointer' }}
-                                className={`transition-colors px-4 py-3 rounded-lg whitespace-nowrap ${location.pathname === (subItem as any).path
-                                  ? 'text-white bg-white/10'
-                                  : 'text-white hover:bg-white/10 hover:text-white'
-                                }`}
-                              >
-                                {subItem.label}
-                              </Link>
-                            ))
                           ) : (
-                            // REGULAR DROPDOWN
+                            // ALL OTHER DROPDOWNS - SAME BLACK STYLE AS SERVICES
                             item.dropdown.map((subItem) => (
                               <Link
                                 key={(subItem as any).path}
                                 to={(subItem as any).path}
                                 onClick={handleLinkClick}
-                                style={{ cursor: 'pointer' }}
-                                className={`block transition-colors ${item.label === 'About Us' ? 'px-4 py-2 rounded-lg' : 'px-4 py-3'
-                                  } ${location.pathname === (subItem as any).path
+                                className={`block px-6 py-3 transition-colors whitespace-nowrap cursor-pointer ${
+                                  location.pathname === (subItem as any).path
                                     ? 'text-white bg-white/10'
-                                    : 'text-white hover:bg-white/10 hover:text-white'
-                                  }`}
+                                    : 'text-white hover:bg-white/5'
+                                }`}
                               >
                                 {subItem.label}
                               </Link>

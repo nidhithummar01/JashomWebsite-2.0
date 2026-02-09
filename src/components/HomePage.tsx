@@ -60,14 +60,14 @@ export function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black" style={{ width: '100%', overflow: 'hidden' }}>
+    <div className="min-h-screen" style={{ width: '100%', overflow: 'hidden', background: '#0B0F14' }}>
       <SEO
         title="Jashom. AI - AI & GPU Optimization | Enterprise AI Solutions"
         description="Transform your business with cutting-edge AI and GPU optimization solutions. Industry-leading expertise in machine learning, deep learning, and high-performance computing. Request a demo today."
         keywords="AI optimization, GPU acceleration, machine learning development, artificial intelligence consulting, MLOps, data engineering, AI security, CUDA programming, deep learning, neural networks, computer vision, NLP, enterprise AI"
       />
       {/* Hero Section - Full Screen Edge-to-Edge */}
-      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black" style={{ margin: 0, padding: 0 }}>
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden" style={{ margin: 0, padding: 0, background: '#0B0F14' }}>
         {/* Video Background - Full Screen Coverage */}
         <video
           ref={videoRef}
@@ -87,8 +87,10 @@ export function HomePage() {
           <source src="/videos/bg.mp4" type="video/mp4" />
         </video>
         
-        {/* Enhanced Dark Overlay for Text Readability - NO GRID */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[1]" />
+        {/* Subtle Premium Gradient Overlay */}
+        <div className="absolute inset-0 z-[1]" style={{
+          background: 'radial-gradient(ellipse at center, rgba(11, 15, 20, 0.3) 0%, rgba(11, 15, 20, 0.5) 50%, rgba(11, 15, 20, 0.7) 100%)'
+        }} />
 
         <div className="relative z-[10] max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -97,26 +99,41 @@ export function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-block mb-6 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
+              className="inline-block mb-6 px-4 py-2 rounded-full border"
+              style={{
+                background: 'rgba(17, 24, 39, 0.4)',
+                backdropFilter: 'blur(12px)',
+                borderColor: 'rgba(14, 165, 233, 0.2)'
+              }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-[#d1d5db]">Next-Gen AI Solutions</span>
+              <span style={{ color: '#9E9E9E' }}>Next-Gen AI Solutions</span>
             </motion.div>
 
             <motion.h1
-              className="mb-4 sm:mb-6 text-gradient text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-2 sm:px-0"
+              className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-2 sm:px-0"
+              style={{ 
+                color: '#FAFAFA',
+                fontWeight: 700,
+                letterSpacing: '-0.03em',
+                lineHeight: 1.15
+              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Accelerate Your AI Journey with Precision Engineering
+              Accelerate Your AI Journey with <span style={{ color: '#0EA5E9' }}>Precision Engineering</span>
             </motion.h1>
 
             <motion.p
-              className="mb-6 sm:mb-8 text-white max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0 font-medium"
-              style={{ textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}
+              className="mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0"
+              style={{ 
+                color: '#9E9E9E',
+                lineHeight: 1.8,
+                textShadow: '0 2px 10px rgba(0,0,0,0.9)'
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -133,7 +150,22 @@ export function HomePage() {
             >
               <Link
                 to="/contact"
-                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base cursor-pointer"
+                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl border text-center text-sm sm:text-base cursor-pointer transition-all duration-240"
+                style={{
+                  background: 'rgba(14, 165, 233, 0.12)',
+                  borderColor: 'rgba(14, 165, 233, 0.35)',
+                  color: '#FAFAFA'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
+                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
                 Start Your AI Transformation
               </Link>
@@ -141,7 +173,22 @@ export function HomePage() {
                 href="https://calendly.com/jaydave-jashom/new-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 text-center text-sm sm:text-base cursor-pointer"
+                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl border text-center text-sm sm:text-base cursor-pointer transition-all duration-240"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  borderColor: 'rgba(255, 255, 255, 0.12)',
+                  color: '#FAFAFA'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
                 Schedule a Meeting
               </a>
@@ -150,24 +197,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <CircuitDivider />
-
       {/* COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase */}
       {/* <ServicesSlider /> */}
 
-      <div className="flex justify-center pb-12 sm:pb-20 px-4">
-        <Link
-          to="/contact"
-          className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-medium text-center text-sm sm:text-base whitespace-nowrap cursor-pointer"
-        >
-          Schedule a Call
-        </Link>
-      </div>
-
-      <CircuitDivider />
-
       {/* What We Do Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="mb-12 sm:mb-16"
@@ -175,7 +209,9 @@ export function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What We Do</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em' }}>
+              What We <span style={{ color: '#0EA5E9' }}>Do</span>
+            </h2>
           </motion.div>
 
           <motion.div
@@ -187,32 +223,32 @@ export function HomePage() {
           >
             {/* GPU Optimization */}
             <div className="space-y-4 max-w-xl">
-              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>GPU Optimization</h3>
-              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>GPU Optimization</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We unlock maximum GPU performance through memory optimization, kernel tuning, and throughput engineering. Our solutions deliver measurable speed improvements and cost reductions for production workloads at scale.
               </p>
             </div>
 
             {/* CUDA Development */}
             <div className="space-y-4 max-w-xl">
-              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>CUDA Development</h3>
-              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>CUDA Development</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We build custom CUDA solutions for parallel computing and performance-critical systems. From low-level GPU programming to algorithm acceleration, we help organizations extract full value from NVIDIA hardware.
               </p>
             </div>
 
             {/* AI Engineering */}
             <div className="space-y-4 max-w-xl">
-              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>AI Engineering</h3>
-              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>AI Engineering</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We develop production-ready AI systems that deliver business impact. Our work spans model optimization, deployment architecture, and integration—moving AI from experimentation to reliable operation.
               </p>
             </div>
 
             {/* Data & Performance Engineering */}
             <div className="space-y-4 max-w-xl">
-              <h3 className="text-white text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Data & Performance Engineering</h3>
-              <p className="text-white/80 text-base sm:text-lg leading-loose" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Data & Performance Engineering</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We architect high-performance data systems that handle scale and complexity. Through optimized pipelines and system design, we enable faster insights and more reliable decision-making.
               </p>
             </div>
@@ -220,185 +256,146 @@ export function HomePage() {
         </div>
       </section>
 
-      <CircuitDivider />
+      {/* Section-5: Trusted by Innovative Teams Worldwide */}
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-[#0a0a1a] to-black relative overflow-hidden" style={{ marginTop: '4rem' }}>
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
+        </div>
 
-      {/* Section-5: Trusted by Innovative Teams - Client Showcase & Impact */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-black to-[#0a1a1a]">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            className="text-center mb-16"
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section Title */}
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-white text-2xl sm:text-3xl font-bold mb-12 sm:mb-16"
           >
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Trusted by Innovative Teams Worldwide
-            </h2>
-            <p className="text-white/60 text-sm sm:text-base max-w-3xl mx-auto">
-              Driving AI and GPU-accelerated solutions for modern businesses
-            </p>
-          </motion.div>
+            Trusted by Innovative Teams Worldwide
+          </motion.h2>
 
-          {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            {/* Left Column - Client Showcase */}
+          {/* Main Grid Container: 50% | 50% split - Force side-by-side on medium screens and up */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+            
+            {/* LEFT SIDE - LOGOS (50%) */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="w-full flex items-center justify-center"
             >
-              <h3 className="text-white text-xl sm:text-2xl font-semibold mb-8">
-                Partnering with Industry Leaders
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  'FinTech Platforms',
-                  'AI Research Teams',
-                  'SaaS Startups',
-                  'Enterprise Engineering',
-                  'Healthcare Systems',
-                  'Data Analytics Firms',
-                  'Cloud Providers',
-                  'Manufacturing Tech'
-                ].map((client, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 * index }}
-                    whileHover={{ scale: 1.05 }}
-                    className="bg-white/5 border border-white/10 rounded-lg p-6 flex items-center justify-center text-center transition-all hover:bg-white/10 hover:border-white/20 cursor-default"
-                  >
-                    <span className="text-white/70 text-sm font-medium">{client}</span>
-                  </motion.div>
-                ))}
+              {/* 2x2 Logo Grid - Clean and transparent */}
+              <div className="grid grid-cols-2 gap-8 sm:gap-10 md:gap-12">
+                <motion.div 
+                  className="flex items-center justify-center p-4"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <img 
+                    src="/logos/nvidia.png" 
+                    alt="NVIDIA"
+                    className="h-10 sm:h-12 w-auto object-contain filter brightness-90 hover:brightness-110 transition-all duration-300"
+                  />
+                </motion.div>
+                <motion.div 
+                  className="flex items-center justify-center p-4"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <img 
+                    src="/logos/aws.png" 
+                    alt="AWS"
+                    className="h-10 sm:h-12 w-auto object-contain filter brightness-90 hover:brightness-110 transition-all duration-300"
+                  />
+                </motion.div>
+                <motion.div 
+                  className="flex items-center justify-center p-4"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <img 
+                    src="/logos/goggle cloud.png" 
+                    alt="Google Cloud"
+                    className="h-10 sm:h-12 w-auto object-contain filter brightness-90 hover:brightness-110 transition-all duration-300"
+                  />
+                </motion.div>
+                <motion.div 
+                  className="flex items-center justify-center p-4"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <img 
+                    src="/logos/microsoft-azure.png" 
+                    alt="Microsoft Azure"
+                    className="h-12 sm:h-14 w-auto object-contain filter brightness-90 hover:brightness-110 transition-all duration-300"
+                  />
+                </motion.div>
               </div>
             </motion.div>
 
-            {/* Right Column - Impact Highlights */}
+            {/* RIGHT SIDE - CONTENT (50%) */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="space-y-6"
+              transition={{ duration: 0.6 }}
+              className="w-full"
             >
-              <h3 className="text-white text-xl sm:text-2xl font-semibold mb-8">
-                Measurable Impact
+              {/* Heading with gradient */}
+              <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent leading-tight mb-8 md:mb-10">
+                500+ clients served
               </h3>
-              
-              {/* Impact Card 1 */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
-              >
-                <div className="text-3xl font-bold text-white mb-2">10× Performance Gains</div>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  GPU optimization delivering measurable speedups for compute-heavy workloads.
-                </p>
-              </motion.div>
 
-              {/* Impact Card 2 */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
-              >
-                <div className="text-3xl font-bold text-white mb-2">AI at Scale</div>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  CUDA-powered systems built for inference, training, and real-time analytics.
-                </p>
-              </motion.div>
+              {/* Metrics Grid - 2 columns on larger screens */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                {/* Metric 1 */}
+                <motion.div 
+                  className="space-y-2 p-4 rounded-xl bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -3 }}
+                >
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">$20bn</div>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    worth investment portfolios managed
+                  </p>
+                </motion.div>
 
-              {/* Impact Card 3 */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
-              >
-                <div className="text-3xl font-bold text-white mb-2">Cost-Efficient Infrastructure</div>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  Reduced cloud and GPU infrastructure spend through low-level optimization.
-                </p>
-              </motion.div>
+                {/* Metric 2 */}
+                <motion.div 
+                  className="space-y-2 p-4 rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-600/5 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -3 }}
+                >
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent">10x</div>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    faster pharmaceutical market analytics
+                  </p>
+                </motion.div>
 
-              {/* Impact Card 4 */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-6 transition-all hover:bg-white/10 hover:border-white/20"
-              >
-                <div className="text-3xl font-bold text-white mb-2">Production-Ready Solutions</div>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  From prototype to deployment with performance guarantees.
-                </p>
-              </motion.div>
+                {/* Metric 3 */}
+                <motion.div 
+                  className="space-y-2 p-4 rounded-xl bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -3 }}
+                >
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-200 bg-clip-text text-transparent">20M+</div>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    customers enjoying AI-powered shopping
+                  </p>
+                </motion.div>
+
+                {/* Metric 4 */}
+                <motion.div 
+                  className="space-y-2 p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 hover:border-green-400/40 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -3 }}
+                >
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-green-400 to-green-200 bg-clip-text text-transparent">$50K</div>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    saved annually with DevOps
+                  </p>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      <CircuitDivider />
-
-      {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="mb-4 text-gradient">Why Choose Jashom?</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
-              Industry-leading expertise in AI optimization and deployment
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              {
-                icon: Cpu,
-                title: 'GPU Optimization',
-                description: 'Maximize performance with advanced GPU acceleration and optimization techniques.'
-              },
-              {
-                icon: Zap,
-                title: 'Lightning Fast',
-                description: 'Deploy AI solutions that operate at unprecedented speeds without compromising quality.'
-              },
-              {
-                icon: Shield,
-                title: 'Enterprise Security',
-                description: 'Bank-grade security protocols to protect your data and AI models.'
-              }
-            ].map((feature, index) => (
-              <motion.div key={index} variants={staggerItem}>
-                <GlassCard delay={0}>
-                  <div className="flex flex-col items-center text-center">
-                    <motion.div
-                      className="w-16 h-16 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center mb-4"
-                      whileHover={{
-                        rotate: [0, -10, 10, 0],
-                        scale: 1.1
-                      }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <feature.icon className="w-8 h-8 text-white" />
-                    </motion.div>
-                    <h3 className="mb-3 text-white">{feature.title}</h3>
-                    <p className="text-white/70">{feature.description}</p>
-                  </div>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
@@ -427,130 +424,6 @@ export function HomePage() {
 
       <CircuitDivider />
 
-      {/* Technology Stack */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="mb-4 text-gradient">Powered by Leading Technologies</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
-              We leverage the most advanced AI frameworks and tools to deliver exceptional results
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              'TensorFlow', 'PyTorch', 'CUDA', 'Kubernetes', 'AWS', 'Azure',
-              'NVIDIA', 'Docker', 'Ray', 'MLflow', 'Hugging Face', 'LangChain'
-            ].map((tech, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                className="glass-effect rounded-lg p-4 text-center border border-[#ffffff]/20 hover:border-[#d1d5db]/50 transition-all cursor-pointer group"
-                whileHover={{
-                  y: -8,
-                  scale: 1.1,
-                  boxShadow: "0 10px 30px rgba(255, 255, 255, 0.1)"
-                }}
-              >
-                <div className="text-white/80 group-hover:text-white transition-colors">{tech}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <CircuitDivider />
-
-      {/* Our Approach */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="mb-4 text-gradient">Our AI-First Approach</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
-              From strategy to deployment, we guide you through every step of your AI transformation journey
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              {
-                icon: Target,
-                step: '01',
-                title: 'Discover & Analyze',
-                description: 'Deep dive into your business needs, challenges, and opportunities for AI integration.'
-              },
-              {
-                icon: Brain,
-                step: '02',
-                title: 'Design & Architect',
-                description: 'Create scalable AI architectures optimized for performance and cost-efficiency.'
-              },
-              {
-                icon: Rocket,
-                step: '03',
-                title: 'Develop & Deploy',
-                description: 'Build robust AI solutions with continuous testing and seamless deployment.'
-              },
-              {
-                icon: TrendingUp,
-                step: '04',
-                title: 'Optimize & Scale',
-                description: 'Monitor, refine, and scale your AI systems for maximum business impact.'
-              }
-            ].map((phase, index) => (
-              <motion.div key={index} variants={staggerItem}>
-                <GlassCard delay={0}>
-                  <motion.div
-                    className="text-[#ffffff]/50 mb-2"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                  >
-                    {phase.step}
-                  </motion.div>
-                  <motion.div
-                    className="w-12 h-12 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center mb-4"
-                    whileHover={{
-                      rotate: 360,
-                      scale: 1.2
-                    }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                  >
-                    <phase.icon className="w-6 h-6 text-white" />
-                  </motion.div>
-                  <h3 className="text-white mb-3">{phase.title}</h3>
-                  <p className="text-white/70 text-sm">{phase.description}</p>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <CircuitDivider />
-
       {/* Client Testimonials */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -560,7 +433,7 @@ export function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-3 sm:mb-4 text-gradient text-2xl sm:text-3xl md:text-4xl">Trusted by Industry Leaders</h2>
+            <h2 className="mb-3 sm:mb-4 text-gradient text-2xl sm:text-3xl md:text-4xl">What Our Clients Say</h2>
             <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
               See what our clients say about transforming their businesses with Jashom
             </p>
@@ -593,7 +466,7 @@ export function HomePage() {
                 rating: 5
               }
             ].map((testimonial, index) => (
-              <motion.div key={index} variants={staggerItem}>
+              <motion.div key={index} variants={staggerItem} className="cursor-pointer">
                 <GlassCard delay={0}>
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -622,104 +495,276 @@ export function HomePage() {
 
       <CircuitDivider />
 
-      {/* Why Jashom Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      {/* Why Jashom - Benefits Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #111827 0%, #0B0F14 100%)' }}>
+        {/* Subtle background glow */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block mb-4 px-6 py-2 rounded-full border" style={{
+              background: 'rgba(14, 165, 233, 0.08)',
+              borderColor: 'rgba(14, 165, 233, 0.25)'
+            }}>
+              <span style={{ color: '#0EA5E9', fontWeight: 600 }}>Why Choose Us</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
+              Why <span style={{ color: '#0EA5E9' }}>Jashom</span>?
+            </h2>
+            <p className="max-w-2xl mx-auto text-base sm:text-lg" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
+              Experience the Jashom advantage with cutting-edge AI solutions tailored to your business needs
+            </p>
+          </motion.div>
+
+          {/* Benefits Grid */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            {/* Benefit 1 - GPU Expertise */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              variants={staggerItem}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
+                borderColor: 'rgba(14, 165, 233, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
-              <div className="inline-block mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-effect border border-[#ffffff]/30">
-                <span className="text-[#d1d5db] text-xs sm:text-sm">The Jashom Difference</span>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
+                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
+                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                }}>
+                  <Cpu className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>10x GPU Performance</h3>
+                <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
+                  Advanced CUDA optimization and parallel computing expertise delivering measurable speedups for AI workloads and real-time inference systems.
+                </p>
               </div>
-              <h2 className="mb-4 sm:mb-6 text-gradient text-2xl sm:text-3xl md:text-4xl">Why Global Enterprises Choose Jashom</h2>
-              <p className="text-white/70 mb-6 sm:mb-8 text-sm sm:text-base">
-                We don't just build AI solutions—we create competitive advantages. Our team combines
-                deep technical expertise with business acumen to deliver transformative results.
-              </p>
-
-              <motion.div
-                className="space-y-4"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-              >
-                {[
-                  'Proven track record with Fortune 500 companies',
-                  'Cutting-edge research in GPU acceleration',
-                  'End-to-end AI solution design and implementation',
-                  'Industry-specific domain expertise',
-                  'Dedicated support and continuous optimization',
-                  'Scalable solutions that grow with your business'
-                ].map((point, index) => (
-                  <motion.div
-                    key={index}
-                    variants={staggerItem}
-                    className="flex items-start gap-3 group cursor-pointer"
-                    whileHover={{ x: 10 }}
-                  >
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.2 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-[#d1d5db] flex-shrink-0 mt-0.5 group-hover:text-[#ffffff]" />
-                    </motion.div>
-                    <span className="text-white/80 group-hover:text-white transition-colors">{point}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center gap-2 mt-6 sm:mt-8 text-[#d1d5db] hover:text-white transition-colors group text-sm sm:text-base cursor-pointer"
-              >
-                <span>View Our Success Stories</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </motion.div>
 
+            {/* Benefit 2 - AI Engineering */}
             <motion.div
-              className="space-y-6"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
+              variants={staggerItem}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
+                borderColor: 'rgba(14, 165, 233, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
-              {[
-                { icon: Award, label: 'Industry Recognition', value: '3+ Awards' },
-                { icon: Users, label: 'Expert Team', value: '50+ AI Experts' },
-                { icon: Globe, label: 'Global Presence', value: '3+ Countries' },
-                { icon: Brain, label: 'AI Models', value: '50+ Models' }
-              ].map((metric, index) => (
-                  <motion.div
-                    key={index}
-                    variants={staggerItem}
-                    className="glass-effect rounded-xl p-4 sm:p-6 border border-[#ffffff]/20 flex items-center gap-3 sm:gap-4 cursor-pointer group"
-                    whileHover={{
-                      scale: 1.05,
-                      x: 10,
-                      borderColor: 'rgba(0, 255, 255, 0.5)',
-                      boxShadow: "0 10px 40px rgba(255, 255, 255, 0.1)"
-                    }}
-                  >
-                    <motion.div
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center flex-shrink-0"
-                      whileHover={{ rotate: [0, -10, 10, 0] }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <metric.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                    </motion.div>
-                    <div>
-                      <div className="text-white/60 text-xs sm:text-sm group-hover:text-white/80 transition-colors">{metric.label}</div>
-                      <div className="text-white text-lg sm:text-xl group-hover:text-[#d1d5db] transition-colors">{metric.value}</div>
-                    </div>
-                  </motion.div>
-              ))}
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
+                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
+                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                }}>
+                  <Brain className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Production-Ready AI</h3>
+                <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
+                  From model development to deployment, we build scalable AI systems that deliver real business impact across healthcare, finance, and retail sectors.
+                </p>
+              </div>
             </motion.div>
-          </div>
+
+            {/* Benefit 3 - Enterprise Security */}
+            <motion.div
+              variants={staggerItem}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
+                borderColor: 'rgba(14, 165, 233, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
+                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
+                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                }}>
+                  <Shield className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Bank-Grade Security</h3>
+                <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
+                  Enterprise-level security protocols, compliance frameworks, and data protection ensuring your AI infrastructure remains secure and audit-ready.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Benefit 4 - Fast Deployment */}
+            <motion.div
+              variants={staggerItem}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
+                borderColor: 'rgba(14, 165, 233, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
+                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
+                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                }}>
+                  <Zap className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Lightning Fast Deployment</h3>
+                <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
+                  Rapid prototyping to production pipeline with MLOps best practices, reducing deployment cycles from weeks to hours with continuous optimization.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Benefit 5 - 24/7 Support */}
+            <motion.div
+              variants={staggerItem}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
+                borderColor: 'rgba(14, 165, 233, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
+                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
+                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                }}>
+                  <Users className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>24/7 Expert Support</h3>
+                <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
+                  Round-the-clock monitoring and dedicated support team ensuring your AI systems run smoothly with guaranteed response times for critical issues.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Benefit 6 - Cost Optimization */}
+            <motion.div
+              variants={staggerItem}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
+                borderColor: 'rgba(14, 165, 233, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
+                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
+                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                }}>
+                  <TrendingUp className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Cost-Effective Solutions</h3>
+                <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
+                  Optimized resource utilization and intelligent scaling strategies that reduce infrastructure costs while maximizing performance and ROI.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
+              style={{
+                background: 'rgba(14, 165, 233, 0.12)',
+                borderColor: 'rgba(14, 165, 233, 0.35)',
+                border: '1px solid',
+                color: '#FAFAFA'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(14, 165, 233, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <span>Start Your AI Transformation</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

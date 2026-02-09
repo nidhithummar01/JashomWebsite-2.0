@@ -35,7 +35,7 @@ export function TeamPage() {
       role: 'Founder',
       bio: 'Visionary founder leading the company\'s strategy, innovation, and long-term growth.',
       linkedin: 'https://www.linkedin.com/in/jayksdave',
-      image: '/images/team/jay-dave.jpg'
+      image: '/images/team/jay-dave-hiring.png'
     },
     {
       name: 'Maxime Derian',
