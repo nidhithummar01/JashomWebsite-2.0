@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { FlaskConical, Zap, Database, Microscope, ArrowRight } from 'lucide-react';
@@ -89,8 +88,6 @@ export function AIForRnDPage() {
             Transform your R&D capabilities with cutting-edge machine learning solutions.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         <section className="py-16">
           <motion.div

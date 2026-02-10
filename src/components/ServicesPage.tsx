@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from './CircuitDivider';
 import { SEO } from './SEO';
 import { ArrowRight } from 'lucide-react';
 
@@ -63,8 +62,6 @@ export function ServicesPage() {
             Comprehensive technology solutions tailored to transform your business with cutting-edge innovation and domain expertise
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         {/* Services Grid - Side by Side Layout */}
         <section className="py-12 sm:py-20">

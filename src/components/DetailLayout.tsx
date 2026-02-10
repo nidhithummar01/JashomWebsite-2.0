@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
@@ -49,8 +48,6 @@ export function DetailLayout({
             {description}
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
           {/* What We Offer Section */}

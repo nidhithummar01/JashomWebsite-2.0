@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
 import { useEffect, useRef } from 'react';
+import { getLatestInsights } from '../data/insightsData';
 // COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase
 // import { ServicesSlider } from './ServicesSlider';
 import {
@@ -20,7 +20,9 @@ import {
   ArrowRight,
   CheckCircle2,
   Target,
-  Rocket
+  Rocket,
+  Calendar,
+  Clock
 } from 'lucide-react';
 
 const staggerContainer = {
@@ -40,7 +42,7 @@ const staggerItem = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 100,
       damping: 10
     }
@@ -399,8 +401,6 @@ export function HomePage() {
         </div>
       </section>
 
-      <CircuitDivider />
-
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -422,78 +422,193 @@ export function HomePage() {
         </div>
       </section>
 
-      <CircuitDivider />
-
-      {/* Client Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Premium Minimal Testimonials Section */}
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0B0F14' }}>
         <div className="max-w-7xl mx-auto">
+          
+          {/* Section Header - Centered */}
           <motion.div
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-16 sm:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="mb-3 sm:mb-4 text-gradient text-2xl sm:text-3xl md:text-4xl">What Our Clients Say</h2>
-            <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
-              See what our clients say about transforming their businesses with Jashom
+            <motion.div
+              className="inline-block mb-4 px-4 py-2 rounded-full border"
+              style={{
+                background: 'rgba(14, 165, 233, 0.05)',
+                borderColor: 'rgba(14, 165, 233, 0.2)'
+              }}
+            >
+              <span style={{ color: '#0EA5E9', fontWeight: 600, fontSize: '0.875rem' }}>Client Testimonials</span>
+            </motion.div>
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em', lineHeight: 1.2 }}>
+              What Our Clients Say
+            </h2>
+            
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
+              Trusted by industry leaders to deliver exceptional results
             </p>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              {
-                quote: "Jashom's GPU optimization reduced our AI inference time by 85%. Their expertise in CUDA programming is unmatched.",
-                author: "Sarah",
-                role: "CTO, Tech Company",
-                rating: 5
-              },
-              {
-                quote: "The AI solutions delivered by Jashom have transformed our customer experience. ROI exceeded expectations within 6 months.",
-                author: "Michael",
-                role: "FoodTech Engineering",
-                rating: 5
-              },
-              {
-                quote: "Outstanding MLOps implementation. Our model deployment cycle went from weeks to hours. Game-changing partnership.",
-                author: "Dr. Emily Watson",
-                role: "Head of AI, HealthTech Solutions",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <motion.div key={index} variants={staggerItem} className="cursor-pointer">
-                <GlassCard delay={0}>
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 + i * 0.1 }}
-                      >
-                        <Sparkles className="w-5 h-5 text-[#d1d5db] fill-[#d1d5db]" />
-                      </motion.div>
-                    ))}
+          {/* Testimonials Grid - 3 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            
+            {/* Testimonial 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="group"
+            >
+              <div 
+                className="h-full p-8 rounded-2xl border transition-all duration-300"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  borderColor: 'rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(10px)'
+                }}
+              >
+                {/* Quote Icon */}
+                <div className="mb-6">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                  </svg>
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
+                  "Jashom's GPU optimization reduced our inference latency by 73%. The team's expertise in CUDA programming is unmatched."
+                </p>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                  <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
+                    background: 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: '#FFF'
+                  }}>
+                    DC
                   </div>
-                  <p className="text-white/80 mb-6 italic">"{testimonial.quote}"</p>
-                  <div className="border-t border-white/10 pt-4">
-                    <div className="text-white">{testimonial.author}</div>
-                    <div className="text-white/60 text-sm">{testimonial.role}</div>
+                  <div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>David Chen</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>VP Engineering, Apex AI</div>
                   </div>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Testimonial 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group"
+            >
+              <div 
+                className="h-full p-8 rounded-2xl border transition-all duration-300"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  borderColor: 'rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(10px)'
+                }}
+              >
+                {/* Quote Icon */}
+                <div className="mb-6">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                  </svg>
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
+                  "The AI automation solutions delivered by Jashom transformed our workflow. We achieved 5x faster processing with their custom ML pipeline."
+                </p>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                  <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
+                    background: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: '#FFF'
+                  }}>
+                    MR
+                  </div>
+                  <div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Maria Rodriguez</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>CTO, DataFlow Systems</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Testimonial 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="group"
+            >
+              <div 
+                className="h-full p-8 rounded-2xl border transition-all duration-300"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  borderColor: 'rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(10px)'
+                }}
+              >
+                {/* Quote Icon */}
+                <div className="mb-6">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                  </svg>
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
+                  "Outstanding DevSecOps implementation. Jashom's team integrated security seamlessly into our CI/CD pipeline without compromising speed."
+                </p>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                  <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
+                    background: 'linear-gradient(135deg, #10B981, #34D399)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: '#FFF'
+                  }}>
+                    EW
+                  </div>
+                  <div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Emily Watson</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>Head of Security, TechCorp</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
-
-      <CircuitDivider />
 
       {/* Why Jashom - Benefits Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #111827 0%, #0B0F14 100%)' }}>
@@ -768,7 +883,187 @@ export function HomePage() {
         </div>
       </section>
 
-      <CircuitDivider />
+      {/* Latest Blogs Section */}
+      <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0B0F14' }}>
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <motion.div
+                  className="inline-block mb-4 px-4 py-2 rounded-full border"
+                  style={{
+                    background: 'rgba(14, 165, 233, 0.08)',
+                    borderColor: 'rgba(14, 165, 233, 0.25)'
+                  }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span style={{ color: '#0EA5E9', fontWeight: 600, fontSize: '0.875rem' }}>Resources</span>
+                </motion.div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
+                  Our Latest <span style={{ color: '#0EA5E9' }}>Blogs</span>
+                </h2>
+              </div>
+              <Link
+                to="/insights"
+                className="hidden sm:flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
+                style={{
+                  background: 'rgba(14, 165, 233, 0.12)',
+                  border: '1px solid rgba(14, 165, 233, 0.35)',
+                  color: '#FAFAFA'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
+                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <span>View All</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Blog Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {getLatestInsights(3).map((blog, index) => (
+              <motion.div
+                key={blog.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+                className="group"
+              >
+                <Link to={blog.link} className="block h-full">
+                  <div
+                    className="relative h-full rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02]"
+                    style={{
+                      background: '#111827',
+                      border: '1px solid rgba(255, 255, 255, 0.08)'
+                    }}
+                  >
+                    {/* Image Section */}
+                    <div className="relative h-48 overflow-hidden" style={{ background: '#1E293B' }}>
+                      <div
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        style={{
+                          backgroundImage: `url(${blog.image})`,
+                          opacity: 0.4
+                        }}
+                      />
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0" style={{
+                        background: 'linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 1) 100%)'
+                      }} />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold" style={{
+                          background: 'rgba(14, 165, 233, 0.15)',
+                          color: '#0EA5E9',
+                          border: '1px solid rgba(14, 165, 233, 0.3)',
+                          backdropFilter: 'blur(8px)'
+                        }}>
+                          {blog.category}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="p-6">
+                      <h3 className="text-lg font-bold mb-3 line-clamp-2 transition-colors duration-240 group-hover:text-[#0EA5E9]" style={{ 
+                        color: '#FAFAFA',
+                        lineHeight: 1.4
+                      }}>
+                        {blog.title}
+                      </h3>
+
+                      <p className="text-sm mb-4 line-clamp-2" style={{ 
+                        color: '#9CA3AF',
+                        lineHeight: 1.6
+                      }}>
+                        {blog.description}
+                      </p>
+
+                      {/* Meta Info */}
+                      <div className="flex items-center gap-4 mb-4 text-xs" style={{ color: '#6B7280' }}>
+                        <div className="flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5" />
+                          <span>{blog.date}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <Clock className="w-3.5 h-3.5" />
+                          <span>{blog.readTime}</span>
+                        </div>
+                      </div>
+
+                      {/* Read More Link */}
+                      <div className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-240" style={{ color: '#0EA5E9' }}>
+                        <span>Read More</span>
+                        <ArrowRight className="w-4 h-4 transition-transform duration-240 group-hover:translate-x-1" />
+                      </div>
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
+                      background: 'linear-gradient(180deg, rgba(14, 165, 233, 0.05) 0%, rgba(14, 165, 233, 0.02) 100%)'
+                    }} />
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile View All Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center sm:hidden"
+          >
+            <Link
+              to="/insights"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
+              style={{
+                background: 'rgba(14, 165, 233, 0.12)',
+                border: '1px solid rgba(14, 165, 233, 0.35)',
+                color: '#FAFAFA'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
+                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+              }}
+            >
+              <span>View All Blogs</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

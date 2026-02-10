@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { Megaphone, TrendingUp, Target, DollarSign, ArrowRight } from 'lucide-react';
@@ -89,8 +88,6 @@ export function AIForMarketingPage() {
             Drive better results with intelligent marketing automation.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         <section className="py-16">
           <motion.div

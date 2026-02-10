@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { Scale, FileSearch, Shield, Clock, ArrowRight } from 'lucide-react';
@@ -89,8 +88,6 @@ export function AIForLegalPage() {
             Empower your legal team to focus on high-value strategic work.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         <section className="py-16">
           <motion.div

@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from './CircuitDivider';
 import { SEO } from './SEO';
 import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
@@ -66,8 +65,6 @@ export function ContactPage() {
             Ready to transform your business with AI? Let's discuss how we can help you achieve your goals.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mt-12 sm:mt-16">
           {/* Contact Form */}
@@ -248,10 +245,58 @@ export function ContactPage() {
                 <span className="text-[#d1d5db] text-sm sm:text-base">Online Now</span>
               </div>
             </div>
+
+            {/* Our Office Section */}
+            <div className="glass-effect rounded-2xl p-6 sm:p-8 border border-[#ffffff]/30">
+              <h3 className="mb-6 text-white text-lg sm:text-xl font-semibold">Our Office</h3>
+              
+              <div className="space-y-6">
+                {/* India Flag and Address */}
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="8" fill="#FF9933"/>
+                      <rect y="8" width="32" height="8" fill="#FFFFFF"/>
+                      <rect y="16" width="32" height="8" fill="#138808"/>
+                      <circle cx="16" cy="12" r="3" fill="none" stroke="#000080" strokeWidth="0.5"/>
+                      <circle cx="16" cy="12" r="2.5" fill="none" stroke="#000080" strokeWidth="0.3"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white/90 text-base leading-relaxed">
+                      414, Satyam-2, Amba Business Park,<br />
+                      ATPL, Adalaj, Gujarat,<br />
+                      India - 380054
+                    </p>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-white/70 flex-shrink-0" />
+                  <a href="mailto:info@jashom.com" className="text-white/90 hover:text-white transition-colors">
+                    info@jashom.com
+                  </a>
+                </div>
+
+                {/* Phone */}
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-white/70 flex-shrink-0" />
+                  <a href="tel:+916354412744" className="text-white/90 hover:text-white transition-colors">
+                    +91 635 441 2744
+                  </a>
+                </div>
+
+                {/* Visit Message */}
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-white/70 text-sm">
+                    Pay us a visit for a cup of coffee. We'll be more than happy to welcome you.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
-
-        <CircuitDivider />
 
         {/* Map/Additional Info */}
         <motion.div
@@ -263,7 +308,7 @@ export function ContactPage() {
           <div className="glass-effect rounded-2xl p-6 sm:p-8 md:p-12 border border-[#ffffff]/30 text-center">
             <h2 className="mb-3 sm:mb-4 text-gradient text-xl sm:text-2xl md:text-3xl px-2">Global Reach, Local Expertise</h2>
             <p className="text-white/70 max-w-2xl mx-auto mb-6 sm:mb-8 text-sm sm:text-base px-4 sm:px-0">
-              While headquartered in Silicon Valley, we serve clients worldwide with 24/7 support
+              While headquartered in Gujarat, India, we serve clients worldwide with 24/7 support
               and distributed teams across multiple time zones.
             </p>
             <a

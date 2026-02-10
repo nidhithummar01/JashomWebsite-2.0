@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { Calculator, FileCheck, TrendingUp, Shield, ArrowRight } from 'lucide-react';
@@ -89,8 +88,6 @@ export function AIForAccountingPage() {
             Address challenges like talent shortages and regulatory changes with intelligent automation.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         <section className="py-16">
           <motion.div

@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { MagneticButton } from './MagneticButton';
@@ -113,8 +112,6 @@ export function SolutionsPage() {
           </p>
         </motion.div>
 
-        <CircuitDivider />
-
         {/* Solutions Grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16"
@@ -169,8 +166,6 @@ export function SolutionsPage() {
             </motion.div>
           ))}
         </motion.div>
-
-        <CircuitDivider />
 
         {/* CTA Section */}
         <motion.div

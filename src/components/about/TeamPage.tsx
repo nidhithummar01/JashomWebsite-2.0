@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { Linkedin } from 'lucide-react';
@@ -104,8 +103,6 @@ export function TeamPage() {
               The talented individuals driving innovation and excellence at Jashom.
             </p>
           </motion.div>
-
-          <CircuitDivider />
 
           {/* Team Grid */}
           <motion.div

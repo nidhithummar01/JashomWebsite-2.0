@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { Heart, Activity, FileText, Shield, ArrowRight } from 'lucide-react';
@@ -89,8 +88,6 @@ export function AIForHealthcarePage() {
             Deliver better outcomes while reducing costs and administrative burden.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         <section className="py-16">
           <motion.div

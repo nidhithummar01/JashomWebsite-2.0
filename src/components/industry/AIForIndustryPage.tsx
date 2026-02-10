@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { TrendingUp, Scale, Calculator, Heart, Megaphone, FlaskConical, ArrowRight } from 'lucide-react';
@@ -105,8 +104,6 @@ export function AIForIndustryPage() {
             Discover how AI can revolutionize your business operations and drive growth.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         {/* Industries Grid */}
         <section className="py-12 sm:py-20">

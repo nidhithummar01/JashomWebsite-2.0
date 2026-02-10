@@ -1,74 +1,70 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
-// COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase
-// import { ServicesPage } from './components/ServicesPage';
-import { SolutionsPage } from './components/SolutionsPage';
-import { CapabilityMatrixPage } from './components/CapabilityMatrixPage';
-import { PortfolioPage } from './components/PortfolioPage';
-import { RankzyAIPage } from './components/portfolio/RankzyAIPage';
-import { PodAIClipforgePage } from './components/portfolio/PodAIClipforgePage';
-import { NVTrustGPUAttestationPage } from './components/portfolio/NVTrustGPUAttestationPage';
-import { HTICUDAAccelerationPage } from './components/portfolio/HTICUDAAccelerationPage';
-import { BoostReferralPage } from './components/portfolio/BoostReferralPage';
-import { ProjectSpherePage } from './components/portfolio/ProjectSpherePage';
-import { EnviroPulsePage } from './components/portfolio/EnviroPulsePage';
-import { GreenSpherePage } from './components/portfolio/GreenSpherePage';
-import { EcoBotAIPage } from './components/portfolio/EcoBotAIPage';
-import { JashomHealthPage } from './components/portfolio/JashomHealthPage';
-import { JashomHealthcarePage } from './components/portfolio/JashomHealthcarePage';
-import { JashomICUConnectPage } from './components/portfolio/JashomICUConnectPage';
-import { RAGLUPage } from './components/portfolio/RAGLUPage';
-import { ContactPage } from './components/ContactPage';
-import { BrochurePage } from './components/BrochurePage';
-import { PlaceholderPage } from './components/PlaceholderPage';
-// NEW PAGE IMPORTS
-import { HireCudaDeveloperPage } from './components/HireCudaDeveloperPage';
-import { ThankYouPage } from './components/ThankYouPage';
-import { GPUOptimizationServicePage } from './components/GPUOptimizationServicePage';
-import { CUDADevelopmentServicePage } from './components/CUDADevelopmentServicePage';
-import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
-import { TermsOfServicePage } from './components/TermsOfServicePage';
-import { CookiePolicyPage } from './components/CookiePolicyPage';
-import { SecurityPolicyPage } from './components/SecurityPolicyPage';
-import { TeamPage } from './components/about/TeamPage';
-import { AboutPortfolioPage } from './components/about/AboutPortfolioPage';
 import { PageTransition } from './components/PageTransition';
 import { ScrollProgress } from './components/ScrollProgress';
 import { AnimatePresence } from 'motion/react';
-// COMMENTED OUT - Service page imports temporarily hidden from UI but preserved in codebase
-// import { AIAutomationPage } from './components/services/AIAutomationPage';
-// import { AIGPUOptimizationPage } from './components/services/AIGPUOptimizationPage';
-// import { RAGApplicationsPage } from './components/services/RAGApplicationsPage';
-// import { DevOpsCloudPage } from './components/services/DevOpsCloudPage';
-// import { DevOpsDevSecOpsPage } from './components/services/DevOpsDevSecOpsPage';
-// import { VAPTPage } from './components/services/VAPTPage';
-// import { ProductEngineeringPage } from './components/services/ProductEngineeringPage';
-// import { AIAgenticPage } from './components/services/AIAgenticPage';
-// import { CustomDevelopmentPage } from './components/services/CustomDevelopmentPage';
-// import { CyberSecurityPage } from './components/services/CyberSecurityPage';
-// import { EdgeComputingPage } from './components/services/EdgeComputingPage';
-// import { CICDAutomationPage } from './components/services/CICDAutomationPage';
-// import { ComplianceRiskPage } from './components/services/ComplianceRiskPage';
-// import { MicroSaaSPage } from './components/services/MicroSaaSPage';
-// COMMENTED OUT - Solutions page imports temporarily hidden from UI but preserved in codebase
-// import { HealthTechPage } from './components/solutions/HealthTechPage';
-// import { FoodTechPage } from './components/solutions/FoodTechPage';
-// import { EnvironmentTechPage } from './components/solutions/EnvironmentTechPage';
-// import { RetailTechPage } from './components/solutions/RetailTechPage';
-// import { SupplyChainPage } from './components/solutions/SupplyChainPage';
-// import { FinTechPage } from './components/solutions/FinTechPage';
-// import { LegalTaxPage } from './components/solutions/LegalTaxPage';
-// COMMENTED OUT - AI for Industry page imports temporarily hidden from UI but preserved in codebase
-// import { AIForIndustryPage } from './components/industry/AIForIndustryPage';
-// import { AIForSalesPage } from './components/industry/AIForSalesPage';
-// import { AIForLegalPage } from './components/industry/AIForLegalPage';
-// import { AIForAccountingPage } from './components/industry/AIForAccountingPage';
-// import { AIForHealthcarePage } from './components/industry/AIForHealthcarePage';
-// import { AIForMarketingPage } from './components/industry/AIForMarketingPage';
-// import { AIForRnDPage } from './components/industry/AIForRnDPage';
+
+// Lazy load heavy components for better performance
+const SolutionsPage = lazy(() => import('./components/SolutionsPage').then(module => ({ default: module.SolutionsPage })));
+const CapabilityMatrixPage = lazy(() => import('./components/CapabilityMatrixPage').then(module => ({ default: module.CapabilityMatrixPage })));
+const PortfolioPage = lazy(() => import('./components/PortfolioPage').then(module => ({ default: module.PortfolioPage })));
+const InsightsPage = lazy(() => import('./components/InsightsPage').then(module => ({ default: module.InsightsPage })));
+const ContactPage = lazy(() => import('./components/ContactPage').then(module => ({ default: module.ContactPage })));
+const BrochurePage = lazy(() => import('./components/BrochurePage').then(module => ({ default: module.BrochurePage })));
+
+// Lazy load portfolio project pages
+const RankzyAIPage = lazy(() => import('./components/portfolio/RankzyAIPage').then(module => ({ default: module.RankzyAIPage })));
+const PodAIClipforgePage = lazy(() => import('./components/portfolio/PodAIClipforgePage').then(module => ({ default: module.PodAIClipforgePage })));
+const NVTrustGPUAttestationPage = lazy(() => import('./components/portfolio/NVTrustGPUAttestationPage').then(module => ({ default: module.NVTrustGPUAttestationPage })));
+const HTICUDAAccelerationPage = lazy(() => import('./components/portfolio/HTICUDAAccelerationPage').then(module => ({ default: module.HTICUDAAccelerationPage })));
+const BoostReferralPage = lazy(() => import('./components/portfolio/BoostReferralPage').then(module => ({ default: module.BoostReferralPage })));
+const ProjectSpherePage = lazy(() => import('./components/portfolio/ProjectSpherePage').then(module => ({ default: module.ProjectSpherePage })));
+const EnviroPulsePage = lazy(() => import('./components/portfolio/EnviroPulsePage').then(module => ({ default: module.EnviroPulsePage })));
+const GreenSpherePage = lazy(() => import('./components/portfolio/GreenSpherePage').then(module => ({ default: module.GreenSpherePage })));
+const EcoBotAIPage = lazy(() => import('./components/portfolio/EcoBotAIPage').then(module => ({ default: module.EcoBotAIPage })));
+const JashomHealthPage = lazy(() => import('./components/portfolio/JashomHealthPage').then(module => ({ default: module.JashomHealthPage })));
+const JashomHealthcarePage = lazy(() => import('./components/portfolio/JashomHealthcarePage').then(module => ({ default: module.JashomHealthcarePage })));
+const JashomICUConnectPage = lazy(() => import('./components/portfolio/JashomICUConnectPage').then(module => ({ default: module.JashomICUConnectPage })));
+const RAGLUPage = lazy(() => import('./components/portfolio/RAGLUPage').then(module => ({ default: module.RAGLUPage })));
+
+// Lazy load service pages (high priority for optimization)
+const HireCudaDeveloperPage = lazy(() => import('./components/HireCudaDeveloperPage').then(module => ({ default: module.HireCudaDeveloperPage })));
+const GPUOptimizationServicePage = lazy(() => import('./components/GPUOptimizationServicePage').then(module => ({ default: module.GPUOptimizationServicePage })));
+const CUDADevelopmentServicePage = lazy(() => import('./components/CUDADevelopmentServicePage').then(module => ({ default: module.CUDADevelopmentServicePage })));
+const ThankYouPage = lazy(() => import('./components/ThankYouPage').then(module => ({ default: module.ThankYouPage })));
+
+// Lazy load service-specific thank you pages
+const HireCudaThankYouPage = lazy(() => import('./components/HireCudaThankYouPage').then(module => ({ default: module.HireCudaThankYouPage })));
+const GPUOptimizationThankYouPage = lazy(() => import('./components/GPUOptimizationThankYouPage').then(module => ({ default: module.GPUOptimizationThankYouPage })));
+const CUDADevelopmentThankYouPage = lazy(() => import('./components/CUDADevelopmentThankYouPage').then(module => ({ default: module.CUDADevelopmentThankYouPage })));
+
+// Lazy load policy pages
+const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then(module => ({ default: module.PrivacyPolicyPage })));
+const TermsOfServicePage = lazy(() => import('./components/TermsOfServicePage').then(module => ({ default: module.TermsOfServicePage })));
+const CookiePolicyPage = lazy(() => import('./components/CookiePolicyPage').then(module => ({ default: module.CookiePolicyPage })));
+const SecurityPolicyPage = lazy(() => import('./components/SecurityPolicyPage').then(module => ({ default: module.SecurityPolicyPage })));
+
+// Lazy load about pages
+const TeamPage = lazy(() => import('./components/about/TeamPage').then(module => ({ default: module.TeamPage })));
+const AboutPortfolioPage = lazy(() => import('./components/about/AboutPortfolioPage').then(module => ({ default: module.AboutPortfolioPage })));
+
+// Lazy load placeholder page
+const PlaceholderPage = lazy(() => import('./components/PlaceholderPage').then(module => ({ default: module.PlaceholderPage })));
+
+// Loading component for Suspense fallback
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="text-center">
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500 mb-4"></div>
+        <p className="text-white/70 text-sm">Loading...</p>
+      </div>
+    </div>
+  );
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -85,92 +81,64 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
-        {/* COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase */}
-        {/* <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} /> */}
-        <Route path="/solutions" element={<PageTransition><SolutionsPage /></PageTransition>} />
-        <Route path="/capability" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
-        <Route path="/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
-        <Route path="/portfolio/rankzy-ai" element={<PageTransition><RankzyAIPage /></PageTransition>} />
-        <Route path="/portfolio/pod-ai-clipforge" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />
-        <Route path="/portfolio/nvtrust-gpu-attestation" element={<PageTransition><NVTrustGPUAttestationPage /></PageTransition>} />
-        <Route path="/portfolio/hti-cuda-acceleration" element={<PageTransition><HTICUDAAccelerationPage /></PageTransition>} />
-        
-        {/* Project Detail Routes */}
-        <Route path="/projects/boostreferral" element={<PageTransition><BoostReferralPage /></PageTransition>} />
-        <Route path="/projects/projectsphere" element={<PageTransition><ProjectSpherePage /></PageTransition>} />
-        <Route path="/projects/enviropulse" element={<PageTransition><EnviroPulsePage /></PageTransition>} />
-        <Route path="/projects/greensphere" element={<PageTransition><GreenSpherePage /></PageTransition>} />
-        <Route path="/projects/ecobot-ai" element={<PageTransition><EcoBotAIPage /></PageTransition>} />
-        <Route path="/projects/jashom-health" element={<PageTransition><JashomHealthPage /></PageTransition>} />
-        <Route path="/projects/jashom-healthcare" element={<PageTransition><JashomHealthcarePage /></PageTransition>} />
-        <Route path="/projects/jashom-icu-connect" element={<PageTransition><JashomICUConnectPage /></PageTransition>} />
-        <Route path="/projects/rag-lu" element={<PageTransition><RAGLUPage /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
-        <Route path="/brochure" element={<PageTransition><BrochurePage /></PageTransition>} />
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
+          <Route path="/solutions" element={<PageTransition><SolutionsPage /></PageTransition>} />
+          <Route path="/capability" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
+          <Route path="/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
+          <Route path="/insights" element={<PageTransition><InsightsPage /></PageTransition>} />
+          <Route path="/blog" element={<PageTransition><InsightsPage /></PageTransition>} />
+          <Route path="/portfolio/rankzy-ai" element={<PageTransition><RankzyAIPage /></PageTransition>} />
+          <Route path="/portfolio/pod-ai-clipforge" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />
+          <Route path="/portfolio/nvtrust-gpu-attestation" element={<PageTransition><NVTrustGPUAttestationPage /></PageTransition>} />
+          <Route path="/portfolio/hti-cuda-acceleration" element={<PageTransition><HTICUDAAccelerationPage /></PageTransition>} />
+          
+          {/* Project Detail Routes */}
+          <Route path="/projects/boostreferral" element={<PageTransition><BoostReferralPage /></PageTransition>} />
+          <Route path="/projects/projectsphere" element={<PageTransition><ProjectSpherePage /></PageTransition>} />
+          <Route path="/projects/enviropulse" element={<PageTransition><EnviroPulsePage /></PageTransition>} />
+          <Route path="/projects/greensphere" element={<PageTransition><GreenSpherePage /></PageTransition>} />
+          <Route path="/projects/ecobot-ai" element={<PageTransition><EcoBotAIPage /></PageTransition>} />
+          <Route path="/projects/jashom-health" element={<PageTransition><JashomHealthPage /></PageTransition>} />
+          <Route path="/projects/jashom-healthcare" element={<PageTransition><JashomHealthcarePage /></PageTransition>} />
+          <Route path="/projects/jashom-icu-connect" element={<PageTransition><JashomICUConnectPage /></PageTransition>} />
+          <Route path="/projects/rag-lu" element={<PageTransition><RAGLUPage /></PageTransition>} />
+          <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+          <Route path="/brochure" element={<PageTransition><BrochurePage /></PageTransition>} />
 
-        {/* NEW ROUTES - Hire Expert and Thank You Page */}
-        <Route path="/hire-cuda-developer" element={<PageTransition><HireCudaDeveloperPage /></PageTransition>} />
-        <Route path="/thank-you" element={<PageTransition><ThankYouPage /></PageTransition>} />
+          {/* Service Routes - High Priority Pages */}
+          <Route path="/hire-cuda-developer" element={<PageTransition><HireCudaDeveloperPage /></PageTransition>} />
+          <Route path="/thank-you" element={<PageTransition><ThankYouPage /></PageTransition>} />
+          <Route path="/gpu-optimization-service" element={<PageTransition><GPUOptimizationServicePage /></PageTransition>} />
+          <Route path="/cuda-development-service" element={<PageTransition><CUDADevelopmentServicePage /></PageTransition>} />
+          
+          {/* Service-Specific Thank You Pages */}
+          <Route path="/thank-you/hire-cuda" element={<PageTransition><HireCudaThankYouPage /></PageTransition>} />
+          <Route path="/thank-you/gpu-optimization" element={<PageTransition><GPUOptimizationThankYouPage /></PageTransition>} />
+          <Route path="/thank-you/cuda-development" element={<PageTransition><CUDADevelopmentThankYouPage /></PageTransition>} />
 
-        {/* NEW SERVICES ROUTES */}
-        <Route path="/gpu-optimization-service" element={<PageTransition><GPUOptimizationServicePage /></PageTransition>} />
-        <Route path="/cuda-development-service" element={<PageTransition><CUDADevelopmentServicePage /></PageTransition>} />
-
-        {/* COMMENTED OUT - Service Routes temporarily hidden from UI but preserved in codebase */}
-        {/* <Route path="/services/ai-automation" element={<PageTransition><AIAutomationPage /></PageTransition>} />
-        <Route path="/services/ai-gpu-optimization" element={<PageTransition><AIGPUOptimizationPage /></PageTransition>} />
-        <Route path="/services/rag-applications" element={<PageTransition><RAGApplicationsPage /></PageTransition>} />
-        <Route path="/services/devops-cloud" element={<PageTransition><DevOpsCloudPage /></PageTransition>} />
-        <Route path="/services/devops-devsecops" element={<PageTransition><DevOpsDevSecOpsPage /></PageTransition>} />
-        <Route path="/services/vapt" element={<PageTransition><VAPTPage /></PageTransition>} />
-        <Route path="/services/product-engineering" element={<PageTransition><ProductEngineeringPage /></PageTransition>} />
-        <Route path="/services/ai-agentic-systems" element={<PageTransition><AIAgenticPage /></PageTransition>} />
-        <Route path="/services/custom-development" element={<PageTransition><CustomDevelopmentPage /></PageTransition>} />
-        <Route path="/services/cyber-security" element={<PageTransition><CyberSecurityPage /></PageTransition>} />
-        <Route path="/services/edge-computing" element={<PageTransition><EdgeComputingPage /></PageTransition>} />
-        <Route path="/services/cicd-automation" element={<PageTransition><CICDAutomationPage /></PageTransition>} />
-        <Route path="/services/compliance-risk" element={<PageTransition><ComplianceRiskPage /></PageTransition>} />
-        <Route path="/services/micro-saas" element={<PageTransition><MicroSaaSPage /></PageTransition>} /> */}
-
-        {/* COMMENTED OUT - Solution Routes temporarily hidden from UI but preserved in codebase */}
-        {/* <Route path="/solutions/healthtech" element={<PageTransition><HealthTechPage /></PageTransition>} />
-        <Route path="/solutions/foodtech" element={<PageTransition><FoodTechPage /></PageTransition>} />
-        <Route path="/solutions/environmenttech" element={<PageTransition><EnvironmentTechPage /></PageTransition>} />
-        <Route path="/solutions/retail-tech" element={<PageTransition><RetailTechPage /></PageTransition>} />
-        <Route path="/solutions/supply-chain" element={<PageTransition><SupplyChainPage /></PageTransition>} />
-        <Route path="/solutions/fintech" element={<PageTransition><FinTechPage /></PageTransition>} />
-        <Route path="/solutions/legal-and-tax" element={<PageTransition><LegalTaxPage /></PageTransition>} /> */}
-
-        {/* COMMENTED OUT - AI for Industry Routes temporarily hidden from UI but preserved in codebase */}
-        {/* <Route path="/ai-for-industry" element={<PageTransition><AIForIndustryPage /></PageTransition>} />
-        <Route path="/ai-for-industry/sales" element={<PageTransition><AIForSalesPage /></PageTransition>} />
-        <Route path="/ai-for-industry/legal" element={<PageTransition><AIForLegalPage /></PageTransition>} />
-        <Route path="/ai-for-industry/accounting" element={<PageTransition><AIForAccountingPage /></PageTransition>} />
-        <Route path="/ai-for-industry/healthcare" element={<PageTransition><AIForHealthcarePage /></PageTransition>} />
-        <Route path="/ai-for-industry/marketing" element={<PageTransition><AIForMarketingPage /></PageTransition>} />
-        <Route path="/ai-for-industry/rnd" element={<PageTransition><AIForRnDPage /></PageTransition>} /> */}
-
-        {/* About Us routes */}
-        <Route path="/about/team" element={<PageTransition><TeamPage /></PageTransition>} />
-        <Route path="/about/portfolio" element={<PageTransition><AboutPortfolioPage /></PageTransition>} />
-        <Route path="/about/blog" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
-        <Route path="/about/career" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with Jashom." /></PageTransition>} />
-        <Route path="/about" element={<PageTransition><TeamPage /></PageTransition>} />
-        
-        {/* Placeholder routes */}
-        <Route path="/careers" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with Jashom." /></PageTransition>} />
-        <Route path="/blog" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
-        <Route path="/news" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from Jashom." /></PageTransition>} />
-        <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
-        <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />
-        <Route path="/api" element={<PageTransition><PlaceholderPage title="API Reference" description="Complete API documentation and integration guides for Jashom's AI platform." /></PageTransition>} />
-        <Route path="/privacy" element={<PageTransition><PrivacyPolicyPage /></PageTransition>} />
-        <Route path="/terms" element={<PageTransition><TermsOfServicePage /></PageTransition>} />
-        <Route path="/cookies" element={<PageTransition><CookiePolicyPage /></PageTransition>} />
-        <Route path="/security" element={<PageTransition><SecurityPolicyPage /></PageTransition>} />
-      </Routes>
+          {/* About Us routes */}
+          <Route path="/about/team" element={<PageTransition><TeamPage /></PageTransition>} />
+          <Route path="/about/portfolio" element={<PageTransition><AboutPortfolioPage /></PageTransition>} />
+          <Route path="/about/blog" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
+          <Route path="/about/career" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with Jashom." /></PageTransition>} />
+          <Route path="/about" element={<PageTransition><TeamPage /></PageTransition>} />
+          
+          {/* Placeholder routes */}
+          <Route path="/careers" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with Jashom." /></PageTransition>} />
+          <Route path="/news" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from Jashom." /></PageTransition>} />
+          <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
+          <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />
+          <Route path="/api" element={<PageTransition><PlaceholderPage title="API Reference" description="Complete API documentation and integration guides for Jashom's AI platform." /></PageTransition>} />
+          
+          {/* Policy Pages */}
+          <Route path="/privacy" element={<PageTransition><PrivacyPolicyPage /></PageTransition>} />
+          <Route path="/terms" element={<PageTransition><TermsOfServicePage /></PageTransition>} />
+          <Route path="/cookies" element={<PageTransition><CookiePolicyPage /></PageTransition>} />
+          <Route path="/security" element={<PageTransition><SecurityPolicyPage /></PageTransition>} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 }

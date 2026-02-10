@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { SEO } from './SEO';
-import { CircuitDivider } from './CircuitDivider';
 import { CheckCircle, ArrowRight, Home } from 'lucide-react';
 
 export function ThankYouPage() {
@@ -32,8 +31,6 @@ export function ThankYouPage() {
             We've received your message and appreciate your interest in Jashom's AI and GPU optimization solutions.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         {/* Main Content */}
         <section className="py-12 sm:py-16">

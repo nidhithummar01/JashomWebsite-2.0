@@ -38,7 +38,7 @@ export function Navigation() {
       dropdown: [
         { path: '/about/team', label: 'Team' },
         { path: '/about/portfolio', label: 'Portfolio' },
-        { path: '/about/blog', label: 'Blog' },
+        { path: '/insights', label: 'Blog' },
         { path: '/about/career', label: 'Career' }
       ]
     },

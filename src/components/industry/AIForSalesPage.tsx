@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { TrendingUp, Target, Users, BarChart3, Zap, ArrowRight } from 'lucide-react';
@@ -90,8 +89,6 @@ export function AIForSalesPage() {
             Transform your sales team into a data-driven powerhouse.
           </p>
         </motion.div>
-
-        <CircuitDivider />
 
         {/* Benefits Section */}
         <section className="py-16">

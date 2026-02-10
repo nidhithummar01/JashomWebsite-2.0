@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { Linkedin, ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
@@ -133,8 +132,6 @@ export function AboutUsPage() {
               </p>
             </motion.div>
 
-            <CircuitDivider />
-
             {/* Team Grid */}
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-16"
@@ -199,8 +196,6 @@ export function AboutUsPage() {
                 Discover how we've helped organizations achieve breakthrough results.
               </p>
             </motion.div>
-
-            <CircuitDivider />
 
             {/* Case Studies by Category - Reusing PortfolioPage structure */}
             <PortfolioContent />

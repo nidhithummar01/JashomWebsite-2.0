@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
@@ -275,8 +274,6 @@ export function PortfolioPage() {
           </p>
         </motion.div>
 
-        <CircuitDivider />
-
         {/* Case Studies by Category */}
         <div className="space-y-16 mt-16">
           {groupedProjects.map(({ category, projects }, categoryIndex) => (
@@ -408,8 +405,6 @@ export function PortfolioPage() {
           ))}
         </div>
 
-        <CircuitDivider />
-
         {/* Stats Section */}
         <motion.div
           className="mt-16"
@@ -439,8 +434,6 @@ export function PortfolioPage() {
             ))}
           </div>
         </motion.div>
-
-        <CircuitDivider />
 
         {/* CTA Section */}
         <motion.div

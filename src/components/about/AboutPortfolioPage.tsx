@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { CircuitDivider } from '../CircuitDivider';
 import { GlassCard } from '../GlassCard';
 import { SEO } from '../SEO';
 import { ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
@@ -275,8 +274,6 @@ export function AboutPortfolioPage() {
               Discover how we've helped organizations achieve breakthrough results.
             </p>
           </motion.div>
-
-          <CircuitDivider />
 
           {/* Case Studies by Category */}
           <div className="space-y-16 mt-16">

@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { CircuitDivider } from './CircuitDivider';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { Brain, Cpu, Code, Cloud, Package } from 'lucide-react';
@@ -107,8 +106,6 @@ export function CapabilityMatrixPage() {
           </p>
         </motion.div>
 
-        <CircuitDivider />
-
         {/* Capabilities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
           {capabilities.map((capability, index) => (
@@ -142,8 +139,6 @@ export function CapabilityMatrixPage() {
             </motion.div>
           ))}
         </div>
-
-        <CircuitDivider />
 
         {/* Expertise Levels */}
         <motion.div
@@ -191,8 +186,6 @@ export function CapabilityMatrixPage() {
             ))}
           </div>
         </motion.div>
-
-        <CircuitDivider />
 
         {/* CTA Section */}
         <motion.div
