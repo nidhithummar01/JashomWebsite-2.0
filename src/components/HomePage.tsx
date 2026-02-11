@@ -512,7 +512,7 @@ export function HomePage() {
 
                 {/* Metric 3 */}
                 <motion.div 
-                  className="space-y-2 p-4 rounded-xl bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300"
+                  className="space-y-2 p-4 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -3 }}
                 >
                   <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-200 bg-clip-text text-transparent">20M+</div>
@@ -586,7 +586,7 @@ export function HomePage() {
               disabled={!canGoPrev}
               className={`absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                 canGoPrev
-                  ? 'bg-cyan-500 hover:bg-cyan-600 cursor-pointer shadow-2xl'
+                  ? 'bg-blue-500 hover:bg-cyan-600 cursor-pointer shadow-2xl'
                   : 'bg-gray-700 cursor-not-allowed opacity-50'
               }`}
               aria-label="Previous slide"
@@ -601,7 +601,7 @@ export function HomePage() {
               disabled={!canGoNext}
               className={`absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                 canGoNext
-                  ? 'bg-cyan-500 hover:bg-cyan-600 cursor-pointer shadow-2xl'
+                  ? 'bg-blue-500 hover:bg-cyan-600 cursor-pointer shadow-2xl'
                   : 'bg-gray-700 cursor-not-allowed opacity-50'
               }`}
               aria-label="Next slide"
@@ -915,7 +915,7 @@ export function HomePage() {
         {/* Subtle background glow */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -1188,7 +1188,7 @@ export function HomePage() {
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -1361,6 +1361,138 @@ export function HomePage() {
               <span>View All Blogs</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <motion.div
+              className="inline-block mb-4 px-4 py-2 rounded-full border"
+              style={{
+                background: 'rgba(14, 165, 233, 0.08)',
+                borderColor: 'rgba(14, 165, 233, 0.25)'
+              }}
+            >
+              <span style={{ color: '#0EA5E9', fontWeight: 600, fontSize: '0.875rem' }}>Get In Touch</span>
+            </motion.div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
+              Let's Build Something <span style={{ color: '#0EA5E9' }}>Amazing</span>
+            </h2>
+            <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
+              Ready to transform your business with AI? Share your details and we'll get back to you within 24 hours.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="rounded-2xl p-6 sm:p-8 border"
+            style={{
+              background: 'rgba(255, 255, 255, 0.02)',
+              borderColor: 'rgba(255, 255, 255, 0.08)',
+              backdropFilter: 'blur(10px)'
+            }}
+          >
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-white/80 mb-2 font-medium text-sm">Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-white/80 mb-2 font-medium text-sm">Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    placeholder="john@company.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-white/80 mb-2 font-medium text-sm">Company</label>
+                  <input
+                    type="text"
+                    name="company"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    placeholder="Your Company"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-white/80 mb-2 font-medium text-sm">Phone</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    placeholder="+1 (555) 000-0000"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-white/80 mb-2 font-medium text-sm">Service Interest</label>
+                <select
+                  name="service"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                >
+                  <option value="" className="bg-[#1A1A1A]">Select a service</option>
+                  <option value="gpu-optimization" className="bg-[#1A1A1A]">GPU Optimization Service</option>
+                  <option value="cuda-development" className="bg-[#1A1A1A]">CUDA Development Service</option>
+                  <option value="ai-ml" className="bg-[#1A1A1A]">AI/ML Development</option>
+                  <option value="consulting" className="bg-[#1A1A1A]">AI Consulting</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-white/80 mb-2 font-medium text-sm">Message *</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all resize-none"
+                  placeholder="Tell us about your project..."
+                />
+              </div>
+
+              <motion.button
+                type="submit"
+                className="w-full px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
+                style={{
+                  background: 'rgba(14, 165, 233, 0.12)',
+                  border: '1px solid rgba(14, 165, 233, 0.35)',
+                  color: '#FAFAFA'
+                }}
+                whileHover={{ 
+                  scale: 1.02,
+                  background: 'rgba(14, 165, 233, 0.18)',
+                  borderColor: 'rgba(14, 165, 233, 0.5)'
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Send Message
+              </motion.button>
+            </form>
           </motion.div>
         </div>
       </section>

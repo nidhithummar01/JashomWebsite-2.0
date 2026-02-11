@@ -5,7 +5,7 @@ import { CheckCircle2, Clock, FileText, ArrowRight, Users, Zap } from 'lucide-re
 
 export function HireCudaThankYouPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#1a1a1a' }}>
+    <div className="min-h-screen" style={{ background: '#111827' }}>
       <SEO
         title="Thank You - Hire CUDA Developer | Jashom"
         description="Thank you for your interest in hiring CUDA developers. We'll review your requirements and get back to you within 24 hours."
@@ -20,7 +20,7 @@ export function HireCudaThankYouPage() {
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, type: "spring" }}
             className="inline-flex items-center justify-center w-24 h-24 rounded-full mb-8"
-            style={{ background: '#FF8C00' }}
+            style={{ background: '#0EA5E9' }}
           >
             <CheckCircle2 className="w-12 h-12 text-white" />
           </motion.div>
@@ -50,16 +50,16 @@ export function HireCudaThankYouPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg"
-            style={{ background: '#333333' }}
+            style={{ background: '#111827' }}
           >
-            <Clock className="w-5 h-5" style={{ color: '#FF8C00' }} />
+            <Clock className="w-5 h-5" style={{ color: '#0EA5E9' }} />
             <span style={{ color: '#FFFFFF' }}>Expected Response: Within 24 Hours</span>
           </motion.div>
         </div>
       </section>
 
       {/* What Happens Next */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#FFFFFF' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#111827' }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -84,8 +84,8 @@ export function HireCudaThankYouPage() {
               transition={{ delay: 0.1 }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: '#FFF3E0' }}>
-                <FileText className="w-8 h-8" style={{ color: '#FF8C00' }} />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
+                <FileText className="w-8 h-8" style={{ color: '#0EA5E9' }} />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: '#1a1a1a' }}>
                 1. Requirements Review
@@ -103,8 +103,8 @@ export function HireCudaThankYouPage() {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: '#FFF3E0' }}>
-                <Users className="w-8 h-8" style={{ color: '#FF8C00' }} />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
+                <Users className="w-8 h-8" style={{ color: '#0EA5E9' }} />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: '#1a1a1a' }}>
                 2. Developer Matching
@@ -122,8 +122,8 @@ export function HireCudaThankYouPage() {
               transition={{ delay: 0.3 }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: '#FFF3E0' }}>
-                <Zap className="w-8 h-8" style={{ color: '#FF8C00' }} />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
+                <Zap className="w-8 h-8" style={{ color: '#0EA5E9' }} />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: '#1a1a1a' }}>
                 3. Quick Onboarding
@@ -137,7 +137,7 @@ export function HireCudaThankYouPage() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#f5f5f5' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#111827' }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -163,8 +163,8 @@ export function HireCudaThankYouPage() {
             >
               <Link
                 to="/portfolio"
-                className="block p-8 rounded-xl border-2 transition-all duration-300 hover:border-orange-500 hover:shadow-lg"
-                style={{ background: '#FFFFFF', borderColor: '#e0e0e0' }}
+                className="block p-8 rounded-xl border-2 transition-all duration-300 hover:border-blue-500 hover:shadow-lg"
+                style={{ background: '#111827', borderColor: '#e0e0e0' }}
               >
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#1a1a1a' }}>
                   View Our Portfolio
@@ -172,7 +172,7 @@ export function HireCudaThankYouPage() {
                 <p className="text-base mb-4" style={{ color: '#666666' }}>
                   Explore 100+ successful GPU projects and CUDA implementations across various industries.
                 </p>
-                <div className="flex items-center gap-2" style={{ color: '#FF8C00' }}>
+                <div className="flex items-center gap-2" style={{ color: '#0EA5E9' }}>
                   <span className="font-semibold">Explore Projects</span>
                   <ArrowRight className="w-5 h-5" />
                 </div>
@@ -188,8 +188,8 @@ export function HireCudaThankYouPage() {
             >
               <Link
                 to="/gpu-optimization-service"
-                className="block p-8 rounded-xl border-2 transition-all duration-300 hover:border-orange-500 hover:shadow-lg"
-                style={{ background: '#FFFFFF', borderColor: '#e0e0e0' }}
+                className="block p-8 rounded-xl border-2 transition-all duration-300 hover:border-blue-500 hover:shadow-lg"
+                style={{ background: '#111827', borderColor: '#e0e0e0' }}
               >
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#1a1a1a' }}>
                   GPU Optimization Services
@@ -197,7 +197,7 @@ export function HireCudaThankYouPage() {
                 <p className="text-base mb-4" style={{ color: '#666666' }}>
                   Learn how we optimize GPU workloads for 10X performance improvements.
                 </p>
-                <div className="flex items-center gap-2" style={{ color: '#FF8C00' }}>
+                <div className="flex items-center gap-2" style={{ color: '#0EA5E9' }}>
                   <span className="font-semibold">Learn More</span>
                   <ArrowRight className="w-5 h-5" />
                 </div>
@@ -208,7 +208,7 @@ export function HireCudaThankYouPage() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#1a1a1a' }}>
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#111827' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -225,7 +225,7 @@ export function HireCudaThankYouPage() {
               <a
                 href="mailto:info@jashom.com"
                 className="text-lg font-semibold hover:opacity-80 transition-opacity"
-                style={{ color: '#FF8C00' }}
+                style={{ color: '#0EA5E9' }}
               >
                 info@jashom.com
               </a>
@@ -233,7 +233,7 @@ export function HireCudaThankYouPage() {
               <a
                 href="tel:+919023906363"
                 className="text-lg font-semibold hover:opacity-80 transition-opacity"
-                style={{ color: '#FF8C00' }}
+                style={{ color: '#0EA5E9' }}
               >
                 +91 90239 06363
               </a>

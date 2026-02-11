@@ -13,7 +13,7 @@ export function GPUOptimizationThankYouPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: '#0a0a0a' }}>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: '#111827' }}>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ scale: 0 }}
@@ -50,14 +50,14 @@ export function GPUOptimizationThankYouPage() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20"
             style={{ background: 'rgba(14, 165, 233, 0.1)' }}
           >
-            <Clock className="w-5 h-5 text-cyan-400" />
+            <Clock className="w-5 h-5 text-blue-400" />
             <span className="text-white">Free Consultation Scheduled: Within 48 Hours</span>
           </motion.div>
         </div>
       </section>
 
       {/* What Happens Next */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#000000' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export function GPUOptimizationThankYouPage() {
               className="text-center"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <FileSearch className="w-8 h-8 text-cyan-400" />
+                <FileSearch className="w-8 h-8 text-blue-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
                 1. Performance Analysis
@@ -102,7 +102,7 @@ export function GPUOptimizationThankYouPage() {
               className="text-center"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <TrendingUp className="w-8 h-8 text-cyan-400" />
+                <TrendingUp className="w-8 h-8 text-blue-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
                 2. Optimization Strategy
@@ -121,7 +121,7 @@ export function GPUOptimizationThankYouPage() {
               className="text-center"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <Rocket className="w-8 h-8 text-cyan-400" />
+                <Rocket className="w-8 h-8 text-blue-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
                 3. Implementation
@@ -135,7 +135,7 @@ export function GPUOptimizationThankYouPage() {
       </section>
 
       {/* Performance Stats */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0a0a0a' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#111827' }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -160,7 +160,7 @@ export function GPUOptimizationThankYouPage() {
               className="text-center p-8 rounded-xl border border-white/10"
               style={{ background: 'rgba(14, 165, 233, 0.05)' }}
             >
-              <div className="text-5xl font-bold text-cyan-400 mb-2">10X</div>
+              <div className="text-5xl font-bold text-blue-400 mb-2">10X</div>
               <div className="text-white/70">Faster Execution</div>
             </motion.div>
 
@@ -172,7 +172,7 @@ export function GPUOptimizationThankYouPage() {
               className="text-center p-8 rounded-xl border border-white/10"
               style={{ background: 'rgba(14, 165, 233, 0.05)' }}
             >
-              <div className="text-5xl font-bold text-cyan-400 mb-2">60%</div>
+              <div className="text-5xl font-bold text-blue-400 mb-2">60%</div>
               <div className="text-white/70">Cost Reduction</div>
             </motion.div>
 
@@ -184,7 +184,7 @@ export function GPUOptimizationThankYouPage() {
               className="text-center p-8 rounded-xl border border-white/10"
               style={{ background: 'rgba(14, 165, 233, 0.05)' }}
             >
-              <div className="text-5xl font-bold text-cyan-400 mb-2">95%</div>
+              <div className="text-5xl font-bold text-blue-400 mb-2">95%</div>
               <div className="text-white/70">GPU Utilization</div>
             </motion.div>
           </div>
@@ -192,7 +192,7 @@ export function GPUOptimizationThankYouPage() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#000000' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -219,7 +219,7 @@ export function GPUOptimizationThankYouPage() {
               <Link
                 to="/portfolio"
                 className="block p-8 rounded-xl border border-white/10 transition-all duration-300 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
-                style={{ background: '#0a0a0a' }}
+                style={{ background: '#111827' }}
               >
                 <h3 className="text-xl font-bold text-white mb-3">
                   Optimization Case Studies
@@ -227,7 +227,7 @@ export function GPUOptimizationThankYouPage() {
                 <p className="text-base text-white/70 mb-4">
                   Real-world examples of GPU optimization projects with measurable performance gains.
                 </p>
-                <div className="flex items-center gap-2 text-cyan-400">
+                <div className="flex items-center gap-2 text-blue-400">
                   <span className="font-semibold">View Case Studies</span>
                   <ArrowRight className="w-5 h-5" />
                 </div>
@@ -244,7 +244,7 @@ export function GPUOptimizationThankYouPage() {
               <Link
                 to="/cuda-development-service"
                 className="block p-8 rounded-xl border border-white/10 transition-all duration-300 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
-                style={{ background: '#0a0a0a' }}
+                style={{ background: '#111827' }}
               >
                 <h3 className="text-xl font-bold text-white mb-3">
                   CUDA Development Services
@@ -252,7 +252,7 @@ export function GPUOptimizationThankYouPage() {
                 <p className="text-base text-white/70 mb-4">
                   Custom CUDA development for GPU-accelerated applications and solutions.
                 </p>
-                <div className="flex items-center gap-2 text-cyan-400">
+                <div className="flex items-center gap-2 text-blue-400">
                   <span className="font-semibold">Learn More</span>
                   <ArrowRight className="w-5 h-5" />
                 </div>
@@ -263,7 +263,7 @@ export function GPUOptimizationThankYouPage() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#0a0a0a' }}>
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#111827' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -279,14 +279,14 @@ export function GPUOptimizationThankYouPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="mailto:info@jashom.com"
-                className="text-lg font-semibold text-cyan-400 hover:opacity-80 transition-opacity"
+                className="text-lg font-semibold text-blue-400 hover:opacity-80 transition-opacity"
               >
                 info@jashom.com
               </a>
               <span className="text-white/30">|</span>
               <a
                 href="tel:+919023906363"
-                className="text-lg font-semibold text-cyan-400 hover:opacity-80 transition-opacity"
+                className="text-lg font-semibold text-blue-400 hover:opacity-80 transition-opacity"
               >
                 +91 90239 06363
               </a>
