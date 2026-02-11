@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { getLatestInsights } from '../data/insightsData';
 // COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase
 // import { ServicesSlider } from './ServicesSlider';
@@ -22,7 +22,9 @@ import {
   Target,
   Rocket,
   Calendar,
-  Clock
+  Clock,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 const staggerContainer = {
@@ -51,6 +53,112 @@ const staggerItem = {
 
 export function HomePage() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
+
+  const portfolioProjects = [
+    {
+      title: 'BoostReferral - SaaS Platform',
+      industry: 'SaaS',
+      challenge: 'Businesses needed an automated solution to manage referral programs',
+      solution: 'Comprehensive referral management platform with analytics',
+      impact: ['Automated referral management', '99.9% platform uptime', 'Scalable SaaS architecture'],
+      tags: ['SaaS Platform', 'Analytics', 'Automation'],
+      image: '/images/portfolio/boostreferral.jpg',
+      link: '/projects/boostreferral',
+      liveUrl: 'https://www.boostreferral.com'
+    },
+    {
+      title: 'ProjectSphere - Project Management Platform',
+      industry: 'SaaS',
+      challenge: 'Organizations need comprehensive project management tools',
+      solution: 'Complete project management platform with real-time collaboration',
+      impact: ['45% team efficiency', '30% faster delivery', '85% user adoption'],
+      tags: ['Project Management', 'Collaboration', 'Analytics'],
+      image: '/images/portfolio/projectsphere.jpg',
+      link: '/projects/projectsphere'
+    },
+    {
+      title: 'EnviroPulse - Environmental Monitoring',
+      industry: 'Environmental Tech',
+      challenge: 'Real-time monitoring across multiple zones needed',
+      solution: 'IoT sensors with advanced analytics for environmental monitoring',
+      impact: ['35% reduction in incidents', 'Real-time monitoring', 'Multi-zone tracking'],
+      tags: ['IoT', 'Real-time Data', 'Analytics'],
+      image: '/images/portfolio/enviropulse.jpg',
+      link: '/projects/enviropulse',
+      liveUrl: 'https://enviropulse.jashom.com'
+    },
+    {
+      title: 'GreenSphere - ESG Platform',
+      industry: 'ESG Platform',
+      challenge: 'ESG metrics tracking and reporting challenges',
+      solution: 'Comprehensive ESG tracking and reporting platform',
+      impact: ['23% carbon reduction', '65% reporting efficiency', 'Automated reporting'],
+      tags: ['ESG', 'Sustainability', 'Reporting'],
+      image: '/images/portfolio/greensphere.jpg',
+      link: '/projects/greensphere',
+      liveUrl: 'https://greenesg.jashom.com/'
+    },
+    {
+      title: 'EcoBot AI - Sustainability Assistant',
+      industry: 'AI Platform',
+      challenge: 'Organizations struggle with environmental regulations',
+      solution: 'AI-powered sustainability assistant with instant responses',
+      impact: ['40% reduced compliance issues', '60% better decisions', 'Instant responses'],
+      tags: ['AI', 'NLP', 'Sustainability'],
+      image: '/images/portfolio/ecobot-ai.jpg',
+      link: '/projects/ecobot-ai',
+      liveUrl: 'https://ecoai.jashom.com/dashboard'
+    },
+    {
+      title: 'Jashom Health - Hospital System',
+      industry: 'Healthcare',
+      challenge: 'Multi-location healthcare with HIPAA compliance needed',
+      solution: 'Comprehensive hospital management with real-time monitoring',
+      impact: ['99.9% uptime', '40% reduced overhead', '100% HIPAA compliance'],
+      tags: ['HIPAA', 'Healthcare', 'Real-time'],
+      image: '/images/portfolio/jashom-health.jpg',
+      link: '/projects/jashom-health',
+      liveUrl: 'https://jashomhealth.jashom.com'
+    },
+    {
+      title: 'Jashom Healthcare - Interoperability',
+      industry: 'Healthcare',
+      challenge: 'Healthcare systems in silos needed integration',
+      solution: 'Seamless interoperability with HL7/FHIR protocols',
+      impact: ['99.9% uptime', '35% reduced duplicates', '50+ partners integrated'],
+      tags: ['HL7', 'FHIR', 'Integration'],
+      image: '/images/portfolio/jashom-healthcare.jpg',
+      link: '/projects/jashom-healthcare',
+      liveUrl: 'https://jashomhealthcare.jashom.com'
+    },
+    {
+      title: 'Jashom ICU Connect - Remote Monitoring',
+      industry: 'Remote ICU',
+      challenge: 'Rural hospitals lack access to specialist care',
+      solution: 'Remote monitoring platform bridging rural hospitals and specialists',
+      impact: ['40% reduced transfers', '15+ hospitals connected', '<30s response time'],
+      tags: ['Remote Monitoring', 'Vital Signs', 'Collaboration'],
+      image: '/images/portfolio/jashom-icu-connect.jpg',
+      link: '/projects/jashom-icu-connect',
+      liveUrl: 'https://jashomhealthcareplus.jashom.com'
+    },
+    {
+      title: 'RAG.LU - AI Knowledge Platform',
+      industry: 'AI Platform',
+      challenge: 'Intelligent knowledge management needed',
+      solution: 'RAG technology for knowledge management',
+      impact: ['93% accuracy', '10x faster processing', 'AI transformation'],
+      tags: ['RAG', 'AI', 'Knowledge Management'],
+      image: '/images/portfolio/rag-lu.ai.png',
+      link: '/projects/rag-lu',
+      liveUrl: 'https://rag.lu'
+    }
+  ];
+
+  const totalSlides = portfolioProjects.length;
+  const maxSlide = totalSlides - cardsPerView;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -59,7 +167,35 @@ export function HomePage() {
         console.error('Video autoplay failed:', error);
       });
     }
+
+    // Handle responsive cards per view
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) {
+        setCardsPerView(3); // Desktop: 3 cards
+      } else if (width >= 640) {
+        setCardsPerView(2); // Tablet: 2 cards
+      } else {
+        setCardsPerView(1); // Mobile: 1 card
+      }
+      setCurrentSlide(0); // Reset to start on resize
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const goToNext = () => {
+    setCurrentSlide((prev) => Math.min(prev + 1, maxSlide));
+  };
+
+  const goToPrev = () => {
+    setCurrentSlide((prev) => Math.max(prev - 1, 0));
+  };
+
+  const canGoPrev = currentSlide > 0;
+  const canGoNext = currentSlide < maxSlide;
 
   return (
     <div className="min-h-screen" style={{ width: '100%', overflow: 'hidden', background: '#0B0F14' }}>
@@ -418,6 +554,170 @@ export function HomePage() {
                 duration={2 + index * 0.2}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Slider Section - Controlled Carousel */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30">
+              <span className="text-[#d1d5db] text-sm">Success Stories</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
+              Our Portfolio
+            </h2>
+            <p className="text-white/70 max-w-3xl mx-auto">
+              Real-world transformations powered by our AI and GPU optimization expertise
+            </p>
+          </motion.div>
+
+          {/* Controlled Carousel Container */}
+          <div className="relative">
+            {/* Left Arrow - Responsive positioning */}
+            <button
+              onClick={goToPrev}
+              disabled={!canGoPrev}
+              className={`absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                canGoPrev
+                  ? 'bg-cyan-500 hover:bg-cyan-600 cursor-pointer shadow-2xl'
+                  : 'bg-gray-700 cursor-not-allowed opacity-50'
+              }`}
+              aria-label="Previous slide"
+              type="button"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={3} />
+            </button>
+
+            {/* Right Arrow - Responsive positioning */}
+            <button
+              onClick={goToNext}
+              disabled={!canGoNext}
+              className={`absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                canGoNext
+                  ? 'bg-cyan-500 hover:bg-cyan-600 cursor-pointer shadow-2xl'
+                  : 'bg-gray-700 cursor-not-allowed opacity-50'
+              }`}
+              aria-label="Next slide"
+              type="button"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={3} />
+            </button>
+
+            {/* Carousel Wrapper - Overflow Hidden with responsive padding */}
+            <div className="overflow-hidden px-12 sm:px-14 lg:px-16">
+              {/* Carousel Track - Transform Based */}
+              <div
+                className="flex gap-4 sm:gap-6 transition-transform duration-500 ease-in-out"
+                style={{
+                  transform: `translateX(-${currentSlide * (100 / cardsPerView + (cardsPerView === 1 ? 0 : 24 / cardsPerView))}%)`
+                }}
+              >
+                {portfolioProjects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0"
+                    style={{
+                      width: cardsPerView === 1 
+                        ? '100%' 
+                        : `calc(${100 / cardsPerView}% - ${(24 * (cardsPerView - 1)) / cardsPerView}px)`
+                    }}
+                  >
+                    <div className="glass-effect rounded-2xl p-3 sm:p-4 border border-[#ffffff]/30 h-full flex flex-col hover:border-[#ffffff]/50 transition-all duration-300 group">
+                      {/* Image - Responsive sizing */}
+                      {project.image && (
+                        <div className="mb-3 rounded-lg overflow-hidden border border-white/10 w-full max-w-[200px]" style={{ height: '120px' }}>
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+                      
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs">
+                          {project.industry}
+                        </span>
+                      </div>
+                      <h3 className="text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-[#d1d5db] transition-colors line-clamp-2">
+                        {project.title}
+                      </h3>
+
+                      <div className="space-y-2 mb-3 flex-grow">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                            <span className="text-[#d1d5db] text-xs font-medium">Challenge</span>
+                          </div>
+                          <p className="text-white/60 text-xs leading-relaxed pl-3 line-clamp-2">{project.challenge}</p>
+                        </div>
+
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                            <span className="text-[#d1d5db] text-xs font-medium">Solution</span>
+                          </div>
+                          <p className="text-white/60 text-xs leading-relaxed pl-3 line-clamp-2">{project.solution}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1 mb-3">
+                        {project.tags.slice(0, 3).map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2 py-0.5 rounded-md bg-white/5 border border-[#ffffff]/10 text-white/50 text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Action Links */}
+                      <div className="flex flex-col gap-2 pt-3 border-t border-white/10">
+                        <Link
+                          to={project.link}
+                          className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
+                        >
+                          <span>View Case Study</span>
+                          <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                        </Link>
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors text-xs"
+                          >
+                            <span>Visit Live Platform</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center mt-8">
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105"
+            >
+              View All Projects
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
