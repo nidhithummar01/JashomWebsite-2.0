@@ -49,7 +49,9 @@ const SecurityPolicyPage = lazy(() => import('./components/SecurityPolicyPage').
 
 // Lazy load about pages
 const TeamPage = lazy(() => import('./components/about/TeamPage').then(module => ({ default: module.TeamPage })));
-const AboutPortfolioPage = lazy(() => import('./components/about/AboutPortfolioPage').then(module => ({ default: module.AboutPortfolioPage })));
+
+// Lazy load careers page
+const CareersPage = lazy(() => import('./components/CareersPage').then(module => ({ default: module.CareersPage })));
 
 // Lazy load placeholder page
 const PlaceholderPage = lazy(() => import('./components/PlaceholderPage').then(module => ({ default: module.PlaceholderPage })));
@@ -120,13 +122,13 @@ function AnimatedRoutes() {
 
           {/* About Us routes */}
           <Route path="/about/team" element={<PageTransition><TeamPage /></PageTransition>} />
-          <Route path="/about/portfolio" element={<PageTransition><AboutPortfolioPage /></PageTransition>} />
+          <Route path="/about/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
           <Route path="/about/blog" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
-          <Route path="/about/career" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with Jashom." /></PageTransition>} />
+          <Route path="/about/career" element={<PageTransition><CareersPage /></PageTransition>} />
           <Route path="/about" element={<PageTransition><TeamPage /></PageTransition>} />
           
           {/* Placeholder routes */}
-          <Route path="/careers" element={<PageTransition><PlaceholderPage title="Careers" description="Join our world-class team of AI engineers and data scientists. Build the future of AI optimization with Jashom." /></PageTransition>} />
+          <Route path="/careers" element={<PageTransition><CareersPage /></PageTransition>} />
           <Route path="/news" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from Jashom." /></PageTransition>} />
           <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
           <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />

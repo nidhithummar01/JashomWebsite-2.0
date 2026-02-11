@@ -184,69 +184,13 @@ export function ContactPage() {
             </div>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Our Office Section */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
             className="space-y-6 sm:space-y-8"
           >
-            <div className="glass-effect rounded-2xl p-6 sm:p-8 border border-[#ffffff]/30">
-              <h2 className="mb-4 sm:mb-6 text-white text-xl sm:text-2xl">Contact Information</h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white/80 mb-1">Email</div>
-                    <a href="mailto:info@jashom.com" className="text-[#d1d5db] hover:text-white transition-colors">
-                      info@jashom.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white/80 mb-1">Phone</div>
-                    <a href="tel:+919023906363" className="text-[#d1d5db] hover:text-white transition-colors">
-                      +91 90239 06363
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#111] border border-white/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white/80 mb-1">Location</div>
-                    <div className="text-white/90">
-                      414, Satyam-2, Amba Business Park,<br />
-                      ATPL, Adalaj, Gujarat, India
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-effect rounded-2xl p-6 sm:p-8 border border-[#ffffff]/30">
-              <h3 className="mb-3 sm:mb-4 text-white text-lg sm:text-xl">Quick Response</h3>
-              <p className="text-white/70 mb-3 sm:mb-4 text-sm sm:text-base">
-                Our team typically responds within 24 hours during business days.
-                For urgent inquiries, please call us directly.
-              </p>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-[#d1d5db] animate-pulse" />
-                <span className="text-[#d1d5db] text-sm sm:text-base">Online Now</span>
-              </div>
-            </div>
-
-            {/* Our Office Section */}
             <div className="glass-effect rounded-2xl p-6 sm:p-8 border border-[#ffffff]/30">
               <h3 className="mb-6 text-white text-lg sm:text-xl font-semibold">Our Office</h3>
               

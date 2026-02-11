@@ -12,6 +12,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'SaaS',
       category: 'SaaS Platforms',
+      image: '/images/portfolio/boostreferral.jpg',
       challenge: 'Businesses needed an automated solution to manage referral programs and drive customer acquisition efficiently.',
       solution: 'Founded and developed a comprehensive referral management platform that automates referral programs, tracks analytics, and drives customer acquisition for businesses.',
       impact: [
@@ -29,6 +30,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'SaaS',
       category: 'SaaS Platforms',
+      image: '/images/portfolio/projectsphere.jpg',
       challenge: 'Organizations need comprehensive project management tools that enable real-time collaboration and provide insights into team performance and project progress.',
       solution: 'ProjectSphere offers a complete project management platform with real-time collaboration, resource management, and advanced analytics for better project outcomes.',
       impact: [
@@ -45,6 +47,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'Environmental Tech',
       category: 'Environmental Tech',
+      image: '/images/portfolio/enviropulse.jpg',
       challenge: 'Industrial facilities need real-time monitoring of environmental metrics across multiple zones, but existing solutions lack comprehensive coverage and actionable insights.',
       solution: 'EnviroPulse combines IoT sensors with advanced analytics to provide real-time monitoring and insights across multiple environmental parameters.',
       impact: [
@@ -62,6 +65,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'ESG Platform',
       category: 'Environmental Tech',
+      image: '/images/portfolio/greensphere.jpg',
       challenge: 'Organizations struggle to track, manage, and report their ESG metrics effectively, leading to compliance risks and missed sustainability opportunities.',
       solution: 'GreenSphere provides a comprehensive platform for tracking, analyzing, and reporting ESG metrics, helping organizations achieve their sustainability goals.',
       impact: [
@@ -79,6 +83,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'AI Platform',
       category: 'Environmental Tech',
+      image: '/images/portfolio/ecobot-ai.jpg',
       challenge: 'Organizations struggle to keep up with complex environmental regulations and sustainability requirements, often leading to compliance issues and missed opportunities for improvement.',
       solution: 'EcoBot AI leverages advanced language models to provide instant, accurate responses to sustainability queries, helping organizations make informed decisions and maintain compliance.',
       impact: [
@@ -96,6 +101,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'Healthcare Platform',
       category: 'Healthcare Technology',
+      image: '/images/portfolio/jashom-health.jpg',
       challenge: 'Modern healthcare facilities face significant challenges in managing multiple locations while maintaining strict HIPAA compliance and providing real-time patient monitoring.',
       solution: 'Jashom Health provides a comprehensive hospital management system designed specifically for multi-location healthcare facilities with HIPAA-compliant security and real-time monitoring.',
       impact: [
@@ -114,6 +120,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'Healthcare Interoperability',
       category: 'Healthcare Technology',
+      image: '/images/portfolio/jashom-healthcare.jpg',
       challenge: 'Healthcare systems operate in silos, making it extremely difficult to share patient data and coordinate care across different departments and facilities.',
       solution: 'Jashom Healthcare provides seamless interoperability between healthcare systems using industry-standard protocols (HL7, FHIR) and advanced integration technology.',
       impact: [
@@ -132,6 +139,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'Remote ICU Monitoring',
       category: 'Healthcare Technology',
+      image: '/images/portfolio/jashom-icu-connect.jpg',
       challenge: 'Rural and semi-urban hospitals often lack access to specialist care, leading to unnecessary patient transfers and delayed critical care interventions.',
       solution: 'Jashom ICU Connect provides a comprehensive remote monitoring and collaboration platform that bridges the gap between rural hospitals and specialist care.',
       impact: [
@@ -150,6 +158,7 @@ export function PortfolioPage() {
       client: 'Jay Dave',
       industry: 'AI & Machine Learning',
       category: 'AI & Machine Learning',
+      image: '/images/portfolio/rag-lu.ai.png',
       challenge: 'Organizations needed intelligent knowledge management and information retrieval solutions powered by cutting-edge AI technology.',
       solution: 'Founded an innovative AI platform leveraging Retrieval-Augmented Generation (RAG) technology for intelligent knowledge management and information retrieval solutions.',
       impact: [
@@ -179,6 +188,7 @@ export function PortfolioPage() {
       tags: ['AI SEO', 'AI Visibility', 'Large Language Model Optimization', 'AI Search Ranking', 'Multi-Provider AI Testing'],
       link: '/portfolio/rankzy-ai'
     },
+    /* COMMENTED OUT - POD AI
     {
       title: 'POD AI (CLIPFORGE) - AI Content Creation & Repurposing Platform',
       client: 'Jashom',
@@ -196,6 +206,8 @@ export function PortfolioPage() {
       tags: ['AI Content Creation', 'Video Generation', 'Content Repurposing', 'Social Media Automation', 'Voice AI Technology'],
       link: '/portfolio/pod-ai-clipforge'
     },
+    */
+    /* COMMENTED OUT - NVTRUST GPU ATTESTATION
     {
       title: 'NVTRUST GPU ATTESTATION - Secure Hardware Verification System',
       client: 'Jashom',
@@ -213,6 +225,8 @@ export function PortfolioPage() {
       tags: ['GPU Security', 'Hardware Attestation', 'Confidential Computing', 'NVIDIA GPU Verification', 'Cryptographic Verification'],
       link: '/portfolio/nvtrust-gpu-attestation'
     },
+    */
+    /* COMMENTED OUT - HTI CUDA GPU ACCELERATION
     {
       title: 'HTI CUDA GPU ACCELERATION - Energy-Efficient AI Computing',
       client: 'Jashom',
@@ -230,6 +244,7 @@ export function PortfolioPage() {
       tags: ['GPU Optimization', 'CUDA Acceleration', 'Energy Efficiency', 'AI Performance', 'Multi-GPU Scaling'],
       link: '/portfolio/hti-cuda-acceleration'
     }
+    */
   ];
 
   // Group projects by category
@@ -293,40 +308,50 @@ export function PortfolioPage() {
               {/* Projects in this category */}
               {projects.map((study, index) => (
                 <GlassCard key={`${category}-${index}`}>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                     {/* Left Column */}
                     <div>
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-full bg-[#ffffff]/20 text-[#d1d5db] text-sm">
+                      {/* Project Image */}
+                      {study.image && (
+                        <div className="mb-3 rounded-lg overflow-hidden border border-white/10" style={{ width: '200px', height: '120px' }}>
+                          <img 
+                            src={study.image} 
+                            alt={study.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+                      
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="px-2.5 py-1 rounded-full bg-[#ffffff]/20 text-[#d1d5db] text-xs">
                           {study.industry}
                         </span>
-                        <span className="text-white/50 text-sm">{study.client}</span>
                       </div>
-                      <h3 className="mb-4 text-white">{study.title}</h3>
+                      <h3 className="mb-3 text-white text-lg font-semibold">{study.title}</h3>
 
-                      <div className="space-y-4">
+                      <div className="space-y-2.5">
                         <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
-                            <span className="text-[#d1d5db]">Challenge</span>
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                            <span className="text-[#d1d5db] text-xs font-medium">Challenge</span>
                           </div>
-                          <p className="text-white/70 text-sm pl-4">{study.challenge}</p>
+                          <p className="text-white/70 text-xs pl-3.5 leading-relaxed">{study.challenge}</p>
                         </div>
 
                         <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
-                            <span className="text-[#d1d5db]">Solution</span>
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                            <span className="text-[#d1d5db] text-xs font-medium">Solution</span>
                           </div>
-                          <p className="text-white/70 text-sm pl-4">{study.solution}</p>
+                          <p className="text-white/70 text-xs pl-3.5 leading-relaxed">{study.solution}</p>
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-2 mt-6">
+                      <div className="flex flex-wrap gap-1.5 mt-3">
                         {study.tags.map((tag, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 rounded-lg bg-white/5 border border-[#ffffff]/20 text-white/60 text-sm"
+                            className="px-2 py-1 rounded-md bg-white/5 border border-[#ffffff]/20 text-white/60 text-xs"
                           >
                             {tag}
                           </span>
@@ -336,31 +361,31 @@ export function PortfolioPage() {
 
                     {/* Right Column - Impact */}
                     <div className="flex flex-col justify-center">
-                      <div className="flex items-center gap-2 mb-6">
-                        <TrendingUp className="w-5 h-5 text-[#d1d5db]" />
-                        <span className="text-[#d1d5db]">Impact & Results</span>
+                      <div className="flex items-center gap-2 mb-3">
+                        <TrendingUp className="w-4 h-4 text-[#d1d5db]" />
+                        <span className="text-[#d1d5db] text-sm font-medium">Impact & Results</span>
                       </div>
-                      <div className="space-y-4">
+                      <div className="space-y-2.5">
                         {study.impact.map((item, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-start gap-3"
+                            className="flex items-start gap-2"
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
                           >
-                            <CheckCircle2 className="w-5 h-5 text-[#ffffff] flex-shrink-0 mt-0.5" />
-                            <span className="text-white">{item}</span>
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#ffffff] flex-shrink-0 mt-0.5" />
+                            <span className="text-white text-xs leading-relaxed">{item}</span>
                           </motion.div>
                         ))}
                       </div>
-                      <div className="mt-6 flex flex-col gap-3">
+                      <div className="mt-3 flex flex-col gap-2">
                         {study.link ? (
                           study.link.startsWith('/') ? (
                             <Link
                               to={study.link}
-                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors cursor-pointer min-h-[44px]"
+                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors cursor-pointer text-xs"
                             >
                               <motion.span
                                 className="flex items-center gap-2"
@@ -368,7 +393,7 @@ export function PortfolioPage() {
                                 whileTap={{ scale: 0.95 }}
                               >
                                 <span>View Full Case Study</span>
-                                <ArrowRight className="w-4 h-4" />
+                                <ArrowRight className="w-3 h-3" />
                               </motion.span>
                             </Link>
                           ) : (
@@ -376,12 +401,12 @@ export function PortfolioPage() {
                               href={study.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors min-h-[44px] flex items-center"
+                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs flex items-center"
                               whileHover={{ x: 5 }}
                               whileTap={{ scale: 0.95 }}
                             >
                               <span>View Full Case Study</span>
-                              <ArrowRight className="w-4 h-4" />
+                              <ArrowRight className="w-3 h-3" />
                             </motion.a>
                           )
                         ) : null}
@@ -390,10 +415,10 @@ export function PortfolioPage() {
                             href={study.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors"
+                            className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors text-xs"
                           >
                             <span>Visit Live Platform</span>
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-3 h-3" />
                           </a>
                         ) : null}
                       </div>
