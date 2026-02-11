@@ -621,7 +621,7 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               {/* Image */}
-              <div className="w-full h-56 overflow-hidden">
+              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
                 <img 
                   src="/images/cuda-quality-code.jpg.jpg" 
                   alt="Quality Code" 
@@ -648,7 +648,7 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               {/* Image */}
-              <div className="w-full h-56 overflow-hidden">
+              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
                 <img 
                   src="/images/cuda-nda.jpg.jpg" 
                   alt="NDA Agreement" 
@@ -675,7 +675,7 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               {/* Image */}
-              <div className="w-full h-56 overflow-hidden">
+              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
                 <img 
                   src="/images/cuda-verified.jpg.jpg" 
                   alt="Certified Developer" 
@@ -702,16 +702,12 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               {/* Image */}
-              <div className="w-full h-56 overflow-hidden bg-white flex items-center justify-center">
+              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
                 <img 
                   src="/images/cuda-cost.jpg.jpg" 
                   alt="Cost Reduction" 
-                  className="w-full h-full"
-                  style={{ 
-                    objectFit: 'cover',
-                    objectPosition: 'center 15%',
-                    transform: 'scale(1.8)'
-                  }}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 40%' }}
                 />
               </div>
               <div className="p-6">
@@ -734,7 +730,7 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               {/* Image */}
-              <div className="w-full h-56 overflow-hidden">
+              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
                 <img 
                   src="/images/cuda-experience.jpg.jpg" 
                   alt="High Experience Team" 
@@ -761,16 +757,11 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               {/* Image */}
-              <div className="w-full h-56 overflow-hidden bg-gray-100 flex items-center justify-center">
+              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
                 <img 
                   src="/images/cuda-onboarding.jpg.jpg" 
                   alt="Quick Onboarding" 
-                  className="w-full h-full"
-                  style={{ 
-                    objectFit: 'cover',
-                    objectPosition: 'center 30%',
-                    transform: 'scale(1.5)'
-                  }}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
