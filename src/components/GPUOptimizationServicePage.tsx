@@ -15,35 +15,43 @@ export function GPUOptimizationServicePage() {
       <section 
         className="relative min-h-[600px] flex items-center overflow-hidden pt-20"
         style={{
-          backgroundImage: 'url(/images/service-hero-bg.jpg.jpg)',
+          backgroundImage: 'url(/images/service-hero-bg.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 style={{ background: '#0B0F14' }}/60"></div>
+        {/* Dark Overlay - Reduced opacity for better image visibility */}
+        <div className="absolute inset-0" style={{ background: 'rgba(11, 15, 20, 0.5)' }}></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col justify-between" style={{ minHeight: '520px', paddingTop: '80px', paddingBottom: '8px' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)' }}>
               GPU Optimization Services
             </h1>
-            <p className="text-base sm:text-lg text-white/90 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed max-w-2xl" style={{ textShadow: '0 1px 5px rgba(0, 0, 0, 0.5)' }}>
               We create unique GPU optimization solutions that address actual performance issues. Our end-to-end optimization services deliver speed, scalability, and long-term business impact from planning to implementation and support.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold text-base transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
               style={{
                 background: '#0EA5E9',
-                color: '#FFFFFF'
+                color: '#FFFFFF',
+                boxShadow: '0 4px 14px 0 rgba(14, 165, 233, 0.4)'
               }}
             >
               Get Free Consultation
@@ -53,41 +61,69 @@ export function GPUOptimizationServicePage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left Column - Title */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0B0F14' }}>
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Title and Description */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                className="space-y-6"
               >
-                <p className="text-white/60 text-sm mb-4 uppercase tracking-wider">Overview</p>
+                <div className="inline-block mb-4 px-4 py-2 rounded-full" style={{ background: 'rgba(14, 165, 233, 0.1)', border: '1px solid rgba(14, 165, 233, 0.3)' }}>
+                  <p className="text-sm uppercase tracking-wider" style={{ color: '#0EA5E9' }}>Overview</p>
+                </div>
                 <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
                   What is GPU
                   <br />
                   Optimization?
                 </h2>
-              </motion.div>
-            </div>
-
-            {/* Right Column - Description */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-6"
-              >
+                
                 <p className="text-white/70 text-base leading-relaxed">
                   GPU optimization is the process of analyzing, tuning, and enhancing GPU workloads to maximize computational performance and efficiency. It involves identifying bottlenecks, optimizing memory usage, improving kernel execution, and implementing best practices to achieve faster processing times and reduced resource consumption.
                 </p>
                 <p className="text-white/70 text-base leading-relaxed">
                   GPU optimization bridges the gap between raw computing power and practical application performance in AI/ML, scientific computing, data analytics, and rendering. It enables organizations to reduce infrastructure costs, accelerate time-to-results, and maintain competitive advantage in compute-intensive industries.
                 </p>
+                
+                {/* Key Benefits */}
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="rounded-lg p-4" style={{ background: 'rgba(14, 165, 233, 0.05)', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                    <div className="text-3xl font-bold mb-1" style={{ color: '#0EA5E9' }}>10x</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Faster Performance</div>
+                  </div>
+                  <div className="rounded-lg p-4" style={{ background: 'rgba(14, 165, 233, 0.05)', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                    <div className="text-3xl font-bold mb-1" style={{ color: '#0EA5E9' }}>40%</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Cost Reduction</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="relative"
+              >
+                <img 
+                  src="/images/gpu.optimization.jpg" 
+                  alt="GPU Optimization" 
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  style={{ boxShadow: '0 20px 60px rgba(14, 165, 233, 0.3)' }}
+                />
               </motion.div>
             </div>
           </div>

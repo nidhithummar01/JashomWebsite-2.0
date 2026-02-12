@@ -71,98 +71,27 @@ export function Footer() {
 
             {/* Map + Navigation Columns - Side by Side 50/50 */}
             <div className="grid grid-cols-2 gap-8 mb-8">
-              {/* LEFT: Vertical Map */}
+              {/* LEFT: Google Maps Embed */}
               <div className="flex items-start justify-center">
-                <svg 
-                  className="w-full h-auto" 
-                  viewBox="0 0 300 600" 
-                  preserveAspectRatio="xMidYMid meet"
-                  style={{ maxHeight: '400px' }}
+                <div 
+                  className="w-full rounded-2xl overflow-hidden"
+                  style={{
+                    border: '1px solid rgba(14, 165, 233, 0.3)',
+                    boxShadow: '0 0 20px rgba(14, 165, 233, 0.2)',
+                    height: '320px'
+                  }}
                 >
-                  <defs>
-                    <pattern id="diagonalLines" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
-                      <line x1="0" y1="0" x2="0" y2="8" stroke="#0EA5E9" strokeWidth="3"/>
-                    </pattern>
-                  </defs>
-                  
-                  {/* North America - Top */}
-                  <path 
-                    d="M 40 80 Q 60 60 100 70 L 120 95 Q 130 120 110 150 L 80 160 Q 55 150 45 130 Z" 
-                    fill="url(#diagonalLines)" 
-                    opacity="0.6"
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9876543210123!2d72.5714!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwMzQnMTcuMCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin&maptype=roadmap&style=feature:all|element:geometry|color:0x212121&style=feature:all|element:labels.icon|visibility:off&style=feature:all|element:labels.text.fill|color:0x757575&style=feature:all|element:labels.text.stroke|color:0x212121&style=feature:administrative|element:geometry|color:0x757575&style=feature:landscape|element:geometry|color:0x212121&style=feature:poi|element:geometry|color:0x212121&style=feature:road|element:geometry.fill|color:0x2c2c2c&style=feature:road|element:labels.text.fill|color:0x8a8a8a&style=feature:road.arterial|element:geometry|color:0x373737&style=feature:road.highway|element:geometry|color:0x3c3c3c&style=feature:road.highway.controlled_access|element:geometry|color:0x4e4e4e&style=feature:road.local|element:labels.text.fill|color:0x616161&style=feature:transit|element:labels.text.fill|color:0x757575&style=feature:water|element:geometry|color:0x000000&style=feature:water|element:labels.text.fill|color:0x3d3d3d"
+                    width="100%"
+                    height="320"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Jashom Office Location - Ahmedabad, Gujarat, India"
                   />
-                  
-                  {/* South America - Below North America */}
-                  <path 
-                    d="M 100 190 Q 120 180 130 200 L 140 250 Q 130 270 110 260 L 90 225 Z" 
-                    fill="url(#diagonalLines)" 
-                    opacity="0.6"
-                  />
-                  
-                  {/* Europe - Upper Middle */}
-                  <path 
-                    d="M 150 70 Q 180 60 200 80 L 210 110 Q 200 120 180 110 L 160 100 Z" 
-                    fill="url(#diagonalLines)" 
-                    opacity="0.6"
-                  />
-                  
-                  {/* Africa - Middle */}
-                  <path 
-                    d="M 150 140 Q 180 130 200 150 L 210 220 Q 195 240 175 230 L 160 180 Z" 
-                    fill="url(#diagonalLines)" 
-                    opacity="0.6"
-                  />
-                  
-                  {/* Asia - Large, Upper Right, PROMINENT */}
-                  <path 
-                    d="M 215 80 Q 255 70 280 90 L 290 130 Q 285 180 260 190 L 225 170 Q 218 130 215 100 Z" 
-                    fill="url(#diagonalLines)" 
-                    opacity="0.6"
-                  />
-                  
-                  {/* Australia - Bottom Right */}
-                  <path 
-                    d="M 240 320 Q 260 310 270 330 L 265 360 Q 245 370 235 350 Z" 
-                    fill="url(#diagonalLines)" 
-                    opacity="0.6"
-                  />
-                  
-                  {/* Antarctica - Bottom */}
-                  <path 
-                    d="M 60 480 Q 150 470 240 480 L 250 510 Q 150 520 60 510 Z" 
-                    fill="url(#diagonalLines)" 
-                    opacity="0.4"
-                  />
-                  
-                  {/* Location Marker - India (on Asia continent) */}
-                  <g transform="translate(260, 140)">
-                    {/* Outer glow */}
-                    <circle cx="0" cy="0" r="15" fill="rgba(14, 165, 233, 0.3)">
-                      <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    {/* Inner dot */}
-                    <circle cx="0" cy="0" r="5" fill="#0EA5E9" filter="url(#glow)">
-                      <animate attributeName="r" values="5;6.5;5" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    {/* Pulse ring */}
-                    <circle cx="0" cy="0" r="8" fill="none" stroke="#0EA5E9" strokeWidth="2">
-                      <animate attributeName="r" values="8;20" dur="2s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;0" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-                  
-                  {/* Glow filter for marker */}
-                  <defs>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                </svg>
+                </div>
               </div>
 
               {/* RIGHT: Navigation Columns (2x2 Grid) */}

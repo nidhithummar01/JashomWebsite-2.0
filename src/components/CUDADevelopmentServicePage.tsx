@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { SEO } from './SEO';
-import { ArrowRight } from 'lucide-react';
 
 export function CUDADevelopmentServicePage() {
   return (
@@ -12,27 +11,46 @@ export function CUDADevelopmentServicePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center overflow-hidden pt-20" style={{ background: '#0B0F14' }}>
+      <section 
+        className="relative min-h-[600px] flex items-center overflow-hidden pt-20"
+        style={{
+          backgroundImage: 'url(/images/cuda.service.hero.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Gradient Overlay - darker on left for text, lighter on right for image visibility */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(11, 15, 20, 0.85) 0%, rgba(11, 15, 20, 0.4) 50%, rgba(11, 15, 20, 0.2) 100%)' }}></div>
+
         {/* Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col justify-between" style={{ minHeight: '520px', paddingTop: '80px', paddingBottom: '8px' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)' }}>
               CUDA Development Services
             </h1>
-            <p className="text-base sm:text-lg text-white/90 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed max-w-2xl" style={{ textShadow: '0 1px 5px rgba(0, 0, 0, 0.5)' }}>
               We create custom CUDA solutions that transform computational challenges into high-performance GPU-accelerated applications. Our end-to-end development services deliver speed, scalability, and innovation from architecture design to deployment and support.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold text-base transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
               style={{
                 background: '#0EA5E9',
-                color: '#FFFFFF'
+                color: '#FFFFFF',
+                boxShadow: '0 4px 14px 0 rgba(14, 165, 233, 0.4)'
               }}
             >
               Get Free Consultation
@@ -42,41 +60,69 @@ export function CUDADevelopmentServicePage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left Column - Title */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0B0F14' }}>
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Title and Description */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                className="space-y-6"
               >
-                <p className="text-white/60 text-sm mb-4 uppercase tracking-wider">Overview</p>
+                <div className="inline-block mb-4 px-4 py-2 rounded-full" style={{ background: 'rgba(14, 165, 233, 0.1)', border: '1px solid rgba(14, 165, 233, 0.3)' }}>
+                  <p className="text-sm uppercase tracking-wider" style={{ color: '#0EA5E9' }}>Overview</p>
+                </div>
                 <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
                   What is CUDA
                   <br />
                   Development?
                 </h2>
-              </motion.div>
-            </div>
-
-            {/* Right Column - Description */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-6"
-              >
+                
                 <p className="text-white/70 text-base leading-relaxed">
                   CUDA development is the process of creating custom GPU-accelerated applications using NVIDIA's parallel computing platform. It involves designing, implementing, and optimizing parallel algorithms, custom kernels, and GPU workloads to achieve dramatic performance improvements over traditional CPU-based solutions.
                 </p>
                 <p className="text-white/70 text-base leading-relaxed">
                   CUDA development enables organizations to harness the massive parallel processing power of modern GPUs for AI/ML, scientific computing, data analytics, and real-time processing. It transforms computational bottlenecks into competitive advantages through expert parallel programming and optimization techniques.
                 </p>
+                
+                {/* Key Benefits */}
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="rounded-lg p-4" style={{ background: 'rgba(14, 165, 233, 0.05)', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                    <div className="text-3xl font-bold mb-1" style={{ color: '#0EA5E9' }}>100x</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Faster Processing</div>
+                  </div>
+                  <div className="rounded-lg p-4" style={{ background: 'rgba(14, 165, 233, 0.05)', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                    <div className="text-3xl font-bold mb-1" style={{ color: '#0EA5E9' }}>50%</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Cost Savings</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="relative"
+              >
+                <img 
+                  src="/images/cuda.developer.jpg" 
+                  alt="CUDA Development" 
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  style={{ boxShadow: '0 20px 60px rgba(14, 165, 233, 0.3)' }}
+                />
               </motion.div>
             </div>
           </div>
@@ -178,32 +224,43 @@ export function CUDADevelopmentServicePage() {
       </section>
 
       {/* Industry-Specific Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(/images/industry-services.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0" style={{ background: 'rgba(11, 15, 20, 0.5)' }}></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6" style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)' }}>
               Delivering Industry-Specific
               <br />
               CUDA Solutions
             </h2>
-            <p className="text-white/70 text-base leading-relaxed mb-12 max-w-3xl">
+            <p className="text-white/90 text-base leading-relaxed mb-12 max-w-3xl" style={{ textShadow: '0 1px 5px rgba(0, 0, 0, 0.5)' }}>
               We provide customized CUDA development solutions tailored to meet the unique computational needs of your industry. We help you accelerate innovation, reduce processing time, and achieve breakthrough performance through expert GPU programming.
             </p>
 
             {/* Industry List - 2 columns */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#0EA5E9' }}>
                   <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base">Machine Learning</span>
+                <span className="text-white text-base font-medium">Machine Learning</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -212,7 +269,7 @@ export function CUDADevelopmentServicePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base">Scientific Computing</span>
+                <span className="text-white text-base font-medium">Scientific Computing</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -221,7 +278,7 @@ export function CUDADevelopmentServicePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base">Financial Computing</span>
+                <span className="text-white text-base font-medium">Financial Computing</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -230,36 +287,9 @@ export function CUDADevelopmentServicePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base">Image & Video Processing</span>
+                <span className="text-white text-base font-medium">Image & Video Processing</span>
               </div>
             </div>
-
-            {/* Image Below */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div 
-                className="rounded-2xl overflow-hidden"
-                style={{ 
-                  background: '#111827',
-                  minHeight: '500px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}
-              >
-                <img 
-                  src="/images/industry-services.jpg" 
-                  alt="Industry-Specific Services" 
-                  className="w-full h-full object-cover"
-                  style={{ minHeight: '500px' }}
-                />
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
