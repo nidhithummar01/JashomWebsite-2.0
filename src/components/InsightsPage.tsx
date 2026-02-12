@@ -105,7 +105,7 @@ export function InsightsPage() {
                   insight.featured ? 'md:col-span-2 lg:col-span-1' : ''
                 } ${index === 0 ? 'lg:row-span-2' : ''}`}
               >
-                <Link to={insight.link} className="block h-full">
+                <Link to={`/insights/${insight.id}`} className="block h-full">
                   {/* Card Container */}
                   <div
                     className="relative h-full min-h-[320px] overflow-hidden transition-all duration-500 group-hover:scale-[1.02]"

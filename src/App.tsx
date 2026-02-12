@@ -12,6 +12,7 @@ const SolutionsPage = lazy(() => import('./components/SolutionsPage').then(modul
 const CapabilityMatrixPage = lazy(() => import('./components/CapabilityMatrixPage').then(module => ({ default: module.CapabilityMatrixPage })));
 const PortfolioPage = lazy(() => import('./components/PortfolioPage').then(module => ({ default: module.PortfolioPage })));
 const InsightsPage = lazy(() => import('./components/InsightsPage').then(module => ({ default: module.InsightsPage })));
+const BlogDetailPage = lazy(() => import('./components/BlogDetailPage').then(module => ({ default: module.BlogDetailPage })));
 const ContactPage = lazy(() => import('./components/ContactPage').then(module => ({ default: module.ContactPage })));
 const BrochurePage = lazy(() => import('./components/BrochurePage').then(module => ({ default: module.BrochurePage })));
 
@@ -90,6 +91,7 @@ function AnimatedRoutes() {
           <Route path="/capability" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
           <Route path="/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
           <Route path="/insights" element={<PageTransition><InsightsPage /></PageTransition>} />
+          <Route path="/insights/:slug" element={<PageTransition><BlogDetailPage /></PageTransition>} />
           <Route path="/blog" element={<PageTransition><InsightsPage /></PageTransition>} />
           <Route path="/portfolio/rankzy-ai" element={<PageTransition><RankzyAIPage /></PageTransition>} />
           <Route path="/portfolio/pod-ai-clipforge" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />

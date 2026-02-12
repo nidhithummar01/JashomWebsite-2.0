@@ -43,33 +43,57 @@ export function CareersPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: '#1a1a1a', minHeight: '500px', paddingTop: '180px', paddingBottom: '80px' }}>
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ minHeight: '600px', paddingTop: '160px', paddingBottom: '100px' }}>
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(/images/carrer.hero.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'brightness(1.1)'
+          }}
+        >
+          {/* Overlay for better text readability */}
+          <div 
+            className="absolute inset-0" 
+            style={{ 
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%)'
+            }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10 flex items-center" style={{ minHeight: '360px' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl"
+            className="max-w-3xl"
           >
             <h1 
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8" 
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-8" 
               style={{ 
                 color: '#FFFFFF', 
                 letterSpacing: '-0.025em',
-                fontWeight: 700
+                fontWeight: 700,
+                textShadow: '0 4px 30px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.6)'
               }}
             >
               Find your big role In our purposeful team
             </h1>
             
-            <p 
-              className="text-lg sm:text-xl leading-relaxed max-w-3xl" 
-              style={{ 
-                color: '#D0D0D0'
+            <a
+              href="#apply-form"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:opacity-90 hover:scale-105"
+              style={{
+                background: '#0EA5E9',
+                color: '#FFFFFF',
+                boxShadow: '0 4px 20px rgba(14, 165, 233, 0.4)'
               }}
             >
-              Join the team to create digital products that the world has never seen before!
-            </p>
+              Join Our Team
+            </a>
           </motion.div>
         </div>
       </section>
@@ -201,7 +225,7 @@ export function CareersPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg"
-                style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+                style={{ background: 'transparent', borderColor: 'rgba(14, 165, 233, 0.3)' }}
               >
                 {/* Job Header */}
                 <div className="flex items-start justify-between mb-6">

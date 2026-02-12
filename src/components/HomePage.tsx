@@ -395,204 +395,87 @@ export function HomePage() {
       </section>
 
       {/* Which Services We Provide Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
         <div className="max-w-7xl mx-auto">
-          {/* Section Heading */}
+          {/* Section Header */}
           <motion.div
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: '#FAFAFA' }}>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0EA5E9' }}>
               Which Services We Provide
             </h2>
-            <p className="text-lg max-w-3xl mx-auto" style={{ color: '#9E9E9E' }}>
-              Comprehensive AI and technology solutions tailored to accelerate your business growth
+            <p className="text-lg" style={{ color: '#B0B0B0' }}>
+              You can also check out the related services.
             </p>
           </motion.div>
 
-          {/* Services Grid - 3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             
-            {/* Service 1 - AI & ML Solutions */}
+            {/* GPU Optimization Service Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
-              style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+              className="rounded-2xl p-8 transition-all duration-300 hover:scale-105"
+              style={{
+                background: '#2a2a2a',
+                border: '1px solid #3a3a3a'
+              }}
             >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>AI & ML Solutions</h3>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#9E9E9E' }}>
-                Custom AI models, machine learning pipelines, and intelligent automation systems that transform your business operations.
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+                GPU Optimization Service
+              </h3>
+              <p className="text-base mb-6 leading-relaxed" style={{ color: '#B0B0B0' }}>
+                Maximize your GPU performance with our expert optimization services. We fine-tune your applications for peak efficiency and speed.
               </p>
-              <a href="/services" className="text-sm font-semibold inline-flex items-center gap-2 transition-colors" style={{ color: '#0EA5E9' }}>
-                Learn More
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+              <a
+                href="/gpu-optimization-service"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
+                style={{
+                  background: '#0EA5E9',
+                  color: '#FFFFFF'
+                }}
+              >
+                Know More
               </a>
             </motion.div>
 
-            {/* Service 2 - GPU Optimization */}
+            {/* CUDA Development Service Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
-              style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+              className="rounded-2xl p-8 transition-all duration-300 hover:scale-105"
+              style={{
+                background: '#2a2a2a',
+                border: '1px solid #3a3a3a'
+              }}
             >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>GPU Optimization</h3>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#9E9E9E' }}>
-                High-performance CUDA development and GPU acceleration services for AI workloads and compute-intensive applications.
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+                CUDA Development Service
+              </h3>
+              <p className="text-base mb-6 leading-relaxed" style={{ color: '#B0B0B0' }}>
+                Build high-performance parallel computing applications with our expert CUDA development team. Custom solutions for your unique needs.
               </p>
-              <a href="/services/gpu-optimization" className="text-sm font-semibold inline-flex items-center gap-2 transition-colors" style={{ color: '#0EA5E9' }}>
-                Learn More
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </motion.div>
-
-            {/* Service 3 - DevOps & Cloud */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
-              style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
-            >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>DevOps & Cloud</h3>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#9E9E9E' }}>
-                Scalable cloud infrastructure, CI/CD automation, and DevSecOps practices for reliable and secure deployments.
-              </p>
-              <a href="/services" className="text-sm font-semibold inline-flex items-center gap-2 transition-colors" style={{ color: '#0EA5E9' }}>
-                Learn More
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </motion.div>
-
-            {/* Service 4 - Cybersecurity */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
-              style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
-            >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Cybersecurity</h3>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#9E9E9E' }}>
-                Comprehensive security assessments, VAPT services, and compliance solutions to protect your digital assets.
-              </p>
-              <a href="/services" className="text-sm font-semibold inline-flex items-center gap-2 transition-colors" style={{ color: '#0EA5E9' }}>
-                Learn More
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </motion.div>
-
-            {/* Service 5 - Product Engineering */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
-              style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
-            >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Product Engineering</h3>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#9E9E9E' }}>
-                End-to-end product development from ideation to deployment, building scalable and user-centric solutions.
-              </p>
-              <a href="/services" className="text-sm font-semibold inline-flex items-center gap-2 transition-colors" style={{ color: '#0EA5E9' }}>
-                Learn More
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </motion.div>
-
-            {/* Service 6 - Custom Development */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
-              style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
-            >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Custom Development</h3>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#9E9E9E' }}>
-                Tailored software solutions designed to meet your unique business requirements and technical challenges.
-              </p>
-              <a href="/services" className="text-sm font-semibold inline-flex items-center gap-2 transition-colors" style={{ color: '#0EA5E9' }}>
-                Learn More
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+              <a
+                href="/cuda-development-service"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
+                style={{
+                  background: '#0EA5E9',
+                  color: '#FFFFFF'
+                }}
+              >
+                Know More
               </a>
             </motion.div>
 
           </div>
-
-          {/* View All Services Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-center mt-12"
-          >
-            <a
-              href="/services"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:opacity-90"
-              style={{
-                background: '#0EA5E9',
-                color: '#FFFFFF'
-              }}
-            >
-              View All Services
-            </a>
-          </motion.div>
         </div>
       </section>
 
