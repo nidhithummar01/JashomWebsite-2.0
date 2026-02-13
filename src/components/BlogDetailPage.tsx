@@ -102,7 +102,7 @@ export function BlogDetailPage() {
             <Link 
               to="/insights"
               className="inline-flex items-center gap-2 text-base transition-colors"
-              style={{ color: '#00E5FF' }}
+              style={{ color: '#10B981' }}
             >
               <ArrowLeft className="w-5 h-5" />
               Back to Insights
@@ -119,9 +119,9 @@ export function BlogDetailPage() {
             <span 
               className="inline-block px-4 py-2 rounded-full text-sm font-semibold"
               style={{
-                background: 'rgba(0, 229, 255, 0.1)',
-                color: '#00E5FF',
-                border: '1px solid rgba(0, 229, 255, 0.3)'
+                background: 'rgba(16, 185, 129, 0.1)',
+                color: '#10B981',
+                border: '1px solid rgba(16, 185, 129, 0.3)'
               }}
             >
               {blog.category}
@@ -208,8 +208,8 @@ export function BlogDetailPage() {
             transition={{ duration: 0.6 }}
             className="rounded-2xl p-12 text-center border"
             style={{
-              background: 'rgba(0, 229, 255, 0.05)',
-              borderColor: 'rgba(0, 229, 255, 0.2)'
+              background: 'rgba(16, 185, 129, 0.05)',
+              borderColor: 'rgba(16, 185, 129, 0.2)'
             }}
           >
             <h2 
@@ -228,7 +228,7 @@ export function BlogDetailPage() {
               to="/contact"
               className="inline-block px-8 py-4 rounded-xl font-semibold text-lg transition-all"
               style={{
-                background: 'linear-gradient(135deg, #00E5FF 0%, #0EA5E9 100%)',
+                background: 'linear-gradient(135deg, #10B981 0%, #10B981 100%)',
                 color: '#000000'
               }}
             >
@@ -270,10 +270,13 @@ export function BlogDetailPage() {
           line-height: 1.8;
         }
         .prose strong {
-          color: #00E5FF;
+          color: #10B981;
           font-weight: 600;
         }
       `}</style>
     </div>
   );
 }
+
+
+

@@ -35,18 +35,18 @@ export function InsightsPage() {
             <motion.div
               className="inline-block mb-6 px-4 py-2 rounded-full border"
               style={{
-                background: 'rgba(14, 165, 233, 0.08)',
-                borderColor: 'rgba(14, 165, 233, 0.25)'
+                background: 'rgba(16, 185, 129, 0.08)',
+                borderColor: 'rgba(16, 185, 129, 0.25)'
               }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <span style={{ color: '#0EA5E9', fontWeight: 600, fontSize: '0.875rem' }}>Insights & Resources</span>
+              <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Insights & Resources</span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-              Latest <span style={{ color: '#0EA5E9' }}>Insights</span> & Case Studies
+              Latest <span style={{ color: '#10B981' }}>Insights</span> & Case Studies
             </h1>
             <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
               Stay informed with the latest trends, best practices, and success stories in AI, GPU optimization, and enterprise technology.
@@ -65,14 +65,14 @@ export function InsightsPage() {
                 key={index}
                 className="px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-240"
                 style={{
-                  background: index === 0 ? 'rgba(14, 165, 233, 0.12)' : 'rgba(255, 255, 255, 0.04)',
-                  border: index === 0 ? '1px solid rgba(14, 165, 233, 0.35)' : '1px solid rgba(255, 255, 255, 0.08)',
-                  color: index === 0 ? '#0EA5E9' : '#9CA3AF'
+                  background: index === 0 ? 'rgba(16, 185, 129, 0.12)' : 'rgba(255, 255, 255, 0.04)',
+                  border: index === 0 ? '1px solid rgba(16, 185, 129, 0.35)' : '1px solid rgba(255, 255, 255, 0.08)',
+                  color: index === 0 ? '#10B981' : '#9CA3AF'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
-                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
-                  e.currentTarget.style.color = '#0EA5E9';
+                  e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
+                  e.currentTarget.style.color = '#10B981';
                 }}
                 onMouseLeave={(e) => {
                   if (index !== 0) {
@@ -136,9 +136,9 @@ export function InsightsPage() {
                       {/* Top Section */}
                       <div>
                         <div className="inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold" style={{
-                          background: 'rgba(14, 165, 233, 0.15)',
-                          color: '#0EA5E9',
-                          border: '1px solid rgba(14, 165, 233, 0.3)'
+                          background: 'rgba(16, 185, 129, 0.15)',
+                          color: '#10B981',
+                          border: '1px solid rgba(16, 185, 129, 0.3)'
                         }}>
                           {insight.category}
                         </div>
@@ -171,7 +171,7 @@ export function InsightsPage() {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-240" style={{ color: '#0EA5E9' }}>
+                        <div className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-240" style={{ color: '#10B981' }}>
                           <span>Read more</span>
                           <ArrowRight className="w-4 h-4 transition-transform duration-240 group-hover:translate-x-1" />
                         </div>
@@ -180,7 +180,7 @@ export function InsightsPage() {
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
-                      background: 'linear-gradient(180deg, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%)'
+                      background: 'linear-gradient(180deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%)'
                     }} />
                   </div>
                 </Link>
@@ -198,18 +198,18 @@ export function InsightsPage() {
             <button
               className="px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center gap-3"
               style={{
-                background: 'rgba(14, 165, 233, 0.12)',
-                border: '1px solid rgba(14, 165, 233, 0.35)',
+                background: 'rgba(16, 185, 129, 0.12)',
+                border: '1px solid rgba(16, 185, 129, 0.35)',
                 color: '#FAFAFA'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
                 e.currentTarget.style.transform = 'scale(1.05)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
@@ -229,8 +229,8 @@ export function InsightsPage() {
             viewport={{ once: true }}
             className="rounded-2xl p-8 sm:p-12 text-center relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(6, 182, 212, 0.08) 100%)',
-              border: '1px solid rgba(14, 165, 233, 0.2)'
+              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.08) 100%)',
+              border: '1px solid rgba(16, 185, 129, 0.2)'
             }}
           >
             {/* Background decoration */}
@@ -260,7 +260,7 @@ export function InsightsPage() {
                 <button
                   className="px-6 py-3 rounded-xl font-semibold whitespace-nowrap transition-all duration-240"
                   style={{
-                    background: '#0EA5E9',
+                    background: '#10B981',
                     color: '#FFFFFF'
                   }}
                   onMouseEnter={(e) => {
@@ -268,7 +268,7 @@ export function InsightsPage() {
                     e.currentTarget.style.transform = 'scale(1.05)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#0EA5E9';
+                    e.currentTarget.style.background = '#10B981';
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 >
@@ -279,6 +279,51 @@ export function InsightsPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <motion.div
+              className="inline-block mb-4 px-4 py-2 rounded-full border"
+              style={{
+                background: 'rgba(16, 185, 129, 0.08)',
+                borderColor: 'rgba(16, 185, 129, 0.25)'
+              }}
+            >
+              <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>
+                GET IN TOUCH
+              </span>
+            </motion.div>
+            
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
+              Have a Question or Project in Mind?
+            </h2>
+            
+            <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
+              Let's discuss how we can help you leverage AI and GPU computing to transform your business. Our team is ready to answer your questions.
+            </p>
+            
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:opacity-90 hover:scale-105"
+              style={{
+                background: '#10B981',
+                color: '#FFFFFF',
+                boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)'
+              }}
+            >
+              Contact Us
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
+

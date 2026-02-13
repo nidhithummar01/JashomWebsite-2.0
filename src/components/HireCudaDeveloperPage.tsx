@@ -5,7 +5,7 @@ import { Award, Zap, DollarSign } from 'lucide-react';
 export function HireCudaDeveloperPage() {
 
   return (
-    <div className="min-h-screen" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
+    <div className="min-h-screen" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
       <SEO
         title="Hire Expert CUDA Developer | 5+ Years Experience | Jashom"
         description="Hire experienced CUDA developers with 5+ years expertise. Build high-performance GPU applications with seamless performance and enhanced computing power."
@@ -65,14 +65,14 @@ export function HireCudaDeveloperPage() {
                   style={{
                     background: '#1F2937', color: '#FAFAFA',
                     borderRadius: '4px',
-                    border: '1px solid rgba(14, 165, 233, 0.2)'
+                    border: '1px solid rgba(16, 185, 129, 0.2)'
                   }}
                 />
                 <a
                   href="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 font-bold transition-all duration-300 hover:opacity-90 whitespace-nowrap w-full sm:w-auto sm:flex-[1] text-center sm:ml-3"
                   style={{
-                    background: '#0EA5E9',
+                    background: '#10B981',
                     color: '#FFFFFF',
                     borderRadius: '4px',
                     textDecoration: 'none'
@@ -85,7 +85,7 @@ export function HireCudaDeveloperPage() {
               {/* Stats - Horizontal Layout with Dividers */}
               <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-6 sm:gap-8 pt-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#0EA5E9' }}>
+                  <div className="w-14 h-14 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                     <Award className="w-7 h-7" style={{ color: '#FFFFFF' }} />
                   </div>
                   <div>
@@ -97,7 +97,7 @@ export function HireCudaDeveloperPage() {
                 <div className="hidden sm:block w-px h-16" style={{ background: '#555555' }}></div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#0EA5E9' }}>
+                  <div className="w-14 h-14 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                     <Zap className="w-7 h-7" style={{ color: '#FFFFFF' }} />
                   </div>
                   <div>
@@ -109,7 +109,7 @@ export function HireCudaDeveloperPage() {
                 <div className="hidden sm:block w-px h-16" style={{ background: '#555555' }}></div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#0EA5E9' }}>
+                  <div className="w-14 h-14 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                     <DollarSign className="w-7 h-7" style={{ color: '#FFFFFF' }} />
                   </div>
                   <div>
@@ -162,8 +162,8 @@ export function HireCudaDeveloperPage() {
                   className="inline-flex items-center justify-center px-8 py-3 rounded font-semibold border-2 transition-all duration-300 hover:bg-orange-500 hover:text-white"
                   style={{
                     background: 'transparent',
-                    borderColor: '#0EA5E9',
-                    color: '#0EA5E9'
+                    borderColor: '#10B981',
+                    color: '#10B981'
                   }}
                 >
                   TALK TO OUR EXPERT
@@ -176,7 +176,7 @@ export function HireCudaDeveloperPage() {
       </section>
 
       {/* Our CUDA Engineers Expertise Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
         <div className="max-w-7xl mx-auto">
           {/* Section Heading */}
           <motion.div
@@ -480,7 +480,7 @@ export function HireCudaDeveloperPage() {
       </section>
 
       {/* Why Hire CUDA Engineers Section - 6 Cards with Images */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
         <div className="max-w-7xl mx-auto">
           {/* Section Heading */}
           <motion.div
@@ -679,7 +679,7 @@ export function HireCudaDeveloperPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0EA5E9' }}>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#10B981' }}>
               Our Engagement Models
             </h2>
             <p className="text-lg max-w-3xl" style={{ color: '#9E9E9E' }}>
@@ -693,7 +693,7 @@ export function HireCudaDeveloperPage() {
             {/* Card 1 - Full-time */}
             <motion.div
               className="rounded-2xl p-8"
-              style={{ background: 'rgba(14, 165, 233, 0.05)' }}
+              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -710,7 +710,7 @@ export function HireCudaDeveloperPage() {
             {/* Card 2 - Part-time */}
             <motion.div
               className="rounded-2xl p-8"
-              style={{ background: 'rgba(14, 165, 233, 0.05)' }}
+              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -727,7 +727,7 @@ export function HireCudaDeveloperPage() {
             {/* Card 3 - Time & Material */}
             <motion.div
               className="rounded-2xl p-8"
-              style={{ background: 'rgba(14, 165, 233, 0.05)' }}
+              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -744,7 +744,7 @@ export function HireCudaDeveloperPage() {
             {/* Card 4 - Custom Model */}
             <motion.div
               className="rounded-2xl p-8"
-              style={{ background: 'rgba(14, 165, 233, 0.05)' }}
+              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -764,31 +764,50 @@ export function HireCudaDeveloperPage() {
 
       {/* CTA Section with Background Image */}
       <section 
-        className="relative py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center"
         style={{
-          background: 'rgba(14, 165, 233, 0.05)', // Fallback color
-          backgroundImage: 'url(/images/cuda-cta-bg.jpg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-          backgroundRepeat: 'no-repeat'
+          minHeight: '400px',
+          background: '#0B0F14'
         }}
       >
-        {/* Enhanced Dark Overlay for better text readability */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5))' }}></div>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/images/cuda-cta-bg.jpg.jpg" 
+            alt="CUDA Background"
+            className="w-full h-full"
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center center',
+              minHeight: '400px'
+            }}
+          />
+        </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        {/* Lighter Gradient Overlay for better image visibility */}
+        <div 
+          className="absolute inset-0" 
+          style={{ 
+            background: 'linear-gradient(90deg, rgba(11, 15, 20, 0.75) 0%, rgba(11, 15, 20, 0.4) 60%, rgba(11, 15, 20, 0.2) 100%)'
+          }}
+        ></div>
+
+        <div className="max-w-7xl mx-auto relative z-10 py-20 w-full">
           <motion.div
-            className="max-w-3xl"
+            className="max-w-[60%]"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 leading-tight" style={{ 
-              color: '#FFFFFF', 
-              letterSpacing: '-0.02em',
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)'
-            }}>
+            <h2 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 leading-tight" 
+              style={{ 
+                color: '#FFFFFF', 
+                letterSpacing: '-0.02em',
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)'
+              }}
+            >
               Ready to unleash the power of CUDA?
             </h2>
 
@@ -798,7 +817,7 @@ export function HireCudaDeveloperPage() {
               style={{
                 background: 'transparent',
                 color: '#FFFFFF',
-                border: '2px solid #0EA5E9'
+                border: '2px solid #10B981'
               }}
             >
               Take Charge
@@ -818,7 +837,7 @@ export function HireCudaDeveloperPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-              Why <span style={{ color: '#0EA5E9' }}>Jashom</span>?
+              Why <span style={{ color: '#10B981' }}>Jashom</span>?
             </h2>
             <p className="max-w-2xl mx-auto text-base sm:text-lg" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
               Experience the Jashom advantage with cutting-edge AI solutions tailored to your business needs
@@ -836,15 +855,15 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg"
               style={{
-                background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)'
+                background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)'
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'rgba(14, 165, 233, 0.1)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'rgba(16, 185, 129, 0.1)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                   </svg>
                 </div>
@@ -863,15 +882,15 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg"
               style={{
-                background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)'
+                background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)'
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'rgba(14, 165, 233, 0.1)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'rgba(16, 185, 129, 0.1)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
@@ -890,15 +909,15 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg"
               style={{
-                background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)'
+                background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)'
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'rgba(14, 165, 233, 0.1)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'rgba(16, 185, 129, 0.1)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -917,15 +936,15 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg"
               style={{
-                background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)'
+                background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)'
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'rgba(14, 165, 233, 0.1)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'rgba(16, 185, 129, 0.1)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <Zap className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                  <Zap className="w-8 h-8" style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Lightning Fast Deployment</h3>
                 <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
@@ -942,15 +961,15 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg"
               style={{
-                background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)'
+                background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)'
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'rgba(14, 165, 233, 0.1)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'rgba(16, 185, 129, 0.1)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
@@ -969,15 +988,15 @@ export function HireCudaDeveloperPage() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg"
               style={{
-                background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)'
+                background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)'
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'rgba(14, 165, 233, 0.1)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'rgba(16, 185, 129, 0.1)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <svg className="w-8 h-8" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
@@ -992,7 +1011,7 @@ export function HireCudaDeveloperPage() {
       </section>
 
       {/* Reviews Section - We Are Trusted By Businesses Across the Globe */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
         <div className="max-w-7xl mx-auto">
           {/* Section Heading */}
           <motion.div
@@ -1027,8 +1046,8 @@ export function HireCudaDeveloperPage() {
                   <svg
                     key={star}
                     className="w-6 h-6"
-                    fill={star <= 4 ? '#0EA5E9' : 'none'}
-                    stroke={star === 5 ? '#0EA5E9' : 'none'}
+                    fill={star <= 4 ? '#10B981' : 'none'}
+                    stroke={star === 5 ? '#10B981' : 'none'}
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1044,7 +1063,7 @@ export function HireCudaDeveloperPage() {
             </div>
             <div className="h-8 w-px" style={{ background: '#e0e0e0' }}></div>
             <div className="text-sm" style={{ color: '#9E9E9E' }}>
-              Powered by <span className="font-bold" style={{ color: '#0EA5E9' }}>Clutch</span>
+              Powered by <span className="font-bold" style={{ color: '#10B981' }}>Clutch</span>
             </div>
           </motion.div>
 
@@ -1054,7 +1073,7 @@ export function HireCudaDeveloperPage() {
             {/* Review 1 */}
             <motion.div
               className="rounded-xl p-6 border"
-              style={{ background: '#FFFFFF', borderColor: 'rgba(14, 165, 233, 0.2)' }}
+              style={{ background: '#FFFFFF', borderColor: 'rgba(16, 185, 129, 0.2)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1066,7 +1085,7 @@ export function HireCudaDeveloperPage() {
                   <svg
                     key={star}
                     className="w-5 h-5"
-                    fill="#0EA5E9"
+                    fill="#10B981"
                     viewBox="0 0 24 24"
                   >
                     <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -1082,7 +1101,7 @@ export function HireCudaDeveloperPage() {
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#0EA5E9' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#10B981' }}>
                     <span className="text-white font-bold text-sm">JD</span>
                   </div>
                   <div>
@@ -1103,7 +1122,7 @@ export function HireCudaDeveloperPage() {
             {/* Review 2 */}
             <motion.div
               className="rounded-xl p-6 border"
-              style={{ background: '#FFFFFF', borderColor: 'rgba(14, 165, 233, 0.2)' }}
+              style={{ background: '#FFFFFF', borderColor: 'rgba(16, 185, 129, 0.2)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1115,7 +1134,7 @@ export function HireCudaDeveloperPage() {
                   <svg
                     key={star}
                     className="w-5 h-5"
-                    fill="#0EA5E9"
+                    fill="#10B981"
                     viewBox="0 0 24 24"
                   >
                     <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -1131,7 +1150,7 @@ export function HireCudaDeveloperPage() {
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#0EA5E9' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#10B981' }}>
                     <span className="text-white font-bold text-sm">SM</span>
                   </div>
                   <div>
@@ -1152,7 +1171,7 @@ export function HireCudaDeveloperPage() {
             {/* Review 3 */}
             <motion.div
               className="rounded-xl p-6 border"
-              style={{ background: '#FFFFFF', borderColor: 'rgba(14, 165, 233, 0.2)' }}
+              style={{ background: '#FFFFFF', borderColor: 'rgba(16, 185, 129, 0.2)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1164,7 +1183,7 @@ export function HireCudaDeveloperPage() {
                   <svg
                     key={star}
                     className="w-5 h-5"
-                    fill="#0EA5E9"
+                    fill="#10B981"
                     viewBox="0 0 24 24"
                   >
                     <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -1180,7 +1199,7 @@ export function HireCudaDeveloperPage() {
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#0EA5E9' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#10B981' }}>
                     <span className="text-white font-bold text-sm">RC</span>
                   </div>
                   <div>
@@ -1201,7 +1220,7 @@ export function HireCudaDeveloperPage() {
             {/* Review 4 */}
             <motion.div
               className="rounded-xl p-6 border"
-              style={{ background: '#FFFFFF', borderColor: 'rgba(14, 165, 233, 0.2)' }}
+              style={{ background: '#FFFFFF', borderColor: 'rgba(16, 185, 129, 0.2)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1213,13 +1232,13 @@ export function HireCudaDeveloperPage() {
                   <svg
                     key={star}
                     className="w-5 h-5"
-                    fill="#0EA5E9"
+                    fill="#10B981"
                     viewBox="0 0 24 24"
                   >
                     <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                   </svg>
                 ))}
-                <svg className="w-5 h-5" fill="none" stroke="#0EA5E9" strokeWidth={2} viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="#10B981" strokeWidth={2} viewBox="0 0 24 24">
                   <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                 </svg>
               </div>
@@ -1232,7 +1251,7 @@ export function HireCudaDeveloperPage() {
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#0EA5E9' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#10B981' }}>
                     <span className="text-white font-bold text-sm">EP</span>
                   </div>
                   <div>
@@ -1253,7 +1272,7 @@ export function HireCudaDeveloperPage() {
             {/* Review 5 */}
             <motion.div
               className="rounded-xl p-6 border"
-              style={{ background: '#FFFFFF', borderColor: 'rgba(14, 165, 233, 0.2)' }}
+              style={{ background: '#FFFFFF', borderColor: 'rgba(16, 185, 129, 0.2)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1265,7 +1284,7 @@ export function HireCudaDeveloperPage() {
                   <svg
                     key={star}
                     className="w-5 h-5"
-                    fill="#0EA5E9"
+                    fill="#10B981"
                     viewBox="0 0 24 24"
                   >
                     <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -1281,7 +1300,7 @@ export function HireCudaDeveloperPage() {
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#0EA5E9' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#10B981' }}>
                     <span className="text-white font-bold text-sm">MK</span>
                   </div>
                   <div>
@@ -1302,7 +1321,7 @@ export function HireCudaDeveloperPage() {
             {/* Review 6 */}
             <motion.div
               className="rounded-xl p-6 border"
-              style={{ background: '#FFFFFF', borderColor: 'rgba(14, 165, 233, 0.2)' }}
+              style={{ background: '#FFFFFF', borderColor: 'rgba(16, 185, 129, 0.2)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1314,7 +1333,7 @@ export function HireCudaDeveloperPage() {
                   <svg
                     key={star}
                     className="w-5 h-5"
-                    fill="#0EA5E9"
+                    fill="#10B981"
                     viewBox="0 0 24 24"
                   >
                     <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -1330,7 +1349,7 @@ export function HireCudaDeveloperPage() {
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#0EA5E9' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#10B981' }}>
                     <span className="text-white font-bold text-sm">LW</span>
                   </div>
                   <div>
@@ -1352,7 +1371,7 @@ export function HireCudaDeveloperPage() {
         </div>
       </section>
       {/* Related Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div
@@ -1361,7 +1380,7 @@ export function HireCudaDeveloperPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0EA5E9' }}>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#10B981' }}>
               Looking for something else?
             </h2>
             <p className="text-lg" style={{ color: '#B0B0B0' }}>
@@ -1394,7 +1413,7 @@ export function HireCudaDeveloperPage() {
                 href="/gpu-optimization-service"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
                 style={{
-                  background: '#0EA5E9',
+                  background: '#10B981',
                   color: '#FFFFFF'
                 }}
               >
@@ -1424,7 +1443,7 @@ export function HireCudaDeveloperPage() {
                 href="/cuda-development-service"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
                 style={{
-                  background: '#0EA5E9',
+                  background: '#10B981',
                   color: '#FFFFFF'
                 }}
               >
@@ -1467,7 +1486,7 @@ export function HireCudaDeveloperPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="rounded-2xl border overflow-hidden"
-                style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+                style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)' }}
               >
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -1499,7 +1518,7 @@ export function HireCudaDeveloperPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="rounded-2xl border overflow-hidden"
-                style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+                style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)' }}
               >
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -1531,7 +1550,7 @@ export function HireCudaDeveloperPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="rounded-2xl border overflow-hidden"
-                style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+                style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)' }}
               >
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -1554,15 +1573,15 @@ export function HireCudaDeveloperPage() {
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#0EA5E9' }}></span>
+                        <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#10B981' }}></span>
                         <span className="text-base" style={{ color: '#9E9E9E' }}><strong>Hourly Basis:</strong> Pay only for the hours worked, ideal for short-term tasks</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#0EA5E9' }}></span>
+                        <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#10B981' }}></span>
                         <span className="text-base" style={{ color: '#9E9E9E' }}><strong>Monthly Basis:</strong> Full-time dedicated developers for ongoing projects</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#0EA5E9' }}></span>
+                        <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#10B981' }}></span>
                         <span className="text-base" style={{ color: '#9E9E9E' }}><strong>Fixed Basis:</strong> Fixed-price contracts for well-defined project scopes</span>
                       </li>
                     </ul>
@@ -1577,7 +1596,7 @@ export function HireCudaDeveloperPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="rounded-2xl border overflow-hidden"
-                style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+                style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)' }}
               >
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -1609,7 +1628,7 @@ export function HireCudaDeveloperPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="rounded-2xl border overflow-hidden"
-                style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+                style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)' }}
               >
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -1641,7 +1660,7 @@ export function HireCudaDeveloperPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="rounded-2xl border overflow-hidden"
-                style={{ background: 'rgba(14, 165, 233, 0.05)', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+                style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.3)' }}
               >
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -1672,7 +1691,7 @@ export function HireCudaDeveloperPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
@@ -1692,8 +1711,8 @@ export function HireCudaDeveloperPage() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                    <svg className="w-6 h-6" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
+                    <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -1704,8 +1723,8 @@ export function HireCudaDeveloperPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                    <svg className="w-6 h-6" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
+                    <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -1716,8 +1735,8 @@ export function HireCudaDeveloperPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(14, 165, 233, 0.1)' }}>
-                    <svg className="w-6 h-6" style={{ color: '#0EA5E9' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
+                    <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   </div>
@@ -1736,7 +1755,7 @@ export function HireCudaDeveloperPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-2xl p-8 border"
-              style={{ background: '#111827', borderColor: 'rgba(14, 165, 233, 0.3)' }}
+              style={{ background: '#111827', borderColor: 'rgba(16, 185, 129, 0.3)' }}
             >
               <form className="space-y-6">
                 {/* Name */}
@@ -1751,7 +1770,7 @@ export function HireCudaDeveloperPage() {
                     required
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                     style={{ 
-                      background: '#1F2937', borderColor: 'rgba(14, 165, 233, 0.3)',
+                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
                       color: '#FAFAFA'
                     }}
                     placeholder="John Doe"
@@ -1770,7 +1789,7 @@ export function HireCudaDeveloperPage() {
                     required
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                     style={{ 
-                      background: '#1F2937', borderColor: 'rgba(14, 165, 233, 0.3)',
+                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
                       color: '#FAFAFA'
                     }}
                     placeholder="john@company.com"
@@ -1788,7 +1807,7 @@ export function HireCudaDeveloperPage() {
                     name="phone"
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                     style={{ 
-                      background: '#1F2937', borderColor: 'rgba(14, 165, 233, 0.3)',
+                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
                       color: '#FAFAFA'
                     }}
                     placeholder="+1 (555) 000-0000"
@@ -1806,7 +1825,7 @@ export function HireCudaDeveloperPage() {
                     name="company"
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                     style={{ 
-                      background: '#1F2937', borderColor: 'rgba(14, 165, 233, 0.3)',
+                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
                       color: '#FAFAFA'
                     }}
                     placeholder="Your Company"
@@ -1824,7 +1843,7 @@ export function HireCudaDeveloperPage() {
                     required
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                     style={{ 
-                      background: '#1F2937', borderColor: 'rgba(14, 165, 233, 0.3)',
+                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
                       color: '#FAFAFA'
                     }}
                   >
@@ -1848,7 +1867,7 @@ export function HireCudaDeveloperPage() {
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all resize-none"
                     style={{ 
-                      background: '#1F2937', borderColor: 'rgba(14, 165, 233, 0.3)',
+                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
                       color: '#FAFAFA'
                     }}
                     placeholder="Tell us about your project, timeline, and specific CUDA expertise needed..."
@@ -1860,7 +1879,7 @@ export function HireCudaDeveloperPage() {
                   type="submit"
                   className="w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
                   style={{
-                    background: '#0EA5E9',
+                    background: '#10B981',
                     color: '#FFFFFF'
                   }}
                 >

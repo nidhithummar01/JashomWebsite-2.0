@@ -241,7 +241,7 @@ export function HomePage() {
               style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(12px)',
-                borderColor: 'rgba(14, 165, 233, 0.2)'
+                borderColor: 'rgba(16, 185, 129, 0.2)'
               }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -262,7 +262,13 @@ export function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Accelerate Your AI Journey with <span style={{ color: '#0EA5E9' }}>Precision Engineering</span>
+              Accelerate Your AI Journey with <span style={{ 
+                background: 'linear-gradient(135deg, #10B981 0%, #7C3AED 50%, #06B6D4 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                fontWeight: 800
+              }}>Precision Engineering</span>
             </motion.h1>
 
             <motion.p
@@ -288,20 +294,21 @@ export function HomePage() {
             >
               <Link
                 to="/contact"
-                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl border text-center text-sm sm:text-base cursor-pointer transition-all duration-240"
+                className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl border text-center text-sm sm:text-base cursor-pointer transition-all duration-240 font-semibold"
                 style={{
-                  background: 'rgba(14, 165, 233, 0.12)',
-                  borderColor: 'rgba(14, 165, 233, 0.35)',
-                  color: '#FAFAFA'
+                  background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                  borderColor: 'transparent',
+                  color: '#FFFFFF',
+                  boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
-                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
-                  e.currentTarget.style.transform = 'translateY(-1px)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                  e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
-                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -319,7 +326,7 @@ export function HomePage() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
+                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
                   e.currentTarget.style.transform = 'translateY(-1px)';
                 }}
                 onMouseLeave={(e) => {
@@ -338,9 +345,21 @@ export function HomePage() {
       {/* COMMENTED OUT - Services temporarily hidden from UI but preserved in codebase */}
       {/* <ServicesSlider /> */}
 
-      {/* What We Do Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
-        <div className="max-w-7xl mx-auto">
+      {/* What We Do Section - PREMIUM */}
+      <section 
+        className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" 
+        style={{ 
+          background: 'radial-gradient(ellipse at top, rgba(16, 185, 129, 0.15) 0%, rgba(11, 15, 20, 0.95) 50%, #0B0F14 100%)',
+          position: 'relative'
+        }}
+      >
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-violet-500/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             className="mb-12 sm:mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -348,7 +367,11 @@ export function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em' }}>
-              What We <span style={{ color: '#0EA5E9' }}>Do</span>
+              What We <span style={{ 
+                background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>Do</span>
             </h2>
           </motion.div>
 
@@ -360,60 +383,120 @@ export function HomePage() {
             transition={{ delay: 0.2 }}
           >
             {/* GPU Optimization */}
-            <div className="space-y-4 max-w-xl">
-              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>GPU Optimization</h3>
-              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
+            <motion.div 
+              className="space-y-4 max-w-xl p-8 rounded-2xl transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%)',
+                border: '1px solid rgba(16, 185, 129, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: '0 20px 60px rgba(16, 185, 129, 0.2)',
+                borderColor: 'rgba(16, 185, 129, 0.3)'
+              }}
+            >
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#10B981', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>GPU Optimization</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We unlock maximum GPU performance through memory optimization, kernel tuning, and throughput engineering. Our solutions deliver measurable speed improvements and cost reductions for production workloads at scale.
               </p>
-            </div>
+            </motion.div>
 
             {/* CUDA Development */}
-            <div className="space-y-4 max-w-xl">
-              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>CUDA Development</h3>
-              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
+            <motion.div 
+              className="space-y-4 max-w-xl p-8 rounded-2xl transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(124, 58, 237, 0.02) 100%)',
+                border: '1px solid rgba(124, 58, 237, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: '0 20px 60px rgba(124, 58, 237, 0.2)',
+                borderColor: 'rgba(124, 58, 237, 0.3)'
+              }}
+            >
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#7C3AED', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>CUDA Development</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We build custom CUDA solutions for parallel computing and performance-critical systems. From low-level GPU programming to algorithm acceleration, we help organizations extract full value from NVIDIA hardware.
               </p>
-            </div>
+            </motion.div>
 
             {/* AI Engineering */}
-            <div className="space-y-4 max-w-xl">
-              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>AI Engineering</h3>
-              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
+            <motion.div 
+              className="space-y-4 max-w-xl p-8 rounded-2xl transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.02) 100%)',
+                border: '1px solid rgba(6, 182, 212, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: '0 20px 60px rgba(6, 182, 212, 0.2)',
+                borderColor: 'rgba(6, 182, 212, 0.3)'
+              }}
+            >
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#06B6D4', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>AI Engineering</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We develop production-ready AI systems that deliver business impact. Our work spans model optimization, deployment architecture, and integration—moving AI from experimentation to reliable operation.
               </p>
-            </div>
+            </motion.div>
 
             {/* Data & Performance Engineering */}
-            <div className="space-y-4 max-w-xl">
-              <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Data & Performance Engineering</h3>
-              <p className="text-base sm:text-lg leading-loose" style={{ color: '#9E9E9E', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
+            <motion.div 
+              className="space-y-4 max-w-xl p-8 rounded-2xl transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(124, 58, 237, 0.02) 100%)',
+                border: '1px solid rgba(16, 185, 129, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: '0 20px 60px rgba(16, 185, 129, 0.15), 0 0 60px rgba(124, 58, 237, 0.15)',
+                borderColor: 'rgba(16, 185, 129, 0.3)'
+              }}
+            >
+              <h3 className="text-xl sm:text-2xl font-bold" style={{ 
+                background: 'linear-gradient(135deg, #10B981, #7C3AED)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                fontFamily: 'Inter, sans-serif', 
+                letterSpacing: '-0.02em' 
+              }}>Data & Performance Engineering</h3>
+              <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                 We architect high-performance data systems that handle scale and complexity. Through optimized pipelines and system design, we enable faster insights and more reliable decision-making.
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Which Services We Provide Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(14, 165, 233, 0.05)' }}>
-        <div className="max-w-7xl mx-auto">
+      {/* Which Services We Provide Section - MATCHING REFERENCE IMAGE */}
+      <section 
+        className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" 
+        style={{ 
+          background: 'linear-gradient(180deg, rgba(5, 46, 44, 0.8) 0%, rgba(11, 15, 20, 0.95) 100%)',
+          position: 'relative'
+        }}
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0EA5E9' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#10B981' }}>
               Which Services We Provide
             </h2>
-            <p className="text-lg" style={{ color: '#B0B0B0' }}>
-              You can also check out the related services.
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF' }}>
+              Explore our specialized GPU and CUDA development services
             </p>
           </motion.div>
 
           {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             
             {/* GPU Optimization Service Card */}
             <motion.div
@@ -421,27 +504,46 @@ export function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl p-8 transition-all duration-300 hover:scale-105"
+              className="rounded-2xl p-8 transition-all duration-300 group relative"
               style={{
-                background: '#2a2a2a',
-                border: '1px solid #3a3a3a'
+                background: 'rgba(30, 41, 59, 0.6)',
+                border: '1px solid rgba(16, 185, 129, 0.2)',
+                backdropFilter: 'blur(10px)'
               }}
             >
-              <h3 className="text-2xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl mb-6 flex items-center justify-center"
+                style={{
+                  background: 'rgba(16, 185, 129, 0.15)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
+                }}
+              >
+                <Cpu className="w-7 h-7" style={{ color: '#10B981' }} />
+              </div>
+              
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#10B981' }}>
                 GPU Optimization Service
               </h3>
-              <p className="text-base mb-6 leading-relaxed" style={{ color: '#B0B0B0' }}>
+              <p className="text-base mb-8 leading-relaxed" style={{ color: '#9CA3AF' }}>
                 Maximize your GPU performance with our expert optimization services. We fine-tune your applications for peak efficiency and speed.
               </p>
               <a
                 href="/gpu-optimization-service"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300"
                 style={{
-                  background: '#0EA5E9',
+                  background: '#10B981',
                   color: '#FFFFFF'
                 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#059669';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#10B981';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
-                Know More
+                Explore Service →
               </a>
             </motion.div>
 
@@ -451,27 +553,46 @@ export function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-2xl p-8 transition-all duration-300 hover:scale-105"
+              className="rounded-2xl p-8 transition-all duration-300 group relative"
               style={{
-                background: '#2a2a2a',
-                border: '1px solid #3a3a3a'
+                background: 'rgba(30, 41, 59, 0.6)',
+                border: '1px solid rgba(124, 58, 237, 0.2)',
+                backdropFilter: 'blur(10px)'
               }}
             >
-              <h3 className="text-2xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl mb-6 flex items-center justify-center"
+                style={{
+                  background: 'rgba(124, 58, 237, 0.15)',
+                  border: '1px solid rgba(124, 58, 237, 0.3)'
+                }}
+              >
+                <Zap className="w-7 h-7" style={{ color: '#7C3AED' }} />
+              </div>
+              
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#7C3AED' }}>
                 CUDA Development Service
               </h3>
-              <p className="text-base mb-6 leading-relaxed" style={{ color: '#B0B0B0' }}>
+              <p className="text-base mb-8 leading-relaxed" style={{ color: '#9CA3AF' }}>
                 Build high-performance parallel computing applications with our expert CUDA development team. Custom solutions for your unique needs.
               </p>
               <a
                 href="/cuda-development-service"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300"
                 style={{
-                  background: '#0EA5E9',
+                  background: 'linear-gradient(135deg, #7C3AED, #06B6D4)',
                   color: '#FFFFFF'
                 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #6D28D9, #0891B2)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #7C3AED, #06B6D4)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
-                Know More
+                Explore Service →
               </a>
             </motion.div>
 
@@ -479,8 +600,16 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Premium Divider */}
+      <div className="premium-divider" />
+
       {/* Section-5: Trusted by Innovative Teams Worldwide */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-[#0a0a1a] to-black relative overflow-hidden" style={{ marginTop: '4rem' }}>
+      <section 
+        className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" 
+        style={{ 
+          background: 'linear-gradient(180deg, rgba(11, 15, 20, 0.95) 0%, rgba(5, 46, 44, 0.6) 50%, rgba(11, 15, 20, 0.95) 100%)'
+        }}
+      >
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
@@ -822,11 +951,11 @@ export function HomePage() {
             <motion.div
               className="inline-block mb-4 px-4 py-2 rounded-full border"
               style={{
-                background: 'rgba(14, 165, 233, 0.05)',
-                borderColor: 'rgba(14, 165, 233, 0.2)'
+                background: 'rgba(16, 185, 129, 0.05)',
+                borderColor: 'rgba(16, 185, 129, 0.2)'
               }}
             >
-              <span style={{ color: '#0EA5E9', fontWeight: 600, fontSize: '0.875rem' }}>Client Testimonials</span>
+              <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Client Testimonials</span>
             </motion.div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em', lineHeight: 1.2 }}>
@@ -860,8 +989,8 @@ export function HomePage() {
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#0EA5E9" opacity="0.3"/>
-                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3"/>
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3"/>
                   </svg>
                 </div>
 
@@ -873,7 +1002,7 @@ export function HomePage() {
                 {/* Author Info */}
                 <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
-                    background: 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
+                    background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -910,8 +1039,8 @@ export function HomePage() {
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#0EA5E9" opacity="0.3"/>
-                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3"/>
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3"/>
                   </svg>
                 </div>
 
@@ -960,8 +1089,8 @@ export function HomePage() {
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#0EA5E9" opacity="0.3"/>
-                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#0EA5E9" opacity="0.3"/>
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3"/>
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3"/>
                   </svg>
                 </div>
 
@@ -1012,13 +1141,13 @@ export function HomePage() {
             viewport={{ once: true }}
           >
             <div className="inline-block mb-4 px-6 py-2 rounded-full border" style={{
-              background: 'rgba(14, 165, 233, 0.08)',
-              borderColor: 'rgba(14, 165, 233, 0.25)'
+              background: 'rgba(16, 185, 129, 0.08)',
+              borderColor: 'rgba(16, 185, 129, 0.25)'
             }}>
-              <span style={{ color: '#0EA5E9', fontWeight: 600 }}>Why Choose Us</span>
+              <span style={{ color: '#10B981', fontWeight: 600 }}>Why Choose Us</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-              Why <span style={{ color: '#0EA5E9' }}>Jashom</span>?
+              Why <span style={{ color: '#10B981' }}>Jashom</span>?
             </h2>
             <p className="max-w-2xl mx-auto text-base sm:text-lg" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
               Experience the Jashom advantage with cutting-edge AI solutions tailored to your business needs
@@ -1039,25 +1168,25 @@ export function HomePage() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
-                borderColor: 'rgba(14, 165, 233, 0.2)',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%)',
+                borderColor: 'rgba(16, 185, 129, 0.2)',
                 backdropFilter: 'blur(8px)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.2)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <Cpu className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                  <Cpu className="w-8 h-8" style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>10x GPU Performance</h3>
                 <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
@@ -1072,25 +1201,25 @@ export function HomePage() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
-                borderColor: 'rgba(14, 165, 233, 0.2)',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%)',
+                borderColor: 'rgba(16, 185, 129, 0.2)',
                 backdropFilter: 'blur(8px)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.2)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <Brain className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                  <Brain className="w-8 h-8" style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Production-Ready AI</h3>
                 <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
@@ -1105,25 +1234,25 @@ export function HomePage() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
-                borderColor: 'rgba(14, 165, 233, 0.2)',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%)',
+                borderColor: 'rgba(16, 185, 129, 0.2)',
                 backdropFilter: 'blur(8px)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.2)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <Shield className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                  <Shield className="w-8 h-8" style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Bank-Grade Security</h3>
                 <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
@@ -1138,25 +1267,25 @@ export function HomePage() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
-                borderColor: 'rgba(14, 165, 233, 0.2)',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%)',
+                borderColor: 'rgba(16, 185, 129, 0.2)',
                 backdropFilter: 'blur(8px)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.2)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <Zap className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                  <Zap className="w-8 h-8" style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Lightning Fast Deployment</h3>
                 <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
@@ -1171,25 +1300,25 @@ export function HomePage() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
-                borderColor: 'rgba(14, 165, 233, 0.2)',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%)',
+                borderColor: 'rgba(16, 185, 129, 0.2)',
                 backdropFilter: 'blur(8px)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.2)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <Users className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                  <Users className="w-8 h-8" style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>24/7 Expert Support</h3>
                 <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
@@ -1204,25 +1333,25 @@ export function HomePage() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative rounded-2xl p-8 border cursor-pointer overflow-hidden transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%)',
-                borderColor: 'rgba(14, 165, 233, 0.2)',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%)',
+                borderColor: 'rgba(16, 185, 129, 0.2)',
                 backdropFilter: 'blur(8px)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.4)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.2)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300" style={{
-                  background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%)',
-                  border: '1px solid rgba(14, 165, 233, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}>
-                  <TrendingUp className="w-8 h-8" style={{ color: '#0EA5E9' }} />
+                  <TrendingUp className="w-8 h-8" style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Cost-Effective Solutions</h3>
                 <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
@@ -1243,20 +1372,20 @@ export function HomePage() {
               to="/contact"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
               style={{
-                background: 'rgba(14, 165, 233, 0.12)',
-                borderColor: 'rgba(14, 165, 233, 0.35)',
+                background: 'rgba(16, 185, 129, 0.12)',
+                borderColor: 'rgba(16, 185, 129, 0.35)',
                 border: '1px solid',
                 color: '#FAFAFA'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
                 e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(14, 165, 233, 0.2)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(16, 185, 129, 0.2)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
                 e.currentTarget.style.transform = 'scale(1)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
@@ -1267,6 +1396,9 @@ export function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Premium Divider */}
+      <div className="premium-divider" />
 
       {/* Latest Blogs Section */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0B0F14' }}>
@@ -1289,36 +1421,36 @@ export function HomePage() {
                 <motion.div
                   className="inline-block mb-4 px-4 py-2 rounded-full border"
                   style={{
-                    background: 'rgba(14, 165, 233, 0.08)',
-                    borderColor: 'rgba(14, 165, 233, 0.25)'
+                    background: 'rgba(16, 185, 129, 0.08)',
+                    borderColor: 'rgba(16, 185, 129, 0.25)'
                   }}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <span style={{ color: '#0EA5E9', fontWeight: 600, fontSize: '0.875rem' }}>Resources</span>
+                  <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Resources</span>
                 </motion.div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-                  Our Latest <span style={{ color: '#0EA5E9' }}>Blogs</span>
+                  Our Latest <span style={{ color: '#10B981' }}>Blogs</span>
                 </h2>
               </div>
               <Link
                 to="/insights"
                 className="hidden sm:flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
                 style={{
-                  background: 'rgba(14, 165, 233, 0.12)',
-                  border: '1px solid rgba(14, 165, 233, 0.35)',
+                  background: 'rgba(16, 185, 129, 0.12)',
+                  border: '1px solid rgba(16, 185, 129, 0.35)',
                   color: '#FAFAFA'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
-                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+                  e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
+                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
-                  e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                  e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -1364,9 +1496,9 @@ export function HomePage() {
                       {/* Category Badge */}
                       <div className="absolute top-4 left-4">
                         <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold" style={{
-                          background: 'rgba(14, 165, 233, 0.15)',
-                          color: '#0EA5E9',
-                          border: '1px solid rgba(14, 165, 233, 0.3)',
+                          background: 'rgba(16, 185, 129, 0.15)',
+                          color: '#10B981',
+                          border: '1px solid rgba(16, 185, 129, 0.3)',
                           backdropFilter: 'blur(8px)'
                         }}>
                           {blog.category}
@@ -1376,7 +1508,7 @@ export function HomePage() {
 
                     {/* Content Section */}
                     <div className="p-6">
-                      <h3 className="text-lg font-bold mb-3 line-clamp-2 transition-colors duration-240 group-hover:text-[#0EA5E9]" style={{ 
+                      <h3 className="text-lg font-bold mb-3 line-clamp-2 transition-colors duration-240 group-hover:text-[#10B981]" style={{ 
                         color: '#FAFAFA',
                         lineHeight: 1.4
                       }}>
@@ -1403,7 +1535,7 @@ export function HomePage() {
                       </div>
 
                       {/* Read More Link */}
-                      <div className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-240" style={{ color: '#0EA5E9' }}>
+                      <div className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-240" style={{ color: '#10B981' }}>
                         <span>Read More</span>
                         <ArrowRight className="w-4 h-4 transition-transform duration-240 group-hover:translate-x-1" />
                       </div>
@@ -1411,7 +1543,7 @@ export function HomePage() {
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
-                      background: 'linear-gradient(180deg, rgba(14, 165, 233, 0.05) 0%, rgba(14, 165, 233, 0.02) 100%)'
+                      background: 'linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%)'
                     }} />
                   </div>
                 </Link>
@@ -1430,17 +1562,17 @@ export function HomePage() {
               to="/insights"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
               style={{
-                background: 'rgba(14, 165, 233, 0.12)',
-                border: '1px solid rgba(14, 165, 233, 0.35)',
+                background: 'rgba(16, 185, 129, 0.12)',
+                border: '1px solid rgba(16, 185, 129, 0.35)',
                 color: '#FAFAFA'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.18)';
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.5)';
+                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(14, 165, 233, 0.12)';
-                e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.35)';
+                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
+                e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
               }}
             >
               <span>View All Blogs</span>
@@ -1449,6 +1581,9 @@ export function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Premium Divider */}
+      <div className="premium-divider" />
 
       {/* Contact Form Section */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
@@ -1462,14 +1597,14 @@ export function HomePage() {
             <motion.div
               className="inline-block mb-4 px-4 py-2 rounded-full border"
               style={{
-                background: 'rgba(14, 165, 233, 0.08)',
-                borderColor: 'rgba(14, 165, 233, 0.25)'
+                background: 'rgba(16, 185, 129, 0.08)',
+                borderColor: 'rgba(16, 185, 129, 0.25)'
               }}
             >
-              <span style={{ color: '#0EA5E9', fontWeight: 600, fontSize: '0.875rem' }}>Get In Touch</span>
+              <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Get In Touch</span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-              Let's Build Something <span style={{ color: '#0EA5E9' }}>Amazing</span>
+              Let's Build Something <span style={{ color: '#10B981' }}>Amazing</span>
             </h2>
             <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
               Ready to transform your business with AI? Share your details and we'll get back to you within 24 hours.
@@ -1496,7 +1631,7 @@ export function HomePage() {
                     type="text"
                     name="name"
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -1507,7 +1642,7 @@ export function HomePage() {
                     type="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -1519,7 +1654,7 @@ export function HomePage() {
                   <input
                     type="text"
                     name="company"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
                     placeholder="Your Company"
                   />
                 </div>
@@ -1529,7 +1664,7 @@ export function HomePage() {
                   <input
                     type="tel"
                     name="phone"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -1539,7 +1674,7 @@ export function HomePage() {
                 <label className="block text-white/80 mb-2 font-medium text-sm">Service Interest</label>
                 <select
                   name="service"
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
                 >
                   <option value="" className="bg-[#1A1A1A]">Select a service</option>
                   <option value="gpu-optimization" className="bg-[#1A1A1A]">GPU Optimization Service</option>
@@ -1555,7 +1690,7 @@ export function HomePage() {
                   name="message"
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#0EA5E9] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -1564,14 +1699,14 @@ export function HomePage() {
                 type="submit"
                 className="w-full px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
                 style={{
-                  background: 'rgba(14, 165, 233, 0.12)',
-                  border: '1px solid rgba(14, 165, 233, 0.35)',
+                  background: 'rgba(16, 185, 129, 0.12)',
+                  border: '1px solid rgba(16, 185, 129, 0.35)',
                   color: '#FAFAFA'
                 }}
                 whileHover={{ 
                   scale: 1.02,
-                  background: 'rgba(14, 165, 233, 0.18)',
-                  borderColor: 'rgba(14, 165, 233, 0.5)'
+                  background: 'rgba(16, 185, 129, 0.18)',
+                  borderColor: 'rgba(16, 185, 129, 0.5)'
                 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -1621,3 +1756,4 @@ export function HomePage() {
     </div>
   );
 }
+

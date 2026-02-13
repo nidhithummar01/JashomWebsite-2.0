@@ -93,25 +93,37 @@ export function ContactPage() {
                   className="absolute bottom-0 left-0 h-1 rounded-full"
                   style={{
                     width: '180px',
-                    background: '#00E5FF',
-                    boxShadow: '0 0 20px rgba(0, 229, 255, 0.8)'
+                    background: '#10B981',
+                    boxShadow: '0 0 20px rgba(16, 185, 129, 0.8)'
                   }}
                 />
               </h1>
               
               <p 
-                className="text-xl sm:text-2xl leading-relaxed"
+                className="text-xl sm:text-2xl leading-relaxed mb-8"
                 style={{ color: '#D1D5DB' }}
               >
                 We help companies scale with GPU optimization, CUDA development, and intelligent AI systems.
               </p>
+
+              <a
+                href="#contact-form"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
+                style={{
+                  background: '#10B981',
+                  color: '#FFFFFF',
+                  boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)'
+                }}
+              >
+                Get Started
+              </a>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* SECTION 2 - SIDE BY SIDE INFO & FORM */}
-      <section style={{ padding: '120px 0', background: '#000000' }}>
+      <section id="contact-form" style={{ padding: '120px 0', background: '#000000' }}>
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 xl:gap-20 items-start"
@@ -130,15 +142,15 @@ export function ContactPage() {
                   style={{ color: '#FFFFFF' }}
                 >
                   We'd love to help you build{' '}
-                  <span style={{ color: '#00E5FF' }}>smarter systems</span>.
+                  <span style={{ color: '#10B981' }}>smarter systems</span>.
                 </h2>
 
                 {/* Cyan Divider */}
                 <div 
                   className="h-1 w-32 rounded-full mb-12"
                   style={{
-                    background: '#00E5FF',
-                    boxShadow: '0 0 15px rgba(0, 229, 255, 0.6)'
+                    background: '#10B981',
+                    boxShadow: '0 0 15px rgba(16, 185, 129, 0.6)'
                   }}
                 />
 
@@ -167,7 +179,7 @@ export function ContactPage() {
 
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <Mail className="w-6 h-6" style={{ color: '#00E5FF' }} />
+                      <Mail className="w-6 h-6" style={{ color: '#10B981' }} />
                       <a 
                         href="mailto:info@jashom.com"
                         className="text-xl hover:underline transition-colors"
@@ -178,7 +190,7 @@ export function ContactPage() {
                     </div>
                     
                     <div className="flex items-center gap-3">
-                      <Phone className="w-6 h-6" style={{ color: '#00E5FF' }} />
+                      <Phone className="w-6 h-6" style={{ color: '#10B981' }} />
                       <a 
                         href="tel:+919023906363"
                         className="text-xl hover:underline transition-colors"
@@ -236,12 +248,12 @@ export function ContactPage() {
                       className="w-full border transition-all duration-300"
                       style={{
                         background: 'rgba(255, 255, 255, 0.05)',
-                        borderColor: focusedField === 'fullName' ? '#00E5FF' : 'rgba(255, 255, 255, 0.1)',
+                        borderColor: focusedField === 'fullName' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                         color: '#FFFFFF',
                         borderRadius: '12px',
                         fontSize: '18px',
                         padding: '24px 28px',
-                        boxShadow: focusedField === 'fullName' ? '0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.1)' : 'none'
+                        boxShadow: focusedField === 'fullName' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                       }}
                     />
                   </div>
@@ -260,12 +272,12 @@ export function ContactPage() {
                       className="w-full border transition-all duration-300"
                       style={{
                         background: 'rgba(255, 255, 255, 0.05)',
-                        borderColor: focusedField === 'email' ? '#00E5FF' : 'rgba(255, 255, 255, 0.1)',
+                        borderColor: focusedField === 'email' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                         color: '#FFFFFF',
                         borderRadius: '12px',
                         fontSize: '18px',
                         padding: '24px 28px',
-                        boxShadow: focusedField === 'email' ? '0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.1)' : 'none'
+                        boxShadow: focusedField === 'email' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                       }}
                     />
                   </div>
@@ -284,12 +296,12 @@ export function ContactPage() {
                       className="w-full border transition-all duration-300"
                       style={{
                         background: 'rgba(255, 255, 255, 0.05)',
-                        borderColor: focusedField === 'company' ? '#00E5FF' : 'rgba(255, 255, 255, 0.1)',
+                        borderColor: focusedField === 'company' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                         color: '#FFFFFF',
                         borderRadius: '12px',
                         fontSize: '18px',
                         padding: '24px 28px',
-                        boxShadow: focusedField === 'company' ? '0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.1)' : 'none'
+                        boxShadow: focusedField === 'company' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                       }}
                     />
                   </div>
@@ -308,12 +320,12 @@ export function ContactPage() {
                       className="w-full border transition-all duration-300 resize-none"
                       style={{
                         background: 'rgba(255, 255, 255, 0.05)',
-                        borderColor: focusedField === 'message' ? '#00E5FF' : 'rgba(255, 255, 255, 0.1)',
+                        borderColor: focusedField === 'message' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                         color: '#FFFFFF',
                         borderRadius: '12px',
                         fontSize: '18px',
                         padding: '24px 28px',
-                        boxShadow: focusedField === 'message' ? '0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.1)' : 'none'
+                        boxShadow: focusedField === 'message' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                       }}
                     />
                   </div>
@@ -357,8 +369,8 @@ export function ContactPage() {
               className="overflow-hidden border"
               style={{
                 borderRadius: '20px',
-                borderColor: 'rgba(0, 229, 255, 0.3)',
-                boxShadow: '0 0 40px rgba(0, 229, 255, 0.2)',
+                borderColor: 'rgba(16, 185, 129, 0.3)',
+                boxShadow: '0 0 40px rgba(16, 185, 129, 0.2)',
                 height: '450px'
               }}
             >
@@ -463,3 +475,6 @@ export function ContactPage() {
     </div>
   );
 }
+
+
+
