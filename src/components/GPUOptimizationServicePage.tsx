@@ -1,7 +1,31 @@
 import { motion } from 'motion/react';
 import { SEO } from './SEO';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function GPUOptimizationServicePage() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Redirect to GPU optimization thank you page
+    navigate('/gpu-optimization-thank-you');
+  };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>
       <SEO
@@ -29,22 +53,24 @@ export function GPUOptimizationServicePage() {
           }}
         ></div>
 
-        {/* Content - Vertically Centered */}
+        {/* Content - Premium Spacing */}
         <div className="relative z-10 min-h-screen flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-[700px] text-left sm:text-left"
+              className="text-left"
+              style={{ maxWidth: '620px' }}
             >
               {/* Heading */}
               <h1 
-                className="font-bold text-white leading-tight mb-5"
+                className="font-bold text-white leading-tight"
                 style={{ 
-                  fontSize: 'clamp(32px, 5vw, 60px)',
+                  fontSize: 'clamp(36px, 5vw, 64px)',
                   textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
-                  letterSpacing: '-0.02em'
+                  letterSpacing: '-0.02em',
+                  marginBottom: '32px'
                 }}
               >
                 GPU Optimization Services
@@ -52,11 +78,13 @@ export function GPUOptimizationServicePage() {
               
               {/* Paragraph */}
               <p 
-                className="text-white/90 mb-8"
+                className="text-white/90"
                 style={{ 
-                  fontSize: 'clamp(16px, 2vw, 20px)',
-                  lineHeight: '1.7',
-                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)'
+                  fontSize: 'clamp(17px, 2vw, 20px)',
+                  lineHeight: '1.75',
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
+                  marginBottom: '48px',
+                  maxWidth: '560px'
                 }}
               >
                 We create unique GPU optimization solutions that address actual performance issues. Our end-to-end optimization services deliver speed, scalability, and long-term business impact from planning to implementation and support.
@@ -264,62 +292,86 @@ export function GPUOptimizationServicePage() {
       </section>
 
       {/* Industry-Specific Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
+      <section className="px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
-              Offering Industry-Specific
-              <br />
-              GPU Solutions
-            </h2>
-            <p className="text-white/70 text-base leading-relaxed mb-12 max-w-3xl">
-              We provide customized GPU optimization solutions tailored to meet the particular needs of your industry. We assist you in improving computational performance, reducing costs, and accelerating innovation through cutting-edge GPU technology.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight" style={{ marginBottom: '16px' }}>
+                Offering Industry-Specific
+                <br />
+                GPU Solutions
+              </h2>
+              <p className="text-white/70 text-base leading-relaxed max-w-3xl" style={{ marginBottom: '60px' }}>
+                We provide customized GPU optimization solutions tailored to meet the particular needs of your industry. We assist you in improving computational performance, reducing costs, and accelerating innovation through cutting-edge GPU technology.
+              </p>
 
-            {/* Industry List - Vertical Stack */}
-            <div className="space-y-6 max-w-2xl">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              {/* Industry List - Vertical Stack */}
+              <div className="max-w-2xl" style={{ display: 'flex', flexDirection: 'column', gap: '56px' }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-white text-base">AI & Machine Learning</span>
                 </div>
-                <span className="text-white text-base">AI & Machine Learning</span>
-              </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-white text-base">Scientific Computing</span>
                 </div>
-                <span className="text-white text-base">Scientific Computing</span>
-              </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-white text-base">Data Analytics</span>
                 </div>
-                <span className="text-white text-base">Data Analytics</span>
-              </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-white text-base">Rendering & Graphics</span>
                 </div>
-                <span className="text-white text-base">Rendering & Graphics</span>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            {/* Right Column - Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-2xl">
+                <img 
+                  src="/images/gpu.service.jpg" 
+                  alt="Industry-Specific GPU Solutions" 
+                  className="w-full h-auto object-cover"
+                  style={{ 
+                    borderRadius: '20px',
+                    boxShadow: '0 20px 60px rgba(16, 185, 129, 0.25), 0 0 40px rgba(16, 185, 129, 0.1)'
+                  }}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -516,31 +568,31 @@ export function GPUOptimizationServicePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl overflow-hidden"
+            className="relative rounded-2xl overflow-hidden group"
             style={{ 
               maxHeight: '500px',
               borderRadius: '24px',
               boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)'
             }}
           >
-            {/* Background Image */}
-            <div className="absolute inset-0">
+            {/* Background Image with Hover Zoom */}
+            <div className="absolute inset-0 overflow-hidden">
               <img 
                 src="/images/custom-ai-partner.jpg.jpg" 
                 alt="Custom AI Development Partner" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{
                   objectPosition: '70% center',
-                  transform: 'translateY(-10px) scale(1.08)',
-                  filter: 'blur(1px)'
+                  transform: 'translateY(-10px) scale(1.08)'
                 }}
               />
-              {/* Dark Overlay with Gradient from Left + Vignette */}
+              {/* Enhanced Gradient Overlay for Better Depth */}
               <div 
                 className="absolute inset-0" 
                 style={{ 
                   background: `
                     linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.4) 100%),
+                    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%),
                     radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.4) 100%)
                   `,
                   boxShadow: 'inset 0 0 60px rgba(0, 0, 0, 0.3)'
@@ -1086,7 +1138,7 @@ export function GPUOptimizationServicePage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
+      <section className="px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="max-w-7xl mx-auto">
           {/* Section Heading */}
           <motion.div
@@ -1094,7 +1146,7 @@ export function GPUOptimizationServicePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            style={{ marginBottom: '60px' }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
               Why Choose Jashom For
@@ -1104,7 +1156,7 @@ export function GPUOptimizationServicePage() {
           </motion.div>
 
           {/* Benefits List */}
-          <div className="space-y-12">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '56px' }}>
             {/* Benefit 1 - End-to-end Expertise */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1119,7 +1171,7 @@ export function GPUOptimizationServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Deep GPU Expertise</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Deep GPU Expertise</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
                   Jashom specializes in GPU computing and CUDA optimization. Our team has extensive experience with NVIDIA architectures, parallel computing patterns, and performance tuning. We manage all aspects from profiling to deployment, focusing on measurable performance gains and cost reduction.
                 </p>
@@ -1140,7 +1192,7 @@ export function GPUOptimizationServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Proven Performance Results</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Proven Performance Results</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
                   We deliver measurable improvements with up to 10X performance gains. Our optimization strategies reduce computational costs, accelerate time-to-results, and maximize hardware utilization. Every optimization is backed by comprehensive profiling and benchmarking data.
                 </p>
@@ -1161,7 +1213,7 @@ export function GPUOptimizationServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Tailored Optimization Strategies</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Tailored Optimization Strategies</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
                   Jashom creates optimization solutions that understand your specific workload requirements. We design strategies based on your industry needs, whether it's AI/ML acceleration, scientific computing, data analytics, or rendering. Our solutions provide real competitive advantages in compute-intensive applications.
                 </p>
@@ -1408,7 +1460,7 @@ export function GPUOptimizationServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
                       With carefully optimized GPU workloads, your company can achieve faster computation, reduce infrastructure costs, and improve efficiency. GPU optimization helps you scale your operations, streamline processes, and accelerate time-to-results for compute-intensive applications.
                     </p>
@@ -1439,7 +1491,7 @@ export function GPUOptimizationServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
                       We understand that optimization requirements can evolve. Our flexible approach allows us to adapt to changing needs, whether it's targeting different GPU architectures, optimizing new workloads, or adjusting performance goals. We work closely with you to ensure the optimization strategy aligns with your current objectives.
                     </p>
@@ -1470,7 +1522,7 @@ export function GPUOptimizationServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
                       We do both! We can optimize your existing CUDA code, CPU-to-GPU migrations, and legacy applications. We also develop new GPU-accelerated solutions from scratch, implementing best practices and cutting-edge optimization techniques from the ground up.
                     </p>
@@ -1501,7 +1553,7 @@ export function GPUOptimizationServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
                       Security is a top priority. We follow industry best practices for code security, data protection, and confidentiality. All optimization work is conducted under strict NDA agreements, and we implement secure coding practices to protect your intellectual property and sensitive data throughout the optimization process.
                     </p>
@@ -1514,181 +1566,298 @@ export function GPUOptimizationServicePage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        {/* Contact Form Section */}
-        <motion.div
-          className="mt-12 sm:mt-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="rounded-2xl sm:rounded-3xl p-8 sm:p-12 border" style={{ background: '#0B0F14', borderColor: 'rgba(16, 185, 129, 0.2)' }}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
-              {/* Left Column - Contact Form */}
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                  Get Started with GPU Optimization
-                </h2>
-                <p className="text-white/70 text-base mb-8">
-                  Fill out the form and our team will get back to you within 24 hours.
-                </p>
+        {/* Contact Form Section - Premium Layout */}
+        <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                className="inline-block mb-6 px-4 py-2 rounded-full border"
+                style={{
+                  background: 'rgba(16, 185, 129, 0.08)',
+                  borderColor: 'rgba(16, 185, 129, 0.25)'
+                }}
+              >
+                <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Get In Touch</span>
+              </motion.div>
 
-                <form className="space-y-6">
-                  {/* Name */}
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white/90 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="John Doe"
-                    />
+              <h2
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+                style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}
+              >
+                Get Started with{' '}
+                <span style={{ 
+                  background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}>
+                  GPU Optimization
+                </span>
+              </h2>
+
+              <p
+                className="text-base sm:text-lg mb-4 leading-relaxed max-w-2xl mx-auto"
+                style={{ color: '#9CA3AF' }}
+              >
+                Fill out the form and our team will get back to you within 24 hours.
+              </p>
+            </motion.div>
+
+            {/* Form Container - Centered with max-width */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+              style={{
+                maxWidth: '1100px',
+                margin: '0 auto'
+              }}
+            >
+              {/* Subtle radial glow behind form */}
+              <div 
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.08) 0%, transparent 60%)',
+                  filter: 'blur(60px)',
+                  opacity: 0.6
+                }}
+              />
+
+              <div
+                className="relative w-full"
+                style={{
+                  background: 'rgba(17, 24, 39, 0.6)',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(14px)',
+                  padding: '48px 32px',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+                }}
+              >
+                <form style={{ display: 'flex', flexDirection: 'column', gap: '28px' }} onSubmit={handleSubmit}>
+                  {/* Row 1: Name & Email */}
+                  <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
+                    <div>
+                      <label className="block text-white/90 mb-2 font-medium text-sm">Full Name *</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.06)',
+                          borderColor: 'rgba(255, 255, 255, 0.1)'
+                        }}
+                        placeholder="John Doe"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-white/90 mb-2 font-medium text-sm">Email Address *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.06)',
+                          borderColor: 'rgba(255, 255, 255, 0.1)'
+                        }}
+                        placeholder="john@company.com"
+                      />
+                    </div>
                   </div>
 
-                  {/* Email */}
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white/90 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                  {/* Row 2: Company & Phone */}
+                  <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
+                    <div>
+                      <label className="block text-white/90 mb-2 font-medium text-sm">Company Name</label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.06)',
+                          borderColor: 'rgba(255, 255, 255, 0.1)'
+                        }}
+                        placeholder="Your Company"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-white/90 mb-2 font-medium text-sm">Phone Number</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.06)',
+                          borderColor: 'rgba(255, 255, 255, 0.1)'
+                        }}
+                        placeholder="+1 (555) 000-0000"
+                      />
+                    </div>
                   </div>
 
-                  {/* Phone */}
+                  {/* Row 3: Message (Full Width) */}
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-white/90 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-
-                  {/* Company */}
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-white/90 mb-2">
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="Your Company"
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-white/90 mb-2">
-                      Project Details *
-                    </label>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Project Details *</label>
                     <textarea
-                      id="message"
                       name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all resize-none"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
                       placeholder="Tell us about your GPU optimization needs..."
                     />
                   </div>
 
                   {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300"
-                    style={{ background: '#10B981' }}
-                  >
-                    Send Message
-                  </button>
+                  <div className="flex justify-center sm:justify-start">
+                    <motion.button
+                      type="submit"
+                      className="px-12 py-4 rounded-xl font-semibold text-base transition-all duration-300 cursor-pointer"
+                      style={{
+                        background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                        border: '1px solid transparent',
+                        color: '#FFFFFF',
+                        boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
+                        minWidth: '200px'
+                      }}
+                      whileHover={{ 
+                        y: -2,
+                        boxShadow: '0 8px 24px rgba(16, 185, 129, 0.35)'
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Send Message
+                    </motion.button>
+                  </div>
                 </form>
               </div>
+            </motion.div>
 
-              {/* Right Column - Office Information */}
-              <div className="lg:pl-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Our Office</h3>
-                
-                <div className="space-y-8">
-                  {/* Address */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Address</h4>
-                      <p className="text-white/70 leading-relaxed">
-                        414, Satyam-2, Amba Business Park,<br />
-                        ATPL, Adalaj, Gujarat,<br />
-                        India - 380054
-                      </p>
-                    </div>
-                  </div>
+            {/* Our Office Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-16 max-w-4xl mx-auto"
+            >
+              <div className="text-center mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#FAFAFA' }}>
+                  Our Office
+                </h3>
+              </div>
 
-                  {/* Email */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Email</h4>
-                      <a href="mailto:info@jashom.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-                        info@jashom.com
-                      </a>
-                    </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Address */}
+                <div 
+                  className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
+                  style={{
+                    background: 'rgba(17, 24, 39, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    backdropFilter: 'blur(14px)'
+                  }}
+                >
+                  <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
+                    <img 
+                      src="/images/inidan.flag.jpg" 
+                      alt="India Flag" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-
-                  {/* Phone */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Phone</h4>
-                      <a href="tel:+919023906363" className="text-blue-400 hover:text-blue-300 transition-colors">
-                        +91 90239 06363
-                      </a>
-                    </div>
-                  </div>
+                  <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Address</h4>
+                  <p className="text-sm leading-relaxed" style={{ color: '#9CA3AF' }}>
+                    414, Satyam-2, Amba Business Park,<br />
+                    ATPL, Adalaj, Gujarat,<br />
+                    India - 380054
+                  </p>
                 </div>
 
-                {/* Quick Response Badge */}
-                <div className="mt-8 p-6 rounded-xl border" style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>
-                  <div className="flex items-center gap-3 mb-2">
-                    <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                {/* Email */}
+                <div 
+                  className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
+                  style={{
+                    background: 'rgba(17, 24, 39, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    backdropFilter: 'blur(14px)'
+                  }}
+                >
+                  <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
+                    <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <h4 className="text-lg font-semibold text-white">Quick Response</h4>
                   </div>
-                  <p className="text-white/70 text-sm">
-                    We typically respond to all inquiries within 24 hours during business days.
+                  <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Email</h4>
+                  <a 
+                    href="mailto:info@jashom.com" 
+                    className="text-sm transition-colors inline-block"
+                    style={{ color: '#10B981' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#10B981'}
+                  >
+                    info@jashom.com
+                  </a>
+                  <p className="text-xs mt-3" style={{ color: '#6B7280' }}>
+                    We respond within 24 hours
+                  </p>
+                </div>
+
+                {/* Phone */}
+                <div 
+                  className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
+                  style={{
+                    background: 'rgba(17, 24, 39, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    backdropFilter: 'blur(14px)'
+                  }}
+                >
+                  <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
+                    <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Phone</h4>
+                  <a 
+                    href="tel:+919023906363" 
+                    className="text-sm transition-colors inline-block"
+                    style={{ color: '#10B981' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#10B981'}
+                  >
+                    +91 90239 06363
+                  </a>
+                  <p className="text-xs mt-3" style={{ color: '#6B7280' }}>
+                    Mon-Fri, 9AM-6PM IST
                   </p>
                 </div>
               </div>
+            </motion.div>
 
-            </div>
           </div>
-        </motion.div>
+        </section>
       </div>
     </div>
   );

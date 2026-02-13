@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Send } from 'lucide-react';
 import { ContactModal } from './ContactModal';
 
 const menuItemVariants = {
@@ -42,6 +42,7 @@ export function Navigation() {
         { path: '/about/career', label: 'Career' }
       ]
     },
+    { path: '/contact', label: 'Contact Us' },
     // COMMENTED OUT - Old Services temporarily hidden from UI but preserved in codebase
     /*
     {
@@ -113,8 +114,7 @@ export function Navigation() {
       ]
     },
     */
-    // Thank You Page - accessible but not promoted (used for redirects)
-    { path: '/thank-you', label: 'Thank You Page' },
+    // Thank You pages are accessible via routing but not shown in navbar (used for form redirects)
     // Contact Us will be handled separately as modal trigger
   ];
 
@@ -262,20 +262,22 @@ export function Navigation() {
               </motion.div>
             ))}
             
-            {/* CONTACT US BUTTON - Opens Modal */}
+            {/* QUICK CONTACT ICON - Opens Modal */}
             <motion.button
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navItems.length * 0.05 }}
               onClick={() => setIsContactModalOpen(true)}
-              className="relative text-white hover:text-gray-300 transition-colors cursor-pointer"
+              className="relative text-white hover:text-[#10B981] transition-colors cursor-pointer p-2 rounded-lg hover:bg-white/5"
+              aria-label="Quick Contact"
             >
-              <motion.span
-                whileHover={{ scale: 1.1 }}
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: -15 }}
+                whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                Contact Us
-              </motion.span>
+                <Send className="w-5 h-5" />
+              </motion.div>
             </motion.button>
           </div>
 
@@ -446,16 +448,17 @@ export function Navigation() {
                   </motion.div>
                 ))}
                 
-                {/* CONTACT US BUTTON - Mobile */}
+                {/* QUICK CONTACT ICON - Mobile */}
                 <motion.button
                   variants={menuItemVariants}
                   onClick={() => {
                     setIsContactModalOpen(true);
                     handleLinkClick();
                   }}
-                  className="block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base text-white hover:bg-white/10 hover:text-white w-full text-left cursor-pointer"
+                  className="flex items-center gap-3 py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] text-sm sm:text-base text-white hover:bg-white/10 hover:text-white w-full cursor-pointer"
                 >
-                  Contact Us
+                  <Send className="w-5 h-5" />
+                  <span>Quick Contact</span>
                 </motion.button>
               </div>
               </motion.div>

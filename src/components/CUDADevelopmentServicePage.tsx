@@ -1,7 +1,31 @@
 import { motion } from 'motion/react';
 import { SEO } from './SEO';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function CUDADevelopmentServicePage() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Redirect to CUDA development thank you page
+    navigate('/cuda-development-thank-you');
+  };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>
       <SEO
@@ -29,22 +53,24 @@ export function CUDADevelopmentServicePage() {
           }}
         ></div>
 
-        {/* Content - Vertically Centered */}
+        {/* Content - Premium Spacing */}
         <div className="relative z-10 min-h-screen flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-[700px] text-left sm:text-left"
+              className="text-left"
+              style={{ maxWidth: '620px' }}
             >
               {/* Heading */}
               <h1 
-                className="font-bold text-white leading-tight mb-5"
+                className="font-bold text-white leading-tight"
                 style={{ 
-                  fontSize: 'clamp(32px, 5vw, 60px)',
+                  fontSize: 'clamp(36px, 5vw, 64px)',
                   textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
-                  letterSpacing: '-0.02em'
+                  letterSpacing: '-0.02em',
+                  marginBottom: '32px'
                 }}
               >
                 CUDA Development Services
@@ -52,11 +78,13 @@ export function CUDADevelopmentServicePage() {
               
               {/* Paragraph */}
               <p 
-                className="text-white/90 mb-8"
+                className="text-white/90"
                 style={{ 
-                  fontSize: 'clamp(16px, 2vw, 20px)',
-                  lineHeight: '1.7',
-                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)'
+                  fontSize: 'clamp(17px, 2vw, 20px)',
+                  lineHeight: '1.75',
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
+                  marginBottom: '48px',
+                  maxWidth: '560px'
                 }}
               >
                 We create custom CUDA solutions that transform computational challenges into high-performance GPU-accelerated applications. Our end-to-end development services deliver speed, scalability, and innovation from architecture design to deployment and support.
@@ -649,7 +677,7 @@ export function CUDADevelopmentServicePage() {
       </div>
 
       {/* Why Choose Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
+      <section className="px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="max-w-7xl mx-auto">
           {/* Section Heading */}
           <motion.div
@@ -657,7 +685,7 @@ export function CUDADevelopmentServicePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            style={{ marginBottom: '60px' }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
               Why Choose Jashom For
@@ -667,7 +695,7 @@ export function CUDADevelopmentServicePage() {
           </motion.div>
 
           {/* Benefits List */}
-          <div className="space-y-12">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '56px' }}>
             {/* Benefit 1 - Deep CUDA Expertise */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -682,7 +710,7 @@ export function CUDADevelopmentServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Deep CUDA Expertise</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Deep CUDA Expertise</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
                   Jashom specializes in CUDA development and GPU computing. Our team has extensive experience with parallel programming, kernel optimization, and NVIDIA architectures. We manage all aspects from design to deployment, focusing on measurable performance gains and production-ready solutions.
                 </p>
@@ -703,7 +731,7 @@ export function CUDADevelopmentServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Proven Development Results</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Proven Development Results</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
                   We deliver measurable improvements with up to 100X performance gains over CPU implementations. Our custom CUDA solutions reduce processing time, lower infrastructure costs, and enable real-time capabilities. Every solution is backed by comprehensive profiling and benchmarking data.
                 </p>
@@ -724,7 +752,7 @@ export function CUDADevelopmentServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Tailored Development Approach</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Tailored Development Approach</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
                   Jashom creates custom CUDA solutions that understand your specific computational challenges. We design strategies based on your workload requirements, whether it's ML acceleration, scientific simulation, or real-time processing. Our solutions provide real competitive advantages in compute-intensive applications.
                 </p>
@@ -1084,173 +1112,277 @@ export function CUDADevelopmentServicePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="rounded-2xl sm:rounded-3xl p-8 sm:p-12 border" style={{ background: '#0B0F14', borderColor: 'rgba(16, 185, 129, 0.2)' }}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
-              {/* Left Column - Contact Form */}
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                  Get Started with CUDA Development
-                </h2>
-                <p className="text-white/70 text-base mb-8">
-                  Fill out the form and our team will get back to you within 24 hours.
-                </p>
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
+              style={{ color: '#FAFAFA', letterSpacing: '-0.025em', lineHeight: 1.2 }}
+            >
+              Get Started with CUDA Development
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg mb-4 leading-relaxed max-w-2xl mx-auto"
+              style={{ color: '#9CA3AF' }}
+            >
+              Fill out the form and our team will get back to you within 24 hours.
+            </motion.p>
+          </div>
 
-                <form className="space-y-6">
-                  {/* Name */}
+          {/* Form Container - Centered with max-width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+            style={{
+              maxWidth: '1100px',
+              margin: '0 auto'
+            }}
+          >
+            {/* Subtle radial glow behind form */}
+            <div 
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.08) 0%, transparent 60%)',
+                filter: 'blur(60px)',
+                opacity: 0.6
+              }}
+            />
+
+            <div
+              className="relative w-full"
+              style={{
+                background: 'rgba(17, 24, 39, 0.6)',
+                borderRadius: '20px',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                backdropFilter: 'blur(14px)',
+                padding: '48px 32px',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+              }}
+            >
+              <form style={{ display: 'flex', flexDirection: 'column', gap: '28px' }} onSubmit={handleSubmit}>
+                {/* Row 1: Name & Email */}
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white/90 mb-2">
-                      Full Name *
-                    </label>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Full Name *</label>
                     <input
                       type="text"
-                      id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
                       placeholder="John Doe"
                     />
                   </div>
 
-                  {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white/90 mb-2">
-                      Email Address *
-                    </label>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Email Address *</label>
                     <input
                       type="email"
-                      id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
                       placeholder="john@company.com"
                     />
                   </div>
+                </div>
 
-                  {/* Phone */}
+                {/* Row 2: Company & Phone */}
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-white/90 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-
-                  {/* Company */}
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-white/90 mb-2">
-                      Company Name
-                    </label>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Company Name</label>
                     <input
                       type="text"
-                      id="company"
                       name="company"
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
                       placeholder="Your Company"
                     />
                   </div>
 
-                  {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-white/90 mb-2">
-                      Project Details *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-lg border bg-white/5 border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                      placeholder="Tell us about your CUDA development needs..."
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
+                      placeholder="+1 (555) 000-0000"
                     />
                   </div>
+                </div>
 
-                  {/* Submit Button */}
-                  <button
+                {/* Row 3: Message (Full Width) */}
+                <div>
+                  <label className="block text-white/90 mb-2 font-medium text-sm">Project Details *</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all resize-none"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      borderColor: 'rgba(255, 255, 255, 0.1)'
+                    }}
+                    placeholder="Tell us about your CUDA development needs..."
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <div className="flex justify-center sm:justify-start">
+                  <motion.button
                     type="submit"
-                    className="w-full px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300"
-                    style={{ background: '#10B981' }}
+                    className="px-12 py-4 rounded-xl font-semibold text-base transition-all duration-300 cursor-pointer"
+                    style={{
+                      background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                      border: '1px solid transparent',
+                      color: '#FFFFFF',
+                      boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
+                      minWidth: '200px'
+                    }}
+                    whileHover={{ 
+                      y: -2,
+                      boxShadow: '0 8px 24px rgba(16, 185, 129, 0.35)'
+                    }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     Send Message
-                  </button>
-                </form>
-              </div>
-
-              {/* Right Column - Office Information */}
-              <div className="lg:pl-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Our Office</h3>
-                
-                <div className="space-y-8">
-                  {/* Address */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Address</h4>
-                      <p className="text-white/70 leading-relaxed">
-                        414, Satyam-2, Amba Business Park,<br />
-                        ATPL, Adalaj, Gujarat,<br />
-                        India - 380054
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Email */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Email</h4>
-                      <a href="mailto:info@jashom.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-                        info@jashom.com
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Phone */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Phone</h4>
-                      <a href="tel:+919023906363" className="text-blue-400 hover:text-blue-300 transition-colors">
-                        +91 90239 06363
-                      </a>
-                    </div>
-                  </div>
+                  </motion.button>
                 </div>
-
-                {/* Quick Response Badge */}
-                <div className="mt-8 p-6 rounded-xl border" style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>
-                  <div className="flex items-center gap-3 mb-2">
-                    <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    <h4 className="text-lg font-semibold text-white">Quick Response</h4>
-                  </div>
-                  <p className="text-white/70 text-sm">
-                    We typically respond to all inquiries within 24 hours during business days.
-                  </p>
-                </div>
-              </div>
-
+              </form>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Office Information Section - Below Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-16"
+          >
+            <div className="text-center mb-10">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3" style={{ color: '#FAFAFA' }}>
+                Our Office
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Address */}
+              <div 
+                className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
+                style={{
+                  background: 'rgba(17, 24, 39, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(14px)'
+                }}
+              >
+                <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
+                  <img 
+                    src="/images/inidan.flag.jpg" 
+                    alt="India Flag" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Address</h4>
+                <p className="text-sm leading-relaxed" style={{ color: '#9CA3AF' }}>
+                  414, Satyam-2, Amba Business Park,<br />
+                  ATPL, Adalaj, Gujarat,<br />
+                  India - 380054
+                </p>
+              </div>
+
+              {/* Email */}
+              <div 
+                className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
+                style={{
+                  background: 'rgba(17, 24, 39, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(14px)'
+                }}
+              >
+                <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
+                  <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Email</h4>
+                <a 
+                  href="mailto:info@jashom.com" 
+                  className="text-sm transition-colors inline-block"
+                  style={{ color: '#10B981' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#10B981'}
+                >
+                  info@jashom.com
+                </a>
+                <p className="text-xs mt-3" style={{ color: '#6B7280' }}>
+                  We respond within 24 hours
+                </p>
+              </div>
+
+              {/* Phone */}
+              <div 
+                className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
+                style={{
+                  background: 'rgba(17, 24, 39, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(14px)'
+                }}
+              >
+                <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
+                  <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Phone</h4>
+                <a 
+                  href="tel:+919023906363" 
+                  className="text-sm transition-colors inline-block"
+                  style={{ color: '#10B981' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#10B981'}
+                >
+                  +91 90239 06363
+                </a>
+                <p className="text-xs mt-3" style={{ color: '#6B7280' }}>
+                  Available Mon-Fri, 9AM-6PM IST
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </div>

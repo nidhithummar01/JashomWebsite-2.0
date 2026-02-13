@@ -1,8 +1,32 @@
 import { motion } from 'motion/react';
 import { SEO } from './SEO';
 import { Award, Zap, DollarSign } from 'lucide-react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function HireCudaDeveloperPage() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    projectDetails: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Redirect to hire cuda thank you page
+    navigate('/hire-cuda-thank-you');
+  };
 
   return (
     <div className="min-h-screen" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
@@ -138,38 +162,64 @@ export function HireCudaDeveloperPage() {
       {/* Hire CUDA Developers Section - Before Why Choose */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-4xl mx-auto text-center px-4">
+          <div className="max-w-7xl mx-auto">
             
-            {/* Centered Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold leading-tight px-4" style={{ color: '#FAFAFA' }}>
-                Hire CUDA Developers From Us To Improve Your Product Efficiency
-              </h2>
+            {/* 2-Column Layout: Text Left, Image Right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
               
-              <p className="text-base sm:text-lg leading-relaxed px-4 max-w-3xl mx-auto" style={{ color: '#9E9E9E' }}>
-                Hire CUDA developers to enhance your GPU computing with high-performance applications. Our experts write efficient code, turning complex computational needs into high-value performance gains. With core CUDA and parallel computing expertise, we support you at every stage of development, from requirements analysis to deployment.
-              </p>
+              {/* Left Column - Text Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <h2 className="text-3xl sm:text-4xl font-bold leading-tight" style={{ color: '#FAFAFA' }}>
+                  Hire CUDA Developers From Us To Improve Your Product Efficiency
+                </h2>
+                
+                <p className="text-base sm:text-lg leading-relaxed max-w-2xl" style={{ color: '#9E9E9E' }}>
+                  Hire CUDA developers to enhance your GPU computing with high-performance applications. Our experts write efficient code, turning complex computational needs into high-value performance gains. With core CUDA and parallel computing expertise, we support you at every stage of development, from requirements analysis to deployment.
+                </p>
 
-              <div className="pt-4">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 rounded font-semibold border-2 transition-all duration-300 hover:bg-orange-500 hover:text-white"
-                  style={{
-                    background: 'transparent',
-                    borderColor: '#10B981',
-                    color: '#10B981'
-                  }}
-                >
-                  TALK TO OUR EXPERT
-                </a>
-              </div>
-            </motion.div>
+                <div className="pt-4">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-8 py-3 rounded font-semibold border-2 transition-all duration-300 hover:bg-orange-500 hover:text-white"
+                    style={{
+                      background: 'transparent',
+                      borderColor: '#10B981',
+                      color: '#10B981'
+                    }}
+                  >
+                    TALK TO OUR EXPERT
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Right Column - Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="relative"
+              >
+                <div className="relative overflow-hidden rounded-2xl">
+                  <img 
+                    src="/images/hire.page.jpg" 
+                    alt="Hire CUDA Developers" 
+                    className="w-full h-auto object-cover"
+                    style={{ 
+                      borderRadius: '20px',
+                      boxShadow: '0 20px 60px rgba(16, 185, 129, 0.25), 0 0 40px rgba(16, 185, 129, 0.1)'
+                    }}
+                  />
+                </div>
+              </motion.div>
+
+            </div>
 
           </div>
         </div>
@@ -503,19 +553,30 @@ export function HireCudaDeveloperPage() {
             
             {/* Card 1 - Quality Code */}
             <motion.div
-              className="rounded-xl overflow-hidden"
+              className="rounded-xl overflow-hidden group"
               style={{ background: '#0B0F14' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              {/* Image */}
-              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
+              {/* Image Container with Enhanced Styling */}
+              <div className="relative w-full overflow-hidden" style={{ height: '260px' }}>
                 <img 
                   src="/images/cuda-quality-code.jpg.jpg" 
                   alt="Quality Code" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ 
+                    borderRadius: '12px 12px 0 0',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+                  }}
+                />
+                {/* Subtle gradient overlay */}
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(11, 15, 20, 0.4) 100%)'
+                  }}
                 />
               </div>
               <div className="p-6">
@@ -530,19 +591,30 @@ export function HireCudaDeveloperPage() {
 
             {/* Card 2 - NDA */}
             <motion.div
-              className="rounded-xl overflow-hidden"
+              className="rounded-xl overflow-hidden group"
               style={{ background: '#0B0F14' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {/* Image */}
-              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
+              {/* Image Container with Enhanced Styling */}
+              <div className="relative w-full overflow-hidden" style={{ height: '260px' }}>
                 <img 
                   src="/images/cuda-nda.jpg.jpg" 
                   alt="NDA Agreement" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ 
+                    borderRadius: '12px 12px 0 0',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+                  }}
+                />
+                {/* Subtle gradient overlay */}
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(11, 15, 20, 0.4) 100%)'
+                  }}
                 />
               </div>
               <div className="p-6">
@@ -557,19 +629,30 @@ export function HireCudaDeveloperPage() {
 
             {/* Card 3 - Verified Skillset */}
             <motion.div
-              className="rounded-xl overflow-hidden"
+              className="rounded-xl overflow-hidden group"
               style={{ background: '#0B0F14' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              {/* Image */}
-              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
+              {/* Image Container with Enhanced Styling */}
+              <div className="relative w-full overflow-hidden" style={{ height: '260px' }}>
                 <img 
                   src="/images/cuda-verified.jpg.jpg" 
                   alt="Certified Developer" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ 
+                    borderRadius: '12px 12px 0 0',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+                  }}
+                />
+                {/* Subtle gradient overlay */}
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(11, 15, 20, 0.4) 100%)'
+                  }}
                 />
               </div>
               <div className="p-6">
@@ -584,20 +667,31 @@ export function HireCudaDeveloperPage() {
 
             {/* Card 4 - Cost Reduction */}
             <motion.div
-              className="rounded-xl overflow-hidden"
+              className="rounded-xl overflow-hidden group"
               style={{ background: '#0B0F14' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              {/* Image */}
-              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
+              {/* Image Container with Enhanced Styling */}
+              <div className="relative w-full overflow-hidden" style={{ height: '260px' }}>
                 <img 
                   src="/images/cuda-cost.jpg.jpg" 
                   alt="Cost Reduction" 
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 40%' }}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ 
+                    objectPosition: 'center 40%',
+                    borderRadius: '12px 12px 0 0',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+                  }}
+                />
+                {/* Subtle gradient overlay */}
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(11, 15, 20, 0.4) 100%)'
+                  }}
                 />
               </div>
               <div className="p-6">
@@ -612,19 +706,30 @@ export function HireCudaDeveloperPage() {
 
             {/* Card 5 - High Experience */}
             <motion.div
-              className="rounded-xl overflow-hidden"
+              className="rounded-xl overflow-hidden group"
               style={{ background: '#0B0F14' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              {/* Image */}
-              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
+              {/* Image Container with Enhanced Styling */}
+              <div className="relative w-full overflow-hidden" style={{ height: '260px' }}>
                 <img 
                   src="/images/cuda-experience.jpg.jpg" 
                   alt="High Experience Team" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ 
+                    borderRadius: '12px 12px 0 0',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+                  }}
+                />
+                {/* Subtle gradient overlay */}
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(11, 15, 20, 0.4) 100%)'
+                  }}
                 />
               </div>
               <div className="p-6">
@@ -639,19 +744,30 @@ export function HireCudaDeveloperPage() {
 
             {/* Card 6 - Quick Onboarding */}
             <motion.div
-              className="rounded-xl overflow-hidden"
+              className="rounded-xl overflow-hidden group"
               style={{ background: '#0B0F14' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              {/* Image */}
-              <div className="w-full overflow-hidden" style={{ height: '180px' }}>
+              {/* Image Container with Enhanced Styling */}
+              <div className="relative w-full overflow-hidden" style={{ height: '260px' }}>
                 <img 
                   src="/images/cuda-onboarding.jpg.jpg" 
                   alt="Quick Onboarding" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ 
+                    borderRadius: '12px 12px 0 0',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+                  }}
+                />
+                {/* Subtle gradient overlay */}
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(11, 15, 20, 0.4) 100%)'
+                  }}
                 />
               </div>
               <div className="p-6">
@@ -1755,85 +1871,99 @@ export function HireCudaDeveloperPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-2xl p-8 border"
-              style={{ background: '#111827', borderColor: 'rgba(16, 185, 129, 0.3)' }}
+              style={{ 
+                background: '#111827', 
+                borderColor: 'rgba(16, 185, 129, 0.3)'
+              }}
             >
-              <form className="space-y-6">
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
-                    style={{ 
-                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
-                      color: '#FAFAFA'
-                    }}
-                    placeholder="John Doe"
-                  />
+              <form onSubmit={handleSubmit}>
+                {/* 2-Column Grid for Name, Email, Phone, Company */}
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '28px', marginBottom: '28px' }}>
+                  {/* Name */}
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="john@company.com"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
+
+                  {/* Company */}
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="Your Company"
+                    />
+                  </div>
                 </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
-                    style={{ 
-                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
-                      color: '#FAFAFA'
-                    }}
-                    placeholder="john@company.com"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
-                    style={{ 
-                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
-                      color: '#FAFAFA'
-                    }}
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-
-                {/* Company */}
-                <div>
-                  <label htmlFor="company" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
-                    style={{ 
-                      background: '#1F2937', borderColor: 'rgba(16, 185, 129, 0.3)',
-                      color: '#FAFAFA'
-                    }}
-                    placeholder="Your Company"
-                  />
-                </div>
-
-                {/* Hiring Model */}
-                <div>
+                {/* Hiring Model - Full Width */}
+                <div style={{ marginBottom: '28px' }}>
                   <label htmlFor="hiringModel" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
                     Preferred Hiring Model *
                   </label>
@@ -1855,8 +1985,8 @@ export function HireCudaDeveloperPage() {
                   </select>
                 </div>
 
-                {/* Project Details */}
-                <div>
+                {/* Project Details - Full Width */}
+                <div style={{ marginBottom: '28px' }}>
                   <label htmlFor="message" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
                     Project Requirements *
                   </label>
@@ -1874,7 +2004,7 @@ export function HireCudaDeveloperPage() {
                   />
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button - Full Width */}
                 <button
                   type="submit"
                   className="w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
@@ -1886,7 +2016,7 @@ export function HireCudaDeveloperPage() {
                   Submit Request
                 </button>
 
-                <p className="text-xs text-center" style={{ color: '#999999' }}>
+                <p className="text-xs text-center mt-4" style={{ color: '#999999' }}>
                   By submitting this form, you agree to our privacy policy and terms of service.
                 </p>
               </form>

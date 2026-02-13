@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { GlassCard } from './GlassCard';
 import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
 import { useEffect, useRef, useState } from 'react';
@@ -13,14 +12,8 @@ import {
   Shield,
   Brain,
   TrendingUp,
-  Award,
   Users,
-  Globe,
-  Sparkles,
   ArrowRight,
-  CheckCircle2,
-  Target,
-  Rocket,
   Calendar,
   Clock,
   ChevronLeft,
@@ -843,76 +836,86 @@ export function HomePage() {
                         : `calc(${100 / cardsPerView}% - ${(24 * (cardsPerView - 1)) / cardsPerView}px)`
                     }}
                   >
-                    <div className="glass-effect rounded-2xl p-3 sm:p-4 border border-[#ffffff]/30 h-full flex flex-col hover:border-[#ffffff]/50 transition-all duration-300 group">
-                      {/* Image - Responsive sizing */}
+                    <div className="glass-effect rounded-2xl border border-[#ffffff]/30 h-full flex flex-col hover:border-[#ffffff]/50 transition-all duration-300 group overflow-hidden">
+                      {/* Image - Edge-to-edge at top with increased height */}
                       {project.image && (
-                        <div className="mb-3 rounded-lg overflow-hidden border border-white/10 w-full max-w-[200px]" style={{ height: '120px' }}>
+                        <div className="relative w-full overflow-hidden" style={{ height: '200px' }}>
                           <img 
                             src={project.image} 
                             alt={project.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          {/* Subtle gradient overlay for depth */}
+                          <div 
+                            className="absolute inset-0 pointer-events-none"
+                            style={{
+                              background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%)'
+                            }}
                           />
                         </div>
                       )}
                       
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs">
-                          {project.industry}
-                        </span>
-                      </div>
-                      <h3 className="text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-[#d1d5db] transition-colors line-clamp-2">
-                        {project.title}
-                      </h3>
-
-                      <div className="space-y-2 mb-3 flex-grow">
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
-                            <span className="text-[#d1d5db] text-xs font-medium">Challenge</span>
-                          </div>
-                          <p className="text-white/60 text-xs leading-relaxed pl-3 line-clamp-2">{project.challenge}</p>
-                        </div>
-
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
-                            <span className="text-[#d1d5db] text-xs font-medium">Solution</span>
-                          </div>
-                          <p className="text-white/60 text-xs leading-relaxed pl-3 line-clamp-2">{project.solution}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-1 mb-3">
-                        {project.tags.slice(0, 3).map((tag, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2 py-0.5 rounded-md bg-white/5 border border-[#ffffff]/10 text-white/50 text-xs"
-                          >
-                            {tag}
+                      {/* Content section with padding */}
+                      <div className="p-3 sm:p-4 flex flex-col flex-grow">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs">
+                            {project.industry}
                           </span>
-                        ))}
-                      </div>
+                        </div>
+                        <h3 className="text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-[#d1d5db] transition-colors line-clamp-2">
+                          {project.title}
+                        </h3>
 
-                      {/* Action Links */}
-                      <div className="flex flex-col gap-2 pt-3 border-t border-white/10">
-                        <Link
-                          to={project.link}
-                          className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
-                        >
-                          <span>View Case Study</span>
-                          <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
-                        </Link>
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors text-xs"
+                        <div className="space-y-2 mb-3 flex-grow">
+                          <div>
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                              <span className="text-[#d1d5db] text-xs font-medium">Challenge</span>
+                            </div>
+                            <p className="text-white/60 text-xs leading-relaxed pl-3 line-clamp-2">{project.challenge}</p>
+                          </div>
+
+                          <div>
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                              <span className="text-[#d1d5db] text-xs font-medium">Solution</span>
+                            </div>
+                            <p className="text-white/60 text-xs leading-relaxed pl-3 line-clamp-2">{project.solution}</p>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-1 mb-3">
+                          {project.tags.slice(0, 3).map((tag, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-0.5 rounded-md bg-white/5 border border-[#ffffff]/10 text-white/50 text-xs"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Action Links */}
+                        <div className="flex flex-col gap-2 pt-3 border-t border-white/10">
+                          <Link
+                            to={project.link}
+                            className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
                           >
-                            <span>Visit Live Platform</span>
-                            <ArrowRight className="w-3 h-3" />
-                          </a>
-                        )}
+                            <span>View Case Study</span>
+                            <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                          </Link>
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors text-xs"
+                            >
+                              <span>Visit Live Platform</span>
+                              <ArrowRight className="w-3 h-3" />
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1582,20 +1585,18 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Premium Divider */}
-      <div className="premium-divider" />
-
-      {/* Contact Form Section */}
-      <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
-        <div className="max-w-4xl mx-auto">
+      {/* Contact Form Section - Premium Layout */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
           <motion.div
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
           >
             <motion.div
-              className="inline-block mb-4 px-4 py-2 rounded-full border"
+              className="inline-block mb-6 px-4 py-2 rounded-full border"
               style={{
                 background: 'rgba(16, 185, 129, 0.08)',
                 borderColor: 'rgba(16, 185, 129, 0.25)'
@@ -1603,116 +1604,185 @@ export function HomePage() {
             >
               <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Get In Touch</span>
             </motion.div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-              Let's Build Something <span style={{ color: '#10B981' }}>Amazing</span>
+
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+              style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}
+            >
+              Let's Build Something{' '}
+              <span style={{ 
+                background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
+                Amazing
+              </span>
             </h2>
-            <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
+
+            <p
+              className="text-base sm:text-lg mb-4 leading-relaxed max-w-2xl mx-auto"
+              style={{ color: '#9CA3AF' }}
+            >
               Ready to transform your business with AI? Share your details and we'll get back to you within 24 hours.
             </p>
           </motion.div>
 
+          {/* Form Container - Centered with max-width */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="rounded-2xl p-6 sm:p-8 border"
+            transition={{ duration: 0.6 }}
+            className="relative"
             style={{
-              background: 'rgba(255, 255, 255, 0.02)',
-              borderColor: 'rgba(255, 255, 255, 0.08)',
-              backdropFilter: 'blur(10px)'
+              maxWidth: '1100px',
+              margin: '0 auto'
             }}
           >
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Subtle radial glow behind form */}
+            <div 
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.08) 0%, transparent 60%)',
+                filter: 'blur(60px)',
+                opacity: 0.6
+              }}
+            />
+
+            <div
+              className="relative w-full"
+              style={{
+                background: 'rgba(17, 24, 39, 0.6)',
+                borderRadius: '20px',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                backdropFilter: 'blur(14px)',
+                padding: '48px 32px',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+              }}
+            >
+              <form style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+                {/* Row 1: Name & Email */}
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
+                  <div>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Email *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2: Company & Phone */}
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
+                  <div>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Company</label>
+                    <input
+                      type="text"
+                      name="company"
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
+                      placeholder="Your Company"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-white/90 mb-2 font-medium text-sm">Phone</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                      }}
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 3: Service Interest (Full Width) */}
                 <div>
-                  <label className="block text-white/80 mb-2 font-medium text-sm">Name *</label>
-                  <input
-                    type="text"
-                    name="name"
+                  <label className="block text-white/90 mb-2 font-medium text-sm">Service Interest</label>
+                  <select
+                    name="service"
+                    className="w-full px-4 py-3 rounded-xl border text-white focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      borderColor: 'rgba(255, 255, 255, 0.1)'
+                    }}
+                  >
+                    <option value="" className="bg-[#1A1A1A]">Select a service</option>
+                    <option value="gpu-optimization" className="bg-[#1A1A1A]">GPU Optimization Service</option>
+                    <option value="cuda-development" className="bg-[#1A1A1A]">CUDA Development Service</option>
+                    <option value="ai-ml" className="bg-[#1A1A1A]">AI/ML Development</option>
+                    <option value="consulting" className="bg-[#1A1A1A]">AI Consulting</option>
+                  </select>
+                </div>
+
+                {/* Row 4: Message (Full Width) */}
+                <div>
+                  <label className="block text-white/90 mb-2 font-medium text-sm">Message *</label>
+                  <textarea
+                    name="message"
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
-                    placeholder="John Doe"
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl border text-white placeholder-white/40 focus:border-[#10B981]/50 focus:outline-none focus:ring-1 focus:ring-[#10B981]/30 transition-all resize-none"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      borderColor: 'rgba(255, 255, 255, 0.1)'
+                    }}
+                    placeholder="Tell us about your project..."
                   />
                 </div>
 
-                <div>
-                  <label className="block text-white/80 mb-2 font-medium text-sm">Email *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
-                    placeholder="john@company.com"
-                  />
+                {/* Submit Button */}
+                <div className="flex justify-center sm:justify-start">
+                  <motion.button
+                    type="submit"
+                    className="px-12 py-4 rounded-xl font-semibold text-base transition-all duration-300 cursor-pointer"
+                    style={{
+                      background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                      border: '1px solid transparent',
+                      color: '#FFFFFF',
+                      boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
+                      minWidth: '200px'
+                    }}
+                    whileHover={{ 
+                      y: -2,
+                      boxShadow: '0 8px 24px rgba(16, 185, 129, 0.35)'
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Send Message
+                  </motion.button>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white/80 mb-2 font-medium text-sm">Company</label>
-                  <input
-                    type="text"
-                    name="company"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
-                    placeholder="Your Company"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-white/80 mb-2 font-medium text-sm">Phone</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-white/80 mb-2 font-medium text-sm">Service Interest</label>
-                <select
-                  name="service"
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all"
-                >
-                  <option value="" className="bg-[#1A1A1A]">Select a service</option>
-                  <option value="gpu-optimization" className="bg-[#1A1A1A]">GPU Optimization Service</option>
-                  <option value="cuda-development" className="bg-[#1A1A1A]">CUDA Development Service</option>
-                  <option value="ai-ml" className="bg-[#1A1A1A]">AI/ML Development</option>
-                  <option value="consulting" className="bg-[#1A1A1A]">AI Consulting</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-white/80 mb-2 font-medium text-sm">Message *</label>
-                <textarea
-                  name="message"
-                  required
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-[#ffffff]/20 text-white placeholder-white/40 focus:border-[#10B981] focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 transition-all resize-none"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                className="w-full px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
-                style={{
-                  background: 'rgba(16, 185, 129, 0.12)',
-                  border: '1px solid rgba(16, 185, 129, 0.35)',
-                  color: '#FAFAFA'
-                }}
-                whileHover={{ 
-                  scale: 1.02,
-                  background: 'rgba(16, 185, 129, 0.18)',
-                  borderColor: 'rgba(16, 185, 129, 0.5)'
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Send Message
-              </motion.button>
-            </form>
+              </form>
+            </div>
           </motion.div>
         </div>
       </section>

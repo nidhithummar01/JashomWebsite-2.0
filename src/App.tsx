@@ -54,6 +54,7 @@ const TeamPage = lazy(() => import('./components/about/TeamPage').then(module =>
 // Lazy load careers pages
 const CareersPage = lazy(() => import('./components/CareersPage').then(module => ({ default: module.CareersPage })));
 const CareerListingPage = lazy(() => import('./components/CareerListingPage').then(module => ({ default: module.CareerListingPage })));
+const CareerApplicationPage = lazy(() => import('./components/CareerApplicationPage').then(module => ({ default: module.CareerApplicationPage })));
 
 // Lazy load placeholder page
 const PlaceholderPage = lazy(() => import('./components/PlaceholderPage').then(module => ({ default: module.PlaceholderPage })));
@@ -133,6 +134,7 @@ function AnimatedRoutes() {
           {/* Placeholder routes */}
           <Route path="/careers" element={<PageTransition><CareersPage /></PageTransition>} />
           <Route path="/careers/openings" element={<PageTransition><CareerListingPage /></PageTransition>} />
+          <Route path="/careers/apply" element={<PageTransition><CareerApplicationPage /></PageTransition>} />
           <Route path="/news" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from Jashom." /></PageTransition>} />
           <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
           <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />

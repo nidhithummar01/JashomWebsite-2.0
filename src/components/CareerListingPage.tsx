@@ -287,9 +287,9 @@ export function CareerListingPage() {
       </section>
 
       {/* Career Cards Grid */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#000000' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#000000' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-8">
             {filteredCareers.map((career, index) => (
               <motion.div
                 key={career.id}
@@ -299,106 +299,194 @@ export function CareerListingPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <Link to={`/careers/openings/${career.slug}`} className="block h-full">
-                  <div
-                    className="relative h-full rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02]"
-                    style={{
-                      background: '#0A0A0A',
-                      border: '1px solid rgba(255, 255, 255, 0.1)'
-                    }}
-                  >
-                    {/* Image with gradient overlay */}
-                    <div className="relative h-48 overflow-hidden">
-                      <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                        style={{
-                          backgroundImage: `url(${career.image})`,
-                          backgroundColor: '#1a1a2e',
-                          opacity: 0.6
-                        }}
-                      />
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          background: 'linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.9) 100%)'
-                        }}
-                      />
-                      
-                      {/* Department Badge */}
-                      <div className="absolute top-4 left-4">
-                        <div
-                          className="px-3 py-1.5 rounded-full text-xs font-semibold"
-                          style={{
-                            background: 'rgba(0, 102, 255, 0.15)',
-                            color: '#0066FF',
-                            border: '1px solid rgba(0, 102, 255, 0.3)',
-                            backdropFilter: 'blur(8px)'
-                          }}
+                <div
+                  className="relative rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(11, 15, 20, 0.8) 100%)',
+                    border: '1px solid rgba(16, 185, 129, 0.15)',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(16, 185, 129, 0.2)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.15)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+                  }}
+                >
+                  <div className="p-8 md:p-10">
+                    {/* Header Section */}
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-center gap-3 mb-4">
+                          <span
+                            className="px-4 py-1.5 rounded-full text-xs font-semibold"
+                            style={{
+                              background: 'rgba(16, 185, 129, 0.15)',
+                              color: '#10B981',
+                              border: '1px solid rgba(16, 185, 129, 0.3)'
+                            }}
+                          >
+                            {career.department}
+                          </span>
+                          <span
+                            className="px-4 py-1.5 rounded-full text-xs"
+                            style={{
+                              background: 'rgba(255, 255, 255, 0.05)',
+                              color: '#9CA3AF'
+                            }}
+                          >
+                            {career.postedDate}
+                          </span>
+                        </div>
+                        
+                        <h3
+                          className="text-2xl md:text-3xl font-bold mb-3"
+                          style={{ color: '#FAFAFA', lineHeight: 1.3 }}
                         >
-                          {career.department}
+                          {career.title}
+                        </h3>
+                        
+                        <p
+                          className="text-base mb-6"
+                          style={{ color: '#D1D5DB', lineHeight: 1.7 }}
+                        >
+                          {career.description}
+                        </p>
+
+                        {/* Meta Information */}
+                        <div className="flex flex-wrap items-center gap-4 text-sm" style={{ color: '#9CA3AF' }}>
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4" style={{ color: '#10B981' }} />
+                            <span>{career.location}</span>
+                          </div>
+                          <span>•</span>
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" style={{ color: '#10B981' }} />
+                            <span>{career.type}</span>
+                          </div>
+                          <span>•</span>
+                          <div className="flex items-center gap-2">
+                            <Users className="w-4 h-4" style={{ color: '#10B981' }} />
+                            <span>{career.openings} {career.openings === 1 ? 'Opening' : 'Openings'}</span>
+                          </div>
                         </div>
                       </div>
 
-                      {/* Posted Date Badge */}
-                      <div className="absolute top-4 right-4">
-                        <div
-                          className="px-3 py-1.5 rounded-full text-xs"
-                          style={{
-                            background: 'rgba(0, 0, 0, 0.5)',
-                            color: '#FFFFFF',
-                            backdropFilter: 'blur(8px)'
-                          }}
-                        >
-                          {career.postedDate}
-                        </div>
-                      </div>
+                      {/* Apply Button */}
+                      <Link
+                        to={`/careers/apply?role=${encodeURIComponent(career.title)}`}
+                        className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 whitespace-nowrap"
+                        style={{
+                          background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                          color: '#FFFFFF',
+                          boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.boxShadow = '0 6px 25px rgba(16, 185, 129, 0.4)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = '0 4px 15px rgba(16, 185, 129, 0.3)';
+                        }}
+                      >
+                        Apply Now
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Link>
                     </div>
 
-                    {/* Content */}
-                    <div className="p-6">
-                      <h3
-                        className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors"
-                        style={{
-                          color: '#FAFAFA',
-                          lineHeight: 1.4
-                        }}
-                      >
-                        {career.title}
-                      </h3>
+                    {/* Divider */}
+                    <div
+                      style={{
+                        height: '1px',
+                        background: 'linear-gradient(to right, transparent, rgba(16, 185, 129, 0.3), transparent)',
+                        margin: '32px 0'
+                      }}
+                    />
 
-                      <p
-                        className="text-sm mb-4 line-clamp-2"
-                        style={{
-                          color: '#9CA3AF',
-                          lineHeight: 1.6
-                        }}
-                      >
-                        {career.description}
-                      </p>
-
-                      {/* Meta Information */}
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center gap-2 text-xs" style={{ color: '#9CA3AF' }}>
-                          <MapPin className="w-3.5 h-3.5" />
-                          <span>{career.location}</span>
-                          <span className="mx-1">•</span>
-                          <Clock className="w-3.5 h-3.5" />
-                          <span>{career.type}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs" style={{ color: '#9CA3AF' }}>
-                          <Users className="w-3.5 h-3.5" />
-                          <span>{career.openings} {career.openings === 1 ? 'Opening' : 'Openings'}</span>
-                        </div>
+                    {/* Content Sections */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      {/* Key Responsibilities */}
+                      <div>
+                        <h4
+                          className="text-lg font-semibold mb-4"
+                          style={{ color: '#10B981' }}
+                        >
+                          Key Responsibilities
+                        </h4>
+                        <ul className="space-y-3">
+                          {career.responsibilities.slice(0, 4).map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-3 text-sm"
+                              style={{ color: '#D1D5DB', lineHeight: 1.6 }}
+                            >
+                              <span
+                                className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2"
+                                style={{ background: '#10B981' }}
+                              />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
 
-                      {/* Read More Link */}
-                      <div className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all" style={{ color: '#0066FF' }}>
-                        <span>Read More</span>
-                        <ArrowRight className="w-4 h-4" />
+                      {/* Requirements */}
+                      <div>
+                        <h4
+                          className="text-lg font-semibold mb-4"
+                          style={{ color: '#10B981' }}
+                        >
+                          Requirements
+                        </h4>
+                        <ul className="space-y-3">
+                          {career.requirements.slice(0, 4).map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-3 text-sm"
+                              style={{ color: '#D1D5DB', lineHeight: 1.6 }}
+                            >
+                              <span
+                                className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2"
+                                style={{ background: '#10B981' }}
+                              />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Benefits */}
+                      <div>
+                        <h4
+                          className="text-lg font-semibold mb-4"
+                          style={{ color: '#10B981' }}
+                        >
+                          Benefits
+                        </h4>
+                        <ul className="space-y-3">
+                          {career.benefits.slice(0, 4).map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-3 text-sm"
+                              style={{ color: '#D1D5DB', lineHeight: 1.6 }}
+                            >
+                              <span
+                                className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2"
+                                style={{ background: '#10B981' }}
+                              />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </div>

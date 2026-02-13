@@ -2,8 +2,10 @@ import { motion } from 'motion/react';
 import { SEO } from './SEO';
 import { Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function ContactPage() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -25,6 +27,8 @@ export function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+    // Redirect to thank you page
+    navigate('/thank-you');
   };
 
   const faqs = [
@@ -56,56 +60,61 @@ export function ContactPage() {
 
       {/* SECTION 1 - HERO SECTION */}
       <section 
-        className="relative overflow-hidden flex items-center"
+        className="relative overflow-hidden"
         style={{ 
-          height: '90vh',
-          minHeight: '600px',
+          minHeight: '100vh',
           backgroundImage: 'url(/images/contact.hero.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Dark Overlay 70% */}
+        {/* Dark Gradient Overlay - Left to Right fade for readability */}
         <div 
-          className="absolute inset-0 z-0"
-          style={{ background: 'rgba(0, 0, 0, 0.7)' }}
+          className="absolute inset-0"
+          style={{ 
+            background: 'linear-gradient(to right, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 0.85) 40%, rgba(11, 15, 20, 0.6) 70%, rgba(11, 15, 20, 0.4) 100%)'
+          }}
         />
 
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        {/* Content - Premium Spacing */}
+        <div className="relative z-10 min-h-screen flex items-center">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-3xl"
+              className="text-left"
+              style={{ maxWidth: '620px' }}
             >
+              {/* Heading */}
               <h1 
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+                className="font-bold text-white leading-tight"
                 style={{ 
-                  color: '#FFFFFF',
-                  textAlign: 'left',
-                  position: 'relative',
-                  paddingBottom: '24px'
+                  fontSize: 'clamp(36px, 5vw, 64px)',
+                  textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '32px'
                 }}
               >
                 Let's Discuss Your AI Project
-                <div 
-                  className="absolute bottom-0 left-0 h-1 rounded-full"
-                  style={{
-                    width: '180px',
-                    background: '#10B981',
-                    boxShadow: '0 0 20px rgba(16, 185, 129, 0.8)'
-                  }}
-                />
               </h1>
               
+              {/* Paragraph */}
               <p 
-                className="text-xl sm:text-2xl leading-relaxed mb-8"
-                style={{ color: '#D1D5DB' }}
+                className="text-white/90"
+                style={{ 
+                  fontSize: 'clamp(17px, 2vw, 20px)',
+                  lineHeight: '1.75',
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
+                  marginBottom: '48px',
+                  maxWidth: '560px'
+                }}
               >
-                We help companies scale with GPU optimization, CUDA development, and intelligent AI systems.
+                Ready to transform your AI infrastructure? Our team of experts is here to help you leverage GPU acceleration and cutting-edge AI solutions for your business.
               </p>
-
+              
+              {/* CTA Button */}
               <a
                 href="#contact-form"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
@@ -115,14 +124,14 @@ export function ContactPage() {
                   boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)'
                 }}
               >
-                Get Started
+                Get in Touch
               </a>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 - SIDE BY SIDE INFO & FORM */}
+      {/* SECTION 2 - CONTACT FORM + OFFICE INFO */}
       <section id="contact-form" style={{ padding: '120px 0', background: '#000000' }}>
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -164,21 +173,26 @@ export function ContactPage() {
 
                 {/* Office Block */}
                 <div className="mb-10">
-                  <div className="flex items-start gap-4 mb-6">
+                  <div className="flex items-start gap-4" style={{ marginBottom: '28px' }}>
                     <span className="text-3xl">🇮🇳</span>
                     <div>
                       <p 
                         className="text-lg leading-relaxed"
-                        style={{ color: '#9CA3AF' }}
+                        style={{ color: '#9CA3AF', marginBottom: '0' }}
                       >
-                        414, Satyam-2, Amba Business Park<br />
+                        414, Satyam-2, Amba Business Park
+                      </p>
+                      <p 
+                        className="text-lg leading-relaxed"
+                        style={{ color: '#9CA3AF', marginTop: '18px', marginBottom: '0' }}
+                      >
                         ATPL, Adalaj, Gujarat, India
                       </p>
                     </div>
                   </div>
 
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
+                  <div style={{ marginTop: '28px' }}>
+                    <div className="flex items-center gap-3" style={{ marginBottom: '16px' }}>
                       <Mail className="w-6 h-6" style={{ color: '#10B981' }} />
                       <a 
                         href="mailto:info@jashom.com"
@@ -204,7 +218,7 @@ export function ContactPage() {
 
                 <p 
                   className="text-lg italic"
-                  style={{ color: '#9CA3AF' }}
+                  style={{ color: '#9CA3AF', marginTop: '24px' }}
                 >
                   Let's build something powerful together.
                 </p>

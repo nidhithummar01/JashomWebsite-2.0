@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { SEO } from './SEO';
 import { Briefcase, Users, TrendingUp, Heart, Clock, MapPin } from 'lucide-react';
+import { useState } from 'react';
 
 interface JobOpening {
   id: number;
@@ -35,6 +36,29 @@ const jobOpenings: JobOpening[] = [
 ];
 
 export function CareersPage() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    position: '',
+    resume: '',
+    coverLetter: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Redirect to thank you page
+    navigate('/thank-you');
+  };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>
       <SEO
@@ -375,8 +399,8 @@ export function CareersPage() {
                 </div>
 
                 {/* Apply Button */}
-                <a
-                  href="#apply-form"
+                <Link
+                  to={`/careers/apply?role=${encodeURIComponent(job.title)}`}
                   className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
                   style={{
                     background: '#10B981',
@@ -384,7 +408,7 @@ export function CareersPage() {
                   }}
                 >
                   Apply Now
-                </a>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -424,12 +448,15 @@ export function CareersPage() {
                 If you are passionate and skilled, we'll get along very well :)
               </p>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 {/* Full Name */}
                 <div>
                   <input
                     type="text"
+                    name="fullName"
                     placeholder="Full Name"
+                    value={formData.fullName}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                     style={{ 
@@ -444,7 +471,10 @@ export function CareersPage() {
                 <div>
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email ID"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                     style={{ 
@@ -459,7 +489,10 @@ export function CareersPage() {
                 <div>
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="Contact Number"
+                    value={formData.phone}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                     style={{ 
@@ -480,7 +513,7 @@ export function CareersPage() {
                       color: '#9E9E9E'
                     }}
                   >
-                    <input type="file" className="hidden" accept=".pdf,.doc,.docx" />
+                    <input type="file" name="resume" className="hidden" accept=".pdf,.doc,.docx" />
                     <span>Choose File (Resume)</span>
                   </label>
                   <p className="text-xs mt-2" style={{ color: '#666666' }}>
