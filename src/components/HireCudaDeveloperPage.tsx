@@ -1499,7 +1499,7 @@ export function HireCudaDeveloperPage() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#10B981' }}>
               Looking for something else?
             </h2>
-            <p className="text-lg" style={{ color: '#B0B0B0' }}>
+            <p className="text-lg text-center mx-auto" style={{ color: '#B0B0B0' }}>
               You can also check out the related services.
             </p>
           </motion.div>

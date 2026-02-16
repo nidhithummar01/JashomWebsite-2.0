@@ -448,72 +448,111 @@ export function CareersPage() {
                 If you are passionate and skilled, we'll get along very well :)
               </p>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                {/* Full Name */}
-                <div>
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Full Name"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                    style={{ 
-                      background: '#1F2937', 
-                      borderColor: 'rgba(16, 185, 129, 0.3)',
-                      color: '#FAFAFA'
-                    }}
-                  />
+              <form onSubmit={handleSubmit}>
+                {/* 2-Column Grid for Name, Email, Phone, Position */}
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '28px', marginBottom: '28px' }}>
+                  {/* Full Name */}
+                  <div>
+                    <label htmlFor="fullName" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', 
+                        borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', 
+                        borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', 
+                        borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
+
+                  {/* Position */}
+                  <div>
+                    <label htmlFor="position" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                      Position Applied For
+                    </label>
+                    <input
+                      type="text"
+                      id="position"
+                      name="position"
+                      value={formData.position}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                      style={{ 
+                        background: '#1F2937', 
+                        borderColor: 'rgba(16, 185, 129, 0.3)',
+                        color: '#FAFAFA'
+                      }}
+                      placeholder="e.g. Senior Developer"
+                    />
+                  </div>
                 </div>
 
-                {/* Email ID */}
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email ID"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                    style={{ 
-                      background: '#1F2937', 
-                      borderColor: 'rgba(16, 185, 129, 0.3)',
-                      color: '#FAFAFA'
-                    }}
-                  />
-                </div>
-
-                {/* Contact Number */}
-                <div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Contact Number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                    style={{ 
-                      background: '#1F2937', 
-                      borderColor: 'rgba(16, 185, 129, 0.3)',
-                      color: '#FAFAFA'
-                    }}
-                  />
-                </div>
-
-                {/* Resume Upload */}
-                <div>
+                {/* Resume Upload - Full Width */}
+                <div style={{ marginBottom: '28px' }}>
+                  <label htmlFor="resume" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                    Resume/CV *
+                  </label>
                   <label 
-                    className="block w-full px-4 py-3 rounded-lg border cursor-pointer transition-all hover:border-blue-500"
+                    className="block w-full px-4 py-3 rounded-lg border cursor-pointer transition-all hover:border-orange-500"
                     style={{ 
                       background: '#1F2937', 
                       borderColor: 'rgba(16, 185, 129, 0.3)',
                       color: '#9E9E9E'
                     }}
                   >
-                    <input type="file" name="resume" className="hidden" accept=".pdf,.doc,.docx" />
+                    <input type="file" name="resume" className="hidden" accept=".pdf,.doc,.docx" required />
                     <span>Choose File (Resume)</span>
                   </label>
                   <p className="text-xs mt-2" style={{ color: '#666666' }}>
@@ -521,7 +560,28 @@ export function CareersPage() {
                   </p>
                 </div>
 
-                {/* Submit Button */}
+                {/* Cover Letter - Full Width */}
+                <div style={{ marginBottom: '28px' }}>
+                  <label htmlFor="coverLetter" className="block text-sm font-semibold mb-2" style={{ color: '#FAFAFA' }}>
+                    Cover Letter
+                  </label>
+                  <textarea
+                    id="coverLetter"
+                    name="coverLetter"
+                    value={formData.coverLetter}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all resize-none"
+                    style={{ 
+                      background: '#1F2937', 
+                      borderColor: 'rgba(16, 185, 129, 0.3)',
+                      color: '#FAFAFA'
+                    }}
+                    placeholder="Tell us why you're a great fit for this role..."
+                  />
+                </div>
+
+                {/* Submit Button - Full Width */}
                 <button
                   type="submit"
                   className="w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
@@ -530,8 +590,12 @@ export function CareersPage() {
                     color: '#FFFFFF'
                   }}
                 >
-                  Submit
+                  Submit Application
                 </button>
+
+                <p className="text-xs text-center mt-4" style={{ color: '#999999' }}>
+                  By submitting this form, you agree to our privacy policy and terms of service.
+                </p>
               </form>
             </motion.div>
 
