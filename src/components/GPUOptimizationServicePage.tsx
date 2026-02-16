@@ -34,7 +34,7 @@ export function GPUOptimizationServicePage() {
       </Helmet>
 
       {/* Hero Section with Background Image */}
-      <section 
+      <section
         className="relative overflow-hidden"
         style={{
           minHeight: '100vh',
@@ -45,9 +45,9 @@ export function GPUOptimizationServicePage() {
         }}
       >
         {/* Dark Gradient Overlay - Left to Right fade for readability */}
-        <div 
-          className="absolute inset-0" 
-          style={{ 
+        <div
+          className="absolute inset-0"
+          style={{
             background: 'linear-gradient(to right, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 0.85) 40%, rgba(11, 15, 20, 0.6) 70%, rgba(11, 15, 20, 0.4) 100%)'
           }}
         ></div>
@@ -63,9 +63,9 @@ export function GPUOptimizationServicePage() {
               style={{ maxWidth: '620px' }}
             >
               {/* Heading */}
-              <h1 
+              <h1
                 className="font-bold text-white leading-tight"
-                style={{ 
+                style={{
                   fontSize: 'clamp(36px, 5vw, 64px)',
                   textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
                   letterSpacing: '-0.02em',
@@ -74,11 +74,11 @@ export function GPUOptimizationServicePage() {
               >
                 GPU Optimization Services
               </h1>
-              
+
               {/* Paragraph */}
-              <p 
+              <p
                 className="text-white/90"
-                style={{ 
+                style={{
                   fontSize: 'clamp(17px, 2vw, 20px)',
                   lineHeight: '1.75',
                   textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
@@ -88,7 +88,7 @@ export function GPUOptimizationServicePage() {
               >
                 We create unique GPU optimization solutions that address actual performance issues. Our end-to-end optimization services deliver speed, scalability, and long-term business impact from planning to implementation and support.
               </p>
-              
+
               {/* CTA Button */}
               <a
                 href="/contact"
@@ -133,14 +133,14 @@ export function GPUOptimizationServicePage() {
                   <br />
                   Optimization?
                 </h2>
-                
+
                 <p className="text-white/70 text-base leading-relaxed">
                   GPU optimization is the process of analyzing, tuning, and enhancing GPU workloads to maximize computational performance and efficiency. It involves identifying bottlenecks, optimizing memory usage, improving kernel execution, and implementing best practices to achieve faster processing times and reduced resource consumption.
                 </p>
                 <p className="text-white/70 text-base leading-relaxed">
                   GPU optimization bridges the gap between raw computing power and practical application performance in AI/ML, scientific computing, data analytics, and rendering. It enables organizations to reduce infrastructure costs, accelerate time-to-results, and maintain competitive advantage in compute-intensive industries.
                 </p>
-                
+
                 {/* Key Benefits */}
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="rounded-lg p-4" style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
@@ -164,9 +164,9 @@ export function GPUOptimizationServicePage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="relative"
               >
-                <img 
-                  src="/images/gpu.optimization.jpg" 
-                  alt="GPU Optimization" 
+                <img
+                  src="/images/gpu.optimization.jpg"
+                  alt="GPU Optimization"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                   style={{ boxShadow: '0 20px 60px rgba(16, 185, 129, 0.3)' }}
                 />
@@ -359,11 +359,11 @@ export function GPUOptimizationServicePage() {
               className="relative"
             >
               <div className="relative overflow-hidden rounded-2xl">
-                <img 
-                  src="/images/gpu.service.jpg" 
-                  alt="Industry-Specific GPU Solutions" 
+                <img
+                  src="/images/gpu.service.jpg"
+                  alt="Industry-Specific GPU Solutions"
                   className="w-full h-auto object-cover"
-                  style={{ 
+                  style={{
                     borderRadius: '20px',
                     boxShadow: '0 20px 60px rgba(16, 185, 129, 0.25), 0 0 40px rgba(16, 185, 129, 0.1)'
                   }}
@@ -409,7 +409,7 @@ export function GPUOptimizationServicePage() {
 
           {/* Process Steps - Centered Transparent Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            
+
             {/* Step 1 */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -568,7 +568,7 @@ export function GPUOptimizationServicePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="relative rounded-2xl overflow-hidden group"
-            style={{ 
+            style={{
               maxHeight: '500px',
               borderRadius: '24px',
               boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)'
@@ -576,9 +576,9 @@ export function GPUOptimizationServicePage() {
           >
             {/* Background Image with Hover Zoom */}
             <div className="absolute inset-0 overflow-hidden">
-              <img 
-                src="/images/custom-ai-partner.jpg.jpg" 
-                alt="Custom AI Development Partner" 
+              <img
+                src="/images/custom-ai-partner.jpg.jpg"
+                alt="Custom AI Development Partner"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{
                   objectPosition: '70% center',
@@ -586,9 +586,9 @@ export function GPUOptimizationServicePage() {
                 }}
               />
               {/* Enhanced Gradient Overlay for Better Depth */}
-              <div 
-                className="absolute inset-0" 
-                style={{ 
+              <div
+                className="absolute inset-0"
+                style={{
                   background: `
                     linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.4) 100%),
                     linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%),
@@ -795,7 +795,7 @@ export function GPUOptimizationServicePage() {
 
           {/* AI Models Grid - 4 columns, 2 rows */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            
+
             {/* Model 1 - GPT-4o */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -803,7 +803,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -820,16 +820,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/gpt-4o.jpg.jpg" 
-                  alt="GPT-4o" 
+                <img
+                  src="/images/AI Models exeperty/gpt-4o.jpg.jpg"
+                  alt="GPT-4o"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -845,7 +845,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -862,16 +862,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/llama-3.jpg.webp" 
-                  alt="Llama 3" 
+                <img
+                  src="/images/AI Models exeperty/llama-3.jpg.webp"
+                  alt="Llama 3"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -887,7 +887,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -904,16 +904,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/palm-2.jpg.webp" 
-                  alt="PaLM 2" 
+                <img
+                  src="/images/AI Models exeperty/palm-2.jpg.webp"
+                  alt="PaLM 2"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -929,7 +929,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -946,16 +946,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/stability-ai.jpg.webp" 
-                  alt="Stability AI" 
+                <img
+                  src="/images/AI Models exeperty/stability-ai.jpg.webp"
+                  alt="Stability AI"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -971,7 +971,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -988,16 +988,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/google-gemini.jpg.webp" 
-                  alt="Google Gemini" 
+                <img
+                  src="/images/AI Models exeperty/google-gemini.jpg.webp"
+                  alt="Google Gemini"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -1013,7 +1013,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -1030,16 +1030,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/vicuna.jpg.webp" 
-                  alt="Vicuna" 
+                <img
+                  src="/images/AI Models exeperty/vicuna.jpg.webp"
+                  alt="Vicuna"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -1055,7 +1055,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.7 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -1072,16 +1072,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/mistral.jpg.webp" 
-                  alt="Mistral" 
+                <img
+                  src="/images/AI Models exeperty/mistral.jpg.webp"
+                  alt="Mistral"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -1097,7 +1097,7 @@ export function GPUOptimizationServicePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.8 }}
               className="rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300"
-              style={{ 
+              style={{
                 background: 'rgba(17, 24, 39, 0.4)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(16, 185, 129, 0.1)'
@@ -1114,16 +1114,16 @@ export function GPUOptimizationServicePage() {
               }}
             >
               <div className="mb-4 flex items-center justify-center" style={{ height: '72px' }}>
-                <img 
-                  src="/images/AI Models exeperty/claude.jpg.webp" 
-                  alt="Claude" 
+                <img
+                  src="/images/AI Models exeperty/claude.jpg.webp"
+                  alt="Claude"
                   className="object-contain transition-transform duration-300"
                   style={{ maxHeight: '72px', maxWidth: '100%' }}
                 />
               </div>
-              <h3 
-                className="text-base font-semibold" 
-                style={{ 
+              <h3
+                className="text-base font-semibold"
+                style={{
                   color: '#FAFAFA',
                   letterSpacing: '0.02em'
                 }}
@@ -1246,11 +1246,11 @@ export function GPUOptimizationServicePage() {
             >
               <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Client Testimonials</span>
             </motion.div>
-            
+
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em', lineHeight: 1.2 }}>
               What Our Clients Say
             </h2>
-            
+
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
               Trusted by industry leaders to deliver exceptional results
             </p>
@@ -1258,7 +1258,7 @@ export function GPUOptimizationServicePage() {
 
           {/* Testimonials Grid - 3 Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            
+
             {/* Testimonial 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -1267,7 +1267,7 @@ export function GPUOptimizationServicePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="group"
             >
-              <div 
+              <div
                 className="h-full p-8 rounded-2xl border transition-all duration-300"
                 style={{
                   background: 'rgba(255, 255, 255, 0.02)',
@@ -1278,8 +1278,8 @@ export function GPUOptimizationServicePage() {
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3"/>
-                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3"/>
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
                   </svg>
                 </div>
 
@@ -1317,7 +1317,7 @@ export function GPUOptimizationServicePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="group"
             >
-              <div 
+              <div
                 className="h-full p-8 rounded-2xl border transition-all duration-300"
                 style={{
                   background: 'rgba(255, 255, 255, 0.02)',
@@ -1328,8 +1328,8 @@ export function GPUOptimizationServicePage() {
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3"/>
-                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3"/>
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
                   </svg>
                 </div>
 
@@ -1367,7 +1367,7 @@ export function GPUOptimizationServicePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="group"
             >
-              <div 
+              <div
                 className="h-full p-8 rounded-2xl border transition-all duration-300"
                 style={{
                   background: 'rgba(255, 255, 255, 0.02)',
@@ -1378,8 +1378,8 @@ export function GPUOptimizationServicePage() {
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3"/>
-                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3"/>
+                    <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
+                    <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
                   </svg>
                 </div>
 
@@ -1450,10 +1450,10 @@ export function GPUOptimizationServicePage() {
                     <h3 className="text-lg font-semibold text-white pr-4">
                       How can my company benefit from GPU optimization?
                     </h3>
-                    <svg 
-                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -1481,10 +1481,10 @@ export function GPUOptimizationServicePage() {
                     <h3 className="text-lg font-semibold text-white pr-4">
                       What happens if my project's requirements change in the middle?
                     </h3>
-                    <svg 
-                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -1512,10 +1512,10 @@ export function GPUOptimizationServicePage() {
                     <h3 className="text-lg font-semibold text-white pr-4">
                       Do you optimize existing code or build new solutions?
                     </h3>
-                    <svg 
-                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -1543,10 +1543,10 @@ export function GPUOptimizationServicePage() {
                     <h3 className="text-lg font-semibold text-white pr-4">
                       How secure are the GPU optimization solutions you provide?
                     </h3>
-                    <svg 
-                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -1590,7 +1590,7 @@ export function GPUOptimizationServicePage() {
                 style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}
               >
                 Get Started with{' '}
-                <span style={{ 
+                <span style={{
                   background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent'
@@ -1620,7 +1620,7 @@ export function GPUOptimizationServicePage() {
               }}
             >
               {/* Subtle radial glow behind form */}
-              <div 
+              <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.08) 0%, transparent 60%)',
@@ -1743,7 +1743,7 @@ export function GPUOptimizationServicePage() {
                         boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
                         minWidth: '200px'
                       }}
-                      whileHover={{ 
+                      whileHover={{
                         y: -2,
                         boxShadow: '0 8px 24px rgba(16, 185, 129, 0.35)'
                       }}
@@ -1772,7 +1772,7 @@ export function GPUOptimizationServicePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Address */}
-                <div 
+                <div
                   className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'rgba(17, 24, 39, 0.6)',
@@ -1781,9 +1781,9 @@ export function GPUOptimizationServicePage() {
                   }}
                 >
                   <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
-                    <img 
-                      src="/images/inidan.flag.jpg" 
-                      alt="India Flag" 
+                    <img
+                      src="/images/inidan.flag.jpg"
+                      alt="India Flag"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -1796,7 +1796,7 @@ export function GPUOptimizationServicePage() {
                 </div>
 
                 {/* Email */}
-                <div 
+                <div
                   className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'rgba(17, 24, 39, 0.6)',
@@ -1810,8 +1810,8 @@ export function GPUOptimizationServicePage() {
                     </svg>
                   </div>
                   <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Email</h4>
-                  <a 
-                    href="mailto:info@jashom.com" 
+                  <a
+                    href="mailto:info@jashom.com"
                     className="text-sm transition-colors inline-block"
                     style={{ color: '#10B981' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
@@ -1825,7 +1825,7 @@ export function GPUOptimizationServicePage() {
                 </div>
 
                 {/* Phone */}
-                <div 
+                <div
                   className="p-6 rounded-xl text-center transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'rgba(17, 24, 39, 0.6)',
@@ -1839,8 +1839,8 @@ export function GPUOptimizationServicePage() {
                     </svg>
                   </div>
                   <h4 className="text-lg font-semibold mb-3" style={{ color: '#FAFAFA' }}>Phone</h4>
-                  <a 
-                    href="tel:+919023906363" 
+                  <a
+                    href="tel:+919023906363"
                     className="text-sm transition-colors inline-block"
                     style={{ color: '#10B981' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
