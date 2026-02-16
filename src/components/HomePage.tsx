@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { SEO } from './SEO';
+import { Helmet } from 'react-helmet-async';
 import { AnimatedCounter } from './AnimatedCounter';
 import { useEffect, useRef, useState } from 'react';
 import { getLatestInsights } from '../data/insightsData';
@@ -192,11 +192,10 @@ export function HomePage() {
 
   return (
     <div className="min-h-screen" style={{ width: '100%', overflow: 'hidden', background: '#0B0F14' }}>
-      <SEO
-        title="Jashom. AI - AI & GPU Optimization | Enterprise AI Solutions"
-        description="Transform your business with cutting-edge AI and GPU optimization solutions. Industry-leading expertise in machine learning, deep learning, and high-performance computing. Request a demo today."
-        keywords="AI optimization, GPU acceleration, machine learning development, artificial intelligence consulting, MLOps, data engineering, AI security, CUDA programming, deep learning, neural networks, computer vision, NLP, enterprise AI"
-      />
+      <Helmet>
+        <title>GPU Optimization Services & CUDA Development Company | Jashom</title>
+        <meta name="description" content="Jashom provides advanced GPU optimization, CUDA development, and high-performance computing solutions to accelerate AI, simulation, and enterprise workloads efficiently." />
+      </Helmet>
       {/* Hero Section - Full Screen Edge-to-Edge */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden" style={{ margin: 0, padding: 0, background: '#0B0F14' }}>
         {/* Video Background - Full Screen Coverage */}

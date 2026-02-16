@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { SEO } from './SEO';
+import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,11 +28,10 @@ export function GPUOptimizationServicePage() {
   };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>
-      <SEO
-        title="GPU Optimization Service | High-Performance Computing Solutions | Jashom"
-        description="Professional GPU optimization services to maximize performance, reduce costs, and accelerate your computational workloads with expert optimization techniques."
-        keywords="GPU optimization, performance tuning, CUDA optimization, GPU computing, high performance computing"
-      />
+      <Helmet>
+        <title>NVIDIA GPU Optimization Services | Optimize NVIDIA GPU Performance</title>
+        <meta name="description" content="Improve speed and efficiency with expert NVIDIA GPU optimization services. We help businesses optimize NVIDIA GPU performance for AI, HPC, and data-intensive applications." />
+      </Helmet>
 
       {/* Hero Section with Background Image */}
       <section 

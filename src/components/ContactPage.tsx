@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { SEO } from './SEO';
+import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -52,11 +52,10 @@ export function ContactPage() {
 
   return (
     <div className="min-h-screen" style={{ background: '#000000' }}>
-      <SEO
-        title="Contact Jashom | AI & GPU Optimization Experts"
-        description="Get in touch with Jashom's AI experts. We help companies scale with GPU optimization, CUDA development, and intelligent AI systems."
-        keywords="contact AI company, AI consultation, GPU optimization contact, CUDA development inquiry"
-      />
+      <Helmet>
+        <title>Contact Jashom | GPU & CUDA Development Consultation</title>
+        <meta name="description" content="Get in touch with Jashom for expert GPU optimization and CUDA development services. Contact our team to discuss your performance challenges and project requirements." />
+      </Helmet>
 
       {/* SECTION 1 - HERO SECTION */}
       <section 

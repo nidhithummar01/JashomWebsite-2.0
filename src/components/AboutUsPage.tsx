@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { GlassCard } from './GlassCard';
-import { SEO } from './SEO';
+import { Helmet } from 'react-helmet-async';
 import { Linkedin, ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
 
 const staggerContainer = {
@@ -102,11 +102,10 @@ export function AboutUsPage() {
 
   return (
     <div className="min-h-screen bg-black" key={pathAndHash}>
-      <SEO
-        title="About Us | Jashom - AI Innovation Leaders"
-        description="Learn more about Jashom's mission, vision, and the team driving AI innovation across industries."
-        keywords="about Jashom, AI team, company mission, AI experts, technology leaders"
-      />
+      <Helmet>
+        <title>About Jashom | GPU Optimization & CUDA Development Experts</title>
+        <meta name="description" content="Learn about Jashom, a technology-driven company specializing in GPU optimization, NVIDIA CUDA development, and high-performance computing solutions for modern AI and enterprise applications." />
+      </Helmet>
       
       {/* Team Section - Only render if hash is 'team' or no hash on /about */}
       {showTeam && (

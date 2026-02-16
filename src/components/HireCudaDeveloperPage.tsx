@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { SEO } from './SEO';
+import { Helmet } from 'react-helmet-async';
 import { Award, Zap, DollarSign } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -30,11 +30,10 @@ export function HireCudaDeveloperPage() {
 
   return (
     <div className="min-h-screen" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
-      <SEO
-        title="Hire Expert CUDA Developer | 5+ Years Experience | Jashom"
-        description="Hire experienced CUDA developers with 5+ years expertise. Build high-performance GPU applications with seamless performance and enhanced computing power."
-        keywords="hire CUDA developer, GPU computing, parallel computing, AI acceleration, CUDA expert, 5+ years experience"
-      />
+      <Helmet>
+        <title>Hire CUDA Developers | Dedicated CUDA Programmers & GPU Experts</title>
+        <meta name="description" content="Looking to hire CUDA developers? Get skilled GPU programmers for NVIDIA CUDA projects, performance optimization, and custom parallel computing solutions." />
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ minHeight: '600px', paddingTop: '160px', paddingBottom: '100px' }}>

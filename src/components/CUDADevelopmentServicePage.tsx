@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { SEO } from './SEO';
+import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,11 +28,10 @@ export function CUDADevelopmentServicePage() {
   };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>
-      <SEO
-        title="CUDA Development Service | Custom GPU Computing Solutions | Jashom"
-        description="Professional CUDA development services for custom GPU computing solutions. Expert parallel programming, kernel development, and GPU acceleration."
-        keywords="CUDA development, GPU programming, parallel computing, kernel development, GPU acceleration"
-      />
+      <Helmet>
+        <title>CUDA Development Services | Expert CUDA Developers for GPU Computing</title>
+        <meta name="description" content="Hire experienced CUDA developers to build high-performance GPU applications. Jashom delivers scalable CUDA development solutions for AI, deep learning, and parallel computing." />
+      </Helmet>
 
       {/* Hero Section */}
       <section 
