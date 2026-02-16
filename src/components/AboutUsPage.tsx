@@ -31,12 +31,12 @@ const staggerItem = {
 
 export function AboutUsPage() {
   const location = useLocation();
-  
+
   // Determine which section to show based on hash
   // Use both pathname and hash to ensure re-render on navigation
   const hash = location.hash.substring(1); // Remove the '#' symbol
   const pathAndHash = `${location.pathname}${location.hash}`;
-  
+
   // Show Team if hash is 'team' or if on /about with no hash (default to Team)
   const showTeam = hash === 'team' || (location.pathname === '/about' && !hash);
   // Show Portfolio only if hash is 'portfolio'
@@ -101,107 +101,115 @@ export function AboutUsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black" key={pathAndHash}>
+    <>
       <Helmet>
         <title>About Jashom | GPU Optimization & CUDA Development Experts</title>
-        <meta name="description" content="Learn about Jashom, a technology-driven company specializing in GPU optimization, NVIDIA CUDA development, and high-performance computing solutions for modern AI and enterprise applications." />
+        <meta
+          name="description"
+          content="Learn about Jashom, a technology-driven company specializing in GPU optimization, NVIDIA CUDA development, and high-performance computing solutions for modern AI and enterprise applications"
+        />
       </Helmet>
-      
-      {/* Team Section - Only render if hash is 'team' or no hash on /about */}
-      {showTeam && (
-        <section id="team" className="pt-24 pb-20" key="team-section">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Header */}
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <motion.div
-                className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <span className="text-[#d1d5db]">Our Team</span>
-              </motion.div>
-              <h1 className="mb-4 text-gradient">Meet the Team</h1>
-              <p className="text-white/70 max-w-3xl mx-auto">
-                The talented individuals driving innovation and excellence at Jashom.
-              </p>
-            </motion.div>
 
-            {/* Team Grid */}
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-16"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-            >
-              {teamMembers.map((member, index) => (
+
+      <div className="about us">
+        <div className="min-h-screen bg-black" key={pathAndHash}>
+
+          {/* Team Section - Only render if hash is 'team' or no hash on /about */}
+          {showTeam && (
+            <section id="team" className="pt-24 pb-20" key="team-section">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header */}
                 <motion.div
-                  key={index}
-                  variants={staggerItem}
+                  className="text-center mb-16"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                 >
-                  <GlassCard>
-                    <div className="text-center relative">
-                      <h3 className="text-white mb-2 text-lg sm:text-xl">{member.name}</h3>
-                      <p className="text-white/70 mb-4 text-sm sm:text-base">{member.role}</p>
-                      <a
-                        href={member.linkedin || '#'}
-                        target={member.linkedin ? "_blank" : undefined}
-                        rel={member.linkedin ? "noopener noreferrer" : undefined}
-                        className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
-                        onClick={(e) => {
-                          if (!member.linkedin) {
-                            e.preventDefault();
-                          }
-                        }}
-                      >
-                        <Linkedin className="w-5 h-5" />
-                        <span className="text-sm">LinkedIn</span>
-                      </a>
-                    </div>
-                  </GlassCard>
+                  <motion.div
+                    className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <span className="text-[#d1d5db]">Our Team</span>
+                  </motion.div>
+                  <h1 className="mb-4 text-gradient">Meet the Team</h1>
+                  <p className="text-white/70 max-w-3xl mx-auto">
+                    The talented individuals driving innovation and excellence at Jashom.
+                  </p>
                 </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-      )}
 
-      {/* Portfolio Section - Only render if hash is 'portfolio' */}
-      {showPortfolio && (
-        <section id="portfolio" className="pt-24 pb-20" key="portfolio-section">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Header */}
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <motion.div
-                className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <span className="text-[#d1d5db]">Success Stories</span>
-              </motion.div>
-              <h1 className="mb-4 text-gradient">Portfolio</h1>
-              <p className="text-white/70 max-w-3xl mx-auto">
-                Real-world transformations powered by our AI and GPU optimization expertise.
-                Discover how we've helped organizations achieve breakthrough results.
-              </p>
-            </motion.div>
+                {/* Team Grid */}
+                <motion.div
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-16"
+                  variants={staggerContainer}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                >
+                  {teamMembers.map((member, index) => (
+                    <motion.div
+                      key={index}
+                      variants={staggerItem}
+                    >
+                      <GlassCard>
+                        <div className="text-center relative">
+                          <h3 className="text-white mb-2 text-lg sm:text-xl">{member.name}</h3>
+                          <p className="text-white/70 mb-4 text-sm sm:text-base">{member.role}</p>
+                          <a
+                            href={member.linkedin || '#'}
+                            target={member.linkedin ? "_blank" : undefined}
+                            rel={member.linkedin ? "noopener noreferrer" : undefined}
+                            className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors"
+                            onClick={(e) => {
+                              if (!member.linkedin) {
+                                e.preventDefault();
+                              }
+                            }}
+                          >
+                            <Linkedin className="w-5 h-5" />
+                            <span className="text-sm">LinkedIn</span>
+                          </a>
+                        </div>
+                      </GlassCard>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </section>
+          )}
 
-            {/* Case Studies by Category - Reusing PortfolioPage structure */}
-            <PortfolioContent />
-          </div>
-        </section>
-      )}
-    </div>
+          {/* Portfolio Section - Only render if hash is 'portfolio' */}
+          {showPortfolio && (
+            <section id="portfolio" className="pt-24 pb-20" key="portfolio-section">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header */}
+                <motion.div
+                  className="text-center mb-16"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  <motion.div
+                    className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <span className="text-[#d1d5db]">Success Stories</span>
+                  </motion.div>
+                  <h1 className="mb-4 text-gradient">Portfolio</h1>
+                  <p className="text-white/70 max-w-3xl mx-auto">
+                    Real-world transformations powered by our AI and GPU optimization expertise.
+                    Discover how we've helped organizations achieve breakthrough results.
+                  </p>
+                </motion.div>
+
+                <PortfolioContent />
+              </div>
+            </section>
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 

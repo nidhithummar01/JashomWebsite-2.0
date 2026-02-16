@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { GlassCard } from '../GlassCard';
-import { SEO } from '../SEO';
+import { Helmet } from 'react-helmet-async';
 import { Linkedin } from 'lucide-react';
 
 const staggerContainer = {
@@ -75,12 +75,14 @@ export function TeamPage() {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO
-        title="Our Team | About Us | Jashom - AI Innovation Leaders"
-        description="Meet the talented individuals driving innovation and excellence at Jashom."
-        keywords="Jashom team, AI experts, technology leaders, company team"
-      />
-      
+      <Helmet>
+        <title>About Jashom | GPU Optimization & CUDA Development Experts</title>
+        <meta
+          name="description"
+          content="Learn about Jashom, a technology-driven company specializing in GPU optimization, NVIDIA CUDA development, and high-performance computing solutions for modern AI and enterprise applications"
+        />
+      </Helmet>
+
       {/* Team Section */}
       <section className="pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,8 +134,8 @@ export function TeamPage() {
                             src={member.image}
                             alt={member.name}
                             className="w-full h-full object-cover object-center"
-                            style={{ 
-                              objectFit: 'cover', 
+                            style={{
+                              objectFit: 'cover',
                               objectPosition: 'center center',
                               display: 'block',
                               width: '100%',
