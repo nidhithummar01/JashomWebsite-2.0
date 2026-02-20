@@ -66,7 +66,7 @@ export function GPUOptimizationServicePage() {
               <h1
                 className="font-bold text-white leading-tight"
                 style={{
-                  fontSize: 'clamp(36px, 5vw, 64px)',
+                  fontSize: 'clamp(28px, 4vw, 48px)',
                   textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
                   letterSpacing: '-0.02em',
                   marginBottom: '32px'
@@ -185,6 +185,9 @@ export function GPUOptimizationServicePage() {
         </div>
       </section>
 
+      {/* Divider between sections */}
+      <div className="premium-divider" />
+
       {/* Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
         <div className="max-w-7xl mx-auto">
@@ -223,7 +226,7 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-3xl p-8"
+              className="rounded-2xl p-8"
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
@@ -242,7 +245,7 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-3xl p-8"
+              className="rounded-2xl p-8"
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
@@ -261,7 +264,7 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="rounded-3xl p-8"
+              className="rounded-2xl p-8"
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
@@ -313,13 +316,13 @@ export function GPUOptimizationServicePage() {
                 <br />
                 GPU Solutions
               </h2>
-              <p className="text-white/70 text-base leading-relaxed max-w-3xl" style={{ marginBottom: '60px' }}>
+              <p className="text-white/70 text-base leading-relaxed max-w-3xl mb-6">
                 We provide customized GPU optimization solutions tailored to meet the particular needs of your industry. We assist you in improving computational performance, reducing costs, and accelerating innovation through cutting-edge GPU technology.
               </p>
 
-              {/* Industry List - Vertical Stack */}
-              <div className="max-w-2xl" style={{ display: 'flex', flexDirection: 'column', gap: '56px' }}>
-                <div className="flex items-center gap-3">
+              {/* Industry List - 2x2 Grid */}
+              <div className="grid grid-cols-2 gap-8 max-w-2xl">
+                <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -328,7 +331,7 @@ export function GPUOptimizationServicePage() {
                   <span className="text-white text-base">AI & Machine Learning</span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -337,7 +340,7 @@ export function GPUOptimizationServicePage() {
                   <span className="text-white text-base">Scientific Computing</span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -346,7 +349,7 @@ export function GPUOptimizationServicePage() {
                   <span className="text-white text-base">Data Analytics</span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -617,7 +620,7 @@ export function GPUOptimizationServicePage() {
                 </p>
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:opacity-90"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90"
                   style={{
                     background: '#10B981',
                     color: '#FFFFFF'
@@ -662,8 +665,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Faster
@@ -683,8 +686,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(6, 182, 212, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Reduced
@@ -704,8 +707,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(139, 92, 246, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Improved
@@ -723,8 +726,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(236, 72, 153, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Enhanced
@@ -744,8 +747,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(251, 146, 60, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Competitive
@@ -763,8 +766,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(52, 211, 153, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Energy
@@ -1162,14 +1165,15 @@ export function GPUOptimizationServicePage() {
           </motion.div>
 
           {/* Benefits List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '56px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* Benefit 1 - End-to-end Expertise */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-start gap-6"
+              className="flex items-start gap-6 rounded-xl p-6 border transition-all duration-300"
+              style={{ borderColor: 'rgba(16, 185, 129, 0.3)' }}
             >
               <div className="w-10 h-10 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1190,7 +1194,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-start gap-6"
+              className="flex items-start gap-6 rounded-xl p-6 border transition-all duration-300"
+              style={{ borderColor: 'rgba(16, 185, 129, 0.3)' }}
             >
               <div className="w-10 h-10 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1211,7 +1216,8 @@ export function GPUOptimizationServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-start gap-6"
+              className="flex items-start gap-6 rounded-xl p-6 border transition-all duration-300"
+              style={{ borderColor: 'rgba(16, 185, 129, 0.3)' }}
             >
               <div className="w-10 h-10 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1283,7 +1289,7 @@ export function GPUOptimizationServicePage() {
                 }}
               >
                 {/* Quote Icon */}
-                <div className="mb-6">
+                <div className="mb-4">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                     <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -1296,7 +1302,7 @@ export function GPUOptimizationServicePage() {
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                     background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                     display: 'flex',
@@ -1333,7 +1339,7 @@ export function GPUOptimizationServicePage() {
                 }}
               >
                 {/* Quote Icon */}
-                <div className="mb-6">
+                <div className="mb-4">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                     <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -1346,7 +1352,7 @@ export function GPUOptimizationServicePage() {
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                     background: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
                     display: 'flex',
@@ -1383,7 +1389,7 @@ export function GPUOptimizationServicePage() {
                 }}
               >
                 {/* Quote Icon */}
-                <div className="mb-6">
+                <div className="mb-4">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                     <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -1396,7 +1402,7 @@ export function GPUOptimizationServicePage() {
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                     background: 'linear-gradient(135deg, #10B981, #34D399)',
                     display: 'flex',

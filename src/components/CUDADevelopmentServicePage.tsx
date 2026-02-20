@@ -66,7 +66,7 @@ export function CUDADevelopmentServicePage() {
               <h1
                 className="font-bold text-white leading-tight"
                 style={{
-                  fontSize: 'clamp(36px, 5vw, 64px)',
+                  fontSize: 'clamp(28px, 4vw, 48px)',
                   textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
                   letterSpacing: '-0.02em',
                   marginBottom: '32px'
@@ -115,8 +115,26 @@ export function CUDADevelopmentServicePage() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section title - full width centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-block mb-4 px-4 py-2 rounded-full" style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
+              <p className="text-sm uppercase tracking-wider" style={{ color: '#10B981' }}>Overview</p>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              What is CUDA
+              <br />
+              Development?
+            </h2>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Column - Title and Description */}
+            {/* Left Column - Description */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -125,15 +143,6 @@ export function CUDADevelopmentServicePage() {
                 transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <div className="inline-block mb-4 px-4 py-2 rounded-full" style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
-                  <p className="text-sm uppercase tracking-wider" style={{ color: '#10B981' }}>Overview</p>
-                </div>
-                <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-                  What is CUDA
-                  <br />
-                  Development?
-                </h2>
-
                 <p className="text-white/70 text-base leading-relaxed">
                   CUDA development is the process of creating custom GPU-accelerated applications using NVIDIA's parallel computing platform. It involves designing, implementing, and optimizing parallel algorithms, custom kernels, and GPU workloads to achieve dramatic performance improvements over traditional CPU-based solutions.
                 </p>
@@ -176,37 +185,38 @@ export function CUDADevelopmentServicePage() {
         </div>
       </section>
 
+      {/* Divider between sections */}
+      <div className="premium-divider" />
+
       {/* Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-            {/* Left Column - Title */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-                Custom Development That
-                <br />
-                Delivers Results
-              </h2>
-            </motion.div>
+          {/* Section title - full width centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              Custom Development That
+              <br />
+              Delivers Results
+            </h2>
+          </motion.div>
 
-            {/* Right Column - Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center"
-            >
-              <p className="text-white/70 text-base leading-relaxed">
-                Our expert CUDA engineers deliver scalable, efficient, and high-performance custom solutions. Jashom provides end-to-end CUDA development for all GPU computing needs, from kernel optimization to complete application acceleration.
-              </p>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-3xl mx-auto text-center mb-16"
+          >
+            <p className="text-white/70 text-base leading-relaxed">
+              Our expert CUDA engineers deliver scalable, efficient, and high-performance custom solutions. Jashom provides end-to-end CUDA development for all GPU computing needs, from kernel optimization to complete application acceleration.
+            </p>
+          </motion.div>
 
           {/* Service Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -216,7 +226,7 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-3xl p-8"
+              className="rounded-2xl p-8"
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
@@ -235,7 +245,7 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-3xl p-8"
+              className="rounded-2xl p-8"
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
@@ -254,7 +264,7 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="rounded-3xl p-8"
+              className="rounded-2xl p-8"
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
@@ -557,8 +567,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Dramatic
@@ -578,8 +588,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(6, 182, 212, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Cost
@@ -597,8 +607,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(139, 92, 246, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Competitive
@@ -616,8 +626,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(236, 72, 153, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Scalable
@@ -635,8 +645,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(251, 146, 60, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Future-Ready
@@ -654,8 +664,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="rounded-3xl p-8 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300"
-              style={{ background: 'rgba(16, 185, 129, 0.05)' }}
+              className="rounded-xl p-8 border transition-all duration-300"
+              style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(52, 211, 153, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Faster
@@ -694,14 +704,15 @@ export function CUDADevelopmentServicePage() {
           </motion.div>
 
           {/* Benefits List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '56px' }}>
+          <div className="flex flex-col gap-6">
             {/* Benefit 1 - Deep CUDA Expertise */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-start gap-6"
+              className="flex items-start gap-6 border rounded-xl p-6"
+              style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}
             >
               <div className="w-10 h-10 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -722,7 +733,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-start gap-6"
+              className="flex items-start gap-6 border rounded-xl p-6"
+              style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}
             >
               <div className="w-10 h-10 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -743,7 +755,8 @@ export function CUDADevelopmentServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-start gap-6"
+              className="flex items-start gap-6 border rounded-xl p-6"
+              style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}
             >
               <div className="w-10 h-10 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -815,7 +828,7 @@ export function CUDADevelopmentServicePage() {
                 }}
               >
                 {/* Quote Icon */}
-                <div className="mb-6">
+                <div className="mb-4">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                     <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -828,7 +841,7 @@ export function CUDADevelopmentServicePage() {
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                     background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                     display: 'flex',
@@ -865,7 +878,7 @@ export function CUDADevelopmentServicePage() {
                 }}
               >
                 {/* Quote Icon */}
-                <div className="mb-6">
+                <div className="mb-4">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                     <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -878,7 +891,7 @@ export function CUDADevelopmentServicePage() {
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                     background: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
                     display: 'flex',
@@ -915,7 +928,7 @@ export function CUDADevelopmentServicePage() {
                 }}
               >
                 {/* Quote Icon */}
-                <div className="mb-6">
+                <div className="mb-4">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                     <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -928,7 +941,7 @@ export function CUDADevelopmentServicePage() {
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                     background: 'linear-gradient(135deg, #10B981, #34D399)',
                     display: 'flex',
