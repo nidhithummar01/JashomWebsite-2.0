@@ -92,7 +92,7 @@ export function GPUOptimizationServicePage() {
               {/* CTA Button */}
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90 hover:scale-105"
                 style={{
                   background: '#10B981',
                   color: '#FFFFFF',
@@ -115,8 +115,26 @@ export function GPUOptimizationServicePage() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section title - full width centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-block mb-4 px-4 py-2 rounded-full" style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
+              <p className="text-sm uppercase tracking-wider" style={{ color: '#10B981' }}>Overview</p>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              What is GPU
+              <br />
+              Optimization?
+            </h2>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Column - Title and Description */}
+            {/* Left Column - Description */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -125,15 +143,6 @@ export function GPUOptimizationServicePage() {
                 transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <div className="inline-block mb-4 px-4 py-2 rounded-full" style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
-                  <p className="text-sm uppercase tracking-wider" style={{ color: '#10B981' }}>Overview</p>
-                </div>
-                <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-                  What is GPU
-                  <br />
-                  Optimization?
-                </h2>
-
                 <p className="text-white/70 text-base leading-relaxed">
                   GPU optimization is the process of analyzing, tuning, and enhancing GPU workloads to maximize computational performance and efficiency. It involves identifying bottlenecks, optimizing memory usage, improving kernel execution, and implementing best practices to achieve faster processing times and reduced resource consumption.
                 </p>
@@ -179,34 +188,32 @@ export function GPUOptimizationServicePage() {
       {/* Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-            {/* Left Column - Title */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-                Optimize Performance That Will
-                <br />
-                Make a Difference
-              </h2>
-            </motion.div>
+          {/* Section title - full width centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              Optimize Performance That Will
+              <br />
+              Make a Difference
+            </h2>
+          </motion.div>
 
-            {/* Right Column - Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center"
-            >
-              <p className="text-white/70 text-base leading-relaxed">
-                Our skilled GPU engineers deliver scalable, efficient, and high-performance optimization solutions. Jashom provides performance-driven GPU optimization for all computing needs, from AI/ML acceleration to scientific computing workloads.
-              </p>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-3xl mx-auto text-center mb-16"
+          >
+            <p className="text-white/70 text-base leading-relaxed">
+              Our skilled GPU engineers deliver scalable, efficient, and high-performance optimization solutions. Jashom provides performance-driven GPU optimization for all computing needs, from AI/ML acceleration to scientific computing workloads.
+            </p>
+          </motion.div>
 
           {/* Service Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -278,7 +285,7 @@ export function GPUOptimizationServicePage() {
           >
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90"
               style={{
                 background: '#10B981',
                 color: '#FFFFFF'

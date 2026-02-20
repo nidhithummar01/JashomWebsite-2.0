@@ -92,7 +92,7 @@ export function CUDADevelopmentServicePage() {
               {/* CTA Button */}
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90 hover:scale-105"
                 style={{
                   background: '#10B981',
                   color: '#FFFFFF',

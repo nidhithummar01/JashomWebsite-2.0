@@ -494,7 +494,7 @@ export function HomePage() {
               </motion.div>
 
               {/* Service Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
 
                 {/* GPU Optimization Service Card */}
                 <motion.div
@@ -502,7 +502,7 @@ export function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="rounded-2xl p-8 transition-all duration-300 group relative"
+                  className="rounded-2xl p-6 transition-all duration-300 group relative w-full flex flex-col"
                   style={{
                     background: 'rgba(30, 41, 59, 0.6)',
                     border: '1px solid rgba(16, 185, 129, 0.2)',
@@ -510,21 +510,22 @@ export function HomePage() {
                   }}
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl mb-6 flex items-center justify-center"
+                  <div className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center"
                     style={{
                       background: 'rgba(16, 185, 129, 0.15)',
                       border: '1px solid rgba(16, 185, 129, 0.3)'
                     }}
                   >
-                    <Cpu className="w-7 h-7" style={{ color: '#10B981' }} />
+                    <Cpu className="w-6 h-6" style={{ color: '#10B981' }} />
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#10B981' }}>
+                  <h3 className="text-xl font-bold mb-3" style={{ color: '#10B981' }}>
                     GPU Optimization Service
                   </h3>
-                  <p className="text-base mb-8 leading-relaxed" style={{ color: '#9CA3AF' }}>
+                  <p className="text-base mb-6 leading-relaxed" style={{ color: '#9CA3AF' }}>
                     Maximize your GPU performance with our expert optimization services. We fine-tune your applications for peak efficiency and speed.
                   </p>
+                  <div className="w-full mt-auto text-right">
                   <a
                     href="/gpu-optimization-service"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300"
@@ -543,6 +544,7 @@ export function HomePage() {
                   >
                     Explore Service →
                   </a>
+                  </div>
                 </motion.div>
 
                 {/* CUDA Development Service Card */}
@@ -551,7 +553,7 @@ export function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="rounded-2xl p-8 transition-all duration-300 group relative"
+                  className="rounded-2xl p-6 transition-all duration-300 group relative w-full flex flex-col"
                   style={{
                     background: 'rgba(30, 41, 59, 0.6)',
                     border: '1px solid rgba(124, 58, 237, 0.2)',
@@ -559,21 +561,22 @@ export function HomePage() {
                   }}
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl mb-6 flex items-center justify-center"
+                  <div className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center"
                     style={{
                       background: 'rgba(124, 58, 237, 0.15)',
                       border: '1px solid rgba(124, 58, 237, 0.3)'
                     }}
                   >
-                    <Zap className="w-7 h-7" style={{ color: '#7C3AED' }} />
+                    <Zap className="w-6 h-6" style={{ color: '#7C3AED' }} />
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#7C3AED' }}>
+                  <h3 className="text-xl font-bold mb-3" style={{ color: '#7C3AED' }}>
                     CUDA Development Service
                   </h3>
-                  <p className="text-base mb-8 leading-relaxed" style={{ color: '#9CA3AF' }}>
+                  <p className="text-base mb-6 leading-relaxed" style={{ color: '#9CA3AF' }}>
                     Build high-performance parallel computing applications with our expert CUDA development team. Custom solutions for your unique needs.
                   </p>
+                  <div className="w-full mt-auto text-right">
                   <a
                     href="/cuda-development-service"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300"
@@ -592,6 +595,7 @@ export function HomePage() {
                   >
                     Explore Service →
                   </a>
+                  </div>
                 </motion.div>
 
               </div>
@@ -899,7 +903,7 @@ export function HomePage() {
                             </div>
 
                             {/* Action Links */}
-                            <div className="flex flex-col gap-2 pt-3 border-t border-white/10">
+                            <div className="flex flex-row flex-wrap items-center justify-between gap-3 mt-3 pt-4 border-t border-white/10">
                               <Link
                                 to={project.link}
                                 className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
@@ -993,7 +997,7 @@ export function HomePage() {
                     }}
                   >
                     {/* Quote Icon */}
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                         <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -1006,7 +1010,7 @@ export function HomePage() {
                     </p>
 
                     {/* Author Info */}
-                    <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                    <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                       <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                         background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                         display: 'flex',
@@ -1043,7 +1047,7 @@ export function HomePage() {
                     }}
                   >
                     {/* Quote Icon */}
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                         <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -1056,7 +1060,7 @@ export function HomePage() {
                     </p>
 
                     {/* Author Info */}
-                    <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                    <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                       <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                         background: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
                         display: 'flex',
@@ -1093,7 +1097,7 @@ export function HomePage() {
                     }}
                   >
                     {/* Quote Icon */}
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path d="M10 18C10 15.7909 11.7909 14 14 14V10C9.58172 10 6 13.5817 6 18C6 20.2091 7.79086 22 10 22V18Z" fill="#10B981" opacity="0.3" />
                         <path d="M22 18C22 15.7909 23.7909 14 26 14V10C21.5817 10 18 13.5817 18 18C18 20.2091 19.7909 22 22 22V18Z" fill="#10B981" opacity="0.3" />
@@ -1106,7 +1110,7 @@ export function HomePage() {
                     </p>
 
                     {/* Author Info */}
-                    <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
+                    <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                       <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
                         background: 'linear-gradient(135deg, #10B981, #34D399)',
                         display: 'flex',
@@ -1376,28 +1380,26 @@ export function HomePage() {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
                   style={{
-                    background: 'rgba(16, 185, 129, 0.12)',
-                    borderColor: 'rgba(16, 185, 129, 0.35)',
-                    border: '1px solid',
-                    color: '#FAFAFA'
+                    background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                    borderColor: 'transparent',
+                    color: '#FFFFFF',
+                    boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
-                    e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(16, 185, 129, 0.2)';
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                    e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
-                    e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                    e.currentTarget.style.boxShadow = 'none';
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
                   <span>Start Your AI Transformation</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             </div>
@@ -1422,47 +1424,23 @@ export function HomePage() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <motion.div
-                      className="inline-block mb-4 px-4 py-2 rounded-full border"
-                      style={{
-                        background: 'rgba(16, 185, 129, 0.08)',
-                        borderColor: 'rgba(16, 185, 129, 0.25)'
-                      }}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Resources</span>
-                    </motion.div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-                      Our Latest <span style={{ color: '#10B981' }}>Blogs</span>
-                    </h2>
-                  </div>
-                  <Link
-                    to="/insights"
-                    className="hidden sm:flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
+                <div className="text-center mb-6">
+                  <motion.div
+                    className="inline-block mb-4 px-4 py-2 rounded-full border"
                     style={{
-                      background: 'rgba(16, 185, 129, 0.12)',
-                      border: '1px solid rgba(16, 185, 129, 0.35)',
-                      color: '#FAFAFA'
+                      background: 'rgba(16, 185, 129, 0.08)',
+                      borderColor: 'rgba(16, 185, 129, 0.25)'
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
-                      e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
-                      e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
                   >
-                    <span>View All</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
+                    <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>Resources</span>
+                  </motion.div>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
+                    Our Latest <span style={{ color: '#10B981' }}>Blogs</span>
+                  </h2>
                 </div>
               </motion.div>
 
@@ -1557,16 +1535,16 @@ export function HomePage() {
                 ))}
               </div>
 
-              {/* Mobile View All Button */}
+              {/* View All Button - below cards */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-center sm:hidden"
+                className="text-center mt-8"
               >
                 <Link
                   to="/insights"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-240"
                   style={{
                     background: 'rgba(16, 185, 129, 0.12)',
                     border: '1px solid rgba(16, 185, 129, 0.35)',
@@ -1575,18 +1553,23 @@ export function HomePage() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
                     e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
                     e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <span>View All Blogs</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <span>View All</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             </div>
           </section>
+
+          {/* Premium Divider */}
+          <div className="premium-divider" />
 
           {/* Contact Form Section - Premium Layout */}
           <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #111827 100%)' }}>
@@ -1767,13 +1750,12 @@ export function HomePage() {
                     <div className="flex justify-center sm:justify-start">
                       <motion.button
                         type="submit"
-                        className="px-12 py-4 rounded-xl font-semibold text-base transition-all duration-300 cursor-pointer"
+                        className="px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer"
                         style={{
                           background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                           border: '1px solid transparent',
                           color: '#FFFFFF',
-                          boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
-                          minWidth: '200px'
+                          boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)'
                         }}
                         whileHover={{
                           y: -2,

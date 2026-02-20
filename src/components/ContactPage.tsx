@@ -122,7 +122,7 @@ export function ContactPage() {
                   {/* CTA Button */}
                   <a
                     href="#contact-form"
-                    className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90 hover:scale-105"
                     style={{
                       background: '#10B981',
                       color: '#FFFFFF',
@@ -252,7 +252,7 @@ export function ContactPage() {
                       </p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                       {/* Full Name */}
                       <div>
                         <input
@@ -269,9 +269,9 @@ export function ContactPage() {
                             background: 'rgba(255, 255, 255, 0.05)',
                             borderColor: focusedField === 'fullName' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                             color: '#FFFFFF',
-                            borderRadius: '12px',
-                            fontSize: '18px',
-                            padding: '24px 28px',
+                            borderRadius: '10px',
+                            fontSize: '15px',
+                            padding: '14px 18px',
                             boxShadow: focusedField === 'fullName' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                           }}
                         />
@@ -293,9 +293,9 @@ export function ContactPage() {
                             background: 'rgba(255, 255, 255, 0.05)',
                             borderColor: focusedField === 'email' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                             color: '#FFFFFF',
-                            borderRadius: '12px',
-                            fontSize: '18px',
-                            padding: '24px 28px',
+                            borderRadius: '10px',
+                            fontSize: '15px',
+                            padding: '14px 18px',
                             boxShadow: focusedField === 'email' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                           }}
                         />
@@ -317,9 +317,9 @@ export function ContactPage() {
                             background: 'rgba(255, 255, 255, 0.05)',
                             borderColor: focusedField === 'company' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                             color: '#FFFFFF',
-                            borderRadius: '12px',
-                            fontSize: '18px',
-                            padding: '24px 28px',
+                            borderRadius: '10px',
+                            fontSize: '15px',
+                            padding: '14px 18px',
                             boxShadow: focusedField === 'company' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                           }}
                         />
@@ -335,15 +335,15 @@ export function ContactPage() {
                           onFocus={() => setFocusedField('message')}
                           onBlur={() => setFocusedField(null)}
                           required
-                          rows={7}
+                          rows={5}
                           className="w-full border transition-all duration-300 resize-none"
                           style={{
                             background: 'rgba(255, 255, 255, 0.05)',
                             borderColor: focusedField === 'message' ? '#10B981' : 'rgba(255, 255, 255, 0.1)',
                             color: '#FFFFFF',
-                            borderRadius: '12px',
-                            fontSize: '18px',
-                            padding: '24px 28px',
+                            borderRadius: '10px',
+                            fontSize: '15px',
+                            padding: '14px 18px',
                             boxShadow: focusedField === 'message' ? '0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 10px rgba(16, 185, 129, 0.1)' : 'none'
                           }}
                         />
@@ -352,13 +352,11 @@ export function ContactPage() {
                       {/* Submit Button */}
                       <motion.button
                         type="submit"
-                        className="font-semibold text-lg transition-all duration-300"
+                        className="font-semibold text-sm transition-all duration-300 px-6 py-3 rounded-xl"
                         style={{
                           background: 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)',
                           color: '#FFFFFF',
-                          borderRadius: '14px',
-                          boxShadow: '0 4px 25px rgba(0, 102, 255, 0.4)',
-                          padding: '20px 128px'
+                          boxShadow: '0 4px 25px rgba(0, 102, 255, 0.4)'
                         }}
                         whileHover={{
                           scale: 1.02,
@@ -426,13 +424,13 @@ export function ContactPage() {
                     className="lg:col-span-4"
                   >
                     <p
-                      className="text-sm font-semibold tracking-wider mb-4 uppercase"
+                      className="text-xs font-semibold tracking-wider mb-3 uppercase"
                       style={{ color: 'rgba(255, 255, 255, 0.6)' }}
                     >
                       FAQs
                     </p>
                     <h2
-                      className="text-4xl sm:text-5xl font-bold leading-tight"
+                      className="text-3xl sm:text-4xl font-bold leading-tight"
                       style={{ color: '#FFFFFF' }}
                     >
                       Frequently
@@ -442,7 +440,7 @@ export function ContactPage() {
                   </motion.div>
 
                   {/* Right 60% - Accordion */}
-                  <div className="lg:col-span-8 space-y-4">
+                  <div className="lg:col-span-8 space-y-3">
                     {faqs.map((faq, index) => (
                       <motion.div
                         key={index}
@@ -450,22 +448,22 @@ export function ContactPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="rounded-2xl border overflow-hidden"
+                        className="rounded-xl border overflow-hidden"
                         style={{
                           background: '#0B0F14',
                           borderColor: 'rgba(255, 255, 255, 0.1)'
                         }}
                       >
                         <details className="group">
-                          <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
-                            <h3
-                              className="text-lg font-semibold pr-4"
+                          <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                            <h4
+                              className="font-semibold pr-3"
                               style={{ color: '#FFFFFF' }}
                             >
                               {faq.question}
-                            </h3>
+                            </h4>
                             <svg
-                              className="w-6 h-6 transition-transform group-open:rotate-180"
+                              className="w-4 h-4 flex-shrink-0 transition-transform group-open:rotate-180"
                               style={{ color: 'rgba(255, 255, 255, 0.6)' }}
                               fill="none"
                               viewBox="0 0 24 24"
@@ -474,9 +472,9 @@ export function ContactPage() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
                           </summary>
-                          <div className="px-8 pb-8">
+                          <div className="px-4 sm:px-5 pb-4 sm:pb-5">
                             <p
-                              className="text-base leading-relaxed"
+                              className="text-xs leading-relaxed"
                               style={{ color: 'rgba(255, 255, 255, 0.7)' }}
                             >
                               {faq.answer}
