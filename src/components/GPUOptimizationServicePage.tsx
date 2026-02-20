@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
+import { SEO } from './SEO';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,10 +29,11 @@ export function GPUOptimizationServicePage() {
   };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>
-      <Helmet>
-        <title>NVIDIA GPU Optimization Services | Optimize NVIDIA GPU Performance</title>
-        <meta name="description" content="Improve speed and efficiency with expert NVIDIA GPU optimization services. We help businesses optimize NVIDIA GPU performance for AI, HPC, and data-intensive applications." />
-      </Helmet>
+      <SEO
+        title="NVIDIA GPU Optimization Services | Optimize NVIDIA GPU Performance"
+        description="Improve speed and efficiency with expert NVIDIA GPU optimization services. We help businesses optimize NVIDIA GPU performance for AI, HPC, and data-intensive applications."
+        keywords="GPU optimization, NVIDIA GPU, GPU performance, AI acceleration, HPC optimization"
+      />
 
       {/* Hero Section with Background Image */}
       <section
@@ -91,7 +93,7 @@ export function GPUOptimizationServicePage() {
 
               {/* CTA Button */}
               <a
-                href="/contact"
+                href="/contact/"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
                 style={{
                   background: '#10B981',
@@ -277,7 +279,7 @@ export function GPUOptimizationServicePage() {
             className="flex justify-center mt-16 pt-8"
           >
             <a
-              href="/contact"
+              href="/contact/"
               className="inline-flex items-center justify-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:opacity-90"
               style={{
                 background: '#10B981',
@@ -547,7 +549,7 @@ export function GPUOptimizationServicePage() {
             className="text-center mt-16"
           >
             <a
-              href="/contact"
+              href="/contact/"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/60 hover:scale-105"
             >
               <span>Start Your Optimization Journey</span>
@@ -609,7 +611,7 @@ export function GPUOptimizationServicePage() {
                   We develop multiple projects like custom models, smart assistants, or predictive engines. Together, we can create innovative AI solutions to give you a competitive advantage.
                 </p>
                 <a
-                  href="/contact"
+                  href="/contact/"
                   className="inline-flex items-center justify-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:opacity-90"
                   style={{
                     background: '#10B981',

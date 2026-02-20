@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
 import { useEffect, useRef, useState } from 'react';
 import { getLatestInsights } from '../data/insightsData';
@@ -192,13 +193,11 @@ export function HomePage() {
 
   return (
     <>
-      <Helmet>
-        <title>GPU Optimization Services & CUDA Development Company | Jashom</title>
-        <meta
-          name="description"
-          content="Jashom provides advanced GPU optimization, CUDA development, and high-performance computing solutions to accelerate AI, simulation, and enterprise workloads efficiently"
-        />
-      </Helmet>
+      <SEO
+        title="GPU Optimization Services & CUDA Development Company | Jashom"
+        description="Jashom provides advanced GPU optimization, CUDA development, and high-performance computing solutions to accelerate AI, simulation, and enterprise workloads efficiently"
+        keywords="GPU optimization, CUDA development, high-performance computing, AI acceleration, GPU consulting, CUDA experts"
+      />
 
       <div className="home">
         <div className="min-h-screen" style={{ width: '100%', overflow: 'hidden', background: '#0B0F14' }}>
@@ -291,7 +290,7 @@ export function HomePage() {
                   transition={{ delay: 0.5 }}
                 >
                   <Link
-                    to="/contact"
+                    to="/contact/"
                     className="w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl border text-center text-sm sm:text-base cursor-pointer transition-all duration-240 font-semibold"
                     style={{
                       background: 'linear-gradient(135deg, #10B981, #06B6D4)',
@@ -526,7 +525,7 @@ export function HomePage() {
                     Maximize your GPU performance with our expert optimization services. We fine-tune your applications for peak efficiency and speed.
                   </p>
                   <a
-                    href="/gpu-optimization-service"
+                    href="/gpu-optimization-service/"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300"
                     style={{
                       background: '#10B981',
@@ -575,7 +574,7 @@ export function HomePage() {
                     Build high-performance parallel computing applications with our expert CUDA development team. Custom solutions for your unique needs.
                   </p>
                   <a
-                    href="/cuda-development-service"
+                    href="/cuda-development-service/"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300"
                     style={{
                       background: 'linear-gradient(135deg, #7C3AED, #06B6D4)',
@@ -930,7 +929,7 @@ export function HomePage() {
               {/* View All Button */}
               <div className="text-center mt-8">
                 <Link
-                  to="/portfolio"
+                  to="/portfolio/"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105"
                 >
                   View All Projects
@@ -1375,7 +1374,7 @@ export function HomePage() {
                 viewport={{ once: true }}
               >
                 <Link
-                  to="/contact"
+                  to="/contact/"
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
                   style={{
                     background: 'rgba(16, 185, 129, 0.12)',
@@ -1442,7 +1441,7 @@ export function HomePage() {
                     </h2>
                   </div>
                   <Link
-                    to="/insights"
+                    to="/insights/"
                     className="hidden sm:flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
                     style={{
                       background: 'rgba(16, 185, 129, 0.12)',
@@ -1565,7 +1564,7 @@ export function HomePage() {
                 className="text-center sm:hidden"
               >
                 <Link
-                  to="/insights"
+                  to="/insights/"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-240"
                   style={{
                     background: 'rgba(16, 185, 129, 0.12)',
@@ -1810,13 +1809,13 @@ export function HomePage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
                     <Link
-                      to="/contact"
+                      to="/contact/"
                       className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-sm sm:text-base cursor-pointer"
                     >
                       Request a Demo
                     </Link>
                     <Link
-                      to="/portfolio"
+                      to="/portfolio/"
                       className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-white/5 border border-[#ffffff]/30 text-white hover:bg-white/10 transition-all duration-300 text-sm sm:text-base cursor-pointer"
                     >
                       View Case Studies

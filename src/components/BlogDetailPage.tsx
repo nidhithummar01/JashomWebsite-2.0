@@ -140,7 +140,7 @@ export function BlogDetailPage() {
             className="mb-8"
           >
             <Link 
-              to="/insights"
+              to="/insights/"
               className="inline-flex items-center gap-2 text-base transition-colors"
               style={{ color: '#10B981' }}
             >
@@ -640,7 +640,7 @@ export function BlogDetailPage() {
               Let's discuss how GPU optimization can transform your machine learning workflows.
             </p>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-block px-8 py-4 rounded-xl font-semibold text-lg transition-all"
               style={{
                 background: 'linear-gradient(135deg, #10B981 0%, #10B981 100%)',

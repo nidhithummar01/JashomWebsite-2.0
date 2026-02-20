@@ -89,62 +89,62 @@ function AnimatedRoutes() {
       <Suspense fallback={<LoadingFallback />}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
-          <Route path="/solutions" element={<PageTransition><SolutionsPage /></PageTransition>} />
-          <Route path="/capability" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
-          <Route path="/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
-          <Route path="/insights" element={<PageTransition><InsightsPage /></PageTransition>} />
-          <Route path="/insights/:slug" element={<PageTransition><BlogDetailPage /></PageTransition>} />
-          <Route path="/blog" element={<PageTransition><InsightsPage /></PageTransition>} />
-          <Route path="/portfolio/rankzy-ai" element={<PageTransition><RankzyAIPage /></PageTransition>} />
-          <Route path="/portfolio/pod-ai-clipforge" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />
-          <Route path="/portfolio/nvtrust-gpu-attestation" element={<PageTransition><NVTrustGPUAttestationPage /></PageTransition>} />
-          <Route path="/portfolio/hti-cuda-acceleration" element={<PageTransition><HTICUDAAccelerationPage /></PageTransition>} />
+          <Route path="/solutions/" element={<PageTransition><SolutionsPage /></PageTransition>} />
+          <Route path="/capability/" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
+          <Route path="/portfolio/" element={<PageTransition><PortfolioPage /></PageTransition>} />
+          <Route path="/insights/" element={<PageTransition><InsightsPage /></PageTransition>} />
+          <Route path="/insights/:slug/" element={<PageTransition><BlogDetailPage /></PageTransition>} />
+          <Route path="/blog/" element={<PageTransition><InsightsPage /></PageTransition>} />
+          <Route path="/portfolio/rankzy-ai/" element={<PageTransition><RankzyAIPage /></PageTransition>} />
+          <Route path="/portfolio/pod-ai-clipforge/" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />
+          <Route path="/portfolio/nvtrust-gpu-attestation/" element={<PageTransition><NVTrustGPUAttestationPage /></PageTransition>} />
+          <Route path="/portfolio/hti-cuda-acceleration/" element={<PageTransition><HTICUDAAccelerationPage /></PageTransition>} />
           
           {/* Project Detail Routes */}
-          <Route path="/projects/boostreferral" element={<PageTransition><BoostReferralPage /></PageTransition>} />
-          <Route path="/projects/projectsphere" element={<PageTransition><ProjectSpherePage /></PageTransition>} />
-          <Route path="/projects/enviropulse" element={<PageTransition><EnviroPulsePage /></PageTransition>} />
-          <Route path="/projects/greensphere" element={<PageTransition><GreenSpherePage /></PageTransition>} />
-          <Route path="/projects/ecobot-ai" element={<PageTransition><EcoBotAIPage /></PageTransition>} />
-          <Route path="/projects/jashom-health" element={<PageTransition><JashomHealthPage /></PageTransition>} />
-          <Route path="/projects/jashom-healthcare" element={<PageTransition><JashomHealthcarePage /></PageTransition>} />
-          <Route path="/projects/jashom-icu-connect" element={<PageTransition><JashomICUConnectPage /></PageTransition>} />
-          <Route path="/projects/rag-lu" element={<PageTransition><RAGLUPage /></PageTransition>} />
-          <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
-          <Route path="/brochure" element={<PageTransition><BrochurePage /></PageTransition>} />
+          <Route path="/projects/boostreferral/" element={<PageTransition><BoostReferralPage /></PageTransition>} />
+          <Route path="/projects/projectsphere/" element={<PageTransition><ProjectSpherePage /></PageTransition>} />
+          <Route path="/projects/enviropulse/" element={<PageTransition><EnviroPulsePage /></PageTransition>} />
+          <Route path="/projects/greensphere/" element={<PageTransition><GreenSpherePage /></PageTransition>} />
+          <Route path="/projects/ecobot-ai/" element={<PageTransition><EcoBotAIPage /></PageTransition>} />
+          <Route path="/projects/jashom-health/" element={<PageTransition><JashomHealthPage /></PageTransition>} />
+          <Route path="/projects/jashom-healthcare/" element={<PageTransition><JashomHealthcarePage /></PageTransition>} />
+          <Route path="/projects/jashom-icu-connect/" element={<PageTransition><JashomICUConnectPage /></PageTransition>} />
+          <Route path="/projects/rag-lu/" element={<PageTransition><RAGLUPage /></PageTransition>} />
+          <Route path="/contact/" element={<PageTransition><ContactPage /></PageTransition>} />
+          <Route path="/brochure/" element={<PageTransition><BrochurePage /></PageTransition>} />
 
           {/* Service Routes - High Priority Pages */}
-          <Route path="/hire-cuda-developer" element={<PageTransition><HireCudaDeveloperPage /></PageTransition>} />
-          <Route path="/thank-you" element={<PageTransition><ThankYouPage /></PageTransition>} />
-          <Route path="/gpu-optimization-service" element={<PageTransition><GPUOptimizationServicePage /></PageTransition>} />
-          <Route path="/cuda-development-service" element={<PageTransition><CUDADevelopmentServicePage /></PageTransition>} />
+          <Route path="/hire-cuda-developer/" element={<PageTransition><HireCudaDeveloperPage /></PageTransition>} />
+          <Route path="/thank-you/" element={<PageTransition><ThankYouPage /></PageTransition>} />
+          <Route path="/gpu-optimization-service/" element={<PageTransition><GPUOptimizationServicePage /></PageTransition>} />
+          <Route path="/cuda-development-service/" element={<PageTransition><CUDADevelopmentServicePage /></PageTransition>} />
           
           {/* Service-Specific Thank You Pages */}
-          <Route path="/thank-you/hire-cuda" element={<PageTransition><HireCudaThankYouPage /></PageTransition>} />
-          <Route path="/thank-you/gpu-optimization" element={<PageTransition><GPUOptimizationThankYouPage /></PageTransition>} />
-          <Route path="/thank-you/cuda-development" element={<PageTransition><CUDADevelopmentThankYouPage /></PageTransition>} />
+          <Route path="/thank-you/hire-cuda/" element={<PageTransition><HireCudaThankYouPage /></PageTransition>} />
+          <Route path="/thank-you/gpu-optimization/" element={<PageTransition><GPUOptimizationThankYouPage /></PageTransition>} />
+          <Route path="/thank-you/cuda-development/" element={<PageTransition><CUDADevelopmentThankYouPage /></PageTransition>} />
 
           {/* About Us routes */}
-          <Route path="/about/team" element={<PageTransition><TeamPage /></PageTransition>} />
-          <Route path="/about/portfolio" element={<PageTransition><PortfolioPage /></PageTransition>} />
-          <Route path="/about/blog" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
-          <Route path="/about/career" element={<PageTransition><CareersPage /></PageTransition>} />
-          <Route path="/about" element={<PageTransition><TeamPage /></PageTransition>} />
+          <Route path="/about/team/" element={<PageTransition><TeamPage /></PageTransition>} />
+          <Route path="/about/portfolio/" element={<PageTransition><PortfolioPage /></PageTransition>} />
+          <Route path="/about/blog/" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
+          <Route path="/about/career/" element={<PageTransition><CareersPage /></PageTransition>} />
+          <Route path="/about/" element={<PageTransition><TeamPage /></PageTransition>} />
           
           {/* Placeholder routes */}
-          <Route path="/careers" element={<PageTransition><CareersPage /></PageTransition>} />
-          <Route path="/careers/openings" element={<PageTransition><CareerListingPage /></PageTransition>} />
-          <Route path="/careers/apply" element={<PageTransition><CareerApplicationPage /></PageTransition>} />
-          <Route path="/news" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from Jashom." /></PageTransition>} />
-          <Route path="/docs" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
-          <Route path="/resources" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />
-          <Route path="/api" element={<PageTransition><PlaceholderPage title="API Reference" description="Complete API documentation and integration guides for Jashom's AI platform." /></PageTransition>} />
+          <Route path="/careers/" element={<PageTransition><CareersPage /></PageTransition>} />
+          <Route path="/careers/openings/" element={<PageTransition><CareerListingPage /></PageTransition>} />
+          <Route path="/careers/apply/" element={<PageTransition><CareerApplicationPage /></PageTransition>} />
+          <Route path="/news/" element={<PageTransition><PlaceholderPage title="News" description="Read the latest news, announcements, and press releases from Jashom." /></PageTransition>} />
+          <Route path="/docs/" element={<PageTransition><PlaceholderPage title="Documentation" description="Technical documentation, API references, and implementation guides for Jashom's AI solutions." /></PageTransition>} />
+          <Route path="/resources/" element={<PageTransition><PlaceholderPage title="Resources" description="Access whitepapers, research papers, and technical resources from Jashom's AI experts." /></PageTransition>} />
+          <Route path="/api/" element={<PageTransition><PlaceholderPage title="API Reference" description="Complete API documentation and integration guides for Jashom's AI platform." /></PageTransition>} />
           
           {/* Policy Pages */}
-          <Route path="/privacy" element={<PageTransition><PrivacyPolicyPage /></PageTransition>} />
-          <Route path="/terms" element={<PageTransition><TermsOfServicePage /></PageTransition>} />
-          <Route path="/cookies" element={<PageTransition><CookiePolicyPage /></PageTransition>} />
-          <Route path="/security" element={<PageTransition><SecurityPolicyPage /></PageTransition>} />
+          <Route path="/privacy/" element={<PageTransition><PrivacyPolicyPage /></PageTransition>} />
+          <Route path="/terms/" element={<PageTransition><TermsOfServicePage /></PageTransition>} />
+          <Route path="/cookies/" element={<PageTransition><CookiePolicyPage /></PageTransition>} />
+          <Route path="/security/" element={<PageTransition><SecurityPolicyPage /></PageTransition>} />
         </Routes>
       </Suspense>
     </AnimatePresence>

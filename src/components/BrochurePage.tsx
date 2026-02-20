@@ -684,7 +684,7 @@ export function BrochurePage() {
                     </div>
 
                     <motion.a
-                      href="/contact"
+                      href="/contact/"
                       className="inline-block px-10 py-4 rounded-xl bg-black border border-white text-white text-lg transition-all duration-300 hover:bg-white hover:text-black"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}

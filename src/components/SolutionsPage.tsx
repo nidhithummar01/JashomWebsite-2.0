@@ -198,7 +198,7 @@ export function SolutionsPage() {
                 Let's discuss how our AI solutions can drive innovation in your specific domain.
               </p>
               <MagneticButton
-                href="/contact"
+                href="/contact/"
                 className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black text-sm sm:text-base"
               >
                 Schedule Consultation

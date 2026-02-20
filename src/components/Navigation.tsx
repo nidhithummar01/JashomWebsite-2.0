@@ -22,27 +22,27 @@ export function Navigation() {
     {
       label: 'Services',
       dropdown: [
-        { path: '/gpu-optimization-service', label: 'GPU Optimization Service' },
-        { path: '/cuda-development-service', label: 'CUDA Development Service' }
+        { path: '/gpu-optimization-service/', label: 'GPU Optimization Service' },
+        { path: '/cuda-development-service/', label: 'CUDA Development Service' }
       ]
     },
     // HIRE EXPERT WITH HOVER DROPDOWN
     {
       label: 'Hire Expert',
       dropdown: [
-        { path: '/hire-cuda-developer', label: 'Hire CUDA Developer' }
+        { path: '/hire-cuda-developer/', label: 'Hire CUDA Developer' }
       ]
     },
     {
       label: 'About Us',
       dropdown: [
-        { path: '/about/team', label: 'Team' },
-        { path: '/about/portfolio', label: 'Portfolio' },
-        { path: '/insights', label: 'Blog' },
-        { path: '/about/career', label: 'Career' }
+        { path: '/about/team/', label: 'Team' },
+        { path: '/about/portfolio/', label: 'Portfolio' },
+        { path: '/insights/', label: 'Blog' },
+        { path: '/about/career/', label: 'Career' }
       ]
     },
-    { path: '/contact', label: 'Contact Us' },
+    { path: '/contact/', label: 'Contact Us' },
     // COMMENTED OUT - Old Services temporarily hidden from UI but preserved in codebase
     /*
     {
@@ -345,7 +345,7 @@ export function Navigation() {
                       <div>
                         {item.label === 'Solutions' ? (
                           <Link
-                            to="/solutions"
+                            to="/solutions/"
                             onClick={handleLinkClick}
                             className={`block py-3 px-4 sm:px-6 rounded-lg transition-all min-h-[44px] flex items-center text-sm sm:text-base font-medium ${location.pathname === '/solutions'
                               ? 'text-white bg-white/10'

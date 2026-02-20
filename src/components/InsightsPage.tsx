@@ -310,7 +310,7 @@ export function InsightsPage() {
             </p>
             
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:opacity-90 hover:scale-105"
               style={{
                 background: '#10B981',

@@ -22,7 +22,7 @@ export function PortfolioPage() {
         'Scalable SaaS architecture serving thousands of users'
       ],
       tags: ['SaaS Platform', 'Referral Management', 'Analytics', 'Automation'],
-      link: '/projects/boostreferral',
+      link: '/projects/boostreferral/',
       liveUrl: 'https://www.boostreferral.com'
     },
     {
@@ -40,7 +40,7 @@ export function PortfolioPage() {
         'Real-time team collaboration'
       ],
       tags: ['Project Management', 'Real-time Collaboration', 'Resource Management', 'Analytics Dashboard'],
-      link: '/projects/projectsphere'
+      link: '/projects/projectsphere/'
     },
     {
       title: 'EnviroPulse - Environmental Monitoring',
@@ -57,7 +57,7 @@ export function PortfolioPage() {
         'Multi-zone tracking capabilities'
       ],
       tags: ['IoT Integration', 'Real-time Data', 'Data Visualization', 'Environmental Sensors', 'Analytics Dashboard'],
-      link: '/projects/enviropulse',
+      link: '/projects/enviropulse/',
       liveUrl: 'https://enviropulse.jashom.com'
     },
     {
@@ -75,7 +75,7 @@ export function PortfolioPage() {
         'Sustainability reporting automation'
       ],
       tags: ['ESG Metrics', 'Sustainability Tracking', 'Reporting Tools', 'Data Visualization', 'Compliance Management'],
-      link: '/projects/greensphere',
+      link: '/projects/greensphere/',
       liveUrl: 'https://greenesg.jashom.com/'
     },
     {
@@ -93,7 +93,7 @@ export function PortfolioPage() {
         'High accuracy LLM integration'
       ],
       tags: ['AI Integration', 'Natural Language Processing', 'Sustainability Analytics', 'Environmental Compliance', 'Real-time Analytics'],
-      link: '/projects/ecobot-ai',
+      link: '/projects/ecobot-ai/',
       liveUrl: 'https://ecoai.jashom.com/dashboard'
     },
     {
@@ -112,7 +112,7 @@ export function PortfolioPage() {
         'Supports 25+ hospital locations simultaneously'
       ],
       tags: ['HIPAA Compliance', 'Multi-location Support', 'Real-time Monitoring', 'Patient Management', 'Healthcare Analytics'],
-      link: '/projects/jashom-health',
+      link: '/projects/jashom-health/',
       liveUrl: 'https://jashomhealth.jashom.com'
     },
     {
@@ -131,7 +131,7 @@ export function PortfolioPage() {
         '24/7 real-time synchronization'
       ],
       tags: ['HL7 Integration', 'FHIR Standards', 'EMR/LIS/PACS', 'IoT Device Integration', 'Real-time Sync', 'HIPAA Compliance'],
-      link: '/projects/jashom-healthcare',
+      link: '/projects/jashom-healthcare/',
       liveUrl: 'https://jashomhealthcare.jashom.com'
     },
     {
@@ -150,7 +150,7 @@ export function PortfolioPage() {
         '100% 24/7 monitoring coverage'
       ],
       tags: ['Real-time Monitoring', 'Vital Signs Tracking', 'Expert Collaboration', 'Secure Communication', 'Role-based Access', 'HIPAA Compliance'],
-      link: '/projects/jashom-icu-connect',
+      link: '/projects/jashom-icu-connect/',
       liveUrl: 'https://jashomhealthcareplus.jashom.com'
     },
     {
@@ -168,7 +168,7 @@ export function PortfolioPage() {
         'AI transformation solutions for enterprises'
       ],
       tags: ['RAG Technology', 'AI Platform', 'Machine Learning', 'Knowledge Management'],
-      link: '/projects/rag-lu',
+      link: '/projects/rag-lu/',
       liveUrl: 'https://rag.lu'
     },
     {
@@ -473,7 +473,7 @@ export function PortfolioPage() {
               Join leading organizations that have transformed their operations with Jashom.
             </p>
             <a
-              href="/contact"
+              href="/contact/"
               className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black scale-100 hover:scale-105 text-sm sm:text-base text-center"
             >
               Start Your Project

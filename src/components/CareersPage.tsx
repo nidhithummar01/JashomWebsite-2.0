@@ -109,7 +109,7 @@ export function CareersPage() {
             </h1>
             
             <Link
-              to="/careers/openings"
+              to="/careers/openings/"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:opacity-90 hover:scale-105"
               style={{
                 background: '#10B981',
@@ -618,7 +618,7 @@ export function CareersPage() {
               We're always looking for talented individuals. Send us your resume and let's talk about how you can contribute to our mission.
             </p>
             <a
-              href="/contact"
+              href="/contact/"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:opacity-90"
               style={{
                 background: '#10B981',

@@ -100,7 +100,7 @@ export function CareerApplicationPage() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              to="/careers/openings"
+              to="/careers/openings/"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300"
               style={{
                 background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
@@ -146,7 +146,7 @@ export function CareerApplicationPage() {
             className="mb-8"
           >
             <Link
-              to="/careers/openings"
+              to="/careers/openings/"
               className="inline-flex items-center gap-2 text-base transition-colors"
               style={{ color: '#10B981' }}
             >

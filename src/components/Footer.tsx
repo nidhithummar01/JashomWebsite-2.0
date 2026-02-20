@@ -7,28 +7,28 @@ export function Footer() {
 
   const footerLinks = {
     company: [
-      { label: 'About Us', path: '/about/team' },
-      { label: 'Company Brochure', path: '/brochure' },
-      { label: 'Case Studies', path: '/portfolio' },
-      { label: 'Contact Us', path: '/contact' }
+      { label: 'About Us', path: '/about/team/' },
+      { label: 'Company Brochure', path: '/brochure/' },
+      { label: 'Case Studies', path: '/portfolio/' },
+      { label: 'Contact Us', path: '/contact/' }
     ],
     services: [
-      { label: 'GPU Optimization Service', path: '/gpu-optimization-service' },
-      { label: 'CUDA Development Service', path: '/cuda-development-service' }
+      { label: 'GPU Optimization Service', path: '/gpu-optimization-service/' },
+      { label: 'CUDA Development Service', path: '/cuda-development-service/' }
     ],
     hireExperts: [
-      { label: 'Hire CUDA Developer', path: '/hire-cuda-developer' }
+      { label: 'Hire CUDA Developer', path: '/hire-cuda-developer/' }
     ],
     resources: [
-      { label: 'Blog & Insights', path: '/insights' },
-      { label: 'Case Studies', path: '/portfolio' },
-      { label: 'Documentation', path: '/docs' }
+      { label: 'Blog & Insights', path: '/insights/' },
+      { label: 'Case Studies', path: '/portfolio/' },
+      { label: 'Documentation', path: '/docs/' }
     ],
     legal: [
-      { label: 'Privacy Policy', path: '/privacy' },
-      { label: 'Terms of Service', path: '/terms' },
-      { label: 'Cookie Policy', path: '/cookies' },
-      { label: 'Security Policy', path: '/security' }
+      { label: 'Privacy Policy', path: '/privacy/' },
+      { label: 'Terms of Service', path: '/terms/' },
+      { label: 'Cookie Policy', path: '/cookies/' },
+      { label: 'Security Policy', path: '/security/' }
     ]
   };
 
