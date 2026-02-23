@@ -162,7 +162,7 @@ export function HireCudaThankYouPage() {
               transition={{ delay: 0.1 }}
             >
               <Link
-                to="/portfolio"
+                to="/portfolio/"
                 className="block p-8 rounded-xl border-2 transition-all duration-300 hover:border-blue-500 hover:shadow-lg"
                 style={{ background: '#111827', borderColor: '#e0e0e0' }}
               >
@@ -187,7 +187,7 @@ export function HireCudaThankYouPage() {
               transition={{ delay: 0.2 }}
             >
               <Link
-                to="/gpu-optimization-service"
+                to="/gpu-optimization-service/"
                 className="block p-8 rounded-xl border-2 transition-all duration-300 hover:border-blue-500 hover:shadow-lg"
                 style={{ background: '#111827', borderColor: '#e0e0e0' }}
               >

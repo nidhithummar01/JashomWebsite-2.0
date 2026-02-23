@@ -20,7 +20,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/gpu-ai.jpg',
     date: 'Feb 8, 2026',
     readTime: '8 min read',
-    link: '/insights/gpu-acceleration-ai',
+    link: '/insights/gpu-acceleration-ai/',
     featured: true,
     color: '#0EA5E9'
   },
@@ -32,7 +32,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/portfolio-management.jpg',
     date: 'Feb 5, 2026',
     readTime: '12 min read',
-    link: '/portfolio/investment-portfolio',
+    link: '/portfolio/investment-portfolio/',
     featured: true,
     color: '#1E293B'
   },
@@ -44,7 +44,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/shoppable-video.jpg',
     date: 'Feb 1, 2026',
     readTime: '10 min read',
-    link: '/portfolio/abuv-platform',
+    link: '/portfolio/abuv-platform/',
     color: '#7C3AED'
   },
   {
@@ -55,7 +55,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/furniture-software.jpg',
     date: 'Jan 28, 2026',
     readTime: '9 min read',
-    link: '/portfolio/furniture-suite',
+    link: '/portfolio/furniture-suite/',
     color: '#F5F5F5'
   },
   {
@@ -66,7 +66,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/cuda-development.jpg',
     date: 'Jan 25, 2026',
     readTime: '15 min read',
-    link: '/insights/cuda-best-practices',
+    link: '/insights/cuda-best-practices/',
     color: '#F8F9FA'
   },
   {
@@ -77,7 +77,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/custom-ai.jpg',
     date: 'Jan 20, 2026',
     readTime: '11 min read',
-    link: '/insights/custom-ai-solutions',
+    link: '/insights/custom-ai-solutions/',
     color: '#0EA5E9'
   },
   {
@@ -88,7 +88,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/telemedicine.jpg',
     date: 'Jan 15, 2026',
     readTime: '13 min read',
-    link: '/insights/neurology-telemedicine',
+    link: '/insights/neurology-telemedicine/',
     color: '#1E293B'
   },
   {
@@ -99,7 +99,7 @@ export const insightsData: InsightCard[] = [
     image: '/insights/bpm-automation.jpg',
     date: 'Jan 10, 2026',
     readTime: '10 min read',
-    link: '/portfolio/bpm-automation',
+    link: '/portfolio/bpm-automation/',
     color: '#6B7280'
   }
 ];

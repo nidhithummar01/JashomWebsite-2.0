@@ -217,7 +217,7 @@ export function GPUOptimizationThankYouPage() {
               transition={{ delay: 0.1 }}
             >
               <Link
-                to="/portfolio"
+                to="/portfolio/"
                 className="block p-8 rounded-xl border border-white/10 transition-all duration-300 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
                 style={{ background: '#111827' }}
               >
@@ -242,7 +242,7 @@ export function GPUOptimizationThankYouPage() {
               transition={{ delay: 0.2 }}
             >
               <Link
-                to="/cuda-development-service"
+                to="/cuda-development-service/"
                 className="block p-8 rounded-xl border border-white/10 transition-all duration-300 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
                 style={{ background: '#111827' }}
               >

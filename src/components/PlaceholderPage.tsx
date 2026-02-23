@@ -45,7 +45,7 @@ export function PlaceholderPage({ title, description }: PlaceholderPageProps) {
               Back to Home
             </Link>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-[#ffffff]/30 text-white hover:bg-white/10 transition-all"
             >
               Contact Us
@@ -56,23 +56,23 @@ export function PlaceholderPage({ title, description }: PlaceholderPageProps) {
           <div className="mt-16 pt-8 border-t border-white/10">
             <p className="text-white/60 mb-6">Meanwhile, explore our other pages:</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/solutions" className="text-[#d1d5db] hover:text-white transition-colors">
+              <Link to="/solutions/" className="text-[#d1d5db] hover:text-white transition-colors">
                 Solutions
               </Link>
               <span className="text-white/20">•</span>
-              <Link to="/services" className="text-[#d1d5db] hover:text-white transition-colors">
+              <Link to="/services/" className="text-[#d1d5db] hover:text-white transition-colors">
                 Services
               </Link>
               <span className="text-white/20">•</span>
-              <Link to="/capability" className="text-[#d1d5db] hover:text-white transition-colors">
+              <Link to="/capability/" className="text-[#d1d5db] hover:text-white transition-colors">
                 Capabilities
               </Link>
               <span className="text-white/20">•</span>
-              <Link to="/portfolio" className="text-[#d1d5db] hover:text-white transition-colors">
+              <Link to="/portfolio/" className="text-[#d1d5db] hover:text-white transition-colors">
                 Portfolio
               </Link>
               <span className="text-white/20">•</span>
-              <Link to="/contact" className="text-[#d1d5db] hover:text-white transition-colors">
+              <Link to="/contact/" className="text-[#d1d5db] hover:text-white transition-colors">
                 Contact
               </Link>
             </div>

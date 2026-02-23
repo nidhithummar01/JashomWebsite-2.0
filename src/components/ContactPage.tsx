@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
+import { SEO } from './SEO';
 import { Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -52,13 +53,11 @@ export function ContactPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Contact Jashom | GPU & CUDA Development Consultation</title>
-        <meta
-          name="description"
-          content="Get in touch with Jashom for expert GPU optimization and CUDA development services. Contact our team to discuss your performance challenges and project requirements"
-        />
-      </Helmet>
+      <SEO
+        title="Contact Jashom | GPU & CUDA Development Consultation"
+        description="Get in touch with Jashom for expert GPU optimization and CUDA development services. Contact our team to discuss your performance challenges and project requirements"
+        keywords="contact Jashom, GPU consultation, CUDA development inquiry, AI consulting"
+      />
 
       <div className="contact">
         <div className="min-h-screen" style={{ background: '#000000' }}>
@@ -126,7 +125,9 @@ export function ContactPage() {
                     style={{
                       background: '#10B981',
                       color: '#FFFFFF',
-                      boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)'
+                      boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)',
+                      border: 'none',
+                      cursor: 'pointer'
                     }}
                   >
                     Get in Touch

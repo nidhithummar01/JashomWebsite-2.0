@@ -200,7 +200,7 @@ export function CapabilityMatrixPage() {
               Let's discuss how our capabilities can address your specific technical challenges.
             </p>
             <a
-              href="/contact"
+              href="/contact/"
               className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#d1d5db] text-black neon-glow-hover transition-all duration-300 hover:scale-105 text-sm sm:text-base text-center"
             >
               Schedule Technical Call

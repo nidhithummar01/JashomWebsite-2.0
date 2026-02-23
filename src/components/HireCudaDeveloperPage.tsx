@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Award, Zap, DollarSign, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SEO } from './SEO';
 
 export function HireCudaDeveloperPage() {
   const navigate = useNavigate();
@@ -30,13 +31,11 @@ export function HireCudaDeveloperPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Hire CUDA Developers | Dedicated CUDA Programmers & GPU Experts</title>
-        <meta
-          name="description"
-          content="Looking to hire CUDA developers? Get skilled GPU programmers for NVIDIA CUDA projects, performance optimization, and custom parallel computing solutions."
-        />
-      </Helmet>
+      <SEO
+        title="Hire CUDA Developers | Dedicated CUDA Programmers & GPU Experts"
+        description="Looking to hire CUDA developers? Get skilled GPU programmers for NVIDIA CUDA projects, performance optimization, and custom parallel computing solutions."
+        keywords="hire CUDA developers, CUDA programmers, GPU experts, NVIDIA CUDA, parallel computing"
+      />
 
       <div className="hire cuda developer">
         <div className="min-h-screen" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
@@ -951,7 +950,7 @@ export function HireCudaDeveloperPage() {
                 </h2>
 
                 <a
-                  href="/contact"
+                  href="/contact/"
                   className="inline-flex items-center justify-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-orange-500"
                   style={{
                     background: 'transparent',

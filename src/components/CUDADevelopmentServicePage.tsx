@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
+import { SEO } from './SEO';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,10 +29,11 @@ export function CUDADevelopmentServicePage() {
   };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>
-      <Helmet>
-        <title>CUDA Development Services | Expert CUDA Developers for GPU Computing</title>
-        <meta name="description" content="Hire experienced CUDA developers to build high-performance GPU applications. Jashom delivers scalable CUDA development solutions for AI, deep learning, and parallel computing." />
-      </Helmet>
+      <SEO
+        title="CUDA Development Services | Expert CUDA Developers for GPU Computing"
+        description="Hire experienced CUDA developers to build high-performance GPU applications. Jashom delivers scalable CUDA development solutions for AI, deep learning, and parallel computing."
+        keywords="CUDA development, CUDA developers, GPU computing, parallel computing, CUDA programming"
+      />
 
       {/* Hero Section */}
       <section
@@ -524,7 +526,7 @@ export function CUDADevelopmentServicePage() {
             className="text-center mt-16"
           >
             <a
-              href="/contact"
+              href="/contact/"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/60 hover:scale-105"
             >
               <span>Start Your Development Journey</span>

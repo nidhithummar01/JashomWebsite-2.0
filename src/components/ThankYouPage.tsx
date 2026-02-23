@@ -98,7 +98,7 @@ export function ThankYouPage() {
                     <span>Back to Home</span>
                   </a>
                   <a
-                    href="/portfolio"
+                    href="/portfolio/"
                     className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-transparent text-white hover:bg-white/10 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
                   >
                     <span>View Portfolio</span>

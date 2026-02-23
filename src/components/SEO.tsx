@@ -19,8 +19,15 @@ export function SEO({
   ogType = 'website'
 }: SEOProps) {
   const location = useLocation();
-  const baseUrl = 'https://neoteq.ai';
-  const currentUrl = `${baseUrl}${location.pathname}`;
+  const baseUrl = 'https://jashom-website-2-0.vercel.app';
+  
+  // Ensure pathname has trailing slash (except for root)
+  let pathname = location.pathname;
+  if (pathname !== '/' && !pathname.endsWith('/')) {
+    pathname = `${pathname}/`;
+  }
+  
+  const currentUrl = `${baseUrl}${pathname}`;
   // Convert relative ogImage path to absolute URL
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
 
