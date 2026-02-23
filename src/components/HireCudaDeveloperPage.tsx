@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
-import { Award, Zap, DollarSign } from 'lucide-react';
+import { Award, Zap, DollarSign, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -72,7 +72,7 @@ export function HireCudaDeveloperPage() {
                   transition={{ duration: 0.6 }}
                   className="space-y-8"
                 >
-                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.025em' }}>
+                  <h1 className="font-bold leading-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.025em', fontSize: 'clamp(28px, 4vw, 48px)' }}>
                     Hire CUDA Developers
                   </h1>
 
@@ -85,29 +85,42 @@ export function HireCudaDeveloperPage() {
                   </p>
 
                   {/* Email Input + CTA Button */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 max-w-4xl">
-                    <input
-                      type="email"
-                      placeholder="Enter your email address"
-                      className="px-6 py-4 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:flex-[2]"
-                      style={{
-                        background: '#1F2937', color: '#FAFAFA',
-                        borderRadius: '4px',
-                        border: '1px solid rgba(16, 185, 129, 0.2)'
-                      }}
-                    />
-                    <a
-                      href="/contact"
-                      className="inline-flex items-center justify-center px-8 py-4 font-bold transition-all duration-300 hover:opacity-90 whitespace-nowrap w-full sm:w-auto sm:flex-[1] text-center sm:ml-3"
-                      style={{
-                        background: '#10B981',
-                        color: '#FFFFFF',
-                        borderRadius: '4px',
-                        textDecoration: 'none'
-                      }}
-                    >
-                      HIRE CUDA DEVELOPER NOW
-                    </a>
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 max-w-sm items-stretch sm:items-center">
+                    <div className="w-full sm:w-[260px] sm:min-w-[260px] sm:max-w-[260px] sm:flex-shrink-0">
+                      <input
+                        type="email"
+                        placeholder="Enter your email address"
+                        className="text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 w-full max-w-full box-border"
+                        style={{
+                          background: '#1F2937',
+                          color: '#FAFAFA',
+                          borderRadius: '4px',
+                          border: '1px solid rgba(16, 185, 129, 0.2)',
+                          padding: '0 16px',
+                          height: '44px',
+                          boxSizing: 'border-box'
+                        }}
+                      />
+                    </div>
+                    <div className="flex-none sm:ml-3 w-full sm:w-[250px] sm:min-w-[250px]">
+                      <a
+                        href="/contact"
+                        className="inline-flex items-center justify-center px-6 rounded-xl font-semibold text-sm leading-snug transition-all duration-300 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] w-full text-center"
+                        style={{
+                          background: '#10B981',
+                          color: '#FFFFFF',
+                          textDecoration: 'none',
+                          boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)',
+                          paddingTop: '12px',
+                          paddingBottom: '12px',
+                          minHeight: '44px',
+                          height: '44px',
+                          boxSizing: 'border-box'
+                        }}
+                      >
+                        HIRE CUDA DEVELOPER NOW
+                      </a>
+                    </div>
                   </div>
 
                   {/* Stats - Horizontal Layout with Dividers */}
@@ -190,7 +203,7 @@ export function HireCudaDeveloperPage() {
                     <div className="pt-4">
                       <a
                         href="/contact"
-                        className="inline-flex items-center justify-center px-8 py-3 rounded font-semibold border-2 transition-all duration-300 hover:bg-orange-500 hover:text-white"
+                        className="inline-flex items-center justify-center w-auto max-w-xs px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 text-center text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-orange-500 hover:text-white cursor-pointer"
                         style={{
                           background: 'transparent',
                           borderColor: '#10B981',
@@ -250,7 +263,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Item 1 - GPU Kernel Optimization */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex gap-4 border rounded-xl p-6"
+                  style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -275,7 +289,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Item 2 - Parallel Computing Architecture */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex gap-4 border rounded-xl p-6"
+                  style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -300,7 +315,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Item 3 - Performance Profiling */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex gap-4 border rounded-xl p-6"
+                  style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -325,7 +341,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Item 4 - AI/ML Acceleration */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex gap-4 border rounded-xl p-6"
+                  style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -350,7 +367,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Item 5 - Memory Management */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex gap-4 border rounded-xl p-6"
+                  style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -375,7 +393,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Item 6 - Multi-GPU Scaling */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex gap-4 border rounded-xl p-6"
+                  style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -557,8 +576,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Card 1 - Quality Code */}
                 <motion.div
-                  className="rounded-xl overflow-hidden group"
-                  style={{ background: '#0B0F14' }}
+                  className="rounded-2xl overflow-hidden group border"
+                  style={{ background: '#0B0F14', borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -595,8 +614,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Card 2 - NDA */}
                 <motion.div
-                  className="rounded-xl overflow-hidden group"
-                  style={{ background: '#0B0F14' }}
+                  className="rounded-2xl overflow-hidden group border"
+                  style={{ background: '#0B0F14', borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -633,8 +652,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Card 3 - Verified Skillset */}
                 <motion.div
-                  className="rounded-xl overflow-hidden group"
-                  style={{ background: '#0B0F14' }}
+                  className="rounded-2xl overflow-hidden group border"
+                  style={{ background: '#0B0F14', borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -671,8 +690,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Card 4 - Cost Reduction */}
                 <motion.div
-                  className="rounded-xl overflow-hidden group"
-                  style={{ background: '#0B0F14' }}
+                  className="rounded-2xl overflow-hidden group border"
+                  style={{ background: '#0B0F14', borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -710,8 +729,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Card 5 - High Experience */}
                 <motion.div
-                  className="rounded-xl overflow-hidden group"
-                  style={{ background: '#0B0F14' }}
+                  className="rounded-2xl overflow-hidden group border"
+                  style={{ background: '#0B0F14', borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -748,8 +767,8 @@ export function HireCudaDeveloperPage() {
 
                 {/* Card 6 - Quick Onboarding */}
                 <motion.div
-                  className="rounded-xl overflow-hidden group"
-                  style={{ background: '#0B0F14' }}
+                  className="rounded-2xl overflow-hidden group border"
+                  style={{ background: '#0B0F14', borderColor: 'rgba(255, 255, 255, 0.1)' }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -793,7 +812,7 @@ export function HireCudaDeveloperPage() {
             <div className="max-w-7xl mx-auto">
               {/* Section Heading */}
               <motion.div
-                className="mb-12"
+                className="mb-12 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -802,7 +821,7 @@ export function HireCudaDeveloperPage() {
                 <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#10B981' }}>
                   Our Engagement Models
                 </h2>
-                <p className="text-lg max-w-3xl" style={{ color: '#9E9E9E' }}>
+                <p className="text-lg max-w-3xl mx-auto" style={{ color: '#9E9E9E' }}>
                   Discover the right engagement model that fits perfectly with your business needs for your CUDA project today!
                 </p>
               </motion.div>
@@ -1531,13 +1550,14 @@ export function HireCudaDeveloperPage() {
                   </p>
                   <a
                     href="/gpu-optimization-service"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-240 hover:opacity-90"
                     style={{
                       background: '#10B981',
                       color: '#FFFFFF'
                     }}
                   >
-                    Know More
+                    <span>Know More</span>
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </motion.div>
 
@@ -1561,13 +1581,14 @@ export function HireCudaDeveloperPage() {
                   </p>
                   <a
                     href="/cuda-development-service"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-600"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-240 hover:opacity-90"
                     style={{
                       background: '#10B981',
                       color: '#FFFFFF'
                     }}
                   >
-                    Know More
+                    <span>Know More</span>
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </motion.div>
 
@@ -1575,30 +1596,36 @@ export function HireCudaDeveloperPage() {
             </div>
           </section >
 
-          {/* Q&A / FAQ Section */}
+          {/* Q&A / FAQ Section - Home page style, border retained on items */}
           < section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+              {/* Section Header - Centered (like Home page) */}
+              <motion.div
+                className="text-center mb-16 sm:mb-20"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <motion.div
+                  className="inline-block mb-4 px-4 py-2 rounded-full border"
+                  style={{
+                    background: 'rgba(16, 185, 129, 0.05)',
+                    borderColor: 'rgba(16, 185, 129, 0.2)'
+                  }}
+                >
+                  <span style={{ color: '#10B981', fontWeight: 600, fontSize: '0.875rem' }}>FAQs</span>
+                </motion.div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em', lineHeight: 1.2 }}>
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
+                  Common questions about hiring CUDA developers from Jashom
+                </p>
+              </motion.div>
 
-                {/* Left Column - Title */}
-                <div className="lg:col-span-4">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <p className="text-sm mb-4 uppercase tracking-wider" style={{ color: '#999999' }}>FAQs</p>
-                    <h2 className="text-4xl sm:text-5xl font-bold leading-tight" style={{ color: '#FAFAFA' }}>
-                      Frequently
-                      <br />
-                      Asked Questions
-                    </h2>
-                  </motion.div>
-                </div>
-
-                {/* Right Column - FAQ Items */}
-                <div className="lg:col-span-8 space-y-4">
+              {/* FAQ Items - full width, border kept on each item */}
+              <div className="max-w-4xl mx-auto space-y-4">
                   {/* FAQ 1 */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -1805,7 +1832,6 @@ export function HireCudaDeveloperPage() {
                     </details>
                   </motion.div>
 
-                </div>
               </div>
             </div>
           </section >
@@ -1821,16 +1847,17 @@ export function HireCudaDeveloperPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
+                  className="text-center"
                 >
                   <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: '#FAFAFA' }}>
                     Get Started with Expert CUDA Developers
                   </h2>
-                  <p className="text-base leading-relaxed mb-8" style={{ color: '#9E9E9E' }}>
+                  <p className="text-base leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: '#9E9E9E' }}>
                     Fill out the form and our team will get back to you within 24 hours. Share your project requirements and we'll match you with the perfect CUDA developer for your needs.
                   </p>
 
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="flex flex-col items-center text-center gap-3">
                       <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
                         <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1842,7 +1869,7 @@ export function HireCudaDeveloperPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col items-center text-center gap-3">
                       <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
                         <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1854,7 +1881,7 @@ export function HireCudaDeveloperPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col items-center text-center gap-3">
                       <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
                         <svg className="w-6 h-6" style={{ color: '#10B981' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />

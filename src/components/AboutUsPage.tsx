@@ -132,7 +132,7 @@ export function AboutUsPage() {
                   >
                     <span className="text-[#d1d5db]">Our Team</span>
                   </motion.div>
-                  <h1 className="mb-4 text-gradient">Meet the Team</h1>
+                  <h1 className="mb-4 text-gradient font-bold leading-tight" style={{ fontSize: 'clamp(28px, 4vw, 48px)' }}>Meet the Team</h1>
                   <p className="text-white/70 max-w-3xl mx-auto">
                     The talented individuals driving innovation and excellence at Jashom.
                   </p>
@@ -456,130 +456,125 @@ function PortfolioContent() {
   return (
     <div className="space-y-16 mt-16">
       {groupedProjects.map(({ category, projects }, categoryIndex) => (
-        <div key={category} className="space-y-8">
+        <div key={category} className={categoryIndex > 0 ? 'pt-12 sm:pt-16' : ''}>
           {/* Category Header */}
           <motion.div
-            className="text-center mb-8"
+            className="text-center mb-10 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: categoryIndex * 0.1 }}
           >
-            <h2 className="text-3xl font-bold text-gradient mb-2">{category}</h2>
-            <p className="text-white/60 text-sm">{projects.length} {projects.length === 1 ? 'Project' : 'Projects'}</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 gap-y-1 mt-8 sm:mt-10 mb-8 sm:mb-10">
+              <h2 className="text-3xl font-bold text-gradient">{category}</h2>
+              <p className="text-white/60 text-sm">({projects.length} {projects.length === 1 ? 'Project' : 'Projects'})</p>
+            </div>
           </motion.div>
 
-          {/* Projects in this category */}
+          {/* Projects in this category - columns match project count (1→1, 2→2, 3+→3) */}
+          <div className={`pt-10 sm:pt-12 grid gap-6 sm:gap-8 ${
+            projects.length === 1 ? 'grid-cols-1' :
+            projects.length === 2 ? 'grid-cols-1 md:grid-cols-2' :
+            'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          }`}>
           {projects.map((study, index) => (
             <GlassCard key={`${category}-${index}`}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-                {/* Left Column */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 rounded-full bg-[#ffffff]/20 text-[#d1d5db] text-sm">
-                      {study.industry}
-                    </span>
-                    <span className="text-white/50 text-sm">{study.client}</span>
-                  </div>
-                  <h3 className="mb-4 text-white">{study.title}</h3>
+              <div className="flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="px-3 py-1 rounded-full bg-[#ffffff]/20 text-[#d1d5db] text-sm">
+                    {study.industry}
+                  </span>
+                  <span className="text-white/50 text-sm">{study.client}</span>
+                </div>
+                <h3 className="mb-3 text-white font-semibold">{study.title}</h3>
 
-                  <div className="space-y-4">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
-                        <span className="text-[#d1d5db]">Challenge</span>
-                      </div>
-                      <p className="text-white/70 text-sm pl-4">{study.challenge}</p>
+                <div className="space-y-3 flex-1">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
+                      <span className="text-[#d1d5db] text-xs font-medium">Challenge</span>
                     </div>
-
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
-                        <span className="text-[#d1d5db]">Solution</span>
-                      </div>
-                      <p className="text-white/70 text-sm pl-4">{study.solution}</p>
+                    <p className="text-white/70 text-xs pl-4 leading-relaxed line-clamp-3">{study.challenge}</p>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <div className="w-2 h-2 rounded-full bg-[#ffffff]" />
+                      <span className="text-[#d1d5db] text-xs font-medium">Solution</span>
+                    </div>
+                    <p className="text-white/70 text-xs pl-4 leading-relaxed line-clamp-3">{study.solution}</p>
+                    <p className="text-[#9ca3af] text-xs font-medium mt-2 mb-1.5 pl-4">Technologies used</p>
+                    <div className="flex flex-wrap gap-1.5 pl-4">
+                      {study.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center px-2 py-1 rounded-md bg-[#ffffff]/12 border border-[#ffffff]/25 text-[#e5e7eb] text-xs font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {study.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 rounded-lg bg-white/5 border border-[#ffffff]/20 text-white/60 text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <TrendingUp className="w-4 h-4 text-[#d1d5db]" />
+                      <span className="text-[#d1d5db] text-xs font-medium">Impact & Results</span>
+                    </div>
+                    <ul className="space-y-1.5 pl-4">
+                      {study.impact.slice(0, 3).map((item, idx) => (
+                        <motion.li
+                          key={idx}
+                          className="flex items-start gap-2 text-white text-xs"
+                          initial={{ opacity: 0, x: 10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: idx * 0.05 }}
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#ffffff] flex-shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
-                {/* Right Column - Impact */}
-                <div className="flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-6">
-                    <TrendingUp className="w-5 h-5 text-[#d1d5db]" />
-                    <span className="text-[#d1d5db]">Impact & Results</span>
-                  </div>
-                  <div className="space-y-4">
-                    {study.impact.map((item, idx) => (
-                      <motion.div
-                        key={idx}
-                        className="flex items-start gap-3"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
+                <div className="mt-4 pt-4 border-t border-white/10 flex flex-row flex-wrap items-center justify-between gap-3">
+                  {study.link ? (
+                    study.link.startsWith('/') ? (
+                      <Link
+                        to={study.link}
+                        className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
                       >
-                        <CheckCircle2 className="w-5 h-5 text-[#ffffff] flex-shrink-0 mt-0.5" />
-                        <span className="text-white">{item}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex flex-col gap-3">
-                    {study.link ? (
-                      study.link.startsWith('/') ? (
-                        <Link
-                          to={study.link}
-                          className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors cursor-pointer min-h-[44px]"
-                        >
-                          <motion.span
-                            className="flex items-center gap-2"
-                            whileHover={{ x: 5 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <span>View Full Case Study</span>
-                            <ArrowRight className="w-4 h-4" />
-                          </motion.span>
-                        </Link>
-                      ) : (
-                        <motion.a
-                          href={study.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors min-h-[44px] flex items-center"
-                          whileHover={{ x: 5 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <span>View Full Case Study</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </motion.a>
-                      )
-                    ) : null}
-                    {study.liveUrl ? (
+                        <span>View Full Case Study</span>
+                        <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    ) : (
                       <a
-                        href={study.liveUrl}
+                        href={study.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors"
+                        className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
                       >
-                        <span>Visit Live Platform</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <span>View Full Case Study</span>
+                        <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
                       </a>
-                    ) : null}
-                  </div>
+                    )
+                  ) : null}
+                  {study.liveUrl ? (
+                    <a
+                      href={study.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors text-xs"
+                    >
+                      <span>Visit Live Platform</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </a>
+                  ) : null}
                 </div>
               </div>
             </GlassCard>
           ))}
+          </div>
         </div>
       ))}
     </div>

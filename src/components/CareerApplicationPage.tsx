@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { SEO } from './SEO';
 import { useState } from 'react';
-import { CheckCircle, Upload, ArrowLeft } from 'lucide-react';
+import { CheckCircle, Upload, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function CareerApplicationPage() {
@@ -385,22 +385,26 @@ export function CareerApplicationPage() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-8 py-5 rounded-xl font-semibold text-lg transition-all duration-300"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
                 style={{
-                  background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                  background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                  borderColor: 'transparent',
                   color: '#FFFFFF',
-                  boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
+                  boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
                 }}
                 onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                  e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
                   e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 25px rgba(16, 185, 129, 0.4)';
                 }}
                 onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(16, 185, 129, 0.3)';
                 }}
               >
-                Submit Application
+                <span>Submit Application</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
 
               <p className="text-center text-sm" style={{ color: '#6B7280' }}>

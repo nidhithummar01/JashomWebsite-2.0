@@ -96,7 +96,7 @@ export function ContactPage() {
                   <h1
                     className="font-bold text-white leading-tight"
                     style={{
-                      fontSize: 'clamp(36px, 5vw, 64px)',
+                      fontSize: 'clamp(28px, 4vw, 48px)',
                       textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
                       letterSpacing: '-0.02em',
                       marginBottom: '32px'
