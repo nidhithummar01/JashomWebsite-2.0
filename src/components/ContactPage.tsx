@@ -119,17 +119,24 @@ export function ContactPage() {
                   </p>
 
                   {/* CTA Button */}
-                  <a
-                    href="#contact-form"
+                  <button
+                    onClick={() => {
+                      const formSection = document.getElementById('contact-form');
+                      if (formSection) {
+                        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
                     className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:opacity-90 hover:scale-105"
                     style={{
                       background: '#10B981',
                       color: '#FFFFFF',
-                      boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)'
+                      boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)',
+                      border: 'none',
+                      cursor: 'pointer'
                     }}
                   >
                     Get in Touch
-                  </a>
+                  </button>
                 </motion.div>
               </div>
             </div>

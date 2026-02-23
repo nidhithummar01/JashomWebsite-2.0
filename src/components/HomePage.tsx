@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SEO } from './SEO';
 import { AnimatedCounter } from './AnimatedCounter';
@@ -46,9 +46,16 @@ const staggerItem = {
 };
 
 export function HomePage() {
+  const navigate = useNavigate();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Navigate to thank you page
+    navigate('/thank-you/');
+  };
 
   const portfolioProjects = [
     {
@@ -259,13 +266,13 @@ export function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  Accelerate Your AI Journey with <span style={{
+                  Powering High-Performance AI with <span style={{
                     background: 'linear-gradient(135deg, #10B981 0%, #7C3AED 50%, #06B6D4 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
                     fontWeight: 800
-                  }}>Precision Engineering</span>
+                  }}>Precision GPU Engineering</span>
                 </motion.h1>
 
                 <motion.p
@@ -279,8 +286,7 @@ export function HomePage() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
-                  From GPU optimization to intelligent automation, we build AI solutions that drive measurable business outcomes.
-                  Partner with experts who understand both technology and your industry.
+                  We assist companies in unleashing the power of the current hardware, whether it is through high-level optimization of graphics cards or scalable parallel computing. Our developers have expertise in NVIDIA GPU optimization, CUDA acceleration, and production-ready AI systems that are used to deliver quantifiable improvements.
                 </motion.p>
 
                 <motion.div
@@ -395,7 +401,7 @@ export function HomePage() {
                 >
                   <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#10B981', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>GPU Optimization</h3>
                   <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
-                    We unlock maximum GPU performance through memory optimization, kernel tuning, and throughput engineering. Our solutions deliver measurable speed improvements and cost reductions for production workloads at scale.
+                    We provide dedicated GPU Optimization Services aimed at the maximum use of the compute efficiency. Our model will guarantee optimization in the use of hardware, the reduction of operational expenses, and coherent high-performance scale.
                   </p>
                 </motion.div>
 
@@ -415,53 +421,7 @@ export function HomePage() {
                 >
                   <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#7C3AED', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>CUDA Development</h3>
                   <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
-                    We build custom CUDA solutions for parallel computing and performance-critical systems. From low-level GPU programming to algorithm acceleration, we help organizations extract full value from NVIDIA hardware.
-                  </p>
-                </motion.div>
-
-                {/* AI Engineering */}
-                <motion.div
-                  className="space-y-4 max-w-xl p-8 rounded-2xl transition-all duration-300"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.02) 100%)',
-                    border: '1px solid rgba(6, 182, 212, 0.1)',
-                    backdropFilter: 'blur(10px)'
-                  }}
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: '0 20px 60px rgba(6, 182, 212, 0.2)',
-                    borderColor: 'rgba(6, 182, 212, 0.3)'
-                  }}
-                >
-                  <h3 className="text-xl sm:text-2xl font-bold" style={{ color: '#06B6D4', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>AI Engineering</h3>
-                  <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
-                    We develop production-ready AI systems that deliver business impact. Our work spans model optimization, deployment architecture, and integration—moving AI from experimentation to reliable operation.
-                  </p>
-                </motion.div>
-
-                {/* Data & Performance Engineering */}
-                <motion.div
-                  className="space-y-4 max-w-xl p-8 rounded-2xl transition-all duration-300"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(124, 58, 237, 0.02) 100%)',
-                    border: '1px solid rgba(16, 185, 129, 0.1)',
-                    backdropFilter: 'blur(10px)'
-                  }}
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: '0 20px 60px rgba(16, 185, 129, 0.15), 0 0 60px rgba(124, 58, 237, 0.15)',
-                    borderColor: 'rgba(16, 185, 129, 0.3)'
-                  }}
-                >
-                  <h3 className="text-xl sm:text-2xl font-bold" style={{
-                    background: 'linear-gradient(135deg, #10B981, #7C3AED)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontFamily: 'Inter, sans-serif',
-                    letterSpacing: '-0.02em'
-                  }}>Data & Performance Engineering</h3>
-                  <p className="text-base sm:text-lg leading-loose" style={{ color: '#B0B0B0', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
-                    We architect high-performance data systems that handle scale and complexity. Through optimized pipelines and system design, we enable faster insights and more reliable decision-making.
+                    Our CUDA Development Services assist companies in developing high-performance parallel applications to suit their workloads with high demand. Our built-in kernel development-based team of CUDA Developers provides your apps with complete utilization of NVIDIA architecture.
                   </p>
                 </motion.div>
               </motion.div>
@@ -522,7 +482,7 @@ export function HomePage() {
                     GPU Optimization Service
                   </h3>
                   <p className="text-base mb-8 leading-relaxed" style={{ color: '#9CA3AF' }}>
-                    Maximize your GPU performance with our expert optimization services. We fine-tune your applications for peak efficiency and speed.
+                    We optimize AI and compute workloads with the help of advanced GPU optimization, performance, efficiency, and hardware usage.
                   </p>
                   <a
                     href="/gpu-optimization-service/"
@@ -571,7 +531,7 @@ export function HomePage() {
                     CUDA Development Service
                   </h3>
                   <p className="text-base mb-8 leading-relaxed" style={{ color: '#9CA3AF' }}>
-                    Build high-performance parallel computing applications with our expert CUDA development team. Custom solutions for your unique needs.
+                    Hire skilled CUDA developers to create and optimize parallel advanced applications that meet your requirements.
                   </p>
                   <a
                     href="/cuda-development-service/"
@@ -779,13 +739,13 @@ export function HomePage() {
                 viewport={{ once: true }}
               >
                 <div className="inline-block mb-4 px-4 py-2 rounded-full glass-effect border border-[#ffffff]/30">
-                  <span className="text-[#d1d5db] text-sm">Success Stories</span>
+                  <span className="text-[#d1d5db] text-sm">OUR PORTFOLIO</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
                   Our Portfolio
                 </h2>
                 <p className="text-white/70 max-w-3xl mx-auto">
-                  Real-world transformations powered by our AI and GPU optimization expertise
+                  See real-world applications in which advanced optimization of the GPU and tailored CUDA engineering improved performance standards and business speed.
                 </p>
               </motion.div>
 
@@ -968,7 +928,7 @@ export function HomePage() {
                 </h2>
 
                 <p className="text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
-                  Trusted by industry leaders to deliver exceptional results
+                  The industry leaders are banking on our CUDA and GPU engineering skills to get the compute workloads on high throughput, enhance AI responsiveness, and implement stable high-performance units with results that can be measured.
                 </p>
               </motion.div>
 
@@ -1149,13 +1109,13 @@ export function HomePage() {
                   background: 'rgba(16, 185, 129, 0.08)',
                   borderColor: 'rgba(16, 185, 129, 0.25)'
                 }}>
-                  <span style={{ color: '#10B981', fontWeight: 600 }}>Why Choose Us</span>
+                  <span style={{ color: '#10B981', fontWeight: 600 }}>Why Choose Jashom?</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}>
-                  Why <span style={{ color: '#10B981' }}>Jashom</span>?
+                  Why Choose <span style={{ color: '#10B981' }}>Jashom</span>?
                 </h2>
                 <p className="max-w-2xl mx-auto text-base sm:text-lg" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
-                  Experience the Jashom advantage with cutting-edge AI solutions tailored to your business needs
+                  Experience the Jashom advantage with cutting-edge GPU optimization and CUDA development solutions
                 </p>
               </motion.div>
 
@@ -1193,9 +1153,9 @@ export function HomePage() {
                     }}>
                       <Cpu className="w-8 h-8" style={{ color: '#10B981' }} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>10x GPU Performance</h3>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>10x GPU Performance Improvement</h3>
                     <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
-                      Advanced CUDA optimization and parallel computing expertise delivering measurable speedups for AI workloads and real-time inference systems.
+                      Architecture-sensitive tuning methods are used by us to reap the best out of NVIDIA GPUs, providing physical acceleration to AI applications.
                     </p>
                   </div>
                 </motion.div>
@@ -1226,9 +1186,9 @@ export function HomePage() {
                     }}>
                       <Brain className="w-8 h-8" style={{ color: '#10B981' }} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Production-Ready AI</h3>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Production-Grade AI Systems</h3>
                     <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
-                      From model development to deployment, we build scalable AI systems that deliver real business impact across healthcare, finance, and retail sectors.
+                      Develop scalable systems that are designed with a focus on reliability, monitoring, and long-term performance.
                     </p>
                   </div>
                 </motion.div>
@@ -1259,9 +1219,9 @@ export function HomePage() {
                     }}>
                       <Shield className="w-8 h-8" style={{ color: '#10B981' }} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Bank-Grade Security</h3>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Enterprise-Level Security</h3>
                     <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
-                      Enterprise-level security protocols, compliance frameworks, and data protection ensuring your AI infrastructure remains secure and audit-ready.
+                      Our operations are enforced under stringent security measures, compliance, and data protection models in order to secure essential workloads.
                     </p>
                   </div>
                 </motion.div>
@@ -1292,9 +1252,9 @@ export function HomePage() {
                     }}>
                       <Zap className="w-8 h-8" style={{ color: '#10B981' }} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Lightning Fast Deployment</h3>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Rapid Implementation Cycles</h3>
                     <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
-                      Rapid prototyping to production pipeline with MLOps best practices, reducing deployment cycles from weeks to hours with continuous optimization.
+                      We satisfy the timeline requirements of projects through organized processes, which allow us to roll out faster and maintain the quality of performance.
                     </p>
                   </div>
                 </motion.div>
@@ -1325,9 +1285,9 @@ export function HomePage() {
                     }}>
                       <Users className="w-8 h-8" style={{ color: '#10B981' }} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>24/7 Expert Support</h3>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Dedicated Technical Support</h3>
                     <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
-                      Round-the-clock monitoring and dedicated support team ensuring your AI systems run smoothly with guaranteed response times for critical issues.
+                      Our experts have continued optimization, surveillance, and expert services that ensure that the system operates continuously.
                     </p>
                   </div>
                 </motion.div>
@@ -1358,9 +1318,9 @@ export function HomePage() {
                     }}>
                       <TrendingUp className="w-8 h-8" style={{ color: '#10B981' }} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Cost-Effective Solutions</h3>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAFA' }}>Cost-Efficient Scaling</h3>
                     <p className="leading-relaxed" style={{ color: '#9E9E9E', lineHeight: 1.8 }}>
-                      Optimized resource utilization and intelligent scaling strategies that reduce infrastructure costs while maximizing performance and ROI.
+                      Our frameworks for designing GPU systems consider the demand of performance with functional efficiency to ensure the highest ROI in the long-term.
                     </p>
                   </div>
                 </motion.div>
@@ -1611,13 +1571,13 @@ export function HomePage() {
                   className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
                   style={{ color: '#FAFAFA', letterSpacing: '-0.025em' }}
                 >
-                  Let's Build Something{' '}
+                  Let's Build High-Performance{' '}
                   <span style={{
                     background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent'
                   }}>
-                    Amazing
+                    AI Systems
                   </span>
                 </h2>
 
@@ -1625,7 +1585,7 @@ export function HomePage() {
                   className="text-base sm:text-lg mb-4 leading-relaxed max-w-2xl mx-auto"
                   style={{ color: '#9CA3AF' }}
                 >
-                  Ready to transform your business with AI? Share your details and we'll get back to you within 24 hours.
+                  Hire CUDA Developers today to experience highly accurate solutions to suit your goals.
                 </p>
               </motion.div>
 
@@ -1662,7 +1622,7 @@ export function HomePage() {
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
                   }}
                 >
-                  <form style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+                  <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
                     {/* Row 1: Name & Email */}
                     <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
                       <div>
