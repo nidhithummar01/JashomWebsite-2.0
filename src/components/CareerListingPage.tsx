@@ -379,23 +379,26 @@ export function CareerListingPage() {
                       {/* Apply Button */}
                       <Link
                         to={`/careers/apply?role=${encodeURIComponent(career.title)}`}
-                        className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 whitespace-nowrap"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 whitespace-nowrap cursor-pointer border-0"
                         style={{
-                          background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                          background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                          borderColor: 'transparent',
                           color: '#FFFFFF',
-                          boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
+                          boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = 'scale(1.05)';
-                          e.currentTarget.style.boxShadow = '0 6px 25px rgba(16, 185, 129, 0.4)';
+                          e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                          e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                          e.currentTarget.style.transform = 'translateY(-2px)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = 'scale(1)';
-                          e.currentTarget.style.boxShadow = '0 4px 15px rgba(16, 185, 129, 0.3)';
+                          e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                          e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
+                          e.currentTarget.style.transform = 'translateY(0)';
                         }}
                       >
-                        Apply Now
-                        <ArrowRight className="w-5 h-5 ml-2" />
+                        <span>Apply Now</span>
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
 

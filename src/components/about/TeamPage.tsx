@@ -100,7 +100,7 @@ export function TeamPage() {
             >
               <span className="text-[#d1d5db]">Our Team</span>
             </motion.div>
-            <h1 className="mb-4 text-gradient">Meet the Team</h1>
+            <h1 className="mb-4 text-gradient font-bold leading-tight" style={{ fontSize: 'clamp(28px, 4vw, 48px)' }}>Meet the Team</h1>
             <p className="text-white/70 max-w-3xl mx-auto">
               The talented individuals driving innovation and excellence at Jashom.
             </p>

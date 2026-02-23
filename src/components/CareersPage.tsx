@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { SEO } from './SEO';
-import { Briefcase, Users, TrendingUp, Heart, Clock, MapPin } from 'lucide-react';
+import { Briefcase, Users, TrendingUp, Heart, Clock, MapPin, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 interface JobOpening {
@@ -97,12 +97,11 @@ export function CareersPage() {
             className="max-w-3xl"
           >
             <h1 
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-8" 
+              className="font-bold text-white leading-tight mb-8" 
               style={{ 
-                color: '#FFFFFF', 
-                letterSpacing: '-0.025em',
-                fontWeight: 700,
-                textShadow: '0 4px 30px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.6)'
+                fontSize: 'clamp(28px, 4vw, 48px)',
+                letterSpacing: '-0.02em',
+                textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)'
               }}
             >
               Find your big role In our purposeful team
@@ -110,14 +109,26 @@ export function CareersPage() {
             
             <Link
               to="/careers/openings"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:opacity-90 hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
               style={{
-                background: '#10B981',
+                background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                borderColor: 'transparent',
                 color: '#FFFFFF',
-                boxShadow: '0 4px 20px rgba(16, 185, 129, 0.4)'
+                boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              Join Our Team
+              <span>Join Our Team</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
@@ -401,13 +412,26 @@ export function CareersPage() {
                 {/* Apply Button */}
                 <Link
                   to={`/careers/apply?role=${encodeURIComponent(job.title)}`}
-                  className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
                   style={{
-                    background: '#10B981',
-                    color: '#FFFFFF'
+                    background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                    borderColor: 'transparent',
+                    color: '#FFFFFF',
+                    boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                    e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  Apply Now
+                  <span>Apply Now</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             ))}
@@ -584,13 +608,26 @@ export function CareersPage() {
                 {/* Submit Button - Full Width */}
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
                   style={{
-                    background: '#10B981',
-                    color: '#FFFFFF'
+                    background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                    borderColor: 'transparent',
+                    color: '#FFFFFF',
+                    boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                    e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  Submit Application
+                  <span>Submit Application</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
 
                 <p className="text-xs text-center mt-4" style={{ color: '#999999' }}>
@@ -619,13 +656,26 @@ export function CareersPage() {
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
               style={{
-                background: '#10B981',
-                color: '#FFFFFF'
+                background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                borderColor: 'transparent',
+                color: '#FFFFFF',
+                boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              Get In Touch
+              <span>Get In Touch</span>
+              <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
         </div>

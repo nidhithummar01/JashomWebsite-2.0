@@ -93,7 +93,7 @@ export function InsightsPage() {
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Masonry-style Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {insights.map((insight, index) => (
               <motion.div
                 key={insight.id}
@@ -193,10 +193,10 @@ export function InsightsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
+            className="text-center mt-16 sm:mt-20"
           >
             <button
-              className="px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center gap-3"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-240"
               style={{
                 background: 'rgba(16, 185, 129, 0.12)',
                 border: '1px solid rgba(16, 185, 129, 0.35)',
@@ -205,16 +205,16 @@ export function InsightsPage() {
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(16, 185, 129, 0.18)';
                 e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
-                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'rgba(16, 185, 129, 0.12)';
                 e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.35)';
-                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <span>Load More Insights</span>
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
         </div>
@@ -311,14 +311,26 @@ export function InsightsPage() {
             
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:opacity-90 hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
               style={{
-                background: '#10B981',
+                background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                borderColor: 'transparent',
                 color: '#FFFFFF',
-                boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)'
+                boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              Contact Us
+              <span>Contact Us</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>

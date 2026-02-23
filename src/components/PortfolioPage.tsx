@@ -292,140 +292,133 @@ export function PortfolioPage() {
         {/* Case Studies by Category */}
         <div className="space-y-16 mt-16">
           {groupedProjects.map(({ category, projects }, categoryIndex) => (
-            <div key={category} className="space-y-8">
+            <div key={category} className={categoryIndex > 0 ? 'pt-12 sm:pt-16' : ''}>
               {/* Category Header */}
               <motion.div
-                className="text-center mb-8"
+                className="text-center mb-10 sm:mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: categoryIndex * 0.1 }}
               >
-                <h2 className="text-3xl font-bold text-gradient mb-2">{category}</h2>
-                <p className="text-white/60 text-sm">{projects.length} {projects.length === 1 ? 'Project' : 'Projects'}</p>
+                <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 gap-y-1 mt-8 sm:mt-10 mb-8 sm:mb-10">
+                  <h2 className="text-3xl font-bold text-gradient">{category}</h2>
+                  <p className="text-white/60 text-sm">({projects.length} {projects.length === 1 ? 'Project' : 'Projects'})</p>
+                </div>
               </motion.div>
 
-              {/* Projects in this category */}
+              {/* Projects in this category - columns match project count (1→1, 2→2, 3+→3) */}
+              <div className={`pt-10 sm:pt-12 grid gap-6 sm:gap-8 ${
+                projects.length === 1 ? 'grid-cols-1' :
+                projects.length === 2 ? 'grid-cols-1 md:grid-cols-2' :
+                'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              }`}>
               {projects.map((study, index) => (
                 <GlassCard key={`${category}-${index}`}>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                    {/* Left Column */}
-                    <div>
-                      {/* Project Image */}
-                      {study.image && (
-                        <div className="mb-3 rounded-lg overflow-hidden border border-white/10" style={{ width: '200px', height: '120px' }}>
-                          <img 
-                            src={study.image} 
-                            alt={study.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      )}
-                      
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="px-2.5 py-1 rounded-full bg-[#ffffff]/20 text-[#d1d5db] text-xs">
-                          {study.industry}
-                        </span>
+                  <div className="flex flex-col h-full">
+                    {study.image && (
+                      <div className="mb-3 rounded-lg overflow-hidden border border-white/10 aspect-video">
+                        <img
+                          src={study.image}
+                          alt={study.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <h3 className="mb-3 text-white text-lg font-semibold">{study.title}</h3>
+                    )}
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2.5 py-1 rounded-full bg-[#ffffff]/20 text-[#d1d5db] text-xs">
+                        {study.industry}
+                      </span>
+                    </div>
+                    <h3 className="mb-2 text-white text-base font-semibold">{study.title}</h3>
 
-                      <div className="space-y-2.5">
-                        <div>
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
-                            <span className="text-[#d1d5db] text-xs font-medium">Challenge</span>
-                          </div>
-                          <p className="text-white/70 text-xs pl-3.5 leading-relaxed">{study.challenge}</p>
+                    <div className="space-y-2 flex-1">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                          <span className="text-[#d1d5db] text-xs font-medium">Challenge</span>
                         </div>
-
-                        <div>
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
-                            <span className="text-[#d1d5db] text-xs font-medium">Solution</span>
-                          </div>
-                          <p className="text-white/70 text-xs pl-3.5 leading-relaxed">{study.solution}</p>
+                        <p className="text-white/70 text-xs pl-3.5 leading-relaxed line-clamp-2">{study.challenge}</p>
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                          <span className="text-[#d1d5db] text-xs font-medium">Solution</span>
+                        </div>
+                        <p className="text-white/70 text-xs pl-3.5 leading-relaxed line-clamp-2">{study.solution}</p>
+                        <p className="text-[#9ca3af] text-xs font-medium mt-1.5 mb-1 pl-3.5">Technologies used</p>
+                        <div className="flex flex-wrap gap-1.5 pl-3.5">
+                          {study.tags.map((tag, idx) => (
+                            <span
+                              key={idx}
+                              className="inline-flex items-center px-2 py-0.5 rounded bg-[#ffffff]/12 border border-[#ffffff]/25 text-[#e5e7eb] text-xs"
+                            >
+                              {tag}
+                            </span>
+                          ))}
                         </div>
                       </div>
-
-                      <div className="flex flex-wrap gap-1.5 mt-3">
-                        {study.tags.map((tag, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2 py-1 rounded-md bg-white/5 border border-[#ffffff]/20 text-white/60 text-xs"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <TrendingUp className="w-3.5 h-3.5 text-[#d1d5db]" />
+                          <span className="text-[#d1d5db] text-xs font-medium">Impact & Results</span>
+                        </div>
+                        <ul className="space-y-1 pl-3.5">
+                          {study.impact.slice(0, 2).map((item, idx) => (
+                            <motion.li
+                              key={idx}
+                              className="flex items-start gap-2 text-white text-xs"
+                              initial={{ opacity: 0, x: 10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: idx * 0.05 }}
+                            >
+                              <CheckCircle2 className="w-3 h-3 text-[#ffffff] flex-shrink-0 mt-0.5" />
+                              <span className="line-clamp-1">{item}</span>
+                            </motion.li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
 
-                    {/* Right Column - Impact */}
-                    <div className="flex flex-col justify-center">
-                      <div className="flex items-center gap-2 mb-3">
-                        <TrendingUp className="w-4 h-4 text-[#d1d5db]" />
-                        <span className="text-[#d1d5db] text-sm font-medium">Impact & Results</span>
-                      </div>
-                      <div className="space-y-2.5">
-                        {study.impact.map((item, idx) => (
-                          <motion.div
-                            key={idx}
-                            className="flex items-start gap-2"
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 }}
+                    <div className="mt-3 pt-3 border-t border-white/10 flex flex-row flex-wrap items-center justify-between gap-x-6 gap-y-2">
+                      {study.link ? (
+                        study.link.startsWith('/') ? (
+                          <Link
+                            to={study.link}
+                            className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
                           >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#ffffff] flex-shrink-0 mt-0.5" />
-                            <span className="text-white text-xs leading-relaxed">{item}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-                      <div className="mt-3 flex flex-col gap-2">
-                        {study.link ? (
-                          study.link.startsWith('/') ? (
-                            <Link
-                              to={study.link}
-                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors cursor-pointer text-xs"
-                            >
-                              <motion.span
-                                className="flex items-center gap-2"
-                                whileHover={{ x: 5 }}
-                                whileTap={{ scale: 0.95 }}
-                              >
-                                <span>View Full Case Study</span>
-                                <ArrowRight className="w-3 h-3" />
-                              </motion.span>
-                            </Link>
-                          ) : (
-                            <motion.a
-                              href={study.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs flex items-center"
-                              whileHover={{ x: 5 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              <span>View Full Case Study</span>
-                              <ArrowRight className="w-3 h-3" />
-                            </motion.a>
-                          )
-                        ) : null}
-                        {study.liveUrl ? (
+                            <span>View Full Case Study</span>
+                            <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                          </Link>
+                        ) : (
                           <a
-                            href={study.liveUrl}
+                            href={study.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors text-xs"
+                            className="inline-flex items-center gap-2 text-[#d1d5db] hover:text-white transition-colors text-xs group/link"
                           >
-                            <span>Visit Live Platform</span>
-                            <ArrowRight className="w-3 h-3" />
+                            <span>View Full Case Study</span>
+                            <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
                           </a>
-                        ) : null}
-                      </div>
+                        )
+                      ) : null}
+                      {study.liveUrl ? (
+                        <a
+                          href={study.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#d1d5db] transition-colors text-xs"
+                        >
+                          <span>Visit Live Platform</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </a>
+                      ) : null}
                     </div>
                   </div>
                 </GlassCard>
               ))}
+              </div>
             </div>
           ))}
         </div>
@@ -474,7 +467,11 @@ export function PortfolioPage() {
             </p>
             <a
               href="/contact"
-              className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-black border border-white text-white transition-all duration-300 hover:bg-white hover:text-black scale-100 hover:scale-105 text-sm sm:text-base text-center"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-black text-white transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 text-center"
+              style={{
+                border: '1px solid #ffffff',
+                boxShadow: '0 0 0 1px #ffffff',
+              }}
             >
               Start Your Project
             </a>
