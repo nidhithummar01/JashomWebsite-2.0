@@ -131,7 +131,7 @@ function AnimatedRoutes() {
           <Route path="/about/portfolio/" element={<PageTransition><PortfolioPage /></PageTransition>} />
           <Route path="/about/blog/" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
           <Route path="/about/career/" element={<PageTransition><CareersPage /></PageTransition>} />
-          <Route path="/about/" element={<PageTransition><TeamPage /></PageTransition>} />
+          <Route path="/about/" element={<PageTransition><NewAboutUsPage /></PageTransition>} />
           
           {/* Placeholder routes */}
           <Route path="/careers/" element={<PageTransition><CareersPage /></PageTransition>} />

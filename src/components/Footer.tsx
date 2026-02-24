@@ -7,7 +7,7 @@ export function Footer() {
 
   const footerLinks = {
     company: [
-      { label: 'About Us', path: '/about/team/' },
+      { label: 'About Us', path: '/about/' },
       { label: 'Company Brochure', path: '/brochure/' },
       { label: 'Case Studies', path: '/portfolio/' },
       { label: 'Contact Us', path: '/contact/' }
@@ -51,7 +51,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden" style={{ background: '#000000' }}>
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-14">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-14 pb-0">
         
         {/* Logo */}
         <Link to="/" className="inline-block mb-10">
@@ -188,8 +188,13 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t mt-10 pt-6" style={{ borderColor: 'rgba(16, 185, 129, 0.15)' }}>
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="mt-10">
+          {/* Centered divider line */}
+          <div className="flex justify-center mb-6">
+            <div className="w-full max-w-4xl border-t" style={{ borderColor: 'rgba(16, 185, 129, 0.15)' }}></div>
+          </div>
+          
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-6">
             
             {/* Left: Contact + Social */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
