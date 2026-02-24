@@ -1999,10 +1999,21 @@ export function HireCudaDeveloperPage() {
                     {/* Submit Button - Full Width */}
                     <button
                       type="submit"
-                      className="w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
+                      className="w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300"
                       style={{
-                        background: '#10B981',
-                        color: '#FFFFFF'
+                        background: 'linear-gradient(135deg, #10B981, #06B6D4)',
+                        color: '#FFFFFF',
+                        boxShadow: '0 8px 24px rgba(16, 185, 129, 0.4)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
+                        e.currentTarget.style.boxShadow = '0 12px 32px rgba(16, 185, 129, 0.6)';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
+                        e.currentTarget.style.boxShadow = '0 8px 24px rgba(16, 185, 129, 0.4)';
+                        e.currentTarget.style.transform = 'translateY(0)';
                       }}
                     >
                       Submit Request
