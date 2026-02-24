@@ -9,6 +9,84 @@ const menuItemVariants = {
   open: { opacity: 1, x: 0 }
 };
 
+type NavItemType = { path: string; label: string } | { label: string; dropdown: { path: string; label: string }[] };
+
+function NavLinkBlock({
+  item,
+  index,
+  location,
+  activeDropdown,
+  setActiveDropdown,
+  handleLinkClick,
+  light,
+  contactOutline
+}: {
+  item: NavItemType;
+  index: number;
+  location: { pathname: string };
+  activeDropdown: string | null;
+  setActiveDropdown: (s: string | null) => void;
+  handleLinkClick: () => void;
+  light?: boolean;
+  contactOutline?: boolean;
+}) {
+  const textClass = light ? 'text-[#333333] hover:text-gray-600' : 'text-white hover:text-gray-300';
+  const activeText = light ? 'text-[#333333]' : 'text-white';
+  const indicatorClass = light ? 'bg-[#333333]' : 'bg-white';
+  const hasDropdown = 'dropdown' in item && item.dropdown;
+  const outlineClass = contactOutline ? 'border border-[#3B82F6] rounded-lg px-3 py-1.5 hover:bg-[#3B82F6]/10' : '';
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.05 }}
+      className="relative"
+    >
+      {hasDropdown ? (
+        <div className="relative" onMouseEnter={() => setActiveDropdown(item.label)} onMouseLeave={() => setActiveDropdown(null)}>
+          <button className={`flex items-center gap-1 whitespace-nowrap font-medium leading-normal ${textClass} transition-colors cursor-pointer ${outlineClass}`} style={{ fontSize: '1rem' }}>
+            <motion.span whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>{item.label}</motion.span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+          </button>
+          <AnimatePresence>
+            {activeDropdown === item.label && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                onMouseEnter={() => setActiveDropdown(item.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
+                className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 border border-white/25 rounded-lg shadow-xl py-2 backdrop-blur-xl ${item.label === 'Hire Expert' ? 'whitespace-nowrap' : ''}`}
+                style={{ minWidth: 'max-content', backgroundColor: 'rgba(31, 41, 55, 0.95)' }}
+              >
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[8px] border-l-transparent border-r-transparent" style={{ borderBottomColor: 'rgba(31, 41, 55, 0.95)' }} />
+                {item.label === 'Services'
+                  ? item.dropdown.map((service: { path: string; label: string }) => (
+                      <Link key={service.path} to={service.path} onClick={handleLinkClick} className={`block px-6 py-3 transition-colors whitespace-nowrap cursor-pointer ${location.pathname === service.path ? 'text-white bg-white/10' : 'text-white hover:bg-white/5'}`}>
+                        {service.label}
+                      </Link>
+                    ))
+                  : item.dropdown.map((subItem: { path: string; label: string }) => (
+                      <Link key={subItem.path} to={subItem.path} onClick={handleLinkClick} className={`block px-6 py-3 transition-colors whitespace-nowrap cursor-pointer ${location.pathname === subItem.path ? 'text-white bg-white/10' : 'text-white hover:bg-white/5'}`}>
+                        {subItem.label}
+                      </Link>
+                    ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ) : (
+        <Link to={'path' in item ? item.path : '/'} className={`relative transition-colors cursor-pointer whitespace-nowrap leading-normal font-medium ${location.pathname === ('path' in item ? item.path : '') ? activeText : textClass} ${outlineClass}`} style={{ fontSize: '1rem', ...(item.label === 'Home' && { fontWeight: 600 }) }}>
+          <motion.span whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>{item.label}</motion.span>
+          {location.pathname === ('path' in item ? item.path : '') && !contactOutline && (
+            <motion.div layoutId="nav-indicator" className={`absolute -bottom-[21px] left-0 right-0 h-0.5 ${indicatorClass}`} transition={{ type: "spring", stiffness: 300, damping: 30 }} />
+          )}
+        </Link>
+      )}
+    </motion.div>
+  );
+}
+
 export function Navigation() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -127,162 +205,68 @@ export function Navigation() {
   return (
     <>
       <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-[#333333]"
+        className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 sm:px-6"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
-          <Link to="/" className="flex items-center flex-shrink-0">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <img
-                src="/jashom-logo-header-70px.png"
-                alt="Jashom"
-                className="h-[35px] sm:h-[50px] md:h-[60px] lg:h-[70px] w-auto transition-all duration-300 object-contain max-w-[120px] sm:max-w-none"
-              />
+      {/* Logo + badha options ek j pill ma */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between" style={{ minHeight: 56 }}>
+        {/* Left: mobile par logo, desktop par khali (pill center rahe) */}
+        <div className="flex-1 flex justify-start min-w-0">
+          <Link to="/" className="flex items-center flex-shrink-0 md:hidden">
+            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} whileHover={{ scale: 1.05 }}>
+              <img src="/jashom-logo-header-70px.png" alt="Jashom" className="w-auto object-contain" style={{ height: 40, maxWidth: 135 }} />
             </motion.div>
           </Link>
+        </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                className="relative"
-              >
-                {item.dropdown ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => {
-                      setActiveDropdown(item.label);
-                    }}
-                    onMouseLeave={() => {
-                      setActiveDropdown(null);
-                    }}
-                  >
-                    <button
-                      className="flex items-center gap-1 text-white hover:text-gray-300 transition-colors cursor-pointer"
-                    >
-                      <motion.span
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        {item.label}
-                      </motion.span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
-                    </button>
-
-                    <AnimatePresence>
-                      {activeDropdown === item.label && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          onMouseEnter={() => {
-                            setActiveDropdown(item.label);
-                          }}
-                          onMouseLeave={() => {
-                            setActiveDropdown(null);
-                          }}
-                          className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 bg-black border border-white/20 rounded-lg shadow-xl py-2 ${
-                            item.label === 'Hire Expert' ? 'whitespace-nowrap' : ''
-                          }`}
-                          style={{ minWidth: 'max-content' }}
-                        >
-                          {/* Pointer Arrow - All Dropdowns */}
-                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[8px] border-l-transparent border-r-transparent border-b-black" />
-                          
-                          {item.label === 'Services' ? (
-                            // SERVICES DROPDOWN - COMPACT BLACK BOX WITH CLEAN SPACING
-                            item.dropdown.map((service) => (
-                              <Link
-                                key={(service as any).path}
-                                to={(service as any).path}
-                                onClick={handleLinkClick}
-                                className={`block px-6 py-3 transition-colors whitespace-nowrap cursor-pointer ${
-                                  location.pathname === (service as any).path
-                                    ? 'text-white bg-white/10'
-                                    : 'text-white hover:bg-white/5'
-                                }`}
-                              >
-                                {service.label}
-                              </Link>
-                            ))
-                          ) : (
-                            // ALL OTHER DROPDOWNS - SAME BLACK STYLE AS SERVICES
-                            item.dropdown.map((subItem) => (
-                              <Link
-                                key={(subItem as any).path}
-                                to={(subItem as any).path}
-                                onClick={handleLinkClick}
-                                className={`block px-6 py-3 transition-colors whitespace-nowrap cursor-pointer ${
-                                  location.pathname === (subItem as any).path
-                                    ? 'text-white bg-white/10'
-                                    : 'text-white hover:bg-white/5'
-                                }`}
-                              >
-                                {subItem.label}
-                              </Link>
-                            ))
-                          )}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className={`relative transition-colors cursor-pointer ${location.pathname === item.path
-                      ? 'text-white'
-                      : 'text-white hover:text-gray-300'
-                      }`}
-                  >
-                    <motion.span
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      {item.label}
-                    </motion.span>
-                    {location.pathname === item.path && (
-                      <motion.div
-                        layoutId="nav-indicator"
-                        className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-white"
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                      />
-                    )}
-                  </Link>
-                )}
+        {/* Desktop: pill screen na center ma */}
+        <div className="hidden md:flex flex-1 justify-center min-w-0">
+          <div
+            className="flex w-max min-w-[42rem] rounded-full border-2 border-white/25 backdrop-blur-xl shadow-lg items-center justify-center px-5 sm:px-6"
+            style={{ backgroundColor: 'rgba(31, 41, 55, 0.65)', minHeight: 56, height: 56 }}
+          >
+          <div className="flex items-center">
+            {/* Logo ane Home vache gap */}
+            <Link to="/" className="flex items-center flex-shrink-0" style={{ marginRight: 56 }}>
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} whileHover={{ scale: 1.05 }}>
+                <img src="/jashom-logo-header-70px.png" alt="Jashom" className="w-auto object-contain" style={{ height: 54, maxWidth: 140 }} />
               </motion.div>
+            </Link>
+            {/* Home thi badha options - ek sarkho gap */}
+            <div className="flex items-center gap-6 sm:gap-7">
+            {navItems.map((item, index) => (
+              <NavLinkBlock
+                key={item.label}
+                item={item}
+                index={index}
+                location={location}
+                activeDropdown={activeDropdown}
+                setActiveDropdown={setActiveDropdown}
+                handleLinkClick={handleLinkClick}
+                contactOutline={item.label === 'Contact Us'}
+              />
             ))}
-            
-            {/* QUICK CONTACT ICON - Opens Modal */}
             <motion.button
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navItems.length * 0.05 }}
               onClick={() => setIsContactModalOpen(true)}
-              className="relative text-white hover:text-[#10B981] transition-colors cursor-pointer p-2 rounded-lg hover:bg-white/5"
+              className="relative text-white hover:text-[#10B981] transition-colors cursor-pointer p-2 rounded-lg hover:bg-white/10"
               aria-label="Quick Contact"
             >
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: -15 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <motion.div whileHover={{ scale: 1.1, rotate: -15 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 300 }}>
                 <Send className="w-5 h-5" />
               </motion.div>
             </motion.button>
+            </div>
           </div>
+          </div>
+        </div>
 
-          {/* Mobile menu button */}
+        {/* Right: mobile menu button (desktop par empty, pill center rahe) */}
+        <div className="flex-1 flex justify-end min-w-0">
           <motion.button
             className="md:hidden text-white z-50 flex-shrink-0 cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
@@ -315,6 +299,7 @@ export function Navigation() {
             </AnimatePresence>
           </motion.button>
         </div>
+      </div>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
@@ -466,7 +451,6 @@ export function Navigation() {
             </>
           )}
         </AnimatePresence>
-      </div>
     </motion.nav>
     
     {/* Contact Modal */}
