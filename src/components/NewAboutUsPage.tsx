@@ -74,42 +74,64 @@ export function NewAboutUsPage() {
       </Helmet>
 
       <div className="min-h-screen bg-black">
-        {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Image with Overlay */}
-          <div 
-            className="absolute inset-0 z-0"
+        {/* Hero Section with Background Image */}
+        <section
+          className="relative overflow-hidden"
+          style={{
+            minHeight: '100vh',
+            backgroundImage: 'url(/images/About%20Us/about-us-hero.jpg.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          {/* Dark Gradient Overlay - Left to Right fade for readability */}
+          <div
+            className="absolute inset-0"
             style={{
-              backgroundImage: 'url(/images/About%20Us/about-us-hero.jpg.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
+              background: 'linear-gradient(to right, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 0.85) 40%, rgba(11, 15, 20, 0.6) 70%, rgba(11, 15, 20, 0.4) 100%)'
             }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-          </div>
+          ></div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl"
-            >
-              <h1 
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-                style={{ color: '#FAFAFA' }}
+          {/* Content - Premium Spacing */}
+          <div className="relative z-10 min-h-screen flex items-center">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-left"
+                style={{ maxWidth: '620px' }}
               >
-                Building Epic Digital Stuff With Latest Tech
-              </h1>
-              <p 
-                className="text-lg sm:text-xl max-w-2xl"
-                style={{ color: '#9CA3AF' }}
-              >
-                At Jashom – we are curious to help you turn your impressive ideas into digital reality.
-                We build fast, think smart, and collaborate with brands that dare to lead.
-              </p>
-            </motion.div>
+                {/* Heading */}
+                <h1
+                  className="font-bold text-white leading-tight"
+                  style={{
+                    fontSize: 'clamp(28px, 4vw, 48px)',
+                    textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
+                    letterSpacing: '-0.02em',
+                    marginBottom: '32px'
+                  }}
+                >
+                  Building Epic Digital Stuff With Latest Tech
+                </h1>
+
+                {/* Paragraph */}
+                <p
+                  className="text-white/90"
+                  style={{
+                    fontSize: 'clamp(17px, 2vw, 20px)',
+                    lineHeight: '1.75',
+                    textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
+                    marginBottom: '48px',
+                    maxWidth: '560px'
+                  }}
+                >
+                  At Jashom – we are curious to help you turn your impressive ideas into digital reality.
+                  We build fast, think smart, and collaborate with brands that dare to lead.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -121,40 +143,73 @@ export function NewAboutUsPage() {
           }}
         >
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Left Side - Title */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+              {/* Left Side - Title and Content */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                className="space-y-6"
               >
                 <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>About</p>
                 <h2 
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6"
                   style={{ color: '#FAFAFA' }}
                 >
-                  We Create Software Solutions That Shape The Future
+                  We Create Software Solutions<br />That Shape{' '}
+                  <span style={{
+                    background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}>
+                    The Future
+                  </span>
                 </h2>
+                
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
+                    Jashom has pioneered in delivering the most important software solutions backed by the power of AI development and AI consulting. With our team of passionate developers and data thinkers, you will get nothing less than excellence and innovation.
+                  </p>
+                  <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
+                    With our specialization in providing services, namely custom software development, AI Development, and AI consulting, we aim to build projects with clarity, precision, and passion. As a trusted software development and AI consulting company, our products are fast, future-ready, and scalable.
+                  </p>
+                  <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
+                    We build better code with the world-class tools, right talent, and dedication to provide the best.
+                  </p>
+                </div>
               </motion.div>
 
-              {/* Right Side - Content */}
+              {/* Right Side - Image */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-6"
+                className="relative flex items-center justify-center"
               >
-                <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
-                  Jashom has pioneered in delivering the most important software solutions backed by the power of AI development and AI consulting. With our team of passionate developers and data thinkers, you will get nothing less than excellence and innovation.
-                </p>
-                <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
-                  With our specialization in providing services, namely custom software development, AI Development, and AI consulting, we aim to build projects with clarity, precision, and passion. As a trusted software development and AI consulting company, our products are fast, future-ready, and scalable. Our clients trust us because we create exactly what they want without any fluff. At Jashom, we collaborate with a commitment to deliver software products and AI solutions powered by the latest technologies and CMS platforms. We can revamp your product with efficient AI integration that will bring new experiences to your customers.
-                </p>
-                <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
-                  We build better code with the world-class tools, right talent, and dedication to provide the best.
-                </p>
+                <div 
+                  className="rounded-2xl overflow-hidden w-full max-w-md aspect-square"
+                  style={{
+                    border: '1px solid rgba(16, 185, 129, 0.2)',
+                    boxShadow: '0 20px 60px rgba(16, 185, 129, 0.15)'
+                  }}
+                >
+                  <img 
+                    src="/images/About%20Us/about-us-Software-Solutions.jpg.jpg" 
+                    alt="Software Solutions"
+                    className="w-full h-full object-cover"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+                {/* Decorative glow effect */}
+                <div 
+                  className="absolute -inset-4 -z-10 rounded-2xl opacity-30 blur-2xl max-w-md aspect-square"
+                  style={{
+                    background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 100%)'
+                  }}
+                />
               </motion.div>
             </div>
           </div>
@@ -186,63 +241,84 @@ export function NewAboutUsPage() {
                 />
               </motion.div>
 
-              {/* Social Icons */}
+              {/* Social Icons - Facebook */}
               <motion.div
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
+                whileHover={{
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  borderColor: 'rgba(255, 255, 255, 0.2)'
                 }}
               >
                 <Facebook className="w-8 h-8" style={{ color: '#9CA3AF' }} />
               </motion.div>
 
+              {/* Social Icons - Twitter */}
               <motion.div
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
+                whileHover={{
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  borderColor: 'rgba(255, 255, 255, 0.2)'
                 }}
               >
                 <Twitter className="w-8 h-8" style={{ color: '#9CA3AF' }} />
               </motion.div>
 
-              {/* Industries Served - Blue Card */}
+              {/* Industries Served - Jashom Theme */}
               <motion.div
                 variants={staggerItem}
                 className="sm:col-span-2 rounded-2xl p-8"
                 style={{
-                  background: 'linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}
               >
-                <h3 className="text-4xl font-bold mb-2 text-white">30+</h3>
+                <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>30+</h3>
                 <h4 className="text-xl font-semibold mb-3 text-white">Industries Served</h4>
-                <p className="text-sm text-white/90">
+                <p className="text-sm" style={{ color: '#D1D5DB' }}>
                   Multiple domains utilize our expertise to build solutions that resonate.
                 </p>
               </motion.div>
 
-              {/* More Social Icons */}
+              {/* Social Icons - LinkedIn (Clickable) */}
               <motion.div
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
+                whileHover={{
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  borderColor: 'rgba(16, 185, 129, 0.3)'
+                }}
+                onClick={() => window.open('https://www.linkedin.com/company/jashom/', '_blank')}
               >
                 <Linkedin className="w-8 h-8" style={{ color: '#9CA3AF' }} />
               </motion.div>
 
+              {/* Social Icons - Instagram (Clickable) */}
               <motion.div
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
+                whileHover={{
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  borderColor: 'rgba(16, 185, 129, 0.3)'
+                }}
+                onClick={() => window.open('https://www.instagram.com/jashomtechnologies_', '_blank')}
               >
                 <Instagram className="w-8 h-8" style={{ color: '#9CA3AF' }} />
               </motion.div>
@@ -384,9 +460,9 @@ export function NewAboutUsPage() {
         </section>
 
         {/* Brand Values Section - Side by Side 50/50 */}
-        <section className="py-0 bg-black">
+        <section className="py-0 bg-black pb-20">
           <div className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 min-h-[600px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 min-h-[600px]">
               {/* Left Side - Image and CTA (50%) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -401,36 +477,39 @@ export function NewAboutUsPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40" />
                 
-                <div className="relative h-full flex flex-col justify-end p-8 md:p-12 xl:p-16">
+                <div className="relative h-full flex flex-col justify-between p-8 md:p-12 xl:p-16">
                   {/* Bottom Content */}
-                  <div>
+                  <div className="mt-auto">
                     <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-white">
                       Want to create something impactful?
                     </h3>
-                    <p className="text-white/90 mb-6 text-base md:text-lg">
+                    <p className="text-white/90 mb-8 text-base md:text-lg">
                       Let us talk about your ideas, strategies, and how to execute.
                     </p>
-                    <button
-                      onClick={() => {
-                        const formSection = document.getElementById('contact-form');
-                        formSection?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      className="px-8 py-3 rounded-xl font-semibold transition-all duration-300"
-                      style={{
-                        background: 'linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%)',
-                        color: '#FFFFFF'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 8px 24px rgba(59, 130, 246, 0.4)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
-                    >
-                      Contact Us
-                    </button>
+                    <div className="flex justify-start">
+                      <button
+                        onClick={() => {
+                          const formSection = document.getElementById('contact-form');
+                          formSection?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="px-8 py-3 rounded-xl font-semibold transition-all duration-300"
+                        style={{
+                          background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 100%)',
+                          color: '#FFFFFF',
+                          boxShadow: '0 8px 24px rgba(16, 185, 129, 0.4)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-2px)';
+                          e.currentTarget.style.boxShadow = '0 12px 32px rgba(16, 185, 129, 0.6)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'translateY(0)';
+                          e.currentTarget.style.boxShadow = '0 8px 24px rgba(16, 185, 129, 0.4)';
+                        }}
+                      >
+                        Contact Us
+                      </button>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -442,38 +521,41 @@ export function NewAboutUsPage() {
                 viewport={{ once: true }}
                 className="p-8 md:p-12 xl:p-16 flex flex-col justify-center min-h-[600px]"
                 style={{
-                  background: 'linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%)'
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%)',
+                  borderLeft: '1px solid rgba(16, 185, 129, 0.3)'
                 }}
               >
-                <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8 md:mb-12">Brand Values</h2>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-8 md:mb-12" style={{ color: '#10B981' }}>
+                  Brand Values
+                </h2>
 
                 <div className="space-y-8 md:space-y-10">
                   {/* Innovation-Driven Excellence */}
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: '#FAFAFA' }}>
                       Innovation-Driven Excellence
                     </h3>
-                    <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
+                    <p className="leading-relaxed text-sm md:text-base lg:text-lg" style={{ color: '#D1D5DB' }}>
                       We embrace cutting-edge technology and AI-driven solutions to create impactful digital experiences that drive business growth.
                     </p>
                   </div>
 
                   {/* Customer-Centric Approach */}
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: '#FAFAFA' }}>
                       Customer-Centric Approach
                     </h3>
-                    <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
+                    <p className="leading-relaxed text-sm md:text-base lg:text-lg" style={{ color: '#D1D5DB' }}>
                       Our solutions are tailored to meet unique business needs, ensuring seamless integration, scalability, and long-term success.
                     </p>
                   </div>
 
                   {/* Collaboration & Integrity */}
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: '#FAFAFA' }}>
                       Collaboration & Integrity
                     </h3>
-                    <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
+                    <p className="leading-relaxed text-sm md:text-base lg:text-lg" style={{ color: '#D1D5DB' }}>
                       We foster strong partnerships built on trust, transparency, and teamwork, delivering value with honesty and accountability.
                     </p>
                   </div>
@@ -483,7 +565,7 @@ export function NewAboutUsPage() {
           </div>
         </section>
 
-        {/* Divider Section */}
+        {/* Divider Section - Add Space */}
         <section className="py-16 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="border-t border-white/10"></div>
@@ -493,79 +575,75 @@ export function NewAboutUsPage() {
         {/* Contact Form Section - 50/50 Split */}
         <section 
           id="contact-form"
-          className="py-0"
+          className="py-20"
           style={{
             background: 'linear-gradient(180deg, #000000 0%, #0B0F14 100%)'
           }}
         >
-          <div className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 min-h-[700px]">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
               {/* Left Side - Contact Info & Office Details (50%) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="p-8 md:p-12 xl:p-16 flex flex-col justify-center min-h-[700px]"
+                className="space-y-8 p-8 md:p-10 rounded-2xl"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.5)'
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <div className="space-y-8">
-                  <div>
-                    <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>Contact Us</p>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6" style={{ color: '#FAFAFA' }}>
-                      Jashom is ready to help you grow.
-                    </h2>
-                  </div>
+                <div>
+                  <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>Contact Us</p>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6" style={{ color: '#FAFAFA' }}>
+                    Jashom is ready to help you grow.
+                  </h2>
+                </div>
 
-                  {/* Our Office */}
-                  <div className="space-y-6">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">Our Office</h3>
-                    
-                    <div className="flex items-start gap-3">
-                      <img 
-                        src="/images/inidan.flag.jpg" 
-                        alt="India" 
-                        className="w-8 h-6 object-cover rounded mt-1"
-                      />
-                      <div>
-                        <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
-                          4D5, Aaram Sparrsh, Rajpath Rangoli Rd,
-                        </p>
-                        <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
-                          behind Rajpath club, Bodakdev,
-                        </p>
-                        <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
-                          Ahmedabad, Gujarat 380054
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 pt-4">
-                      <Mail className="w-5 h-5" style={{ color: '#10B981' }} />
-                      <a 
-                        href="mailto:info@jashom.com" 
-                        className="text-white/90 hover:text-white transition-colors text-sm md:text-base lg:text-lg"
-                      >
-                        info@jashom.com
-                      </a>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5" style={{ color: '#10B981' }} />
-                      <a 
-                        href="tel:+919854412744" 
-                        className="text-white/90 hover:text-white transition-colors text-sm md:text-base lg:text-lg"
-                      >
-                        +91 985 441 2744
-                      </a>
-                    </div>
-
-                    <div className="pt-6">
-                      <p className="text-white/70 text-sm md:text-base">
-                        Pay us a visit for a cup of coffee. We'll be more than happy to welcome you.
+                {/* Our Office */}
+                <div className="space-y-6">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">Our Office</h3>
+                  
+                  <div className="flex items-start gap-3">
+                    <img 
+                      src="/images/inidan.flag.jpg" 
+                      alt="India" 
+                      className="w-8 h-6 object-cover rounded mt-1"
+                    />
+                    <div>
+                      <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
+                        414, Satyam-2, Amba Business Park,
+                      </p>
+                      <p className="text-white/90 leading-relaxed text-sm md:text-base lg:text-lg">
+                        ATPL, Adalaj, Gujarat, India
                       </p>
                     </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-4">
+                    <Mail className="w-5 h-5" style={{ color: '#10B981' }} />
+                    <a 
+                      href="mailto:info@jashom.com" 
+                      className="text-white/90 hover:text-white transition-colors text-sm md:text-base lg:text-lg"
+                    >
+                      info@jashom.com
+                    </a>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5" style={{ color: '#10B981' }} />
+                    <a 
+                      href="tel:+919854412744" 
+                      className="text-white/90 hover:text-white transition-colors text-sm md:text-base lg:text-lg"
+                    >
+                      +91 985 441 2744
+                    </a>
+                  </div>
+
+                  <div className="pt-6">
+                    <p className="text-white/70 text-sm md:text-base">
+                      Pay us a visit for a cup of coffee. We'll be more than happy to welcome you.
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -575,9 +653,10 @@ export function NewAboutUsPage() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="p-8 md:p-12 xl:p-16 flex flex-col justify-center min-h-[700px]"
+                className="space-y-6 p-8 md:p-10 rounded-2xl"
                 style={{
-                  background: 'rgba(255, 255, 255, 0.03)'
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
               >
                 <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-white">
