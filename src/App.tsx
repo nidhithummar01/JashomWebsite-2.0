@@ -50,6 +50,7 @@ const SecurityPolicyPage = lazy(() => import('./components/SecurityPolicyPage').
 
 // Lazy load about pages
 const TeamPage = lazy(() => import('./components/about/TeamPage').then(module => ({ default: module.TeamPage })));
+const NewAboutUsPage = lazy(() => import('./components/NewAboutUsPage').then(module => ({ default: module.NewAboutUsPage })));
 
 // Lazy load careers pages
 const CareersPage = lazy(() => import('./components/CareersPage').then(module => ({ default: module.CareersPage })));
@@ -125,6 +126,7 @@ function AnimatedRoutes() {
           <Route path="/thank-you/cuda-development/" element={<PageTransition><CUDADevelopmentThankYouPage /></PageTransition>} />
 
           {/* About Us routes */}
+          <Route path="/about-us/" element={<PageTransition><NewAboutUsPage /></PageTransition>} />
           <Route path="/about/team/" element={<PageTransition><TeamPage /></PageTransition>} />
           <Route path="/about/portfolio/" element={<PageTransition><PortfolioPage /></PageTransition>} />
           <Route path="/about/blog/" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />

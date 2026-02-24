@@ -88,7 +88,7 @@ export function GPUOptimizationServicePage() {
                   maxWidth: '560px'
                 }}
               >
-                We create unique GPU optimization solutions that address actual performance issues. Our end-to-end optimization services deliver speed, scalability, and long-term business impact from planning to implementation and support.
+                We provide advanced GPU Optimization Services, used to maximize your computing infrastructure to full performance. Our team optimizes workload patterns, execution pipes, and parallel processing to remove bottlenecks.
               </p>
 
               {/* CTA Button */}
@@ -146,21 +146,21 @@ export function GPUOptimizationServicePage() {
                 className="space-y-6"
               >
                 <p className="text-white/70 text-base leading-relaxed">
-                  GPU optimization is the process of analyzing, tuning, and enhancing GPU workloads to maximize computational performance and efficiency. It involves identifying bottlenecks, optimizing memory usage, improving kernel execution, and implementing best practices to achieve faster processing times and reduced resource consumption.
+                  GPU optimization is a performance engineering science that aims at making the best use of throughput in a parallel computing system. It requires workload profiling, CUDA kernel restructuring, thread synchronization optimization, and efficient use of memory access to deliver consistent high-performance execution on modern hardware.
                 </p>
                 <p className="text-white/70 text-base leading-relaxed">
-                  GPU optimization bridges the gap between raw computing power and practical application performance in AI/ML, scientific computing, data analytics, and rendering. It enables organizations to reduce infrastructure costs, accelerate time-to-results, and maintain competitive advantage in compute-intensive industries.
+                  Training time can also be minimized by optimized workloads on GPUs, infrastructure waste is minimized, and AI, scientific simulations, and data analytics apps are able to achieve higher compute densities. The result is accelerated processing, optimal use of hardware for compute-intensive processes, and cost-sustainability.
                 </p>
 
                 {/* Key Benefits */}
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="rounded-lg p-4" style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <div className="text-3xl font-bold mb-1" style={{ color: '#10B981' }}>10x</div>
-                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Faster Performance</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Faster Execution</div>
                   </div>
                   <div className="rounded-lg p-4" style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <div className="text-3xl font-bold mb-1" style={{ color: '#10B981' }}>40%</div>
-                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Cost Reduction</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Reduced Compute Costs</div>
                   </div>
                 </div>
               </motion.div>
@@ -202,9 +202,9 @@ export function GPUOptimizationServicePage() {
             className="text-center mb-8"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-              Optimize Performance That Will
+              Optimize Performance That
               <br />
-              Make a Difference
+              Drives Real Results
             </h2>
           </motion.div>
 
@@ -216,7 +216,7 @@ export function GPUOptimizationServicePage() {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <p className="text-white/70 text-base leading-relaxed">
-              Our skilled GPU engineers deliver scalable, efficient, and high-performance optimization solutions. Jashom provides performance-driven GPU optimization for all computing needs, from AI/ML acceleration to scientific computing workloads.
+              Our engineers integrate CUDA Development Services with profound architectural experience to increase the use of a GPU on a wide range of workloads.
             </p>
           </motion.div>
 
@@ -237,7 +237,7 @@ export function GPUOptimizationServicePage() {
                 Optimization
               </h3>
               <p className="text-base leading-relaxed" style={{ color: '#666666' }}>
-                We optimize CUDA kernels, memory patterns, and parallel execution strategies to maximize GPU utilization. Our experts fine-tune your code for peak performance, reducing execution time and improving throughput across NVIDIA GPU architectures.
+                We optimize the underlying kernel execution, better shared memory assignment, and also readjust thread block settings to optimize performance. The services of our CUDA Development are aimed at removing the warp divergence and the latency in the NVIDIA GPU architecture.
               </p>
             </motion.div>
 
@@ -256,7 +256,7 @@ export function GPUOptimizationServicePage() {
                 Acceleration
               </h3>
               <p className="text-base leading-relaxed" style={{ color: '#666666' }}>
-                Accelerate your machine learning models with our GPU optimization expertise. We optimize training pipelines, inference workloads, and neural network architectures to achieve faster results with lower computational costs.
+                Optimize the equilibrium of both the speed of model training and inference via optimized batch operations and the control of accessing memory. We optimize compute to reduce training time and improve predictive performance.
               </p>
             </motion.div>
 
@@ -275,7 +275,7 @@ export function GPUOptimizationServicePage() {
                 Profiling
               </h3>
               <p className="text-base leading-relaxed" style={{ color: '#666666' }}>
-                Comprehensive performance analysis using industry-standard profiling tools. We identify bottlenecks, analyze memory usage patterns, and provide actionable insights to optimize your GPU workloads for maximum efficiency.
+                We identify the areas of inefficiency in the execution flow and memory transfers into increasingly sophisticated profiling frameworks. The benefits of detailed benchmarking are accuracy in making optimization decisions and quantifiable performance improvements.
               </p>
             </motion.div>
           </div>
@@ -314,12 +314,12 @@ export function GPUOptimizationServicePage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight" style={{ marginBottom: '16px' }}>
-                Offering Industry-Specific
+                Industry-Focused GPU
                 <br />
-                GPU Solutions
+                Optimization Solutions
               </h2>
               <p className="text-white/70 text-base leading-relaxed max-w-3xl mb-6">
-                We provide customized GPU optimization solutions tailored to meet the particular needs of your industry. We assist you in improving computational performance, reducing costs, and accelerating innovation through cutting-edge GPU technology.
+                Our GPU optimization services are designed to satisfy the computational needs of industry-specific situations. Each of our solutions is differentiated based on workload complexity, goals, and scalability goals.
               </p>
 
               {/* Industry List - 2x2 Grid */}
@@ -415,14 +415,14 @@ export function GPUOptimizationServicePage() {
               GPU Optimization <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Journey</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-16">
-              A systematic 6-step approach to unlock maximum GPU performance
+              A dedicated six-step model to attain regular improvement in the performance of GPUs.
             </p>
           </motion.div>
 
           {/* Process Steps - Centered Transparent Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
 
-            {/* Step 1 */}
+            {/* Step 1 - Assessment */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -438,12 +438,12 @@ export function GPUOptimizationServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Strategy & Planning</h3>
-                <p className="text-white/60 leading-relaxed">Define objectives, assess infrastructure, and create optimization roadmap</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Assessment</h3>
+                <p className="text-white/60 leading-relaxed">Assess existing GPU architecture, load, and establish specific optimization objectives.</p>
               </div>
             </motion.div>
 
-            {/* Step 2 */}
+            {/* Step 2 - Analysis */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -459,12 +459,12 @@ export function GPUOptimizationServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Data Collection</h3>
-                <p className="text-white/60 leading-relaxed">Gather metrics, analyze workload patterns, and identify bottlenecks</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Analysis</h3>
+                <p className="text-white/60 leading-relaxed">Gather real-time monitoring information and spot performance issues and performance bottlenecks.</p>
               </div>
             </motion.div>
 
-            {/* Step 3 */}
+            {/* Step 3 - Kernel Optimization */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -480,12 +480,12 @@ export function GPUOptimizationServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Algorithm Design</h3>
-                <p className="text-white/60 leading-relaxed">Optimize kernels, parallel strategies, and memory management</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Kernel Optimization</h3>
+                <p className="text-white/60 leading-relaxed">Refine CUDA kernels and improve parallel execution balance.</p>
               </div>
             </motion.div>
 
-            {/* Step 4 */}
+            {/* Step 4 - Tuning */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -501,12 +501,12 @@ export function GPUOptimizationServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Training & Tuning</h3>
-                <p className="text-white/60 leading-relaxed">Fine-tune parameters, optimize throughput, and enhance efficiency</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Tuning</h3>
+                <p className="text-white/60 leading-relaxed">Expenses in runtime parameters and memory allocation, better throughput.</p>
               </div>
             </motion.div>
 
-            {/* Step 5 */}
+            {/* Step 5 - Testing */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -522,12 +522,12 @@ export function GPUOptimizationServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Validation</h3>
-                <p className="text-white/60 leading-relaxed">Benchmark results, validate improvements, and ensure quality</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Testing</h3>
+                <p className="text-white/60 leading-relaxed">Authenticate gains with validation checkpoints.</p>
               </div>
             </motion.div>
 
-            {/* Step 6 */}
+            {/* Step 6 - Deployment */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -544,7 +544,7 @@ export function GPUOptimizationServicePage() {
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-6">Deployment</h3>
-                <p className="text-white/60 leading-relaxed">Seamless integration, monitoring, and continuous optimization</p>
+                <p className="text-white/60 leading-relaxed">Employ workloads that are optimized, monitored, and improved.</p>
               </div>
             </motion.div>
 
@@ -618,17 +618,17 @@ export function GPUOptimizationServicePage() {
                   Need a Custom AI Development Partner?
                 </h2>
                 <p className="text-base sm:text-lg mb-8 leading-relaxed" style={{ color: '#E5E5E5' }}>
-                  We develop multiple projects like custom models, smart assistants, or predictive engines. Together, we can create innovative AI solutions to give you a competitive advantage.
+                  We develop high-performing AI systems based on optimized GPU architecture. Whether you need to hire CUDA Developers for specialized projects or require end-to-end CUDA Development Services, our team delivers scalable solutions engineered for production-grade performance.
                 </p>
                 <a
-                  href="/contact"
+                  href="/contact/"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90"
                   style={{
                     background: '#10B981',
                     color: '#FFFFFF'
                   }}
                 >
-                  Discuss Your Project With Us
+                  Let's talk about Your Project
                 </a>
               </div>
             </div>
@@ -653,7 +653,7 @@ export function GPUOptimizationServicePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
-              How Your Business Benefits from
+              Business Benefits of
               <br />
               GPU Optimization
             </h2>
@@ -661,7 +661,7 @@ export function GPUOptimizationServicePage() {
 
           {/* Benefits Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 1 - Enhanced Forecasting Accuracy */}
+            {/* Card 1 - Faster Processing Speed */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -678,11 +678,11 @@ export function GPUOptimizationServicePage() {
                 Speed
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Accelerate your computational workloads with optimized GPU performance. Reduce processing time from hours to minutes, enabling faster iterations and quicker time-to-market for your products.
+                Fasten hardened compute tasks with an ideal use of parallelization and data movement. With decreased processing time, there will be shorter experimentation times and shorter delivery times.
               </p>
             </motion.div>
 
-            {/* Card 2 - Effective Data Analytics */}
+            {/* Card 2 - Lower Costs of Infrastructure */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -692,18 +692,16 @@ export function GPUOptimizationServicePage() {
               style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(6, 182, 212, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-                Reduced
+                Lower Costs of
                 <br />
                 Infrastructure
-                <br />
-                Costs
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Maximize hardware utilization and reduce cloud computing expenses. Our optimization techniques help you achieve more with less, cutting infrastructure costs by up to 60% while maintaining peak performance.
+                Optimize the use of GPUs in order to reduce costs on clouds and hardware. Harmful efficiency brings a decrease in over-provisioning and enhanced resource allocation.
               </p>
             </motion.div>
 
-            {/* Card 3 - Better Decision-Making */}
+            {/* Card 3 - Improved Scalability */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -718,11 +716,11 @@ export function GPUOptimizationServicePage() {
                 Scalability
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Scale your operations seamlessly as your business grows. Optimized GPU workloads handle increased data volumes and complex computations without proportional cost increases or performance degradation.
+                Processes more data and intricate programs with no drop in performance or increased proportional cost.
               </p>
             </motion.div>
 
-            {/* Card 4 - Workflow Automation */}
+            {/* Card 4 - Enhanced Model Performance */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -739,11 +737,11 @@ export function GPUOptimizationServicePage() {
                 Performance
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Boost AI/ML model training and inference speeds dramatically. Optimized GPU kernels enable faster experimentation, better model accuracy, and real-time predictions for production applications.
+                Improve the performance of AI models training and inference with optimal CUDA execution paths.
               </p>
             </motion.div>
 
-            {/* Card 5 - Improved Productivity */}
+            {/* Card 5 - Competitive Advantage */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -758,11 +756,11 @@ export function GPUOptimizationServicePage() {
                 Advantage
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Stay ahead of competitors with superior computational capabilities. Faster processing, lower costs, and better performance give you the edge in data-intensive industries and AI-driven markets.
+                Become better computers to hasten innovation and become more powerful in data-based markets.
               </p>
             </motion.div>
 
-            {/* Card 6 - Better Customer Experience */}
+            {/* Card 6 - Energy Efficiency */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -777,7 +775,7 @@ export function GPUOptimizationServicePage() {
                 Efficiency
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Reduce power consumption and environmental impact through efficient GPU utilization. Optimized workloads consume less energy per computation, supporting sustainability goals while lowering operational costs.
+                Minimize energy use by optimizing the use of GPUs, which helps on the sustainability agenda and limits the cost of running the operations.
               </p>
             </motion.div>
           </div>
@@ -1160,7 +1158,7 @@ export function GPUOptimizationServicePage() {
             style={{ marginBottom: '60px' }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-              Why Choose Jashom For
+              Why Choose Us for
               <br />
               GPU Optimization?
             </h2>
@@ -1168,7 +1166,7 @@ export function GPUOptimizationServicePage() {
 
           {/* Benefits List */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Benefit 1 - End-to-end Expertise */}
+            {/* Benefit 1 - Advanced Parallel Computing Expertise */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1183,14 +1181,14 @@ export function GPUOptimizationServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Deep GPU Expertise</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Advanced Parallel Computing Expertise</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
-                  Jashom specializes in GPU computing and CUDA optimization. Our team has extensive experience with NVIDIA architectures, parallel computing patterns, and performance tuning. We manage all aspects from profiling to deployment, focusing on measurable performance gains and cost reduction.
+                  Our experts have extensive expertise in CUDA implementation, tuning of the GPU architecture, and high-performance parallel systems. This is done at low-level kernel optimization all the way up to optimizing an entire NVIDIA GPU, and we work to squeeze the highest performance out of every tier of your computing system.
                 </p>
               </div>
             </motion.div>
 
-            {/* Benefit 2 - Proven Results */}
+            {/* Benefit 2 - Results Backed by Data */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1205,14 +1203,14 @@ export function GPUOptimizationServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Proven Performance Results</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Results Backed by Data</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
-                  We deliver measurable improvements with up to 10X performance gains. Our optimization strategies reduce computational costs, accelerate time-to-results, and maximize hardware utilization. Every optimization is backed by comprehensive profiling and benchmarking data.
+                  We value quantitative difference. Each interaction is predetermined by profiling information, systematic testing, and efficiency metrics showing evident acceleration, competitive advantages, and enhanced hardware use.
                 </p>
               </div>
             </motion.div>
 
-            {/* Benefit 3 - Industry-Specific Solutions */}
+            {/* Benefit 3 - Optimization Built Around Your Workload */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1227,9 +1225,9 @@ export function GPUOptimizationServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Tailored Optimization Strategies</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Optimization Built Around Your Workload</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
-                  Jashom creates optimization solutions that understand your specific workload requirements. We design strategies based on your industry needs, whether it's AI/ML acceleration, scientific computing, data analytics, or rendering. Our solutions provide real competitive advantages in compute-intensive applications.
+                  No generic templates. We will create application-specific GPU optimization that will respond to your application and run a discussion, infrastructure configuration, as well as scalability needs by making the performance consistently enhanced on a long-term basis.
                 </p>
               </div>
             </motion.div>
@@ -1267,7 +1265,7 @@ export function GPUOptimizationServicePage() {
             </h2>
 
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
-              Trusted by industry leaders to deliver exceptional results
+              Trusted by forward-thinking organizations to deliver high-performance GPU and CUDA solutions.
             </p>
           </motion.div>
 
@@ -1300,7 +1298,7 @@ export function GPUOptimizationServicePage() {
 
                 {/* Testimonial Text */}
                 <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
-                  "Jashom's GPU optimization reduced our inference latency by 73%. The team's expertise in CUDA programming is unmatched."
+                  "Their graphics processing optimization experience minimized our processing latency. The CUDA execution benefits were fast and quantifiable."
                 </p>
 
                 {/* Author Info */}
@@ -1314,11 +1312,11 @@ export function GPUOptimizationServicePage() {
                     fontWeight: 700,
                     color: '#FFF'
                   }}>
-                    DC
+                    AM
                   </div>
                   <div>
-                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>David Chen</div>
-                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>VP Engineering, Apex AI</div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Arjun Mehta</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>Director of Engineering, NovaAI Labs</div>
                   </div>
                 </div>
               </div>
@@ -1350,13 +1348,13 @@ export function GPUOptimizationServicePage() {
 
                 {/* Testimonial Text */}
                 <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
-                  "The AI automation solutions delivered by Jashom transformed our workflow. We achieved 5x faster processing with their custom ML pipeline."
+                  "Our AI training pipeline became significantly faster after their optimization work. Clear performance gains with reduced infrastructure strain."
                 </p>
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
-                    background: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
+                    background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -1364,11 +1362,11 @@ export function GPUOptimizationServicePage() {
                     fontWeight: 700,
                     color: '#FFF'
                   }}>
-                    MR
+                    SA
                   </div>
                   <div>
-                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Maria Rodriguez</div>
-                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>CTO, DataFlow Systems</div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Sofia Alvarez</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>CTO, Quantix Systems</div>
                   </div>
                 </div>
               </div>
@@ -1400,13 +1398,13 @@ export function GPUOptimizationServicePage() {
 
                 {/* Testimonial Text */}
                 <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
-                  "Outstanding DevSecOps implementation. Jashom's team integrated security seamlessly into our CI/CD pipeline without compromising speed."
+                  "We hired their CUDA developers for complex optimization tasks. The results were stable, scalable, and production-ready."
                 </p>
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4 mt-4 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}>
                   <div className="w-12 h-12 rounded-full flex-shrink-0" style={{
-                    background: 'linear-gradient(135deg, #10B981, #34D399)',
+                    background: 'linear-gradient(135deg, #10B981, #06B6D4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -1414,11 +1412,11 @@ export function GPUOptimizationServicePage() {
                     fontWeight: 700,
                     color: '#FFF'
                   }}>
-                    EW
+                    DB
                   </div>
                   <div>
-                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Emily Watson</div>
-                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>Head of Security, TechCorp</div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Daniel Brooks</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>Chief Operating Officer, CoreTech Solutions</div>
                   </div>
                 </div>
               </div>
@@ -1463,7 +1461,7 @@ export function GPUOptimizationServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      How can my company benefit from GPU optimization?
+                      How long does a GPU optimization project typically take?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1476,7 +1474,7 @@ export function GPUOptimizationServicePage() {
                   </summary>
                   <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      With carefully optimized GPU workloads, your company can achieve faster computation, reduce infrastructure costs, and improve efficiency. GPU optimization helps you scale your operations, streamline processes, and accelerate time-to-results for compute-intensive applications.
+                      The timelines of projects are based on the complexity of the workload, the level of infrastructure, and the objectives of the performance. Enterprise environments take most optimization engagements between a few weeks and a few months.
                     </p>
                   </div>
                 </details>
@@ -1494,7 +1492,7 @@ export function GPUOptimizationServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      What happens if my project's requirements change in the middle?
+                      Can you optimize legacy CUDA codebases?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1507,7 +1505,7 @@ export function GPUOptimizationServicePage() {
                   </summary>
                   <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      We understand that optimization requirements can evolve. Our flexible approach allows us to adapt to changing needs, whether it's targeting different GPU architectures, optimizing new workloads, or adjusting performance goals. We work closely with you to ensure the optimization strategy aligns with your current objectives.
+                      Yes. We test current CUDA implementations, determine architectural waste, and cull kernels to optimize memory access characteristics, parallel execution ratio, and total performance.
                     </p>
                   </div>
                 </details>
@@ -1525,7 +1523,7 @@ export function GPUOptimizationServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      Do you optimize existing code or build new solutions?
+                      What metrics do you use to measure optimization success?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1538,7 +1536,7 @@ export function GPUOptimizationServicePage() {
                   </summary>
                   <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      We do both! We can optimize your existing CUDA code, CPU-to-GPU migrations, and legacy applications. We also develop new GPU-accelerated solutions from scratch, implementing best practices and cutting-edge optimization techniques from the ground up.
+                      We assess the use of GPUs, the performance, the ability to use memory, the decrease in latency, the efficiency of the scalability, and the savings in costs using structured profiling and benchmarking techniques.
                     </p>
                   </div>
                 </details>
@@ -1556,7 +1554,7 @@ export function GPUOptimizationServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      How secure are the GPU optimization solutions you provide?
+                      Do optimized workloads remain stable in production?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1569,7 +1567,7 @@ export function GPUOptimizationServicePage() {
                   </summary>
                   <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      Security is a top priority. We follow industry best practices for code security, data protection, and confidentiality. All optimization work is conducted under strict NDA agreements, and we implement secure coding practices to protect your intellectual property and sensitive data throughout the optimization process.
+                      Absolutely. All optimizations are tested, regressed, and monitored during deployment to make sure that the performance improvements will be maintained in the field.
                     </p>
                   </div>
                 </details>

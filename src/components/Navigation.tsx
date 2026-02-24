@@ -34,8 +34,9 @@ export function Navigation() {
       ]
     },
     {
-      label: 'About Us',
+      label: 'Company',
       dropdown: [
+        { path: '/about-us/', label: 'About Us' },
         { path: '/about/team/', label: 'Team' },
         { path: '/about/portfolio/', label: 'Portfolio' },
         { path: '/insights/', label: 'Blog' },
