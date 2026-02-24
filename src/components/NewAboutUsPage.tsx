@@ -3,10 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import { 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram,
   Mail,
   Phone
 } from 'lucide-react';
@@ -243,36 +239,56 @@ export function NewAboutUsPage() {
               </motion.div>
 
               {/* Social Icons - Facebook */}
-              <motion.div
+              <motion.a
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
+                href="https://www.facebook.com/jashom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
                 whileHover={{
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)'
+                  background: '#1877F2',
+                  borderColor: '#1877F2',
+                  scale: 1.05
                 }}
+                transition={{ duration: 0 }}
               >
-                <Facebook className="w-8 h-8" style={{ color: '#9CA3AF' }} />
-              </motion.div>
+                <img 
+                  src="/images/social-media/facebook.png.png"
+                  alt="Facebook"
+                  className="w-16 h-16 object-cover transition-all duration-300"
+                  style={{ objectFit: 'cover' }}
+                />
+              </motion.a>
 
               {/* Social Icons - Twitter */}
-              <motion.div
+              <motion.a
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
+                href="https://twitter.com/jashom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
                 whileHover={{
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)'
+                  background: '#FFFFFF',
+                  borderColor: '#000000',
+                  scale: 1.05
                 }}
+                transition={{ duration: 0 }}
               >
-                <Twitter className="w-8 h-8" style={{ color: '#9CA3AF' }} />
-              </motion.div>
+                <img 
+                  src="/images/social-media/twitter.png.png"
+                  alt="Twitter"
+                  className="w-16 h-16 object-cover transition-all duration-300"
+                  style={{ objectFit: 'cover' }}
+                />
+              </motion.a>
 
               {/* Industries Served - Jashom Theme */}
               <motion.div
@@ -291,38 +307,56 @@ export function NewAboutUsPage() {
               </motion.div>
 
               {/* Social Icons - LinkedIn (Clickable) */}
-              <motion.div
+              <motion.a
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
+                href="https://www.linkedin.com/company/jashom/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
                 whileHover={{
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(16, 185, 129, 0.3)'
+                  background: '#006192',
+                  borderColor: '#006192',
+                  scale: 1.05
                 }}
-                onClick={() => window.open('https://www.linkedin.com/company/jashom/', '_blank')}
+                transition={{ duration: 0 }}
               >
-                <Linkedin className="w-8 h-8" style={{ color: '#9CA3AF' }} />
-              </motion.div>
+                <img 
+                  src="/images/social-media/linkedin.png.png"
+                  alt="LinkedIn"
+                  className="w-16 h-16 object-cover transition-all duration-300"
+                  style={{ objectFit: 'cover' }}
+                />
+              </motion.a>
 
               {/* Social Icons - Instagram (Clickable) */}
-              <motion.div
+              <motion.a
                 variants={staggerItem}
-                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300"
+                href="https://www.instagram.com/jashomtechnologies_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl p-6 flex items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden instagram-card"
                 style={{
                   background: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
                 whileHover={{
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(16, 185, 129, 0.3)'
+                  background: 'radial-gradient(circle at 30% 110%, #feda75, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%)',
+                  borderColor: '#d62976',
+                  scale: 1.05
                 }}
-                onClick={() => window.open('https://www.instagram.com/jashomtechnologies_', '_blank')}
+                transition={{ duration: 0 }}
               >
-                <Instagram className="w-8 h-8" style={{ color: '#9CA3AF' }} />
-              </motion.div>
+                <img 
+                  src="/images/social-media/instagram.png.png"
+                  alt="Instagram"
+                  className="w-16 h-16 object-cover transition-all duration-300"
+                  style={{ objectFit: 'cover' }}
+                />
+              </motion.a>
 
               {/* Lines of Code */}
               <motion.div
