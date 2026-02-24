@@ -74,7 +74,7 @@ export function CUDADevelopmentServicePage() {
                   marginBottom: '32px'
                 }}
               >
-                CUDA Development Services
+                Custom CUDA Development for Advanced GPU Computing
               </h1>
 
               {/* Paragraph */}
@@ -88,7 +88,7 @@ export function CUDADevelopmentServicePage() {
                   maxWidth: '560px'
                 }}
               >
-                We create custom CUDA solutions that transform computational challenges into high-performance GPU-accelerated applications. Our end-to-end development services deliver speed, scalability, and innovation from architecture design to deployment and support.
+                Revolutionize computational pressure to run scalable performance using master CUDA engineering. Our architectures are built and deployed in the form of GPU-native, which opens the door to the efficiency of parallel processing of the AI systems, simulations, and data-intensive programs.
               </p>
 
               {/* CTA Button */}
@@ -129,10 +129,11 @@ export function CUDADevelopmentServicePage() {
               <p className="text-sm uppercase tracking-wider" style={{ color: '#10B981' }}>Overview</p>
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-              What is CUDA
+              What CUDA Means for
               <br />
-              Development?
+              Your Architecture
             </h2>
+            <p className="text-white/70 text-lg mt-4">Redefining Performance with GPU Parallelism</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -146,21 +147,21 @@ export function CUDADevelopmentServicePage() {
                 className="space-y-6"
               >
                 <p className="text-white/70 text-base leading-relaxed">
-                  CUDA development is the process of creating custom GPU-accelerated applications using NVIDIA's parallel computing platform. It involves designing, implementing, and optimizing parallel algorithms, custom kernels, and GPU workloads to achieve dramatic performance improvements over traditional CPU-based solutions.
+                  CUDA development is concentrated on reengineering applications that perform effectively in thousands of cores of GPUs at the same time. Workloads are separated into parallel operations that are optimized to high throughput environments, rather than creating sequential CPU execution.
                 </p>
                 <p className="text-white/70 text-base leading-relaxed">
-                  CUDA development enables organizations to harness the massive parallel processing power of modern GPUs for AI/ML, scientific computing, data analytics, and real-time processing. It transforms computational bottlenecks into competitive advantages through expert parallel programming and optimization techniques.
+                  Such a solution will minimize latency, optimize the use of resources, and increase the scalability of machine learning, quantitative analytics, visualization engines, and scientific modeling systems. The correct use of CUDA is not acceleration; it is an architectural change.
                 </p>
 
                 {/* Key Benefits */}
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="rounded-lg p-4" style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <div className="text-3xl font-bold mb-1" style={{ color: '#10B981' }}>100x</div>
-                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Faster Processing</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Compute Throughput Increase</div>
                   </div>
                   <div className="rounded-lg p-4" style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
-                    <div className="text-3xl font-bold mb-1" style={{ color: '#10B981' }}>50%</div>
-                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Cost Savings</div>
+                    <div className="text-3xl font-bold mb-1" style={{ color: '#10B981' }}>Up to 50%</div>
+                    <div className="text-sm" style={{ color: '#9E9E9E' }}>Hardware Efficiency Optimization</div>
                   </div>
                 </div>
               </motion.div>
@@ -202,9 +203,9 @@ export function CUDADevelopmentServicePage() {
             className="text-center mb-8"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-              Custom Development That
+              Performance-Driven
               <br />
-              Delivers Results
+              CUDA Engineering
             </h2>
           </motion.div>
 
@@ -216,13 +217,13 @@ export function CUDADevelopmentServicePage() {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <p className="text-white/70 text-base leading-relaxed">
-              Our expert CUDA engineers deliver scalable, efficient, and high-performance custom solutions. Jashom provides end-to-end CUDA development for all GPU computing needs, from kernel optimization to complete application acceleration.
+              Our team develops high-performance GPU systems that are very stable, scalable, and capable of providing performance across enterprise workloads, which can be measured.
             </p>
           </motion.div>
 
           {/* Service Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Card 1 - Custom Kernel Development */}
+            {/* Card 1 - Custom Parallel Algorithm Design */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -232,16 +233,16 @@ export function CUDADevelopmentServicePage() {
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
-                Custom Kernel
+                Custom Parallel
                 <br />
-                Development
+                Algorithm Design
               </h3>
               <p className="text-base leading-relaxed" style={{ color: '#666666' }}>
-                We design and implement high-performance custom CUDA kernels tailored to your specific computational requirements. Our experts optimize memory patterns, thread execution, and parallel strategies for maximum GPU utilization and throughput.
+                To maintain long-term computational performance, we build workload-specific parallel plans, compromising thread allocation, the use of memory hierarchy, and synchronization.
               </p>
             </motion.div>
 
-            {/* Card 2 - Application Integration */}
+            {/* Card 2 - GPU Acceleration for Existing Systems */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -251,16 +252,16 @@ export function CUDADevelopmentServicePage() {
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
-                Application
+                GPU Acceleration for
                 <br />
-                Integration
+                Existing Systems
               </h3>
               <p className="text-base leading-relaxed" style={{ color: '#666666' }}>
-                Seamlessly integrate GPU acceleration into your existing applications and workflows. We handle the complexity of CUDA integration, ensuring smooth interoperability with your current systems while delivering measurable performance gains.
+                With little disturbance, legacy applications are reformed to run on the GPU. We control the optimization of data transfer, API correspondence, and validation to production readiness.
               </p>
             </motion.div>
 
-            {/* Card 3 - End-to-End Solutions */}
+            {/* Card 3 - End-to-End Performance Architecture */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -270,12 +271,12 @@ export function CUDADevelopmentServicePage() {
               style={{ background: '#f5f5f5' }}
             >
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#000000' }}>
-                End-to-End
+                End-to-End Performance
                 <br />
-                Solutions
+                Architecture
               </h3>
               <p className="text-base leading-relaxed" style={{ color: '#666666' }}>
-                Complete GPU-accelerated solutions from architecture design to production deployment. We manage the entire development lifecycle, including profiling, optimization, testing, and ongoing maintenance for long-term success.
+                Since we do initial modeling, benchmark validation, and hardening against deployment, we manage all the steps of the CUDA implementation with precision-driven engineering requirements.
               </p>
             </motion.div>
           </div>
@@ -303,23 +304,23 @@ export function CUDADevelopmentServicePage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6" style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)' }}>
-              Delivering Industry-Specific
+              Accelerating Compute-Intensive
               <br />
-              CUDA Solutions
+              Industries
             </h2>
             <p className="text-white/90 text-base leading-relaxed mb-12 max-w-3xl" style={{ textShadow: '0 1px 5px rgba(0, 0, 0, 0.5)' }}>
-              We provide customized CUDA development solutions tailored to meet the unique computational needs of your industry. We help you accelerate innovation, reduce processing time, and achieve breakthrough performance through expert GPU programming.
+              We design CUDA-driven solutions to industries whose speed of processing has a direct consequence on the results of their operation.
             </p>
 
             {/* Industry List - 2 columns */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: '#10B981' }}>
                   <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base font-medium">Machine Learning</span>
+                <span className="text-white text-base font-medium">Artificial Intelligence Model Training & Inference Systems</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -328,7 +329,7 @@ export function CUDADevelopmentServicePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base font-medium">Scientific Computing</span>
+                <span className="text-white text-base font-medium">Super-Accurate Scientific Research Platforms</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -337,7 +338,7 @@ export function CUDADevelopmentServicePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base font-medium">Financial Computing</span>
+                <span className="text-white text-base font-medium">Risk Engines and Algorithms Trading</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -346,7 +347,7 @@ export function CUDADevelopmentServicePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-white text-base font-medium">Image & Video Processing</span>
+                <span className="text-white text-base font-medium">Instant Media Rendering and Analysis</span>
               </div>
             </div>
           </motion.div>
@@ -379,17 +380,20 @@ export function CUDADevelopmentServicePage() {
               <span className="text-blue-400 font-semibold text-sm">OUR PROCESS</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-              CUDA Development <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Journey</span>
+              Structured CUDA <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Implementation Process</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-16">
-              A systematic 6-step approach to deliver high-performance GPU solutions
+            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-4">
+              A Six-Phase GPU Engineering Model
+            </p>
+            <p className="text-white/60 text-base max-w-2xl mx-auto mb-16">
+              Our design guarantees high availability, acceleration, and system integrity as well as scalability.
             </p>
           </motion.div>
 
           {/* Process Steps - Centered Transparent Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
 
-            {/* Step 1 */}
+            {/* Step 1 - Computational Profiling */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -401,16 +405,16 @@ export function CUDADevelopmentServicePage() {
                 <div className="relative mb-6">
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-blue-500 flex items-center justify-center shadow-lg shadow-blue-500/50 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Requirements Analysis</h3>
-                <p className="text-white/60 leading-relaxed">Understand computational needs, analyze workloads, and define performance goals</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Computational Profiling</h3>
+                <p className="text-white/60 leading-relaxed">We measure execution patterns, memory loads, and bottlenecks in order to come up with realistic acceleration targets.</p>
               </div>
             </motion.div>
 
-            {/* Step 2 */}
+            {/* Step 2 - Parallel Systems Blueprint */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -422,16 +426,16 @@ export function CUDADevelopmentServicePage() {
                 <div className="relative mb-6">
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/50 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Architecture Design</h3>
-                <p className="text-white/60 leading-relaxed">Design parallel algorithms, memory strategies, and optimal GPU architecture</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Parallel Systems Blueprint</h3>
+                <p className="text-white/60 leading-relaxed">Models known as thread hierarchy, shared memory models, and workload partitioning are designed for models that are ideal to execute using the GPUs.</p>
               </div>
             </motion.div>
 
-            {/* Step 3 */}
+            {/* Step 3 - CUDA Core Development */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -447,12 +451,12 @@ export function CUDADevelopmentServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Kernel Development</h3>
-                <p className="text-white/60 leading-relaxed">Implement custom CUDA kernels with optimized parallel execution patterns</p>
+                <h3 className="text-2xl font-bold text-white mb-6">CUDA Core Development</h3>
+                <p className="text-white/60 leading-relaxed">The high-occupancy kernels are also designed to provide the predictability of throughput when operating at peak loading.</p>
               </div>
             </motion.div>
 
-            {/* Step 4 */}
+            {/* Step 4 - Bottleneck Elimination & Benchmarking */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -468,12 +472,12 @@ export function CUDADevelopmentServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Optimization & Testing</h3>
-                <p className="text-white/60 leading-relaxed">Profile performance, optimize bottlenecks, and validate correctness</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Bottleneck Elimination & Benchmarking</h3>
+                <p className="text-white/60 leading-relaxed">The profiling tools reveal the areas of inefficiency so that they can be refined to achieve continuous and reliable performance improvements.</p>
               </div>
             </motion.div>
 
-            {/* Step 5 */}
+            {/* Step 5 - Application Integration */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -489,12 +493,12 @@ export function CUDADevelopmentServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Integration</h3>
-                <p className="text-white/60 leading-relaxed">Seamlessly integrate GPU code with existing systems and workflows</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Application Integration</h3>
+                <p className="text-white/60 leading-relaxed">GPU modules are integrated into your software ecosystem with clean interfaces and continuity.</p>
               </div>
             </motion.div>
 
-            {/* Step 6 */}
+            {/* Step 6 - Production Optimization */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -510,8 +514,8 @@ export function CUDADevelopmentServicePage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Deployment & Support</h3>
-                <p className="text-white/60 leading-relaxed">Production deployment, monitoring, and ongoing maintenance support</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Production Optimization</h3>
+                <p className="text-white/60 leading-relaxed">Scalability is guaranteed during post-deployment analysis, based on the changing workloads and multi-GPUs.</p>
               </div>
             </motion.div>
 
@@ -555,7 +559,7 @@ export function CUDADevelopmentServicePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
-              How Your Business Benefits from
+              Strategic Benefits of
               <br />
               CUDA Development
             </h2>
@@ -563,7 +567,7 @@ export function CUDADevelopmentServicePage() {
 
           {/* Benefits Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 1 */}
+            {/* Card 1 - Accelerated Computational Performance */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -573,18 +577,18 @@ export function CUDADevelopmentServicePage() {
               style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(16, 185, 129, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-                Dramatic
+                Accelerated
+                <br />
+                Computational
                 <br />
                 Performance
-                <br />
-                Gains
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Achieve 10-100X speedups over CPU implementations with custom CUDA solutions. Transform hours of processing into minutes, enabling real-time capabilities and faster innovation cycles.
+                CUDA allows parallel computation of thousands of Cores on the GPU, which saves a lot of processing time when dealing with complex workloads, like AI training, simulations, and applications of large data analytics.
               </p>
             </motion.div>
 
-            {/* Card 2 */}
+            {/* Card 2 - Improved Infrastructure Efficiency */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -594,16 +598,18 @@ export function CUDADevelopmentServicePage() {
               style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(6, 182, 212, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-                Cost
+                Improved
+                <br />
+                Infrastructure
                 <br />
                 Efficiency
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Reduce infrastructure costs by processing more data with fewer resources. GPU acceleration delivers superior price-performance ratios compared to scaling CPU-based systems.
+                By moving more intensive workloads off of CPU and onto the GPUs, the organizations are able to handle larger data volumes with reduced hardware resources to enhance performance-per-watt and infrastructure ROI.
               </p>
             </motion.div>
 
-            {/* Card 3 */}
+            {/* Card 3 - Enhanced Competitive Positioning */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -613,16 +619,18 @@ export function CUDADevelopmentServicePage() {
               style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(139, 92, 246, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                Enhanced
+                <br />
                 Competitive
                 <br />
-                Edge
+                Positioning
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Outpace competitors with superior computational capabilities. Faster processing enables quicker insights, better models, and more responsive applications.
+                A rapid computational speed can be more useful in fast experimentation, real-time analysis, and sophisticated modeling, which will enable companies to innovate faster and have a high level of technological superiority in their industry.
               </p>
             </motion.div>
 
-            {/* Card 4 */}
+            {/* Card 4 - Scalable High-Performance Architecture */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -634,14 +642,16 @@ export function CUDADevelopmentServicePage() {
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 Scalable
                 <br />
-                Solutions
+                High-Performance
+                <br />
+                Architecture
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Build applications that scale effortlessly from single GPUs to multi-GPU clusters. Handle growing data volumes without proportional cost increases.
+                The architecture of CUDA-based systems is built so that it can be used in both multi-GPU architectures and high-performance clusters, both in terms of throughput and reliability, as data requirements and computing complexity rise.
               </p>
             </motion.div>
 
-            {/* Card 5 */}
+            {/* Card 5 - Future-Ready Technology Investment */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -654,13 +664,15 @@ export function CUDADevelopmentServicePage() {
                 Future-Ready
                 <br />
                 Technology
+                <br />
+                Investment
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Invest in proven GPU computing technology that continues to evolve. CUDA solutions remain relevant as new GPU architectures deliver even greater performance.
+                Adopting CUDA aligns your infrastructure with evolving GPU advancements, ensuring compatibility with emerging AI frameworks, deep learning models, and next-generation computational workloads.
               </p>
             </motion.div>
 
-            {/* Card 6 */}
+            {/* Card 6 - Reduced Development Cycles */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -670,12 +682,14 @@ export function CUDADevelopmentServicePage() {
               style={{ background: 'rgba(16, 185, 129, 0.05)', borderColor: 'rgba(52, 211, 153, 0.35)' }}
             >
               <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-                Faster
+                Reduced
                 <br />
-                Time-to-Market
+                Development
+                <br />
+                Cycles
               </h3>
               <p className="text-white/70 text-base leading-relaxed">
-                Accelerate development cycles with rapid prototyping and testing. GPU-powered workflows enable faster iterations and quicker product launches.
+                The performance in terms of optimization of GPU acceleration reduces the time of implementation in testing and in the process of iteration, whereby development teams can quickly rise above their experimental levels and proceed with their production processes more efficiently.
               </p>
             </motion.div>
           </div>
@@ -699,15 +713,15 @@ export function CUDADevelopmentServicePage() {
             style={{ marginBottom: '60px' }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-              Why Choose Jashom For
+              Why Organizations Trust
               <br />
-              CUDA Development?
+              Our CUDA Team
             </h2>
           </motion.div>
 
           {/* Benefits List */}
           <div className="flex flex-col gap-6">
-            {/* Benefit 1 - Deep CUDA Expertise */}
+            {/* Benefit 1 - Advanced Parallel Computing Expertise */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -722,14 +736,14 @@ export function CUDADevelopmentServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Deep CUDA Expertise</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Advanced Parallel Computing Expertise</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
-                  Jashom specializes in CUDA development and GPU computing. Our team has extensive experience with parallel programming, kernel optimization, and NVIDIA architectures. We manage all aspects from design to deployment, focusing on measurable performance gains and production-ready solutions.
+                  Our engineers have extensive practical experience in CUDA programming and in the design of large-scale parallel architecture, as well as in the management of the GPU memory. We build production-ready acceleration frameworks that prioritize execution stability, optimal resource utilization, and sustained high-throughput performance across demanding computational environments.
                 </p>
               </div>
             </motion.div>
 
-            {/* Benefit 2 - Proven Track Record */}
+            {/* Benefit 2 - Quantifiable Performance Improvements */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -744,14 +758,14 @@ export function CUDADevelopmentServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Proven Development Results</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Quantifiable Performance Improvements</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
-                  We deliver measurable improvements with up to 100X performance gains over CPU implementations. Our custom CUDA solutions reduce processing time, lower infrastructure costs, and enable real-time capabilities. Every solution is backed by comprehensive profiling and benchmarking data.
+                  All CUDA implementations have advanced profiling, benchmarking, and performance analysis. We quantify the reduction of latency, throughput improvement as well as resource efficiency to make sure that optimization outcomes are realistic, evidence-based, and consistent with clearly established performance goals.
                 </p>
               </div>
             </motion.div>
 
-            {/* Benefit 3 - Custom Solutions */}
+            {/* Benefit 3 - Workload-Specific Optimization Strategy */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -766,9 +780,9 @@ export function CUDADevelopmentServicePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Tailored Development Approach</h3>
+                <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '16px' }}>Workload-Specific Optimization Strategy</h3>
                 <p className="text-white/70 text-base leading-relaxed max-w-4xl">
-                  Jashom creates custom CUDA solutions that understand your specific computational challenges. We design strategies based on your workload requirements, whether it's ML acceleration, scientific simulation, or real-time processing. Our solutions provide real competitive advantages in compute-intensive applications.
+                  We do not just make some arbitrary acceleration, but instead analyze the patterns of execution of your application, data dependencies, and scaling needs. This enables us to design CUDA solutions that are highly targeted to optimally match workload behaviour and provide predictable and orderable computational benefits.
                 </p>
               </div>
             </motion.div>
@@ -802,11 +816,11 @@ export function CUDADevelopmentServicePage() {
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#FAFAFA', letterSpacing: '-0.025em', lineHeight: 1.2 }}>
-              What Our Clients Say
+              Client Experiences
             </h2>
 
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#9CA3AF', lineHeight: 1.7 }}>
-              Trusted by industry leaders to deliver exceptional results
+              Proven Impact Across Industries
             </p>
           </motion.div>
 
@@ -839,7 +853,7 @@ export function CUDADevelopmentServicePage() {
 
                 {/* Testimonial Text */}
                 <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
-                  "Jashom's GPU optimization reduced our inference latency by 73%. The team's expertise in CUDA programming is unmatched."
+                  "GPU acceleration significantly enhanced our data processing framework, reducing execution cycles under high-load scenarios."
                 </p>
 
                 {/* Author Info */}
@@ -853,11 +867,11 @@ export function CUDADevelopmentServicePage() {
                     fontWeight: 700,
                     color: '#FFF'
                   }}>
-                    DC
+                    DE
                   </div>
                   <div>
-                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>David Chen</div>
-                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>VP Engineering, Apex AI</div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Director of Engineering</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>AI Platform</div>
                   </div>
                 </div>
               </div>
@@ -889,7 +903,7 @@ export function CUDADevelopmentServicePage() {
 
                 {/* Testimonial Text */}
                 <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
-                  "The AI automation solutions delivered by Jashom transformed our workflow. We achieved 5x faster processing with their custom ML pipeline."
+                  "Our migration to CUDA-based execution improved analytical throughput without expanding infrastructure costs."
                 </p>
 
                 {/* Author Info */}
@@ -903,11 +917,11 @@ export function CUDADevelopmentServicePage() {
                     fontWeight: 700,
                     color: '#FFF'
                   }}>
-                    MR
+                    CT
                   </div>
                   <div>
-                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Maria Rodriguez</div>
-                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>CTO, DataFlow Systems</div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Chief Technology Officer</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>Technology Company</div>
                   </div>
                 </div>
               </div>
@@ -939,7 +953,7 @@ export function CUDADevelopmentServicePage() {
 
                 {/* Testimonial Text */}
                 <p className="text-base mb-8" style={{ color: '#D1D5DB', lineHeight: 1.8 }}>
-                  "Outstanding DevSecOps implementation. Jashom's team integrated security seamlessly into our CI/CD pipeline without compromising speed."
+                  "The architectural redesign delivered predictable performance scaling across multiple GPU nodes."
                 </p>
 
                 {/* Author Info */}
@@ -953,11 +967,11 @@ export function CUDADevelopmentServicePage() {
                     fontWeight: 700,
                     color: '#FFF'
                   }}>
-                    EW
+                    HS
                   </div>
                   <div>
-                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Emily Watson</div>
-                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>Head of Security, TechCorp</div>
+                    <div style={{ color: '#FAFAFA', fontWeight: 600, fontSize: '15px' }}>Head of Systems Engineering</div>
+                    <div style={{ color: '#9CA3AF', fontSize: '13px' }}>Engineering Company</div>
                   </div>
                 </div>
               </div>
@@ -1002,7 +1016,7 @@ export function CUDADevelopmentServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      What types of applications can benefit from CUDA development?
+                      How do I know if my application is suitable for CUDA acceleration?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1013,9 +1027,9 @@ export function CUDADevelopmentServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      Applications with computationally intensive workloads benefit most from CUDA development, including machine learning training and inference, scientific simulations, financial modeling, image and video processing, data analytics, cryptography, and real-time processing systems. Any application with parallel processing opportunities can achieve significant speedups.
+                      Applications whose operations are frequently repeated in numbers, process large datasets, matrix calculations, or can be performed in parallel are good candidates. Performing profiling measurements helps us identify whether there are any performance improvements that can be realized and achieved through the use of GPU acceleration.
                     </p>
                   </div>
                 </details>
@@ -1033,7 +1047,7 @@ export function CUDADevelopmentServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      How long does a typical CUDA development project take?
+                      Can CUDA be integrated into an existing production system?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1044,9 +1058,9 @@ export function CUDADevelopmentServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      Project timelines vary based on complexity and scope. Simple kernel optimization projects may take 2-4 weeks, while complete application development can take 2-6 months. We provide detailed timelines during the initial analysis phase and maintain transparent communication throughout the development process.
+                      Yes. We refactor and modularize elements such that there is no disruption to other business operations, and a full system rebuild is not necessary to add the acceleration of a graphics card to your existing architecture.
                     </p>
                   </div>
                 </details>
@@ -1064,7 +1078,7 @@ export function CUDADevelopmentServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      Do you provide ongoing support after development?
+                      What is the difference between CPU optimization and CUDA optimization?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1075,9 +1089,9 @@ export function CUDADevelopmentServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      Yes, we offer comprehensive post-deployment support including maintenance, updates, performance monitoring, and optimization refinements. We can provide ongoing support contracts or project-based assistance as your needs evolve and new GPU architectures are released.
+                      CPU optimization enhances the ability to run sequence-related tasks, whereas CUDA optimization rearranges workloads to execute them in a massively parallel fashion across the armies of cores in GPUs, which is much more efficient at providing high throughput in tasks of high compute intensity.
                     </p>
                   </div>
                 </details>
@@ -1095,7 +1109,7 @@ export function CUDADevelopmentServicePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                     <h3 className="text-lg font-semibold text-white pr-4">
-                      What GPU hardware do I need for CUDA development?
+                      Do you support multi-GPU and cluster-based deployments?
                     </h3>
                     <svg
                       className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
@@ -1106,9 +1120,71 @@ export function CUDADevelopmentServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-6">
+                  <div className="px-6 pt-2 pb-8">
                     <p className="text-white/70 text-base leading-relaxed">
-                      CUDA requires NVIDIA GPUs with compute capability 3.0 or higher. We recommend modern GPUs like the RTX series for development and testing, and data center GPUs like A100, H100, or L40S for production workloads. We can help you select the right hardware based on your specific requirements and budget.
+                      Absolutely. Our CUDA architectures are optimized to be scaled to multi-GPU and high-performance cluster environments, such that the performance remains consistent as the level of computational requirements rises.
+                    </p>
+                  </div>
+                </details>
+              </motion.div>
+
+              {/* FAQ 5 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="rounded-2xl border border-white/10 overflow-hidden"
+                style={{ background: '#0B0F14' }}
+              >
+                <details className="group">
+                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                    <h3 className="text-lg font-semibold text-white pr-4">
+                      How do you measure performance improvement in CUDA projects?
+                    </h3>
+                    <svg
+                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pt-2 pb-8">
+                    <p className="text-white/70 text-base leading-relaxed">
+                      Before and after optimization, we measure the reduction of execution time, the increased memory efficiency, and scalability through profiling tools, benchmarking frameworks, and throughput analysis.
+                    </p>
+                  </div>
+                </details>
+              </motion.div>
+
+              {/* FAQ 6 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="rounded-2xl border border-white/10 overflow-hidden"
+                style={{ background: '#0B0F14' }}
+              >
+                <details className="group">
+                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                    <h3 className="text-lg font-semibold text-white pr-4">
+                      Is ongoing CUDA performance tuning necessary?
+                    </h3>
+                    <svg
+                      className="w-6 h-6 text-white/60 transition-transform group-open:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pt-2 pb-8">
+                    <p className="text-white/70 text-base leading-relaxed">
+                      Yes. With the changing workloads, periodical profiling and optimization will ensure the efficiency is maintained and avoid any bottlenecks, keeping the utilization of the GPUs optimal over time.
                     </p>
                   </div>
                 </details>

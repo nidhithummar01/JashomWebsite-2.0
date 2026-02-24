@@ -370,11 +370,7 @@ export function HomePage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#FAFAFA', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em' }}>
-                  What We <span style={{
-                    background: 'linear-gradient(135deg, #10B981, #06B6D4)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}>Do</span>
+                  What We <span style={{ color: '#10B981' }}>Do</span>
                 </h2>
               </motion.div>
 

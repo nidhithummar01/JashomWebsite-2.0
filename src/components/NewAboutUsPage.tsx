@@ -73,16 +73,17 @@ export function NewAboutUsPage() {
         />
       </Helmet>
 
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-black overflow-x-hidden">
         {/* Hero Section with Background Image */}
         <section
-          className="relative overflow-hidden"
+          className="relative overflow-hidden w-full"
           style={{
             minHeight: '100vh',
             backgroundImage: 'url(/images/About%20Us/about-us-hero.jpg.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            maxWidth: '100vw'
           }}
         >
           {/* Dark Gradient Overlay - Left to Right fade for readability */}
@@ -94,8 +95,8 @@ export function NewAboutUsPage() {
           ></div>
 
           {/* Content - Premium Spacing */}
-          <div className="relative z-10 min-h-screen flex items-center">
-            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
+          <div className="relative z-10 min-h-screen flex items-center overflow-x-hidden">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '100px', maxWidth: '100%' }}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
