@@ -37,11 +37,6 @@ const GPUOptimizationServicePage = lazy(() => import('./components/GPUOptimizati
 const CUDADevelopmentServicePage = lazy(() => import('./components/CUDADevelopmentServicePage').then(module => ({ default: module.CUDADevelopmentServicePage })));
 const ThankYouPage = lazy(() => import('./components/ThankYouPage').then(module => ({ default: module.ThankYouPage })));
 
-// Lazy load service-specific thank you pages
-const HireCudaThankYouPage = lazy(() => import('./components/HireCudaThankYouPage').then(module => ({ default: module.HireCudaThankYouPage })));
-const GPUOptimizationThankYouPage = lazy(() => import('./components/GPUOptimizationThankYouPage').then(module => ({ default: module.GPUOptimizationThankYouPage })));
-const CUDADevelopmentThankYouPage = lazy(() => import('./components/CUDADevelopmentThankYouPage').then(module => ({ default: module.CUDADevelopmentThankYouPage })));
-
 // Lazy load policy pages
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then(module => ({ default: module.PrivacyPolicyPage })));
 const TermsOfServicePage = lazy(() => import('./components/TermsOfServicePage').then(module => ({ default: module.TermsOfServicePage })));
@@ -119,11 +114,6 @@ function AnimatedRoutes() {
           <Route path="/thank-you/" element={<PageTransition><ThankYouPage /></PageTransition>} />
           <Route path="/gpu-optimization-service/" element={<PageTransition><GPUOptimizationServicePage /></PageTransition>} />
           <Route path="/cuda-development-service/" element={<PageTransition><CUDADevelopmentServicePage /></PageTransition>} />
-          
-          {/* Service-Specific Thank You Pages */}
-          <Route path="/thank-you/hire-cuda/" element={<PageTransition><HireCudaThankYouPage /></PageTransition>} />
-          <Route path="/thank-you/gpu-optimization/" element={<PageTransition><GPUOptimizationThankYouPage /></PageTransition>} />
-          <Route path="/thank-you/cuda-development/" element={<PageTransition><CUDADevelopmentThankYouPage /></PageTransition>} />
 
           {/* About Us routes */}
           <Route path="/about-us/" element={<PageTransition><NewAboutUsPage /></PageTransition>} />
