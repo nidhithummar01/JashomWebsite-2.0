@@ -168,7 +168,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <ScrollProgress />
-      <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <div className="min-h-screen bg-black text-white overflow-x-hidden max-w-full" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
         <Navigation />
         <AnimatedRoutes />
         <Footer />

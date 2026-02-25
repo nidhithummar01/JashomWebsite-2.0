@@ -74,7 +74,6 @@ export function NewAboutUsPage() {
         <section
           className="relative overflow-hidden w-full"
           style={{
-            minHeight: '100vh',
             backgroundImage: 'url(/images/About%20Us/about-us-hero.jpg.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -91,8 +90,8 @@ export function NewAboutUsPage() {
           ></div>
 
           {/* Content - Premium Spacing */}
-          <div className="relative z-10 min-h-screen flex items-center overflow-x-hidden">
-            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '100px', maxWidth: '100%' }}>
+          <div className="relative z-10 flex items-center overflow-x-hidden">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '80px', maxWidth: '100%' }}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -120,7 +119,7 @@ export function NewAboutUsPage() {
                     fontSize: 'clamp(17px, 2vw, 20px)',
                     lineHeight: '1.75',
                     textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
-                    marginBottom: '48px',
+                    marginBottom: '0',
                     maxWidth: '560px'
                   }}
                 >
@@ -511,15 +510,25 @@ export function NewAboutUsPage() {
                   backgroundPosition: 'center'
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/50" />
                 
                 <div className="relative h-full flex flex-col justify-between p-8 md:p-12 xl:p-16">
                   {/* Bottom Content */}
                   <div className="mt-auto">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-white">
+                    <h3 
+                      className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-white"
+                      style={{
+                        textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)'
+                      }}
+                    >
                       Want to create something impactful?
                     </h3>
-                    <p className="text-white/90 mb-8 text-base md:text-lg">
+                    <p 
+                      className="text-white mb-8 text-base md:text-lg"
+                      style={{
+                        textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6)'
+                      }}
+                    >
                       Let us talk about your ideas, strategies, and how to execute.
                     </p>
                     <div className="flex justify-start">
@@ -617,24 +626,25 @@ export function NewAboutUsPage() {
           }}
         >
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
               {/* Left Side - Contact Info & Office Details (50%) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="space-y-8 p-8 md:p-10 rounded-2xl"
+                className="rounded-2xl h-full flex flex-col"
                 style={{
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <div>
-                  <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>Contact Us</p>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6" style={{ color: '#FAFAFA' }}>
-                    Jashom is ready to help you grow.
-                  </h2>
-                </div>
+                <div className="space-y-8 p-8 md:p-10">
+                  <div>
+                    <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>Contact Us</p>
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6" style={{ color: '#FAFAFA' }}>
+                      Jashom is ready to help you grow.
+                    </h2>
+                  </div>
 
                 {/* Our Office */}
                 <div className="space-y-6">
@@ -677,10 +687,24 @@ export function NewAboutUsPage() {
                   </div>
 
                   <div className="pt-6">
-                    <p className="text-white/70 text-sm md:text-base">
+                    <p className="text-white/70 text-sm md:text-base mb-6">
                       Pay us a visit for a cup of coffee. We'll be more than happy to welcome you.
                     </p>
+                    
+                    {/* Office Image */}
+                    <div className="rounded-xl overflow-hidden mt-6" style={{
+                      border: '1px solid rgba(16, 185, 129, 0.2)',
+                      boxShadow: '0 4px 12px rgba(16, 185, 129, 0.1)'
+                    }}>
+                      <img 
+                        src="/images/about-us-our-office.jpg" 
+                        alt="Jashom Office" 
+                        className="w-full h-auto object-cover"
+                        style={{ maxHeight: '300px', objectFit: 'cover' }}
+                      />
+                    </div>
                   </div>
+                </div>
                 </div>
               </motion.div>
 
@@ -689,18 +713,19 @@ export function NewAboutUsPage() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="space-y-6 p-8 md:p-10 rounded-2xl"
+                className="rounded-2xl h-full flex flex-col"
                 style={{
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-white">
-                  Ready to Accelerate Your Infrastructure?
-                </h3>
-                <p className="text-white/70 mb-8 text-sm md:text-base">
-                  Let's analyze your current GPU performance, remove bottlenecks, and engineer scalable CUDA solutions that drive measurable computational gains.
-                </p>
+                <div className="space-y-6 p-8 md:p-10">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-white">
+                    Ready to Accelerate Your Infrastructure?
+                  </h3>
+                  <p className="text-white/70 mb-8 text-sm md:text-base">
+                    Let's analyze your current GPU performance, remove bottlenecks, and engineer scalable CUDA solutions that drive measurable computational gains.
+                  </p>
 
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div>
@@ -792,6 +817,7 @@ export function NewAboutUsPage() {
                     {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
                 </form>
+                </div>
               </motion.div>
             </div>
           </div>

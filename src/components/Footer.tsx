@@ -65,8 +65,26 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden" style={{ background: '#000000' }}>
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-14 pb-0">
+    <footer className="relative overflow-hidden" style={{ 
+      background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)',
+      borderTop: '1px solid rgba(16, 185, 129, 0.2)'
+    }}>
+      {/* Large watermark text in background */}
+      <div 
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        style={{
+          fontSize: 'clamp(120px, 20vw, 280px)',
+          fontWeight: '900',
+          color: 'rgba(16, 185, 129, 0.02)',
+          letterSpacing: '0.1em',
+          userSelect: 'none',
+          transform: 'translateY(-10%)'
+        }}
+      >
+        JASHOM
+      </div>
+
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-14 pb-0 w-full">
         
         {/* Logo */}
         <Link to="/" className="inline-block mb-10">
@@ -80,15 +98,15 @@ export function Footer() {
         </Link>
 
         {/* 4-Column Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 w-full">
           
           {/* Column 1 - Map + Address */}
           <div>
             <div 
-              className="w-full rounded-xl overflow-hidden cursor-pointer mb-4"
+              className="w-full rounded-xl overflow-hidden cursor-pointer mb-4 transition-all duration-300 hover:scale-[1.02]"
               style={{
-                border: '1px solid rgba(16, 185, 129, 0.25)',
-                boxShadow: '0 0 15px rgba(16, 185, 129, 0.12)',
+                border: '1px solid rgba(16, 185, 129, 0.3)',
+                boxShadow: '0 4px 20px rgba(16, 185, 129, 0.15), 0 0 40px rgba(16, 185, 129, 0.05)',
                 height: '280px'
               }}
               onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=414+Satyam-2+Amba+Business+Park+ATPL+Adalaj+Gujarat+India', '_blank')}
@@ -143,7 +161,7 @@ export function Footer() {
           {/* Column 2 - Company */}
           <div>
             <h4 className="text-base font-semibold mb-4 text-white">Company</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   <Link
@@ -160,7 +178,7 @@ export function Footer() {
           {/* Column 3 - Services */}
           <div>
             <h4 className="text-base font-semibold mb-4 text-white">Services</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <Link
@@ -187,7 +205,7 @@ export function Footer() {
           {/* Column 4 - Resources */}
           <div>
             <h4 className="text-base font-semibold mb-4 text-white">Resources</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
                   <Link
@@ -204,12 +222,25 @@ export function Footer() {
 
         {/* Divider */}
         <div className="mt-10">
-          {/* Centered divider line */}
+          {/* Centered divider line with glow */}
           <div className="flex justify-center mb-6">
-            <div className="w-full max-w-4xl border-t" style={{ borderColor: 'rgba(16, 185, 129, 0.15)' }}></div>
+            <div 
+              className="w-full max-w-4xl border-t" 
+              style={{ 
+                borderColor: 'rgba(16, 185, 129, 0.2)',
+                boxShadow: '0 1px 3px rgba(16, 185, 129, 0.1)'
+              }}
+            ></div>
           </div>
           
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-6">
+          {/* Policy Row - Elevated with subtle background */}
+          <div 
+            className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-6 pb-6 px-6 rounded-lg -mx-6"
+            style={{
+              background: 'rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(10px)'
+            }}
+          >
             
             {/* Left: Contact + Social */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
