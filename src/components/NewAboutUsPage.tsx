@@ -110,7 +110,7 @@ export function NewAboutUsPage() {
                     marginBottom: '32px'
                   }}
                 >
-                  Building Epic Digital Stuff With Latest Tech
+                  High-Performance GPU & CUDA Engineering
                 </h1>
 
                 {/* Paragraph */}
@@ -124,8 +124,7 @@ export function NewAboutUsPage() {
                     maxWidth: '560px'
                   }}
                 >
-                  At Jashom – we are curious to help you turn your impressive ideas into digital reality.
-                  We build fast, think smart, and collaborate with brands that dare to lead.
+                  We are developing and designing superior-level GPU systems to transform ideas which are rich in compute into scalable, production-ready solutions that are designed to perform in the real world.
                 </p>
               </motion.div>
             </div>
@@ -154,26 +153,28 @@ export function NewAboutUsPage() {
                   className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6"
                   style={{ color: '#FAFAFA' }}
                 >
-                  We Create Software Solutions<br />That Shape{' '}
-                  <span style={{
-                    background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}>
-                    The Future
+                  Engineering Parallel Performance for{' '}
+                  <span style={{ color: '#10B981' }}>
+                    Modern
+                  </span>
+                  {' '}
+                  <span style={{ color: '#10B981' }}>
+                    Workloads
                   </span>
                 </h2>
                 
                 <div className="space-y-4">
                   <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
-                    Jashom has pioneered in delivering the most important software solutions backed by the power of AI development and AI consulting. With our team of passionate developers and data thinkers, you will get nothing less than excellence and innovation.
+                    Our company deals with the design of the GPU architecture and the development of CUDA and optimization of data-intensive applications. We deal with startups, research laboratories, and businesses that require the efficiency of an extra level of computation beyond the CPU.
                   </p>
                   <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
-                    With our specialization in providing services, namely custom software development, AI Development, and AI consulting, we aim to build projects with clarity, precision, and passion. As a trusted software development and AI consulting company, our products are fast, future-ready, and scalable.
+                    Our group is a combination of advanced skills in CUDA programming, memory optimization and multi-GPU coordination to provide stable production ready systems. All solutions are designed based on workload profiling, benchmarking and performance tuning- not assumptions.
                   </p>
                   <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
-                    We build better code with the world-class tools, right talent, and dedication to provide the best.
+                    We engineer scalable GPU systems that are used in AI training pipelines, real-time analytics, simulation engines, and scientific computing systems. We achieve this by designing a development strategy that ensures ultimate throughput, eminent latency, and efficient use of resources throughout the deployments.
+                  </p>
+                  <p className="text-base leading-relaxed" style={{ color: '#D1D5DB' }}>
+                    With proof-of-concept systems to enterprise-grade systems, we support organizations to leverage the full potential of parallel computing, and at the same time ensure reliability, security and maintainability.
                   </p>
                 </div>
               </motion.div>
@@ -299,10 +300,10 @@ export function NewAboutUsPage() {
                   border: '1px solid rgba(16, 185, 129, 0.3)'
                 }}
               >
-                <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>30+</h3>
+                <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>20+</h3>
                 <h4 className="text-xl font-semibold mb-3 text-white">Industries Served</h4>
                 <p className="text-sm" style={{ color: '#D1D5DB' }}>
-                  Multiple domains utilize our expertise to build solutions that resonate.
+                  Bringing graphics computing to healthcare, fintech, research, autonomous systems, and enterprise AI.
                 </p>
               </motion.div>
 
@@ -358,7 +359,7 @@ export function NewAboutUsPage() {
                 />
               </motion.a>
 
-              {/* Lines of Code */}
+              {/* GPU Compute Hours */}
               <motion.div
                 variants={staggerItem}
                 className="sm:col-span-2 rounded-2xl p-8"
@@ -367,10 +368,10 @@ export function NewAboutUsPage() {
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>150k+</h3>
-                <h4 className="text-xl font-semibold mb-3 text-white">Lines of Code Shipped</h4>
+                <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>50k+</h3>
+                <h4 className="text-xl font-semibold mb-3 text-white">GPU Compute Hours Delivered</h4>
                 <p className="text-sm" style={{ color: '#9CA3AF' }}>
-                  Our codes are clean, smart, and scalable, driving products to perform in high-demand situations.
+                  Performance CUDA workloads running on AI training, simulations, and analytics pipelines.
                 </p>
               </motion.div>
 
@@ -384,9 +385,9 @@ export function NewAboutUsPage() {
                 }}
               >
                 <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>6 Weeks</h3>
-                <h4 className="text-xl font-semibold mb-3 text-white">Average Project Kickoff</h4>
+                <h4 className="text-xl font-semibold mb-3 text-white">Average Implementation Cycle</h4>
                 <p className="text-sm" style={{ color: '#9CA3AF' }}>
-                  Our projects kickoff in under 6 weeks, covering phases with speed and focus.
+                  Planning of structured architecture and quick optimization minimize the time of deployment without affecting its quality.
                 </p>
               </motion.div>
 
@@ -400,9 +401,9 @@ export function NewAboutUsPage() {
                 }}
               >
                 <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>24/7</h3>
-                <h4 className="text-xl font-semibold mb-3 text-white">Support Available</h4>
+                <h4 className="text-xl font-semibold mb-3 text-white">Technical Performing Support</h4>
                 <p className="text-sm" style={{ color: '#9CA3AF' }}>
-                  We are always on for bug fixing, crucial updates, or advice, globally.
+                  This is done through continuous monitoring, debugging, and optimization to ensure the existence of stable GPU execution environments.
                 </p>
               </motion.div>
 
@@ -431,10 +432,10 @@ export function NewAboutUsPage() {
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>95%</h3>
+                <h3 className="text-4xl font-bold mb-2" style={{ color: '#10B981' }}>98%</h3>
                 <h4 className="text-xl font-semibold mb-3 text-white">Client Retention Rate</h4>
                 <p className="text-sm" style={{ color: '#9CA3AF' }}>
-                  Our clients stay with us. Our projects finish on time without compromising the impact they create in market.
+                  Long-term relationships based on the quantifiable performance improvements and open-engineering.
                 </p>
               </motion.div>
             </motion.div>
@@ -457,14 +458,14 @@ export function NewAboutUsPage() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
               <div>
-                <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>We dream big and smart</p>
+                <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>We Think in Compute Power</p>
                 <h2 className="text-4xl sm:text-5xl font-bold" style={{ color: '#FAFAFA' }}>
                   Vision
                 </h2>
               </div>
               <div>
                 <p className="text-lg leading-relaxed" style={{ color: '#D1D5DB' }}>
-                  Our vision is to be a global leader in digital transformation, empowering businesses with cutting-edge technology and AI-driven innovation.
+                  To promote the use of GPU computing in the world by designing efficient, scalable and future-compatible CUDA architectures.
                 </p>
               </div>
             </motion.div>
@@ -480,14 +481,14 @@ export function NewAboutUsPage() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
               <div>
-                <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>Jashom is made to impact</p>
+                <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>We Bring Impact</p>
                 <h2 className="text-4xl sm:text-5xl font-bold" style={{ color: '#FAFAFA' }}>
                   Mission
                 </h2>
               </div>
               <div>
                 <p className="text-lg leading-relaxed" style={{ color: '#D1D5DB' }}>
-                  At Jashom, our mission is to transform businesses through innovative digital solutions, intelligent automation, and seamless user experiences.
+                  To help organizations unlock maximum computational performance through precision-driven GPU optimization and parallel engineering expertise.
                 </p>
               </div>
             </motion.div>
@@ -561,37 +562,37 @@ export function NewAboutUsPage() {
                 }}
               >
                 <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-8 md:mb-12" style={{ color: '#10B981' }}>
-                  Brand Values
+                  Values We Deliver
                 </h2>
 
                 <div className="space-y-8 md:space-y-10">
-                  {/* Innovation-Driven Excellence */}
+                  {/* Performance-Driven Innovation */}
                   <div className="space-y-3">
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: '#FAFAFA' }}>
-                      Innovation-Driven Excellence
+                      Performance-Driven Innovation
                     </h3>
                     <p className="leading-relaxed text-sm md:text-base lg:text-lg" style={{ color: '#D1D5DB' }}>
-                      We embrace cutting-edge technology and AI-driven solutions to create impactful digital experiences that drive business growth.
+                      We use state-of-the-art CUDA programming and optimization of the use of the GPUs to develop quantifiable speed gains in the challenging workloads.
                     </p>
                   </div>
 
-                  {/* Customer-Centric Approach */}
+                  {/* Workload-Specific Engineering */}
                   <div className="space-y-3">
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: '#FAFAFA' }}>
-                      Customer-Centric Approach
+                      Workload-Specific Engineering
                     </h3>
                     <p className="leading-relaxed text-sm md:text-base lg:text-lg" style={{ color: '#D1D5DB' }}>
-                      Our solutions are tailored to meet unique business needs, ensuring seamless integration, scalability, and long-term success.
+                      Each of the systems is tailored to your data flow, compute intensity, and scalability needs in order to optimize it.
                     </p>
                   </div>
 
-                  {/* Collaboration & Integrity */}
+                  {/* Transparent Collaboration */}
                   <div className="space-y-3">
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: '#FAFAFA' }}>
-                      Collaboration & Integrity
+                      Transparent Collaboration
                     </h3>
                     <p className="leading-relaxed text-sm md:text-base lg:text-lg" style={{ color: '#D1D5DB' }}>
-                      We foster strong partnerships built on trust, transparency, and teamwork, delivering value with honesty and accountability.
+                      Every phase of development is directed by clear communication, benchmarking reports and shared performance measures.
                     </p>
                   </div>
                 </div>
@@ -695,10 +696,10 @@ export function NewAboutUsPage() {
                 }}
               >
                 <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-white">
-                  Let's Work On Your Goals Together
+                  Ready to Accelerate Your Infrastructure?
                 </h3>
                 <p className="text-white/70 mb-8 text-sm md:text-base">
-                  ...that drop a message. We are here to listen to your ideas or vision, provide AI solutions, or provide guidance.
+                  Let's analyze your current GPU performance, remove bottlenecks, and engineer scalable CUDA solutions that drive measurable computational gains.
                 </p>
 
                 <form onSubmit={handleFormSubmit} className="space-y-6">
