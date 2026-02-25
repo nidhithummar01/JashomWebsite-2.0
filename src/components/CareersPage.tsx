@@ -57,7 +57,7 @@ export function CareersPage() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Redirect to thank you page
-    navigate('/thank-you');
+    navigate('/thank-you/');
   };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>

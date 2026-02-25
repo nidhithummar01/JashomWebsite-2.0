@@ -82,7 +82,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       // Redirect to thank you page after success
       setTimeout(() => {
         onClose();
-        navigate('/thank-you');
+        navigate('/thank-you/');
       }, 2000);
       
     } catch (error) {
@@ -140,7 +140,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               {/* Header */}
               <div className="mb-6 sm:mb-8">
                 <h2 className="text-white text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Contact Us</h2>
-                <p className="text-white/70 text-sm sm:text-base">Ready to transform your business with AI? Let's discuss how we can help you achieve your goals.</p>
+                <p className="text-white/70 text-sm sm:text-base mb-3">
+                  Have a question or need assistance? We're here to help. Reach out to us anytime.
+                </p>
+                <p className="text-white/70 text-sm sm:text-base">
+                  Fill out the form below and our team will get back to you as soon as possible.
+                </p>
               </div>
 
               {submitted ? (

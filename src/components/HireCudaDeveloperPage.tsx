@@ -25,8 +25,8 @@ export function HireCudaDeveloperPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Redirect to hire cuda thank you page
-    navigate('/hire-cuda-thank-you');
+    // Redirect to thank you page
+    navigate('/thank-you/');
   };
 
   return (

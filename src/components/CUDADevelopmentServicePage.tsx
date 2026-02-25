@@ -24,8 +24,8 @@ export function CUDADevelopmentServicePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Redirect to CUDA development thank you page
-    navigate('/cuda-development-thank-you');
+    // Redirect to thank you page
+    navigate('/thank-you/');
   };
   return (
     <div className="min-h-screen" style={{ background: '#0B0F14' }}>

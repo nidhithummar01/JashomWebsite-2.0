@@ -29,25 +29,25 @@ export function ContactPage() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Redirect to thank you page
-    navigate('/thank-you');
+    navigate('/thank-you/');
   };
 
   const faqs = [
     {
-      question: 'What industries does Jashom work with?',
-      answer: 'We work across multiple industries including Healthcare, FinTech, Legal & Tax, Retail, Supply Chain, and Environmental Technology. Our AI solutions are tailored to meet the specific needs of each sector, from GPU-accelerated medical imaging to intelligent automation for financial services.'
+      question: 'Are you an end-to-end CUDA developer or just an advisor?',
+      answer: 'We offer both. Depending on the level of engagement, our team can lead an architecture decision at a consulting level or execute all the way to CUDA development, kernel engineering, testing, and deployment.'
     },
     {
-      question: 'How fast can your team start?',
-      answer: 'We can typically start within 1-2 weeks after the initial consultation. Our onboarding process is streamlined to get your project moving quickly while ensuring we fully understand your requirements and objectives.'
+      question: 'What NVIDIA technologies do you operate?',
+      answer: 'We are involved in the NVIDIA ecosystem, such as CUDA Toolkit, cuDNN, TensorRT, NCCL, and GPU profiling tools, to streamline AI, simulation, and other compute-intensive workloads.'
     },
     {
-      question: 'Do you offer consultation?',
-      answer: 'Yes, we offer free initial consultations to discuss your AI project needs. Our experts will assess your requirements, provide technical recommendations, and outline a clear roadmap for implementation.'
+      question: 'Can you integrate GPU acceleration into existing AI pipelines?',
+      answer: 'Yes. We train and inference pipelines that are optimized through the use of GPU acceleration without interfering with your existing framework, infrastructure, and deployment workflow.'
     },
     {
-      question: 'Where are you located?',
-      answer: 'Our office is located in Adalaj, Gujarat, India at 414, Satyam-2, Amba Business Park, ATPL. We work with clients globally and offer remote collaboration for all projects.'
+      question: 'How do you ensure scalability for future growth?',
+      answer: 'We develop a scalable GPU architecture that benefits from scaling up to workloads, orchestration of multiple GPUs, and an upgrade of the infrastructure without having to redesign larger systems.'
     }
   ];
 
@@ -101,7 +101,7 @@ export function ContactPage() {
                       marginBottom: '32px'
                     }}
                   >
-                    Let's Discuss Your AI Project
+                    Accelerate Your Compute Strategy with GPU & CUDA Expertise
                   </h1>
 
                   {/* Paragraph */}
@@ -115,7 +115,7 @@ export function ContactPage() {
                       maxWidth: '560px'
                     }}
                   >
-                    Ready to transform your AI infrastructure? Our team of experts is here to help you leverage GPU acceleration and cutting-edge AI solutions for your business.
+                    Need to optimize AI training, high-performance computing, or data-intensive jobs? Our GPU and CUDA consulting team helps you design, optimize, and scale parallel computing systems that deliver measurable speed, efficiency, and cost performance.
                   </p>
 
                   {/* CTA Button */}
@@ -156,8 +156,8 @@ export function ContactPage() {
                       className="text-4xl sm:text-5xl font-bold mb-8 leading-tight"
                       style={{ color: '#FFFFFF' }}
                     >
-                      We'd love to help you build{' '}
-                      <span style={{ color: '#10B981' }}>smarter systems</span>.
+                      Our consultants bring deep technical expertise and{' '}
+                      <span style={{ color: '#10B981' }}>production-grade execution</span>.
                     </h2>
 
                     {/* Cyan Divider */}
@@ -169,9 +169,24 @@ export function ContactPage() {
                       }}
                     />
 
-                    {/* Our Office Heading */}
+                    {/* Get in touch heading */}
                     <h3
                       className="text-3xl font-bold mb-6"
+                      style={{ color: '#FFFFFF' }}
+                    >
+                      Get in touch with our GPU experts
+                    </h3>
+
+                    <p
+                      className="text-lg mb-16"
+                      style={{ color: '#9CA3AF' }}
+                    >
+                      We have CUDA consultants who will look at your needs and get back to you within two business days.
+                    </p>
+
+                    {/* Our Office Heading */}
+                    <h3
+                      className="text-3xl font-bold mb-6 mt-8"
                       style={{ color: '#FFFFFF' }}
                     >
                       Our Office

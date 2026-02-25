@@ -26,9 +26,9 @@ export function ThankYouPage() {
           >
             <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-green-400" />
           </motion.div>
-          <h1 className="mb-4 sm:mb-6 text-gradient text-3xl sm:text-4xl md:text-5xl px-2">Thank You!</h1>
+          <h1 className="mb-4 sm:mb-6 text-gradient text-3xl sm:text-4xl md:text-5xl px-2">Request Confirmed</h1>
           <p className="text-white/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
-            We've received your message and appreciate your interest in Jashom's AI and GPU optimization solutions.
+            Your query has been successfully submitted. Thanks for discussing our enhanced GPU computing and CUDA development products and services as high-performance acceleration solutions.
           </p>
         </motion.div>
 
@@ -41,7 +41,7 @@ export function ThankYouPage() {
             className="text-center"
           >
             <div className="glass-effect rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-[#ffffff]/30">
-              <h2 className="mb-6 text-white text-xl sm:text-2xl font-bold">What Happens Next?</h2>
+              <h2 className="mb-6 text-white text-xl sm:text-2xl font-bold">What Comes Next?</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
                 <motion.div
@@ -53,8 +53,8 @@ export function ThankYouPage() {
                   <div className="w-12 h-12 mx-auto mb-4 rounded-full glass-effect border border-white/20 flex items-center justify-center">
                     <span className="text-white font-bold">1</span>
                   </div>
-                  <h3 className="text-white font-semibold mb-2">Review</h3>
-                  <p className="text-white/70 text-sm">Our team will review your requirements and project details</p>
+                  <h3 className="text-white font-semibold mb-2">Evaluate</h3>
+                  <p className="text-white/70 text-sm">Our engineers carefully assess your technical requirements, workload architecture, and performance expectations.</p>
                 </motion.div>
 
                 <motion.div
@@ -66,8 +66,8 @@ export function ThankYouPage() {
                   <div className="w-12 h-12 mx-auto mb-4 rounded-full glass-effect border border-white/20 flex items-center justify-center">
                     <span className="text-white font-bold">2</span>
                   </div>
-                  <h3 className="text-white font-semibold mb-2">Connect</h3>
-                  <p className="text-white/70 text-sm">We'll reach out within 24 hours to discuss your project</p>
+                  <h3 className="text-white font-semibold mb-2">Strategy Call</h3>
+                  <p className="text-white/70 text-sm">A GPU specialist will connect with you shortly to align on objectives and optimization scope.</p>
                 </motion.div>
 
                 <motion.div
@@ -79,14 +79,14 @@ export function ThankYouPage() {
                   <div className="w-12 h-12 mx-auto mb-4 rounded-full glass-effect border border-white/20 flex items-center justify-center">
                     <span className="text-white font-bold">3</span>
                   </div>
-                  <h3 className="text-white font-semibold mb-2">Deliver</h3>
-                  <p className="text-white/70 text-sm">We'll provide a customized solution proposal for your needs</p>
+                  <h3 className="text-white font-semibold mb-2">Solution Blueprint</h3>
+                  <p className="text-white/70 text-sm">You'll receive a tailored CUDA acceleration plan built around scalability and measurable performance gains.</p>
                 </motion.div>
               </div>
 
               <div className="border-t border-white/10 pt-8">
                 <p className="text-white/70 text-sm sm:text-base mb-6">
-                  In the meantime, feel free to explore our portfolio and learn more about our AI and GPU optimization expertise.
+                  In the meantime, explore our case studies to see how we've optimized complex GPU workloads and parallel computing environments.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
