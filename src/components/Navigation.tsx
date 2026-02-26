@@ -117,7 +117,7 @@ export function Navigation() {
         { path: '/about/', label: 'About Us' },
         { path: '/about/team/', label: 'Team' },
         { path: '/about/portfolio/', label: 'Portfolio' },
-        { path: '/insights/', label: 'Blog' },
+        { path: '/blogs/', label: 'Blog' },
         { path: '/about/career/', label: 'Career' }
       ]
     },

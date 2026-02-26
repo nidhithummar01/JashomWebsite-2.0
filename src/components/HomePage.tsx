@@ -1498,7 +1498,7 @@ export function HomePage() {
                 className="text-center mt-8"
               >
                 <Link
-                  to="/insights"
+                  to="/blogs/"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-240"
                   style={{
                     background: 'rgba(16, 185, 129, 0.12)',

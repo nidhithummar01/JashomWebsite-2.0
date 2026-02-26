@@ -1,0 +1,71 @@
+/**
+ * Blog API client. Base URL from env (VITE_API_URL) — no hardcoded URLs.
+ */
+
+const getBaseUrl = (): string => {
+  const url = import.meta.env.VITE_API_URL;
+  if (!url) {
+    console.warn('VITE_API_URL is not set. Using http://localhost:5000 as fallback.');
+    return 'http://localhost:5000';
+  }
+  return String(url).replace(/\/$/, '');
+};
+
+export interface BlogSectionImage {
+  url: string;
+  alt?: string;
+  name?: string;
+}
+
+export interface BlogContentSection {
+  title?: string;
+  content?: string;
+  images?: BlogSectionImage[];
+}
+
+export interface Blog {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  content: string | null;
+  author_name: string | null;
+  tags: string | null;
+  status: string;
+  published_at: string | null;
+  featured_image_url: string | null;
+  featured_image_alt: string | null;
+  content_sections: BlogContentSection[];
+  is_featured?: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
+async function api<T>(path: string): Promise<T> {
+  const base = getBaseUrl();
+  const url = `${base}${path.startsWith('/') ? path : `/${path}`}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(res.statusText || 'Request failed');
+  return res.json();
+}
+
+/** Fetch published blogs (for list/cards). */
+export async function getBlogs(params?: { status?: string; limit?: number; offset?: number }): Promise<Blog[]> {
+  const search = new URLSearchParams();
+  if (params?.status) search.set('status', params.status);
+  if (params?.limit != null) search.set('limit', String(params.limit));
+  if (params?.offset != null) search.set('offset', String(params.offset));
+  const q = search.toString();
+  return api<Blog[]>(`/v1/admin/blogs${q ? `?${q}` : ''}`);
+}
+
+/** Fetch a single blog by id. */
+export async function getBlogById(id: string | number): Promise<Blog> {
+  return api<Blog>(`/v1/admin/blogs/${id}`);
+}
+
+/** Fetch a single blog by slug (for detail page). */
+export async function getBlogBySlug(slug: string): Promise<Blog | null> {
+  const list = await api<Blog[]>(`/v1/admin/blogs?slug=${encodeURIComponent(slug)}`);
+  return list.length > 0 ? list[0] : null;
+}
