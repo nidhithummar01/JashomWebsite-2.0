@@ -46,11 +46,23 @@ export function CUDADevelopmentServicePage() {
           backgroundRepeat: 'no-repeat'
         }}
       >
+        {/* Brightness layer for background image */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(/images/cuda.service.hero.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
+            backgroundRepeat: 'no-repeat',
+            filter: 'brightness(1.2)'
+          }}
+        ></div>
+
         {/* Dark Gradient Overlay - Left to Right fade for readability */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to right, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 0.85) 40%, rgba(11, 15, 20, 0.6) 70%, rgba(11, 15, 20, 0.4) 100%)'
+            background: 'linear-gradient(to right, rgba(11, 15, 20, 0.85) 0%, rgba(11, 15, 20, 0.75) 40%, rgba(11, 15, 20, 0.5) 70%, rgba(11, 15, 20, 0.3) 100%)'
           }}
         ></div>
 
@@ -287,14 +299,23 @@ export function CUDADevelopmentServicePage() {
       <section
         className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/industry-services.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          background: '#0B0F14'
         }}
       >
+        {/* Brightness layer for background image */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(/images/industry-services9.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'brightness(1.1)'
+          }}
+        ></div>
+
         {/* Dark Overlay for text readability */}
-        <div className="absolute inset-0" style={{ background: 'rgba(11, 15, 20, 0.5)' }}></div>
+        <div className="absolute inset-0 z-0" style={{ background: 'rgba(11, 15, 20, 0.4)' }}></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div

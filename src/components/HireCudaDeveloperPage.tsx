@@ -56,7 +56,7 @@ export function HireCudaDeveloperPage() {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: 'linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%)'
+                  background: 'linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.45) 100%)'
                 }}
               />
             </div>
@@ -71,15 +71,26 @@ export function HireCudaDeveloperPage() {
                   transition={{ duration: 0.6 }}
                   className="space-y-8"
                 >
-                  <h1 className="font-bold leading-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.025em', fontSize: 'clamp(28px, 4vw, 48px)' }}>
+                  <h1 className="font-bold leading-tight" style={{ 
+                    color: '#FFFFFF', 
+                    letterSpacing: '-0.025em', 
+                    fontSize: 'clamp(28px, 4vw, 48px)',
+                    textShadow: '0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.8)'
+                  }}>
                     Hire CUDA Developers
                   </h1>
 
-                  <p className="text-lg leading-relaxed" style={{ color: '#B0B0B0' }}>
+                  <p className="text-lg leading-relaxed" style={{ 
+                    color: '#E5E5E5',
+                    textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)'
+                  }}>
                     CUDA Programming Experts | GPU Acceleration Engineers | Parallel Processing Specialists
                   </p>
 
-                  <p className="text-lg leading-relaxed" style={{ color: '#B0B0B0' }}>
+                  <p className="text-lg leading-relaxed" style={{ 
+                    color: '#D1D5DB',
+                    textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)'
+                  }}>
                     Create high-performance GPU applications using expert CUDA programmers. We develop optimized parallel designs, stream memory, and access the full potential of GPUs to run AI models, simulations, and other data-intensive computing environments.
                   </p>
 
@@ -176,14 +187,13 @@ export function HireCudaDeveloperPage() {
           </section >
 
           {/* Hire CUDA Developers Section - Before Why Choose */}
-          < section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
+          <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0F14' }}>
             <div className="max-w-7xl mx-auto">
-              <div className="max-w-7xl mx-auto">
+              {/* 2-Column Layout: Text Left, Image Right */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-                {/* 2-Column Layout: Text Left, Image Right */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-                  {/* Left Column - Text Content */}
+                {/* Left Column - Text Content */}
+                <div>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -195,7 +205,7 @@ export function HireCudaDeveloperPage() {
                       Enhance GPU Performance with Dedicated CUDA Engineers
                     </h2>
 
-                    <p className="text-base sm:text-lg leading-relaxed max-w-2xl" style={{ color: '#9E9E9E' }}>
+                    <p className="text-base leading-relaxed" style={{ color: '#9E9E9E' }}>
                       Our CUDA development team assists companies in taking CPU-based systems to high-performance asymmetric solutions on GPUs. Scheduling the algorithms to perform the parallel execution and refining the thread-level activities, we provide significant improvements in the speed and resource usage. Our engineers become a natural part of your design, all the way to optimization of deployment, and concentrate on providing stable, scalable, and production-ready CUDA implementations.
                     </p>
 
@@ -213,33 +223,33 @@ export function HireCudaDeveloperPage() {
                       </a>
                     </div>
                   </motion.div>
+                </div>
 
-                  {/* Right Column - Image */}
+                {/* Right Column - Image */}
+                <div>
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
                     className="relative"
                   >
-                    <div className="relative overflow-hidden rounded-2xl">
-                      <img
-                        src="/images/hire.page.jpg"
-                        alt="Hire CUDA Developers"
-                        className="w-full h-auto object-cover"
-                        style={{
-                          borderRadius: '20px',
-                          boxShadow: '0 20px 60px rgba(16, 185, 129, 0.25), 0 0 40px rgba(16, 185, 129, 0.1)'
-                        }}
-                      />
-                    </div>
+                    <img
+                      src="/images/hire.page.jpg"
+                      alt="Hire CUDA Developers"
+                      className="w-full rounded-2xl shadow-2xl"
+                      style={{ 
+                        boxShadow: '0 20px 60px rgba(16, 185, 129, 0.3)',
+                        aspectRatio: '1 / 1',
+                        objectFit: 'cover'
+                      }}
+                    />
                   </motion.div>
-
                 </div>
 
               </div>
             </div>
-          </section >
+          </section>
 
           {/* Our CUDA Engineers Expertise Section */}
           < section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'rgba(16, 185, 129, 0.05)' }}>
