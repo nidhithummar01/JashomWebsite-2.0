@@ -1,6 +1,6 @@
 export interface InsightCard {
   id: string;
-  category: 'Insights' | 'Case study' | 'News';
+  category: 'Blog' | 'Case study' | 'News';
   title: string;
   description: string;
   image: string;
@@ -14,13 +14,13 @@ export interface InsightCard {
 export const insightsData: InsightCard[] = [
   {
     id: '1',
-    category: 'Insights',
+    category: 'Blog',
     title: 'GPU Acceleration in AI: Transforming Machine Learning Performance',
     description: 'Explore how GPU optimization is revolutionizing AI workloads, reducing training time from weeks to hours, and enabling real-time inference at scale.',
     image: '/insights/gpu-ai.jpg',
     date: 'Feb 8, 2026',
     readTime: '8 min read',
-    link: '/insights/gpu-acceleration-ai/',
+    link: '/blogs/gpu-acceleration-ai/',
     featured: true,
     color: '#0EA5E9'
   },
@@ -60,35 +60,35 @@ export const insightsData: InsightCard[] = [
   },
   {
     id: '5',
-    category: 'Insights',
+    category: 'Blog',
     title: 'CUDA Development: Best Practices for High-Performance Computing',
     description: 'Explore the essentials of CUDA architecture, its advantages, pitfalls, examples of successful solutions, and implementation tips for optimal GPU performance.',
     image: '/insights/cuda-development.jpg',
     date: 'Jan 25, 2026',
     readTime: '15 min read',
-    link: '/insights/cuda-best-practices/',
+    link: '/blogs/cuda-best-practices/',
     color: '#F8F9FA'
   },
   {
     id: '6',
-    category: 'Insights',
+    category: 'Blog',
     title: 'Custom AI Solutions: Development Roadmap, Costs & Benefits',
     description: 'Discover the complete guide to building custom AI solutions, from initial assessment and architecture design to deployment and ROI maximization.',
     image: '/insights/custom-ai.jpg',
     date: 'Jan 20, 2026',
     readTime: '11 min read',
-    link: '/insights/custom-ai-solutions/',
+    link: '/blogs/custom-ai-solutions/',
     color: '#0EA5E9'
   },
   {
     id: '7',
-    category: 'Insights',
+    category: 'Blog',
     title: 'Neurology Telemedicine: A Full Solution Overview',
     description: 'Learn about the architecture, features, integrations, and implementation of telemedicine solutions transforming neurological care delivery.',
     image: '/insights/telemedicine.jpg',
     date: 'Jan 15, 2026',
     readTime: '13 min read',
-    link: '/insights/neurology-telemedicine/',
+    link: '/blogs/neurology-telemedicine/',
     color: '#1E293B'
   },
   {
@@ -104,7 +104,7 @@ export const insightsData: InsightCard[] = [
   }
 ];
 
-// Get latest N insights
+// Get latest N blog/card entries for homepage
 export const getLatestInsights = (count: number = 3): InsightCard[] => {
   return insightsData.slice(0, count);
 };

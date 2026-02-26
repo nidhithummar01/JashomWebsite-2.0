@@ -11,7 +11,7 @@ import { AnimatePresence } from 'motion/react';
 const SolutionsPage = lazy(() => import('./components/SolutionsPage').then(module => ({ default: module.SolutionsPage })));
 const CapabilityMatrixPage = lazy(() => import('./components/CapabilityMatrixPage').then(module => ({ default: module.CapabilityMatrixPage })));
 const PortfolioPage = lazy(() => import('./components/PortfolioPage').then(module => ({ default: module.PortfolioPage })));
-const InsightsPage = lazy(() => import('./components/InsightsPage').then(module => ({ default: module.InsightsPage })));
+const BlogsPage = lazy(() => import('./components/BlogsPage').then(module => ({ default: module.BlogsPage })));
 const BlogDetailPage = lazy(() => import('./components/BlogDetailPage').then(module => ({ default: module.BlogDetailPage })));
 const ContactPage = lazy(() => import('./components/ContactPage').then(module => ({ default: module.ContactPage })));
 const BrochurePage = lazy(() => import('./components/BrochurePage').then(module => ({ default: module.BrochurePage })));
@@ -88,9 +88,8 @@ function AnimatedRoutes() {
           <Route path="/solutions/" element={<PageTransition><SolutionsPage /></PageTransition>} />
           <Route path="/capability/" element={<PageTransition><CapabilityMatrixPage /></PageTransition>} />
           <Route path="/portfolio/" element={<PageTransition><PortfolioPage /></PageTransition>} />
-          <Route path="/insights/" element={<PageTransition><InsightsPage /></PageTransition>} />
-          <Route path="/insights/:slug/" element={<PageTransition><BlogDetailPage /></PageTransition>} />
-          <Route path="/blog/" element={<PageTransition><InsightsPage /></PageTransition>} />
+          <Route path="/blogs/" element={<PageTransition><BlogsPage /></PageTransition>} />
+          <Route path="/blogs/:slug/" element={<PageTransition><BlogDetailPage /></PageTransition>} />
           <Route path="/portfolio/rankzy-ai/" element={<PageTransition><RankzyAIPage /></PageTransition>} />
           <Route path="/portfolio/pod-ai-clipforge/" element={<PageTransition><PodAIClipforgePage /></PageTransition>} />
           <Route path="/portfolio/nvtrust-gpu-attestation/" element={<PageTransition><NVTrustGPUAttestationPage /></PageTransition>} />
@@ -119,7 +118,7 @@ function AnimatedRoutes() {
           <Route path="/about-us/" element={<PageTransition><NewAboutUsPage /></PageTransition>} />
           <Route path="/about/team/" element={<PageTransition><TeamPage /></PageTransition>} />
           <Route path="/about/portfolio/" element={<PageTransition><PortfolioPage /></PageTransition>} />
-          <Route path="/about/blog/" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest insights, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
+          <Route path="/about/blog/" element={<PageTransition><PlaceholderPage title="Blog" description="Stay updated with the latest blog posts, trends, and best practices in AI, machine learning, and GPU optimization." /></PageTransition>} />
           <Route path="/about/career/" element={<PageTransition><CareersPage /></PageTransition>} />
           <Route path="/about/" element={<PageTransition><NewAboutUsPage /></PageTransition>} />
           
