@@ -68,69 +68,92 @@ export function CareersPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ minHeight: '600px', paddingTop: '160px', paddingBottom: '100px' }}>
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/images/carrer.hero.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'brightness(1.1)'
-          }}
-        >
+      <section className="relative overflow-hidden w-full"
+        style={{
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          maxWidth: '100vw'
+        }}
+      >
+        {/* Background Video with Overlay */}
+        <div className="absolute inset-0 z-0 w-full h-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full"
+            style={{ 
+              objectFit: 'cover',
+              objectPosition: 'center',
+              filter: 'brightness(1.1)',
+              minWidth: '100%',
+              minHeight: '100%'
+            }}
+          >
+            <source src="/videos/carrer.hero.mp4" type="video/mp4" />
+          </video>
+          
           {/* Overlay for better text readability */}
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%)'
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 100%)'
             }}
           />
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10 flex items-center" style={{ minHeight: '360px' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <h1 
-              className="font-bold text-white leading-tight mb-8" 
-              style={{ 
-                fontSize: 'clamp(28px, 4vw, 48px)',
-                letterSpacing: '-0.02em',
-                textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)'
-              }}
+        {/* Content positioned at bottom - Matching About Us Style */}
+        <div className="relative z-10 flex items-center">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style={{ paddingTop: '140px', paddingBottom: '80px' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+              style={{ maxWidth: '620px' }}
             >
-              Find your big role In our purposeful team
-            </h1>
-            
-            <Link
-              to="/careers/openings"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer border-0"
-              style={{
-                background: 'linear-gradient(135deg, #10B981, #06B6D4)',
-                borderColor: 'transparent',
-                color: '#FFFFFF',
-                boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(135deg, #059669, #0891B2)';
-                e.currentTarget.style.boxShadow = '0 12px 48px rgba(16, 185, 129, 0.6)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(135deg, #10B981, #06B6D4)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(16, 185, 129, 0.4)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <span>Join Our Team</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
+              <h1 
+                className="font-bold text-white leading-tight" 
+                style={{ 
+                  fontSize: 'clamp(28px, 4vw, 48px)',
+                  textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '32px',
+                  fontWeight: '700'
+                }}
+              >
+                Find your big role In our purposeful team
+              </h1>
+              
+              <p
+                className="text-white/90"
+                style={{
+                  fontSize: 'clamp(17px, 2vw, 20px)',
+                  lineHeight: '1.75',
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
+                  marginBottom: '48px',
+                  maxWidth: '560px'
+                }}
+              >
+                Join the team to create digital products that the world has never seen before. We're building the future of AI and GPU computing.
+              </p>
+
+              {/* CTA Button */}
+              <Link
+                to="/careers/openings"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90 hover:scale-105 cursor-pointer"
+                style={{
+                  background: '#10B981',
+                  color: '#FFFFFF',
+                  boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.4)'
+                }}
+              >
+                Join Our Team
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 

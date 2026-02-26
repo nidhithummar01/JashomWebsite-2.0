@@ -46,11 +46,23 @@ export function GPUOptimizationServicePage() {
           backgroundRepeat: 'no-repeat'
         }}
       >
+        {/* Brightness layer for background image */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(/images/service-hero-bg.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'brightness(1.3)'
+          }}
+        ></div>
+
         {/* Dark Gradient Overlay - Left to Right fade for readability */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to right, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 0.85) 40%, rgba(11, 15, 20, 0.6) 70%, rgba(11, 15, 20, 0.4) 100%)'
+            background: 'linear-gradient(to right, rgba(11, 15, 20, 0.85) 0%, rgba(11, 15, 20, 0.75) 40%, rgba(11, 15, 20, 0.5) 70%, rgba(11, 15, 20, 0.3) 100%)'
           }}
         ></div>
 
@@ -372,7 +384,7 @@ export function GPUOptimizationServicePage() {
             >
               <div className="relative overflow-hidden rounded-2xl">
                 <img
-                  src="/images/gpu.service.jpg"
+                  src="/images/gpu.service1.png"
                   alt="Industry-Specific GPU Solutions"
                   className="w-full h-auto object-cover"
                   style={{

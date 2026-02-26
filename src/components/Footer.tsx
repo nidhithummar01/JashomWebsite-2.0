@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Phone, Mail } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,9 +14,7 @@ export function Footer() {
     ],
     services: [
       { label: 'GPU Optimization Service', path: '/gpu-optimization-service/' },
-      { label: 'CUDA Development Service', path: '/cuda-development-service/' }
-    ],
-    hireExperts: [
+      { label: 'CUDA Development Service', path: '/cuda-development-service/' },
       { label: 'Hire CUDA Developer', path: '/hire-cuda-developer/' }
     ],
     resources: [
@@ -30,16 +29,6 @@ export function Footer() {
       { label: 'Security Policy', path: '/security/' }
     ]
   };
-
-  const globalLocations = [
-    { 
-      name: 'India', 
-      city: 'Ahmedabad',
-      address: '414, Satyam-2, Amba Business Park',
-      addressLine2: 'ATPL, Adalaj, Gujarat, India',
-      position: { left: '75%', top: '32%' } 
-    }
-  ];
 
   const socialLinks = [
     { 
@@ -65,238 +54,235 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden" style={{ 
-      background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)',
-      borderTop: '1px solid rgba(16, 185, 129, 0.2)'
-    }}>
-      {/* Large watermark text in background */}
-      <div 
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        style={{
-          fontSize: 'clamp(120px, 20vw, 280px)',
-          fontWeight: '900',
-          color: 'rgba(16, 185, 129, 0.02)',
-          letterSpacing: '0.1em',
-          userSelect: 'none',
-          transform: 'translateY(-10%)'
-        }}
-      >
-        JASHOM
-      </div>
-
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-14 pb-0 w-full">
+    <footer 
+      className="relative overflow-hidden" 
+      style={{ 
+        background: '#0a0a0a',
+        borderTop: '1px solid rgba(16, 185, 129, 0.15)',
+        paddingTop: '3rem'
+      }}
+      role="contentinfo"
+      aria-label="Site footer"
+    >
+      <div className="max-w-7xl mx-auto">
         
-        {/* Logo */}
-        <Link to="/" className="inline-block mb-10">
-          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-            <img
-              src="/jashom-logo-header-70px.png"
-              alt="Jashom"
-              className="h-10 w-auto object-contain"
-            />
-          </motion.div>
-        </Link>
-
-        {/* 4-Column Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 w-full">
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-12 pb-8">
           
-          {/* Column 1 - Map + Address */}
+          {/* COLUMN 1: Logo + Description + Address + Map */}
           <div>
-            <div 
-              className="w-full rounded-xl overflow-hidden cursor-pointer mb-4 transition-all duration-300 hover:scale-[1.02]"
-              style={{
-                border: '1px solid rgba(16, 185, 129, 0.3)',
-                boxShadow: '0 4px 20px rgba(16, 185, 129, 0.15), 0 0 40px rgba(16, 185, 129, 0.05)',
-                height: '280px'
-              }}
-              onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=414+Satyam-2+Amba+Business+Park+ATPL+Adalaj+Gujarat+India', '_blank')}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.234!2d72.5840!3d23.1645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA5JzUyLjIiTiA3MsKwMzUnMDIuNCJF!5e0!3m2!1sen!2sin!4v1707734400000!5m2!1sen!2sin&z=16&gestureHandling=none&maptype=roadmap&style=feature:all|element:geometry|color:0x212121&style=feature:all|element:labels.icon|visibility:off&style=feature:all|element:labels.text.fill|color:0x757575&style=feature:all|element:labels.text.stroke|color:0x212121&style=feature:administrative|element:geometry|color:0x757575&style=feature:landscape|element:geometry|color:0x212121&style=feature:poi|element:geometry|color:0x212121&style=feature:road|element:geometry.fill|color:0x2c2c2c&style=feature:road|element:labels.text.fill|color:0x8a8a8a&style=feature:road.arterial|element:geometry|color:0x373737&style=feature:road.highway|element:geometry|color:0x3c3c3c&style=feature:road.highway.controlled_access|element:geometry|color:0x4e4e4e&style=feature:road.local|element:labels.text.fill|color:0x616161&style=feature:transit|element:labels.text.fill|color:0x757575&style=feature:water|element:geometry|color:0x000000&style=feature:water|element:labels.text.fill|color:0x3d3d3d"
-                width="100%"
-                height="280"
-                style={{ border: 0, pointerEvents: 'none' }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Jashom Office Location"
-              />
+            {/* Logo + Description */}
+            <div>
+              <Link to="/" className="inline-block mb-5" aria-label="Jashom home">
+                <motion.img
+                  src="/jashom-logo-header-70px.png"
+                  alt="Jashom"
+                  className="h-14 w-auto"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </Link>
+              <p 
+                className="text-base leading-relaxed"
+                style={{ color: '#9CA3AF' }}
+              >
+                Empowering businesses with modern GPU optimization and CUDA development for high-performance computing.
+              </p>
             </div>
 
-            {/* Address */}
-            <div style={{ marginTop: '24px' }}>
-              <h4 className="text-base font-semibold mb-4 text-white">Our Location</h4>
-              {globalLocations.map((location, index) => (
-                <div key={index} className="text-sm" style={{ lineHeight: '1.6' }}>
-                  <div 
-                    className="font-medium" 
-                    style={{ 
-                      color: '#10B981',
-                      marginBottom: '16px'
-                    }}
-                  >
-                    {location.city}, {location.name}
-                  </div>
-                  <div 
-                    style={{ 
-                      color: '#9CA3AF',
-                      marginBottom: '15px'
-                    }}
-                  >
-                    {location.address}
-                  </div>
-                  <div 
-                    style={{ 
-                      color: '#9CA3AF',
-                      marginBottom: '0'
-                    }}
-                  >
-                    {location.addressLine2}
-                  </div>
+            {/* Address + Map */}
+            <div className="mt-16">
+              <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
+                Address
+              </h4>
+              <div className="text-sm mb-4 space-y-1" style={{ color: '#9CA3AF', lineHeight: '1.7' }}>
+                <div className="font-semibold" style={{ color: '#10B981' }}>
+                  Ahmedabad, India
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 2 - Company */}
-          <div>
-            <h4 className="text-base font-semibold mb-4 text-white">Company</h4>
-            <ul className="space-y-4">
-              {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.path}
-                    className="text-base text-gray-400 hover:text-[#10B981] transition-colors inline-block"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3 - Services */}
-          <div>
-            <h4 className="text-base font-semibold mb-4 text-white">Services</h4>
-            <ul className="space-y-4">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.path}
-                    className="text-base text-gray-400 hover:text-[#10B981] transition-colors inline-block"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              {footerLinks.hireExperts.map((link, index) => (
-                <li key={`hire-${index}`}>
-                  <Link
-                    to={link.path}
-                    className="text-base text-gray-400 hover:text-[#10B981] transition-colors inline-block"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4 - Resources */}
-          <div>
-            <h4 className="text-base font-semibold mb-4 text-white">Resources</h4>
-            <ul className="space-y-4">
-              {footerLinks.resources.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.path}
-                    className="text-base text-gray-400 hover:text-[#10B981] transition-colors inline-block"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="mt-10">
-          {/* Centered divider line with glow */}
-          <div className="flex justify-center mb-6">
-            <div 
-              className="w-full max-w-4xl border-t" 
-              style={{ 
-                borderColor: 'rgba(16, 185, 129, 0.2)',
-                boxShadow: '0 1px 3px rgba(16, 185, 129, 0.1)'
-              }}
-            ></div>
-          </div>
-          
-          {/* Policy Row - Elevated with subtle background */}
-          <div 
-            className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-6 pb-6 px-6 rounded-lg -mx-6"
-            style={{
-              background: 'rgba(255, 255, 255, 0.02)',
-              backdropFilter: 'blur(10px)'
-            }}
-          >
-            
-            {/* Left: Contact + Social */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-              {/* Contact Info */}
-              <div className="flex flex-wrap items-center gap-3 text-base">
-                <span className="text-[#10B981] font-medium">+91 90239 06363</span>
-                <span className="text-gray-600">|</span>
-                <a href="mailto:info@jashom.com" className="text-gray-400 hover:text-[#10B981] transition-colors">
-                  info@jashom.com
-                </a>
+                <div>414, Satyam-2,</div>
+                <div>Amba Business Park</div>
+                <div>ATPL, Adalaj, Gujarat</div>
               </div>
 
-              {/* Social Icons */}
-              <div className="flex items-center gap-4">
+              {/* Map */}
+              <div 
+                className="w-full rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02]"
+                style={{
+                  border: '1px solid rgba(16, 185, 129, 0.2)',
+                  boxShadow: '0 4px 20px rgba(16, 185, 129, 0.1)',
+                  height: '140px'
+                }}
+                onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=414+Satyam-2+Amba+Business+Park+ATPL+Adalaj+Gujarat+India', '_blank')}
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.234!2d72.5840!3d23.1645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA5JzUyLjIiTiA3MsKwMzUnMDIuNCJF!5e0!3m2!1sen!2sin!4v1707734400000!5m2!1sen!2sin&z=16&gestureHandling=none&maptype=roadmap&style=feature:all|element:geometry|color:0x212121&style=feature:all|element:labels.icon|visibility:off&style=feature:all|element:labels.text.fill|color:0x757575&style=feature:all|element:labels.text.stroke|color:0x212121&style=feature:administrative|element:geometry|color:0x757575&style=feature:landscape|element:geometry|color:0x212121&style=feature:poi|element:geometry|color:0x212121&style=feature:road|element:geometry.fill|color:0x2c2c2c&style=feature:road|element:labels.text.fill|color:0x8a8a8a&style=feature:road.arterial|element:geometry|color:0x373737&style=feature:road.highway|element:geometry|color:0x3c3c3c&style=feature:road.highway.controlled_access|element:geometry|color:0x4e4e4e&style=feature:road.local|element:labels.text.fill|color:0x616161&style=feature:transit|element:labels.text.fill|color:0x757575&style=feature:water|element:geometry|color:0x000000&style=feature:water|element:labels.text.fill|color:0x3d3d3d"
+                  width="100%"
+                  height="140"
+                  style={{ border: 0, pointerEvents: 'none' }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Jashom Office Location"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* COLUMN 2: Get in Touch + Company + Services */}
+          <div>
+            {/* Get in Touch */}
+            <div>
+              <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
+                Get in Touch
+              </h4>
+              <div className="space-y-4">
+                <a 
+                  href="tel:+919023906363"
+                  className="flex items-center gap-3 text-base transition-colors group"
+                  style={{ color: '#9CA3AF' }}
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0" style={{ color: '#10B981' }} />
+                  <span className="group-hover:text-[#10B981]">+91 90239 06363</span>
+                </a>
+                <a 
+                  href="mailto:info@jashom.com"
+                  className="flex items-center gap-3 text-base transition-colors group"
+                  style={{ color: '#9CA3AF' }}
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0" style={{ color: '#10B981' }} />
+                  <span className="group-hover:text-[#10B981]">info@jashom.com</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Company */}
+            <div className="mt-16">
+              <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
+                Company
+              </h4>
+              <ul className="space-y-2.5">
+                {footerLinks.company.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      className="text-base transition-colors inline-block hover:translate-x-1 duration-200"
+                      style={{ color: '#9CA3AF' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#10B981'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}
+                    >
+                      &gt; {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div className="mt-16">
+              <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
+                Services
+              </h4>
+              <ul className="space-y-2.5">
+                {footerLinks.services.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      className="text-base transition-colors inline-block hover:translate-x-1 duration-200"
+                      style={{ color: '#9CA3AF' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#10B981'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}
+                    >
+                      &gt; {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* COLUMN 3: Quick Links + Resources */}
+          <div>
+            {/* Quick Links (Social) */}
+            <div>
+              <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
+                Quick Links
+              </h4>
+              <div className="flex items-center gap-3">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-all duration-300 flex items-center justify-center"
-                    whileHover={{ scale: 1.15, y: -2 }}
-                    aria-label={social.label}
+                    className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300"
                     style={{
-                      width: '28px',
-                      height: '28px'
+                      background: 'rgba(16, 185, 129, 0.1)',
+                      border: '1px solid rgba(16, 185, 129, 0.2)'
                     }}
+                    whileHover={{ 
+                      scale: 1.1,
+                      backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                      borderColor: 'rgba(16, 185, 129, 0.4)'
+                    }}
+                    aria-label={social.label}
                   >
                     <img 
                       src={social.image}
                       alt={social.label}
-                      className="w-full h-full transition-all duration-300"
-                      style={{ 
-                        objectFit: 'contain'
-                      }}
+                      className="w-4 h-4"
+                      style={{ objectFit: 'contain' }}
                     />
                   </motion.a>
                 ))}
               </div>
             </div>
 
-            {/* Right: Legal + Copyright */}
-            <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-500">
-              {footerLinks.legal.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.path}
-                  className="hover:text-[#10B981] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <span className="text-gray-600">|</span>
-              <span className="text-gray-600">© {currentYear} Jashom</span>
+            {/* Resources */}
+            <div className="mt-16">
+              <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
+                Resources
+              </h4>
+              <ul className="space-y-2.5">
+                {footerLinks.resources.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      className="text-base transition-colors inline-block hover:translate-x-1 duration-200"
+                      style={{ color: '#9CA3AF' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#10B981'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}
+                    >
+                      &gt; {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+        </div>
+
+        {/* Divider */}
+        <div 
+          className="border-t mb-8"
+          style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
+        />
+
+        {/* Bottom Bar */}
+        <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
+          {footerLinks.legal.map((link, index) => (
+            <Link
+              key={index}
+              to={link.path}
+              className="transition-colors"
+              style={{ color: '#FFFFFF' }}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#10B981'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <span style={{ color: '#4B5563' }}>|</span>
+          <span style={{ color: '#FFFFFF' }}>© {currentYear} Jashom. All Rights Reserved.</span>
         </div>
       </div>
     </footer>
