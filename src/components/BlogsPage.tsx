@@ -37,7 +37,7 @@ export function BlogsPage() {
         className="relative overflow-hidden"
         style={{
           minHeight: '420px',
-          backgroundImage: 'url(/images/service-hero-bg.jpg)',
+          backgroundImage: 'url(/images/blog.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
