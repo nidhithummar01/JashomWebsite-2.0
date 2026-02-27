@@ -55,7 +55,7 @@ export function Footer() {
 
   return (
     <footer 
-      className="relative overflow-hidden" 
+      className="relative overflow-hidden mb-2" 
       style={{ 
         background: '#0a0a0a',
         borderTop: '1px solid rgba(16, 185, 129, 0.15)',
@@ -67,7 +67,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         
         {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-12 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-20 mb-12 pb-8 px-4 md:px-8">
           
           {/* COLUMN 1: Logo + Description + Address + Map */}
           <div>
@@ -129,7 +129,7 @@ export function Footer() {
           </div>
 
           {/* COLUMN 2: Get in Touch + Company + Services */}
-          <div>
+          <div style={{ paddingLeft: '120px' }}>
             {/* Get in Touch */}
             <div>
               <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
@@ -201,7 +201,7 @@ export function Footer() {
           </div>
 
           {/* COLUMN 3: Quick Links + Resources */}
-          <div>
+          <div style={{ paddingLeft: '110px' }}>
             {/* Quick Links (Social) */}
             <div>
               <h4 className="text-2xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#FFFFFF' }}>
@@ -214,7 +214,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300"
+                    className="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300"
                     style={{
                       background: 'rgba(16, 185, 129, 0.1)',
                       border: '1px solid rgba(16, 185, 129, 0.2)'
@@ -229,7 +229,7 @@ export function Footer() {
                     <img 
                       src={social.image}
                       alt={social.label}
-                      className="w-4 h-4"
+                      className="w-6 h-6"
                       style={{ objectFit: 'contain' }}
                     />
                   </motion.a>
