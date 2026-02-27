@@ -214,23 +214,22 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300"
-                    style={{
-                      background: 'rgba(16, 185, 129, 0.1)',
-                      border: '1px solid rgba(16, 185, 129, 0.2)'
-                    }}
+                    className="inline-block transition-all duration-300"
                     whileHover={{ 
-                      scale: 1.1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.2)',
-                      borderColor: 'rgba(16, 185, 129, 0.4)'
+                      scale: 1.1
                     }}
                     aria-label={social.label}
                   >
                     <img 
                       src={social.image}
                       alt={social.label}
-                      className="w-6 h-6"
-                      style={{ objectFit: 'contain' }}
+                      style={{ 
+                        objectFit: 'contain', 
+                        width: social.label === 'Reddit' ? '32px' : '38px', 
+                        height: social.label === 'Reddit' ? '32px' : '38px',
+                        display: 'block',
+                        background: 'transparent'
+                      }}
                     />
                   </motion.a>
                 ))}
